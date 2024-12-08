@@ -1,3 +1,9 @@
-[gd_scene format=3 uid="uid://bfok5ofi1sgg1"]
+[gd_scene load_steps=2 format=3 uid="uid://bfok5ofi1sgg1"]
+
+[ext_resource type="Texture2D" uid="uid://cntvs3u4r5yfi" path="res://assets/sprites/sesigit.png" id="1_56umv"]
 
 [node name="Node2D" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+texture = ExtResource("1_56umv")
