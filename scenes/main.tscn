@@ -1,9 +1,28 @@
-[gd_scene load_steps=2 format=3 uid="uid://bfok5ofi1sgg1"]
+[gd_scene load_steps=3 format=3 uid="uid://bfok5ofi1sgg1"]
 
 [ext_resource type="Texture2D" uid="uid://cntvs3u4r5yfi" path="res://assets/sprites/sesigit.png" id="1_56umv"]
+
+[sub_resource type="GDScript" id="GDScript_gyqdu"]
+resource_name = "3amCommit"
+script/source = "extends Sprite2D
+
+const T = 5
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	rotation += 2*PI/5 * delta 
+	if rotation > 2*PI:
+		rotation -= 2*PI
+"
 
 [node name="Node2D" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(960, 540)
 texture = ExtResource("1_56umv")
+script = SubResource("GDScript_gyqdu")
