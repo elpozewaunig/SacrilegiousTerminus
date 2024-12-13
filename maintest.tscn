@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://1h2haru1jigs"]
+
+[ext_resource type="PackedScene" uid="uid://ccelpifkgb5xq" path="res://SpellCastWheel/SpellCastWheel.tscn" id="1_p0fva"]
+
+[node name="Maintest" type="Node3D"]
+
+[node name="SpellCastWheel" parent="." instance=ExtResource("1_p0fva")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0316231, 0, 0.146943)
