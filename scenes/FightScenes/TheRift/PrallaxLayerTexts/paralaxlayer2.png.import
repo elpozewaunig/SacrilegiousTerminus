@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://0xx8lsd3qsf7"
-path.s3tc="res://.godot/imported/14526816-strichmannchen-stickman-symbol-piktogramm-einfach-vektor-removebg-preview.png-0db5c7ee7b6ab2ec5564a0e6b5a60a34.s3tc.ctex"
+uid="uid://bqessv6mtjusq"
+path.s3tc="res://.godot/imported/paralaxlayer2.png-c01513de9861efd6928999c82e46ad75.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://FightScenes/placeholders/14526816-strichmannchen-stickman-symbol-piktogramm-einfach-vektor-removebg-preview.png"
-dest_files=["res://.godot/imported/14526816-strichmannchen-stickman-symbol-piktogramm-einfach-vektor-removebg-preview.png-0db5c7ee7b6ab2ec5564a0e6b5a60a34.s3tc.ctex"]
+source_file="res://scenes/FightScenes/TheRift/PrallaxLayerTexts/paralaxlayer2.png"
+dest_files=["res://.godot/imported/paralaxlayer2.png-c01513de9861efd6928999c82e46ad75.s3tc.ctex"]
 
 [params]
 

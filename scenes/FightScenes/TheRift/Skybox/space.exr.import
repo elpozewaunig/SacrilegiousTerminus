@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bpeqy5mevxw2l"
-path.bptc="res://.godot/imported/space.exr-93332e055581a53bd2559ee7b5d4c472.bptc.ctex"
+path.bptc="res://.godot/imported/space.exr-5dfc986625fa95b637f9badb97cee433.bptc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://FightScenes/TheRift/Skybox/space.exr"
-dest_files=["res://.godot/imported/space.exr-93332e055581a53bd2559ee7b5d4c472.bptc.ctex"]
+source_file="res://scenes/FightScenes/TheRift/Skybox/space.exr"
+dest_files=["res://.godot/imported/space.exr-5dfc986625fa95b637f9badb97cee433.bptc.ctex"]
 
 [params]
 

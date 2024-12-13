@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://clo06kexhsdk5"
-path.s3tc="res://.godot/imported/paralaxlayer1.png-f1ab054e0a1a15aa26891d59cf56e106.s3tc.ctex"
+uid="uid://c1jpuah8esq03"
+path.s3tc="res://.godot/imported/tweet-shiraaa-picsart-02-06-06-47-29-removebg-preview.png-fad3dc5656b55cbbe9c8d600f4d87460.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://FightScenes/TheRift/PrallaxLayerTexts/paralaxlayer1.png"
-dest_files=["res://.godot/imported/paralaxlayer1.png-f1ab054e0a1a15aa26891d59cf56e106.s3tc.ctex"]
+source_file="res://scenes/FightScenes/placeholders/tweet-shiraaa-picsart-02-06-06-47-29-removebg-preview.png"
+dest_files=["res://.godot/imported/tweet-shiraaa-picsart-02-06-06-47-29-removebg-preview.png-fad3dc5656b55cbbe9c8d600f4d87460.s3tc.ctex"]
 
 [params]
 

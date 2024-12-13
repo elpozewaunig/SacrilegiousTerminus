@@ -1,14 +1,14 @@
 [gd_scene load_steps=3 format=3 uid="uid://8gpddvo73c18"]
 
-[ext_resource type="PackedScene" uid="uid://ccelpifkgb5xq" path="res://scene/SpellCastWheel/SpellCastWheel.tscn" id="1_p0fva"]
-[ext_resource type="Texture2D" uid="uid://capvl4scxoh2v" path="res://scene/SceneBackground/background.png" id="2_xgapr"]
+[ext_resource type="PackedScene" uid="uid://ccelpifkgb5xq" path="res://scenes/SpellCastWheel/SpellCastWheel.tscn" id="1_p0fva"]
+[ext_resource type="Texture2D" uid="uid://capvl4scxoh2v" path="res://scenes/SceneBackground/background.png" id="2_xgapr"]
 
 [node name="root" type="Node3D"]
 
-[node name="SpellCastWheel" parent="." instance=ExtResource("1_p0fva")]
+[node name="ManualWheel" parent="." instance=ExtResource("1_p0fva")]
 transform = Transform3D(1, 0, 0, 0, 0.614285, -0.789084, 0, 0.789084, 0.614285, -1.43457, 0.316572, -1.57377)
 
-[node name="SpellCastWheel2" parent="." instance=ExtResource("1_p0fva")]
+[node name="AutomaticWheel" parent="." instance=ExtResource("1_p0fva")]
 transform = Transform3D(0.879224, -0.466692, -0.095729, 0.014397, 0.226875, -0.973817, 0.476191, 0.854825, 0.206193, 0.982357, 0.135084, -1.48644)
 script = null
 
