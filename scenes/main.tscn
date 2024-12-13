@@ -1,6 +1,22 @@
 [gd_scene load_steps=6 format=3 uid="uid://bfok5ofi1sgg1"]
 
 [ext_resource type="Texture2D" uid="uid://cntvs3u4r5yfi" path="res://assets/sprites/sesigit.png" id="1_56umv"]
+[ext_resource type="Script" path="res://scripts/3amCommit.gd" id="2_75gtc"]
+
+[sub_resource type="Animation" id="Animation_qb8to"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 0.339092, 0.635836, 1)]
+}
 
 [sub_resource type="Animation" id="Animation_6bbow"]
 resource_name = "rgb"
@@ -18,44 +34,11 @@ tracks/0/keys = {
 "values": [Color(1, 0.339092, 0.635836, 1), Color(3.85046e-07, 0.662473, 0.980138, 1), Color(0, 0.7362, 0.503648, 1)]
 }
 
-[sub_resource type="Animation" id="Animation_qb8to"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:self_modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 0.339092, 0.635836, 1)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_a62nv"]
 _data = {
 "RESET": SubResource("Animation_qb8to"),
 "rgb": SubResource("Animation_6bbow")
 }
-
-[sub_resource type="GDScript" id="GDScript_gyqdu"]
-resource_name = "3amCommit"
-script/source = "extends Sprite2D
-
-const T = 5
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	rotation += 2*PI/5 * delta 
-	if rotation > 2*PI:
-		rotation -= 2*PI
-"
 
 [node name="Node2D" type="Node2D"]
 
@@ -70,4 +53,4 @@ autoplay = "rgb"
 self_modulate = Color(1, 0.339092, 0.635836, 1)
 position = Vector2(960, 540)
 texture = ExtResource("1_56umv")
-script = SubResource("GDScript_gyqdu")
+script = ExtResource("2_75gtc")
