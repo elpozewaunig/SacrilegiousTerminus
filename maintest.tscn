@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://8gpddvo73c18"]
 
-[ext_resource type="PackedScene" uid="uid://ccelpifkgb5xq" path="res://SpellCastWheel/SpellCastWheel.tscn" id="1_p0fva"]
-[ext_resource type="Texture2D" uid="uid://capvl4scxoh2v" path="res://SceneBackground/background.png" id="2_xgapr"]
+[ext_resource type="PackedScene" uid="uid://ccelpifkgb5xq" path="res://scene/SpellCastWheel/SpellCastWheel.tscn" id="1_p0fva"]
+[ext_resource type="Texture2D" uid="uid://capvl4scxoh2v" path="res://scene/SceneBackground/background.png" id="2_xgapr"]
 
 [node name="root" type="Node3D"]
 

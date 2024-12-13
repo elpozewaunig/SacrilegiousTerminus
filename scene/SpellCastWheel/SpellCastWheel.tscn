@@ -1,12 +1,12 @@
 [gd_scene load_steps=12 format=3 uid="uid://ccelpifkgb5xq"]
 
-[ext_resource type="Script" path="res://SpellCastWheel/spellCastWheelScript.gd" id="1_clo6s"]
-[ext_resource type="Texture2D" uid="uid://deiwh6oq6lymh" path="res://SpellCastWheel/Material/SpellCastWheel_Texture.png" id="1_gku87"]
-[ext_resource type="ArrayMesh" uid="uid://cfkachmxoytgr" path="res://SpellCastWheel/Model/SpellCastwheel_center.obj" id="2_88er2"]
-[ext_resource type="ArrayMesh" uid="uid://c16sqhbuq784l" path="res://SpellCastWheel/Model/SpellCastwheel_1.obj" id="3_1jw7d"]
-[ext_resource type="Script" path="res://SpellCastWheel/rotateToAngle.gd" id="4_3pldr"]
-[ext_resource type="ArrayMesh" uid="uid://bcupkd1xtaiua" path="res://SpellCastWheel/Model/SpellCastwheel_2.obj" id="4_r0ijm"]
-[ext_resource type="ArrayMesh" uid="uid://b427b71ukrqc6" path="res://SpellCastWheel/Model/SpellCastwheel_3.obj" id="5_68njf"]
+[ext_resource type="Script" path="res://code/spellCastWheelScript.gd" id="1_clo6s"]
+[ext_resource type="Texture2D" uid="uid://deiwh6oq6lymh" path="res://scene/SpellCastWheel/Material/SpellCastWheel_Texture.png" id="1_gku87"]
+[ext_resource type="ArrayMesh" uid="uid://cfkachmxoytgr" path="res://scene/SpellCastWheel/Model/SpellCastwheel_center.obj" id="2_88er2"]
+[ext_resource type="ArrayMesh" uid="uid://c16sqhbuq784l" path="res://scene/SpellCastWheel/Model/SpellCastwheel_1.obj" id="3_1jw7d"]
+[ext_resource type="Script" path="res://code/rotateToAngle.gd" id="4_3pldr"]
+[ext_resource type="ArrayMesh" uid="uid://bcupkd1xtaiua" path="res://scene/SpellCastWheel/Model/SpellCastwheel_2.obj" id="4_r0ijm"]
+[ext_resource type="ArrayMesh" uid="uid://b427b71ukrqc6" path="res://scene/SpellCastWheel/Model/SpellCastwheel_3.obj" id="5_68njf"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dg72n"]
 albedo_texture = ExtResource("1_gku87")
