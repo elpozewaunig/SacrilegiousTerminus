@@ -20,7 +20,7 @@ albedo_texture = ExtResource("1_gku87")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wr8tb"]
 albedo_texture = ExtResource("1_gku87")
 
-[node name="SpellCastWheel" type="Node3D" node_paths=PackedStringArray("innerRing", "middleRing", "outerRing")]
+[node name="ManualWheel" type="Node3D" node_paths=PackedStringArray("innerRing", "middleRing", "outerRing")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0096097, 0, 0.0048047)
 script = ExtResource("1_clo6s")
 innerRing = NodePath("Wheel/1")

@@ -25,13 +25,14 @@ func _process(delta: float) -> void:
 			rotation_degrees.y = goalRotationAngle
 
 	
-func changeAngle(changeToRight: bool) -> void:
-	if changeToRight:
+func changeAngle(changeToLeft: bool) -> void:
+	if changeToLeft:
 		goalRotationAngle += angleChange
-		print("rotating right")
+		print("rotating left")
 	else:
 		goalRotationAngle -= angleChange
-		print("rotating left")
+		print("rotating right")
+		
 	
 
 		

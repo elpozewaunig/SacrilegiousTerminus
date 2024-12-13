@@ -3,7 +3,7 @@
 [ext_resource type="ArrayMesh" uid="uid://dgxd07skcrmye" path="res://scenes/FightScenes/TheRift/3DFront/cliffside.obj" id="1_eq085"]
 [ext_resource type="Texture2D" uid="uid://0xx8lsd3qsf7" path="res://scenes/FightScenes/placeholders/14526816-strichmannchen-stickman-symbol-piktogramm-einfach-vektor-removebg-preview.png" id="2_8p3rk"]
 [ext_resource type="Texture2D" uid="uid://c1jpuah8esq03" path="res://scenes/FightScenes/placeholders/tweet-shiraaa-picsart-02-06-06-47-29-removebg-preview.png" id="3_i0cr4"]
-[ext_resource type="PackedScene" uid="uid://ccelpifkgb5xq" path="res://scenes/SpellCastWheel/SpellCastWheel.tscn" id="4_1qrmd"]
+[ext_resource type="PackedScene" uid="uid://ccelpifkgb5xq" path="res://scenes/SpellCastWheel/ManualWheel.tscn" id="4_1qrmd"]
 [ext_resource type="Texture2D" uid="uid://sumv4w64qs8j" path="res://scenes/FightScenes/TheRift/Skybox/space.jpg" id="5_85042"]
 [ext_resource type="Texture2D" uid="uid://clo06kexhsdk5" path="res://scenes/FightScenes/TheRift/PrallaxLayerTexts/paralaxlayer1.png" id="5_tx0kx"]
 [ext_resource type="Texture2D" uid="uid://bqessv6mtjusq" path="res://scenes/FightScenes/TheRift/PrallaxLayerTexts/paralaxlayer2.png" id="6_1yfnl"]
