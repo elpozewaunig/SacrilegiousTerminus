@@ -1,0 +1,64 @@
+[gd_scene load_steps=12 format=3 uid="uid://b0cfnqq0xj6ro"]
+
+[ext_resource type="ArrayMesh" uid="uid://dgxd07skcrmye" path="res://FightScenes/TheRift/3DFront/cliffside.obj" id="1_eq085"]
+[ext_resource type="Texture2D" uid="uid://0xx8lsd3qsf7" path="res://FightScenes/placeholders/14526816-strichmannchen-stickman-symbol-piktogramm-einfach-vektor-removebg-preview.png" id="2_8p3rk"]
+[ext_resource type="Texture2D" uid="uid://c1jpuah8esq03" path="res://FightScenes/placeholders/tweet-shiraaa-picsart-02-06-06-47-29-removebg-preview.png" id="3_i0cr4"]
+[ext_resource type="PackedScene" uid="uid://ccelpifkgb5xq" path="res://SpellCastWheel/SpellCastWheel.tscn" id="4_1qrmd"]
+[ext_resource type="Texture2D" uid="uid://bpeqy5mevxw2l" path="res://FightScenes/TheRift/Skybox/space.exr" id="5_cnuyg"]
+[ext_resource type="Texture2D" uid="uid://clo06kexhsdk5" path="res://FightScenes/TheRift/PrallaxLayerTexts/paralaxlayer1.png" id="5_tx0kx"]
+[ext_resource type="Texture2D" uid="uid://bqessv6mtjusq" path="res://FightScenes/TheRift/PrallaxLayerTexts/paralaxlayer2.png" id="6_1yfnl"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_ss00f"]
+panorama = ExtResource("5_cnuyg")
+
+[sub_resource type="Sky" id="Sky_iusol"]
+sky_material = SubResource("PanoramaSkyMaterial_ss00f")
+
+[sub_resource type="Environment" id="Environment_055ba"]
+background_mode = 2
+sky = SubResource("Sky_iusol")
+ambient_light_color = Color(0.497937, 0.417187, 0.591134, 1)
+ambient_light_sky_contribution = 0.0
+ambient_light_energy = 0.4
+tonemap_exposure = 1.13
+glow_enabled = true
+fog_enabled = true
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_nx174"]
+exposure_multiplier = 0.437
+
+[node name="TheRift" type="Node3D"]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.992546, -0.121869, 0, 0.121869, 0.992546, 0.23, 0.415, -0.435)
+fov = 50.0
+
+[node name="Cliffside" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.253, 0.01, 0.226)
+mesh = ExtResource("1_eq085")
+
+[node name="Protag" type="Sprite3D" parent="."]
+transform = Transform3D(0.195, 0, 0, 0, 0.195, 0, 0, 0, 0.195, -1.516, 0.091, -4.197)
+texture = ExtResource("2_8p3rk")
+
+[node name="Enemy" type="Sprite3D" parent="."]
+transform = Transform3D(0.88, 0, 0, 0, 0.88, 0, 0, 0, 0.88, 4.37, 2.287, -9.541)
+texture = ExtResource("3_i0cr4")
+
+[node name="SpellCastWheel" parent="." instance=ExtResource("4_1qrmd")]
+transform = Transform3D(1.09528, 0.370278, 0.209476, 0, 0.578562, -1.02269, -0.425425, 0.953302, 0.539308, -0.395682, 0, -5.95621)
+
+[node name="SpellCastWheel2" parent="." instance=ExtResource("4_1qrmd")]
+transform = Transform3D(0.467647, -0.642648, -0.201769, 0.178624, 0.355154, -0.717188, 0.649461, 0.365061, 0.342535, 4.93, 0, -8.239)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_055ba")
+camera_attributes = SubResource("CameraAttributesPractical_nx174")
+
+[node name="PrallaxLayer1" type="Sprite3D" parent="."]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 36.39, -9.975, -77.154)
+texture = ExtResource("5_tx0kx")
+
+[node name="PrallaxLayer2" type="Sprite3D" parent="."]
+transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, -242.35, -87.25, -643.267)
+texture = ExtResource("6_1yfnl")
