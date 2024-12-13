@@ -1,20 +1,23 @@
-[gd_scene load_steps=3 format=3 uid="uid://1h2haru1jigs"]
+[gd_scene load_steps=3 format=3 uid="uid://8gpddvo73c18"]
 
 [ext_resource type="PackedScene" uid="uid://ccelpifkgb5xq" path="res://SpellCastWheel/SpellCastWheel.tscn" id="1_p0fva"]
 [ext_resource type="Texture2D" uid="uid://capvl4scxoh2v" path="res://SceneBackground/background.png" id="2_xgapr"]
 
-[node name="Maintest" type="Node3D"]
+[node name="root" type="Node3D"]
 
 [node name="SpellCastWheel" parent="." instance=ExtResource("1_p0fva")]
-transform = Transform3D(1, 0, 0, 0, 0.760644, -0.649169, 0, 0.649169, 0.760644, -1.28638, 0, -1.489)
+transform = Transform3D(1, 0, 0, 0, 0.614285, -0.789084, 0, 0.789084, 0.614285, -1.43457, 0.316572, -1.57377)
 
 [node name="SpellCastWheel2" parent="." instance=ExtResource("1_p0fva")]
 transform = Transform3D(0.879224, -0.466692, -0.095729, 0.014397, 0.226875, -0.973817, 0.476191, 0.854825, 0.206193, 0.982357, 0.135084, -1.48644)
+script = null
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.948035, 0.318165, 0, -0.318165, 0.948035, 0, 1.61999, 2.42331)
 fov = 50.3224
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
-transform = Transform3D(6.204, 0, 0, 0, 6.367, 0, 0, 0, 2.118, 0, -2.02, -5.313)
+transform = Transform3D(6.204, 0, 0, 0, 6.367, 0, 0, 0, 2.118, 0.0552581, -2.00816, -5.31954)
 texture = ExtResource("2_xgapr")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
