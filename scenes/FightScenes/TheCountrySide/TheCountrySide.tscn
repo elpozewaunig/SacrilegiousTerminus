@@ -1,7 +1,6 @@
-[gd_scene load_steps=10 format=3 uid="uid://bihqmqmhy5qrk"]
+[gd_scene load_steps=9 format=3 uid="uid://bihqmqmhy5qrk"]
 
 [ext_resource type="Texture2D" uid="uid://0xx8lsd3qsf7" path="res://scenes/FightScenes/placeholders/14526816-strichmannchen-stickman-symbol-piktogramm-einfach-vektor-removebg-preview.png" id="1_jmr8u"]
-[ext_resource type="PackedScene" uid="uid://ccelpifkgb5xq" path="res://scenes/SpellCastWheel/ManualWheel.tscn" id="2_2k6fj"]
 [ext_resource type="Texture2D" uid="uid://c1jpuah8esq03" path="res://scenes/FightScenes/placeholders/tweet-shiraaa-picsart-02-06-06-47-29-removebg-preview.png" id="2_8jbw0"]
 [ext_resource type="Texture2D" uid="uid://btjnrke4c1pf3" path="res://scenes/FightScenes/TheMountain/Skybox/spacenopink.jpg" id="3_g3qk6"]
 [ext_resource type="ArrayMesh" uid="uid://doauu2not8aks" path="res://scenes/FightScenes/TheCountrySide/CountrySide1.obj" id="5_vwdhb"]
@@ -39,12 +38,6 @@ texture = ExtResource("1_jmr8u")
 [node name="Enemy" type="Sprite3D" parent="."]
 transform = Transform3D(0.357826, 0, -0.0395044, 0, 0.36, 0, 0.0395044, 0, 0.357826, 0.489, 0.044, -2.186)
 texture = ExtResource("2_8jbw0")
-
-[node name="SpellCastWheel" parent="." instance=ExtResource("2_2k6fj")]
-transform = Transform3D(0.278687, -0.34049, 1.48833e-08, 0, -1.9233e-08, -0.44, 0.340489, 0.278688, -1.21818e-08, 1.328, -0.924, 1.123)
-
-[node name="SpellCastWheel2" parent="." instance=ExtResource("2_2k6fj")]
-transform = Transform3D(-0.360043, 0.451172, -0.359462, -0.27214, 0.240769, 0.574778, 0.508634, 0.448189, 0.0530807, -0.692, -0.08, -1.634)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_055ba")

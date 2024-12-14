@@ -1,10 +1,10 @@
 [gd_scene load_steps=8 format=3 uid="uid://8gpddvo73c18"]
 
-[ext_resource type="PackedScene" uid="uid://ccelpifkgb5xq" path="res://scenes/SpellCastWheel/SpellCastWheel.tscn" id="1_p0fva"]
+[ext_resource type="PackedScene" path="res://scenes/SpellCastWheel/SpellCastWheel.tscn" id="1_p0fva"]
 [ext_resource type="Script" path="res://code/game_manager.gd" id="2_j851o"]
 [ext_resource type="Script" path="res://code/roundManager.gd" id="2_lq0ph"]
 [ext_resource type="Texture2D" uid="uid://capvl4scxoh2v" path="res://scenes/SceneBackground/background.png" id="2_xgapr"]
-[ext_resource type="PackedScene" uid="uid://dqtcwmca5ongg" path="res://scenes/SpellCastWheel/AutomaticWheel.tscn" id="3_knfil"]
+[ext_resource type="PackedScene" path="res://scenes/SpellCastWheel/AutomaticWheel.tscn" id="3_knfil"]
 [ext_resource type="PackedScene" uid="uid://dvygun7k256ji" path="res://scenes/HudOverlay.tscn" id="6_pse0m"]
 
 [sub_resource type="GDScript" id="GDScript_3kbci"]
@@ -30,10 +30,9 @@ texture = ExtResource("2_xgapr")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 
-[node name="GameManager" type="Node3D" parent="." node_paths=PackedStringArray("timer", "timerLabel")]
+[node name="GameManager" type="Node3D" parent="." node_paths=PackedStringArray("timer")]
 script = ExtResource("2_j851o")
 timer = NodePath("CanvasLayer/Timer")
-timerLabel = NodePath("")
 
 [node name="roundManager" type="Node3D" parent="GameManager" node_paths=PackedStringArray("playerWheel", "opponentWheel")]
 script = ExtResource("2_lq0ph")

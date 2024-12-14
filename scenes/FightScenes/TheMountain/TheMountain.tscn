@@ -1,9 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://b0cfnqq0xj6ro"]
+[gd_scene load_steps=10 format=3 uid="uid://b0cfnqq0xj6ro"]
 
 [ext_resource type="ArrayMesh" uid="uid://dgxd07skcrmye" path="res://scenes/FightScenes/TheMountain/3DFront/cliffside.obj" id="1_a22vp"]
 [ext_resource type="Texture2D" uid="uid://0xx8lsd3qsf7" path="res://scenes/FightScenes/placeholders/14526816-strichmannchen-stickman-symbol-piktogramm-einfach-vektor-removebg-preview.png" id="2_u43d2"]
 [ext_resource type="Texture2D" uid="uid://c1jpuah8esq03" path="res://scenes/FightScenes/placeholders/tweet-shiraaa-picsart-02-06-06-47-29-removebg-preview.png" id="3_1ijaa"]
-[ext_resource type="PackedScene" uid="uid://ccelpifkgb5xq" path="res://scenes/SpellCastWheel/ManualWheel.tscn" id="4_v1hvn"]
 [ext_resource type="Material" uid="uid://di53o2e08jnik" path="res://scenes/FightScenes/TheMountain/Skybox/SpaceSkyBox.tres" id="5_x87l0"]
 [ext_resource type="Texture2D" uid="uid://clo06kexhsdk5" path="res://scenes/FightScenes/TheMountain/ParallaxLayerTexts/layer1.png" id="6_k1qaw"]
 [ext_resource type="Texture2D" uid="uid://bqessv6mtjusq" path="res://scenes/FightScenes/TheMountain/ParallaxLayerTexts/layer2.png" id="7_3qoeg"]
@@ -42,12 +41,6 @@ texture = ExtResource("2_u43d2")
 [node name="Enemy" type="Sprite3D" parent="."]
 transform = Transform3D(0.88, 0, 0, 0, 0.88, 0, 0, 0, 0.88, 4.37, 2.287, -9.541)
 texture = ExtResource("3_1ijaa")
-
-[node name="SpellCastWheel" parent="." instance=ExtResource("4_v1hvn")]
-transform = Transform3D(1.09528, 0.370278, 0.209476, 0, 0.578562, -1.02269, -0.425425, 0.953302, 0.539308, -0.395682, 0, -5.95621)
-
-[node name="SpellCastWheel2" parent="." instance=ExtResource("4_v1hvn")]
-transform = Transform3D(0.467647, -0.642648, -0.201769, 0.178624, 0.355154, -0.717188, 0.649461, 0.365061, 0.342535, 4.93, 0, -8.239)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_055ba")
