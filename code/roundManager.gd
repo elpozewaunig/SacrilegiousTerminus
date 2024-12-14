@@ -49,6 +49,10 @@ func _process(delta: float) -> void:
 		score += (maxScore * delta /progressDuration)*getBonusPointsFactor(timeTillNewSpin, timeForRoud)/roundsTillFullToEmpty
 		if score>maxScore: score = maxScore
 	
+	if score == maxScore:
+		playerWon.emit()
+		
+		
 	print(score)
 	if hasProgressBar:
 		updateProgressBarTo.emit(score, maxScore)

@@ -27,3 +27,9 @@ func _input(event: InputEvent) -> void:
 
 func _on_round_manager_update_progress_bar_to(score: float, maxScore: int) -> void:
 	pass #TODO: Replace with function body. #call update function in textureProgessbar....
+	
+	
+
+
+func _on_game_manager_update_the_final_countdown(timeArray: Array) -> void:
+	pass # Replace with function body.

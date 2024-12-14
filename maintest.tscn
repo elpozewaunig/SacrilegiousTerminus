@@ -62,5 +62,6 @@ offset_bottom = 29.0
 
 [node name="HudOverlay" parent="." instance=ExtResource("6_pse0m")]
 
+[connection signal="updateTheFinalCountdown" from="GameManager" to="HudOverlay" method="_on_game_manager_update_the_final_countdown"]
 [connection signal="playerWon" from="GameManager/roundManager" to="GameManager" method="_on_round_manager_player_won"]
 [connection signal="updateProgressBarTo" from="GameManager/roundManager" to="HudOverlay" method="_on_round_manager_update_progress_bar_to"]

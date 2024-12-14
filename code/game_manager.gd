@@ -1,5 +1,7 @@
 extends Node3D
 
+signal updateTheFinalCountdown(timeArray: Array)
+
 @export var timer: Timer
 @export var timerLabel: Label
 
@@ -14,7 +16,8 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	timerLabel.text = "%02d:%02d" % timer.getTimeFromTimer()
+	updateTheFinalCountdown.emit(timer.getTimeFromTimer())
+	
 
 
 func getSignalThatLevelStarts() -> void:
