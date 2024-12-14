@@ -1,0 +1,57 @@
+[gd_scene load_steps=6 format=3 uid="uid://r020t5g1merr"]
+
+[ext_resource type="Texture2D" uid="uid://cch2xm4os4imv" path="res://assets/sprites/tarot symbole/tarotGlow/Plus.png" id="1_yiow4"]
+
+[sub_resource type="CurveTexture" id="CurveTexture_cmwn6"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_nt3cw"]
+emission_shape = 1
+emission_sphere_radius = 50.0
+angle_min = -56.0
+angle_max = 116.0
+inherit_velocity_ratio = 1.0
+direction = Vector3(0, 0, 0)
+spread = 113.309
+angular_velocity_min = -1.60933e-05
+angular_velocity_max = 56.38
+orbit_velocity_min = 9.49949e-08
+orbit_velocity_max = 9.49949e-08
+radial_velocity_min = -2.23517e-05
+radial_velocity_max = 1.99998
+gravity = Vector3(0, 0, 1)
+radial_accel_min = -2.23517e-06
+radial_accel_max = -2.23517e-06
+tangential_accel_min = -2.23517e-06
+tangential_accel_max = 100.0
+damping_min = 1.0
+damping_max = 4.615
+attractor_interaction_enabled = false
+emission_curve = SubResource("CurveTexture_cmwn6")
+hue_variation_min = -2.23517e-08
+hue_variation_max = -2.23517e-08
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oq7o2"]
+transparency = 1
+albedo_color = Color(0.755406, 0, 0.0714572, 1)
+albedo_texture = ExtResource("1_yiow4")
+metallic = 1.0
+roughness = 0.0
+emission_enabled = true
+emission = Color(1, 0.181256, 0.181963, 1)
+emission_energy_multiplier = 1.14
+billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+distance_fade_mode = 1
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_0a2n6"]
+material = SubResource("StandardMaterial3D_oq7o2")
+size = Vector2(3, 0.3)
+
+[node name="GPUParticles3D" type="GPUParticles3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.426009, 0, -1.2062)
+amount = 2500
+trail_lifetime = 0.79
+process_material = SubResource("ParticleProcessMaterial_nt3cw")
+draw_pass_1 = SubResource("PlaneMesh_0a2n6")
