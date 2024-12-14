@@ -4,7 +4,7 @@ var playerSpins: Array
 var opponentSpins: Array
 @export var playerWheel: Node3D
 @export var opponentWheel: Node3D
-@export var progressBar: TextureProgressBar#
+@export var progressBar: TextureProgressBar
 @export var timeForRoud: int
 
 var ringCount: int
@@ -16,6 +16,7 @@ var timeTillNewSpin: float
 const maxScore:int = 100
 const segmenctCount:int = 3
 const progressDuration:int = 20
+const roundsTillFullToEmpty: int = 2
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -39,14 +40,15 @@ func _process(delta: float) -> void:
 	# 1 can be ignored for now, is for possible extensions with partial points
 	
 	if eval == 0 && score != 0:
-		score -= (maxScore * delta /progressDuration)*getPointsDetuctionFactor(timeTillNewSpin, timeForRoud)
+		score -= (maxScore * delta /progressDuration )*getPointsDetuctionFactor(timeTillNewSpin, timeForRoud)/roundsTillFullToEmpty
 		if score < 0: score = 0
 	elif eval == 2 && score != maxScore:
-		score += (maxScore * delta /progressDuration)*getBonusPointsFactor(timeTillNewSpin, timeForRoud)
+		score += (maxScore * delta /progressDuration)*getBonusPointsFactor(timeTillNewSpin, timeForRoud)/roundsTillFullToEmpty
 		if score>maxScore: score = maxScore
 	
 	print(score)
-	progressBar.update(score, maxScore)
+	if progressBar:
+		progressBar.update(score, maxScore)
 	
 	
 	#update timer
