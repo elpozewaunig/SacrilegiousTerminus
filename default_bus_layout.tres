@@ -4,7 +4,7 @@
 resource_name = "PitchShift"
 
 [resource]
-bus/1/name = &"TypewriterPitcher"
+bus/1/name = &"DialogPitcher"
 bus/1/solo = false
 bus/1/mute = false
 bus/1/bypass_fx = false

@@ -1,9 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://dvygun7k256ji"]
+[gd_scene load_steps=12 format=3 uid="uid://dvygun7k256ji"]
 
 [ext_resource type="Script" path="res://code/hudOverlay.gd" id="1_nlpga"]
 [ext_resource type="Script" path="res://code/dialogScript.gd" id="2_p562y"]
 [ext_resource type="AudioStream" uid="uid://dlvfs6xlorf1j" path="res://assets/sounds/sfx_Typewriter.ogg" id="3_o5wnl"]
 [ext_resource type="Texture2D" uid="uid://dnlq0t0f24tw0" path="res://assets/sprites/progressBar/healthbarUnder.png" id="4_7wure"]
+[ext_resource type="AudioStream" uid="uid://m50mdiae1c0m" path="res://assets/sounds/sfx_PlayerVoice.ogg" id="4_nda3g"]
+[ext_resource type="AudioStream" uid="uid://ccdb1xll6wbh2" path="res://assets/sounds/sfx_EnemyVoice.ogg" id="5_oijn2"]
 [ext_resource type="Texture2D" uid="uid://dlcs2chgbvxv2" path="res://assets/sprites/progressBar/healthbarProgress.png" id="5_yctng"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mc56r"]
@@ -13,12 +15,22 @@ content_margin_right = 4.0
 content_margin_bottom = 4.0
 bg_color = Color(0, 0, 0, 0.878431)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6rxup"]
+bg_color = Color(0, 0, 0, 1)
+
 [sub_resource type="GDScript" id="GDScript_covti"]
 resource_name = "michiMakesProgress"
 script/source = "extends TextureProgressBar	
 
-func _on_round_manager_update_progress_bar_to(score: float, maxScore: int) -> void:
+func update(score: float, maxScore: int) -> void:
 	value = score * 100 / maxScore
+"
+
+[sub_resource type="GDScript" id="GDScript_7wjds"]
+script/source = "extends Label
+
+func update(timeArray: Array) -> void:
+	text = \"%02d:%02d\" % timeArray
 "
 
 [node name="HudOverlay" type="Control"]
@@ -29,7 +41,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_nlpga")
-dialog = Array[String](["Me: The rift is opening and Satan is casting his will upon the world. But First i should go to the church and get rid of the Priest of this town. I don’t want any interferance when the new Lord assends to the earth.", "Priester Robert: My good child, what brings you here today?", "Me: I am here to help our Supremelord from the underworld Satan himself"])
 
 [node name="DialogLayer" type="CanvasLayer" parent="."]
 unique_name_in_owner = true
@@ -49,18 +60,37 @@ offset_right = 2.0
 offset_bottom = -34.0
 grow_horizontal = 2
 grow_vertical = 0
-size_flags_vertical = 8
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_mc56r")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="TypewriterAudio" type="AudioStreamPlayer" parent="DialogLayer"]
+[node name="NarratorAudio" type="AudioStreamPlayer" parent="DialogLayer"]
 unique_name_in_owner = true
 stream = ExtResource("3_o5wnl")
 
-[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
-layout_mode = 1
+[node name="PlayerVoiceAudio" type="AudioStreamPlayer" parent="DialogLayer"]
+stream = ExtResource("4_nda3g")
+
+[node name="EnemyVoiceAudio" type="AudioStreamPlayer" parent="DialogLayer"]
+stream = ExtResource("5_oijn2")
+
+[node name="BackgroundLabel" type="Label" parent="DialogLayer"]
+visible = false
+z_index = -2
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_6rxup")
+
+[node name="IngameLayer" type="CanvasLayer" parent="."]
+unique_name_in_owner = true
+visible = false
+
+[node name="FightProgressBar" type="TextureProgressBar" parent="IngameLayer"]
+unique_name_in_owner = true
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
@@ -78,5 +108,13 @@ size_flags_vertical = 4
 texture_under = ExtResource("4_7wure")
 texture_progress = ExtResource("5_yctng")
 script = SubResource("GDScript_covti")
+
+[node name="TimerLabel" type="Label" parent="IngameLayer"]
+unique_name_in_owner = true
+offset_left = 8.0
+offset_top = 6.0
+offset_right = 48.0
+offset_bottom = 29.0
+script = SubResource("GDScript_7wjds")
 
 [connection signal="dialogCompleted" from="DialogLayer" to="." method="_on_dialog_layer_dialog_completed"]
