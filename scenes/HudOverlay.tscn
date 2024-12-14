@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://dvygun7k256ji"]
 
-[ext_resource type="Script" path="res://code/dialogScript.gd" id="1_1dx8n"]
-[ext_resource type="AudioStream" uid="uid://dlvfs6xlorf1j" path="res://assets/sounds/sfx_Typewriter.ogg" id="1_uw1q6"]
-[ext_resource type="Script" path="res://code/ui_overlay.gd" id="1_vdoyi"]
+[ext_resource type="Script" path="res://code/ui_overlay.gd" id="1_nlpga"]
+[ext_resource type="Script" path="res://code/dialogScript.gd" id="2_p562y"]
+[ext_resource type="AudioStream" uid="uid://dlvfs6xlorf1j" path="res://assets/sounds/sfx_Typewriter.ogg" id="3_o5wnl"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mc56r"]
 content_margin_left = 4.0
@@ -11,18 +11,18 @@ content_margin_right = 4.0
 content_margin_bottom = 4.0
 bg_color = Color(0, 0, 0, 1)
 
-[node name="UiOverlay" type="Control"]
+[node name="HudOverlay" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_vdoyi")
+script = ExtResource("1_nlpga")
 
 [node name="DialogLayer" type="CanvasLayer" parent="."]
 unique_name_in_owner = true
-script = ExtResource("1_1dx8n")
+script = ExtResource("2_p562y")
 
 [node name="DialogLabel" type="Label" parent="DialogLayer"]
 unique_name_in_owner = true
@@ -45,4 +45,4 @@ vertical_alignment = 1
 
 [node name="TypewriterAudio" type="AudioStreamPlayer" parent="DialogLayer"]
 unique_name_in_owner = true
-stream = ExtResource("1_uw1q6")
+stream = ExtResource("3_o5wnl")
