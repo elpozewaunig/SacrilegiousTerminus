@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://o78cu66xwawa"]
+
+[ext_resource type="Texture2D" uid="uid://crj6ji3skp4uj" path="res://scenes/FightScenes/TheCountrySide/leaf1.png" id="1_08vrv"]
+
+[resource]
+transparency = 1
+albedo_texture = ExtResource("1_08vrv")
+metallic_specular = 0.0
+disable_receive_shadows = true

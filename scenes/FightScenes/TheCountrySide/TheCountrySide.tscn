@@ -1,9 +1,15 @@
-[gd_scene load_steps=9 format=3 uid="uid://bihqmqmhy5qrk"]
+[gd_scene load_steps=15 format=3 uid="uid://bihqmqmhy5qrk"]
 
 [ext_resource type="Texture2D" uid="uid://0xx8lsd3qsf7" path="res://scenes/FightScenes/placeholders/14526816-strichmannchen-stickman-symbol-piktogramm-einfach-vektor-removebg-preview.png" id="1_jmr8u"]
 [ext_resource type="Texture2D" uid="uid://c1jpuah8esq03" path="res://scenes/FightScenes/placeholders/tweet-shiraaa-picsart-02-06-06-47-29-removebg-preview.png" id="2_8jbw0"]
 [ext_resource type="Texture2D" uid="uid://btjnrke4c1pf3" path="res://scenes/FightScenes/TheMountain/Skybox/spacenopink.jpg" id="3_g3qk6"]
-[ext_resource type="ArrayMesh" uid="uid://doauu2not8aks" path="res://scenes/FightScenes/TheCountrySide/CountrySide1.obj" id="5_vwdhb"]
+[ext_resource type="ArrayMesh" uid="uid://bk3lbs6yirhyf" path="res://scenes/FightScenes/TheCountrySide/CountrySide6.obj" id="4_bhs08"]
+[ext_resource type="Material" uid="uid://dxvag2u3lnpos" path="res://scenes/FightScenes/TheCountrySide/materials/mctrees1.tres" id="5_ctxml"]
+[ext_resource type="Material" uid="uid://b32y7a4ql1syx" path="res://scenes/FightScenes/TheCountrySide/materials/mctrees2.tres" id="6_ocwp7"]
+[ext_resource type="Material" uid="uid://b2secrb3fmurf" path="res://scenes/FightScenes/TheCountrySide/materials/ground.tres" id="7_nre7i"]
+[ext_resource type="Material" uid="uid://o78cu66xwawa" path="res://scenes/FightScenes/TheCountrySide/materials/leaf.tres" id="8_1hqu0"]
+[ext_resource type="Material" uid="uid://cikbnrbgbhmk2" path="res://scenes/FightScenes/TheCountrySide/materials/trunks.tres" id="9_vr3ul"]
+[ext_resource type="Texture2D" uid="uid://mnxcbjjfsn4n" path="res://scenes/FightScenes/TheCountrySide/materials/mctreemulti.png" id="10_h5gba"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_ow5hs"]
 panorama = ExtResource("3_g3qk6")
@@ -19,13 +25,12 @@ ambient_light_color = Color(0.497937, 0.417187, 0.591134, 1)
 ambient_light_sky_contribution = 0.0
 ambient_light_energy = 0.0
 tonemap_exposure = 1.92
-glow_enabled = true
-fog_enabled = true
 
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_nx174"]
 exposure_multiplier = 0.437
 
 [node name="TheRift" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.147749, 0.0364075, -0.0162697)
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.968583, -0.24869, 0, 0.24869, 0.968583, 1.016, -1.154, 2.384)
@@ -43,6 +48,43 @@ texture = ExtResource("2_8jbw0")
 environment = SubResource("Environment_055ba")
 camera_attributes = SubResource("CameraAttributesPractical_nx174")
 
-[node name="CountrySide1" type="MeshInstance3D" parent="."]
-transform = Transform3D(-4.37114e-09, 0, -0.1, 0, 0.1, 0, 0.1, 0, -4.37114e-09, 0.938697, -1.90746, -1.34375)
-mesh = ExtResource("5_vwdhb")
+[node name="Node3D" type="Node3D" parent="."]
+transform = Transform3D(-4.80825e-09, 0, -0.11, 0, 0.11, 0, 0.11, 0, -4.80825e-09, -3.965, -24.657, -32.322)
+
+[node name="CountrySide6" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 266.604, 206.925, -46.2543)
+mesh = ExtResource("4_bhs08")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("5_ctxml")
+surface_material_override/1 = ExtResource("6_ocwp7")
+surface_material_override/2 = ExtResource("7_nre7i")
+surface_material_override/3 = ExtResource("8_1hqu0")
+surface_material_override/4 = ExtResource("9_vr3ul")
+
+[node name="Sprite3D" type="Sprite3D" parent="Node3D"]
+transform = Transform3D(12.56, 0, 0, 0, 12.1458, -3.19886, 0, 3.19886, 12.1458, 231.171, 234.081, 31.4375)
+texture = ExtResource("10_h5gba")
+
+[node name="Sprite3D3" type="Sprite3D" parent="Node3D"]
+transform = Transform3D(12.56, 0, 0, 0, 12.1458, -3.19886, 0, 3.19886, 12.1458, 231.171, 243.405, 44.7817)
+texture = ExtResource("10_h5gba")
+
+[node name="Sprite3D2" type="Sprite3D" parent="Node3D"]
+transform = Transform3D(12.56, 0, 0, 0, 12.1946, 3.00769, 0, -3.00769, 12.1946, 220.489, 235.066, -123.536)
+texture = ExtResource("10_h5gba")
+
+[node name="Sprite3D5" type="Sprite3D" parent="Node3D"]
+transform = Transform3D(8.25928, -2.26593, 9.18714, 0, 12.1946, 3.00769, -9.46245, -1.97781, 8.01897, 100.071, 248.935, -136.668)
+texture = ExtResource("10_h5gba")
+
+[node name="Sprite3D6" type="Sprite3D" parent="Node3D"]
+transform = Transform3D(-5.05027, -2.75384, 11.1653, 0, 12.1946, 3.00769, -11.4999, 1.20936, -4.90333, 109.125, 252.473, 4.8662)
+texture = ExtResource("10_h5gba")
+
+[node name="Sprite3D7" type="Sprite3D" parent="Node3D"]
+transform = Transform3D(-3.88834, -2.85993, 11.5955, -7.52549e-08, 12.1946, 3.00769, -11.943, 0.931123, -3.77521, 17.4533, 255.126, -50.0533)
+texture = ExtResource("10_h5gba")
+
+[node name="Sprite3D4" type="Sprite3D" parent="Node3D"]
+transform = Transform3D(12.56, 0, 0, 0, 12.1946, 3.00769, 0, -3.00769, 12.1946, 220.489, 249.972, -142.52)
+texture = ExtResource("10_h5gba")

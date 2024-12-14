@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://cikbnrbgbhmk2"]
+
+[ext_resource type="Texture2D" uid="uid://fujgxsafxksw" path="res://scenes/FightScenes/TheCountrySide/trunkbake.png" id="1_5t6i2"]
+
+[resource]
+albedo_texture = ExtResource("1_5t6i2")
+metallic_specular = 0.0
+disable_receive_shadows = true

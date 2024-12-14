@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://b2secrb3fmurf"]
+
+[ext_resource type="Texture2D" uid="uid://cjxouk3vxbfex" path="res://scenes/FightScenes/TheCountrySide/bake4.png" id="1_wgslu"]
+
+[resource]
+albedo_texture = ExtResource("1_wgslu")
+metallic_specular = 0.0
+disable_receive_shadows = true
