@@ -1,0 +1,64 @@
+[gd_scene load_steps=9 format=3 uid="uid://ccwx42uifhfce"]
+
+[ext_resource type="ArrayMesh" uid="uid://c6m3qa1gm28w7" path="res://assets/sprites/engel2/obj/ring1.obj" id="1_c5en1"]
+[ext_resource type="Script" path="res://assets/sprites/engel2/engelringrotation.gd" id="2_3h44g"]
+[ext_resource type="Material" uid="uid://jy7c8h5k6yub" path="res://assets/sprites/engel2/engelring.tres" id="2_k6jbx"]
+[ext_resource type="ArrayMesh" uid="uid://iog2kat5uavw" path="res://assets/sprites/engel2/obj/ring2.obj" id="3_24ipw"]
+[ext_resource type="ArrayMesh" uid="uid://ddf87dt07dyki" path="res://assets/sprites/engel2/obj/ring3.obj" id="4_fqe71"]
+[ext_resource type="Texture2D" uid="uid://rg80r680cwr5" path="res://assets/sprites/engel2/eyeouter.png" id="5_jxi2x"]
+[ext_resource type="Texture2D" uid="uid://b2l3kxhq07wuk" path="res://assets/sprites/engel2/eyeinner.png" id="6_trrub"]
+
+[sub_resource type="GDScript" id="GDScript_qac0t"]
+resource_name = "eyeturn"
+script/source = "extends Sprite3D
+
+var current_axis = Vector3(0, 0, 1)  # Fixed to Z-axis
+var target_angle = 0.0  # Target rotation angle
+var current_angle = 0.0  # Current rotation angle
+var blend_speed = 1.0  # Speed of blending towards the target angle (higher = faster)
+
+func _ready():
+	randomize()  # Seed randomness
+	_choose_new_target_angle()
+
+func _process(delta):
+	# Smoothly blend current angle toward the target angle
+	current_angle = lerp(current_angle, target_angle, blend_speed * delta)
+
+	# Apply the rotation (rotate only along Z-axis)
+	rotation.z = deg_to_rad(current_angle)
+
+	# Occasionally pick a new random target angle
+	if randf() < 0.05:  # 5% chance per frame
+		_choose_new_target_angle()
+
+func _choose_new_target_angle():
+	# Generate a new random target angle between -180 and 180 degrees
+	target_angle = randf_range(-180, 180)
+"
+
+[node name="Angle2" type="Node3D"]
+
+[node name="Ring1" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_c5en1")
+surface_material_override/0 = ExtResource("2_k6jbx")
+script = ExtResource("2_3h44g")
+
+[node name="Ring2" type="MeshInstance3D" parent="."]
+mesh = ExtResource("3_24ipw")
+surface_material_override/0 = ExtResource("2_k6jbx")
+script = ExtResource("2_3h44g")
+
+[node name="Ring3" type="MeshInstance3D" parent="."]
+mesh = ExtResource("4_fqe71")
+surface_material_override/0 = ExtResource("2_k6jbx")
+script = ExtResource("2_3h44g")
+
+[node name="eyeouter" type="Sprite3D" parent="."]
+transform = Transform3D(2.045, 0, 0, 0, 2.045, 0, 0, 0, 2.045, 0, 0, 0)
+texture = ExtResource("5_jxi2x")
+
+[node name="eyeinner" type="Sprite3D" parent="eyeouter"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.174741)
+texture = ExtResource("6_trrub")
+script = SubResource("GDScript_qac0t")

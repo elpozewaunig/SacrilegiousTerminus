@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://jy7c8h5k6yub"]
+
+[ext_resource type="Texture2D" uid="uid://dka4v3tdll4uw" path="res://assets/sprites/engel2/IMG_0207.png" id="1_o724g"]
+
+[resource]
+cull_mode = 2
+shading_mode = 0
+albedo_texture = ExtResource("1_o724g")

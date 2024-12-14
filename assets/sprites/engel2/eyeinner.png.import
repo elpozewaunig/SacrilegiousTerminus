@@ -2,26 +2,27 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dka4v3tdll4uw"
-path="res://.godot/imported/IMG_0207.png-10608f649388a259fa8d6f60679b05b1.ctex"
+uid="uid://b2l3kxhq07wuk"
+path.s3tc="res://.godot/imported/eyeinner.png-b613f50553bc055cda36a8dd474b7176.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 
 [deps]
 
-source_file="res://assets/sprites/characters/IMG_0207.png"
-dest_files=["res://.godot/imported/IMG_0207.png-10608f649388a259fa8d6f60679b05b1.ctex"]
+source_file="res://assets/sprites/engel2/eyeinner.png"
+dest_files=["res://.godot/imported/eyeinner.png-b613f50553bc055cda36a8dd474b7176.s3tc.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=false
+mipmaps/generate=true
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
@@ -31,4 +32,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=1
+detect_3d/compress_to=0

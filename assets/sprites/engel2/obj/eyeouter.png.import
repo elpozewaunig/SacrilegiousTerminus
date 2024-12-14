@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://duba0r725g3c0"
-path="res://.godot/imported/angel2.png-3bec5d1974bbd5b276589c9dfcef5917.ctex"
+uid="uid://33l7a0tbt5vb"
+path="res://.godot/imported/eyeouter.png-61a7da7f52d97f684bf2c5fd91a73495.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/characters/angel2.png"
-dest_files=["res://.godot/imported/angel2.png-3bec5d1974bbd5b276589c9dfcef5917.ctex"]
+source_file="res://assets/sprites/engel2/obj/eyeouter.png"
+dest_files=["res://.godot/imported/eyeouter.png-61a7da7f52d97f684bf2c5fd91a73495.ctex"]
 
 [params]
 

@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://ddf87dt07dyki"
+path="res://.godot/imported/ring3.obj-b66d377e8c6aa7c0ec3d7a51dd14cc7a.mesh"
+
+[deps]
+
+files=["res://.godot/imported/ring3.obj-b66d377e8c6aa7c0ec3d7a51dd14cc7a.mesh"]
+
+source_file="res://assets/sprites/engel2/obj/ring3.obj"
+dest_files=["res://.godot/imported/ring3.obj-b66d377e8c6aa7c0ec3d7a51dd14cc7a.mesh", "res://.godot/imported/ring3.obj-b66d377e8c6aa7c0ec3d7a51dd14cc7a.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

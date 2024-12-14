@@ -2,11 +2,11 @@
 
 [ext_resource type="ArrayMesh" uid="uid://sdnkjicuuag3" path="res://scenes/FightScenes/TheMountain/3DFront/rock.obj" id="1_2bq0v"]
 [ext_resource type="Texture2D" uid="uid://b4gbrrmj35ey2" path="res://scenes/FightScenes/TheMountain/3DFront/rockbake.png" id="1_3jns5"]
-[ext_resource type="Texture2D" uid="uid://c1jpuah8esq03" path="res://scenes/FightScenes/placeholders/tweet-shiraaa-picsart-02-06-06-47-29-removebg-preview.png" id="3_1ijaa"]
 [ext_resource type="Texture2D" uid="uid://b3frq2g06mlbx" path="res://assets/sprites/characters/protagonist.png" id="3_d530i"]
 [ext_resource type="Material" uid="uid://di53o2e08jnik" path="res://scenes/FightScenes/TheMountain/Skybox/SpaceSkyBox.tres" id="5_x87l0"]
 [ext_resource type="Texture2D" uid="uid://clo06kexhsdk5" path="res://scenes/FightScenes/TheMountain/ParallaxLayerTexts/layer1.png" id="6_k1qaw"]
 [ext_resource type="Texture2D" uid="uid://bqessv6mtjusq" path="res://scenes/FightScenes/TheMountain/ParallaxLayerTexts/layer2.png" id="7_3qoeg"]
+[ext_resource type="PackedScene" uid="uid://ccwx42uifhfce" path="res://assets/sprites/engel2/Angle2.tscn" id="8_5qb5g"]
 [ext_resource type="PackedScene" uid="uid://ucwlwrhkaopg" path="res://scenes/FightScenes/rifttear.tscn" id="8_1773n"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qcgot"]
@@ -43,10 +43,6 @@ mesh = ExtResource("1_2bq0v")
 transform = Transform3D(0.055, 0, 0, 0, 0.055, 0, 0, 0, 0.055, -1.516, 0.091, -4.197)
 texture = ExtResource("3_d530i")
 
-[node name="Enemy" type="Sprite3D" parent="."]
-transform = Transform3D(0.88, 0, 0, 0, 0.88, 0, 0, 0, 0.88, 4.37, 2.287, -9.541)
-texture = ExtResource("3_1ijaa")
-
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_055ba")
 camera_attributes = SubResource("CameraAttributesPractical_nx174")
@@ -61,3 +57,6 @@ texture = ExtResource("7_3qoeg")
 
 [node name="f" parent="." instance=ExtResource("8_1773n")]
 transform = Transform3D(3.03074, -3.6119, 1.57881e-07, 0, -2.06099e-07, -4.715, 3.6119, 3.03074, -1.32478e-07, 99.208, 33.988, -130.859)
+
+[node name="Angle2" parent="." instance=ExtResource("8_5qb5g")]
+transform = Transform3D(0.669131, -0.177265, -0.721693, 0, 0.971134, -0.238533, 0.743145, 0.15961, 0.649816, 16.694, 6.095, -36.692)
