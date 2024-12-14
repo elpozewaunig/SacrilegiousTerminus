@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://bsle2e6xv3vdw"]
+
+[ext_resource type="PackedScene" uid="uid://dvygun7k256ji" path="res://scenes/HudOverlay.tscn" id="1_rqdsk"]
+
+[sub_resource type="GDScript" id="GDScript_s0c5o"]
+script/source = "extends Node3D
+
+@onready var hudOverlay: Control = $HudOverlay
+
+var DIALOG: Array[DialogOption] = [
+	DialogOption.new(DialogOption.DIALOG_ENTITY.NARRATOR, \"It was a beautiful day in a village when suddenly a deafening sound cracked the silence and a black violet crack opened in the sky. 
+A man looked up into the sky and started to smile.\"),
+DialogOption.new(DialogOption.DIALOG_ENTITY.PLAYER, \"Finally the day I have long awaited has arrived. The rift is opening and Satan is casting his will upon the world. But First i should go to the church and 
+get rid of the Priest of this town. I don’t want any interferance when the new Lord assends to the earth.\"),
+DialogOption.new(DialogOption.DIALOG_ENTITY.NARRATOR, \"With that thought in mind, you head for the church...\")
+]
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	hudOverlay.showDialog(DIALOG, true)
+"
+
+[node name="IntroScene" type="Node3D"]
+script = SubResource("GDScript_s0c5o")
+
+[node name="HudOverlay" parent="." instance=ExtResource("1_rqdsk")]
