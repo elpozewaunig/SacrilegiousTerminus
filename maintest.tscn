@@ -1,9 +1,30 @@
-[gd_scene load_steps=5 format=3 uid="uid://8gpddvo73c18"]
+[gd_scene load_steps=10 format=3 uid="uid://8gpddvo73c18"]
 
-[ext_resource type="PackedScene" uid="uid://ccelpifkgb5xq" path="res://scenes/SpellCastWheel/ManualWheel.tscn" id="1_p0fva"]
+[ext_resource type="PackedScene" uid="uid://ccelpifkgb5xq" path="res://scenes/SpellCastWheel/SpellCastWheel.tscn" id="1_p0fva"]
+[ext_resource type="Script" path="res://code/game_manager.gd" id="2_j851o"]
 [ext_resource type="Script" path="res://code/roundManager.gd" id="2_lq0ph"]
 [ext_resource type="Texture2D" uid="uid://capvl4scxoh2v" path="res://scenes/SceneBackground/background.png" id="2_xgapr"]
 [ext_resource type="PackedScene" uid="uid://dqtcwmca5ongg" path="res://scenes/SpellCastWheel/AutomaticWheel.tscn" id="3_knfil"]
+[ext_resource type="Texture2D" uid="uid://dnlq0t0f24tw0" path="res://assets/sprites/progressBar/healthbarUnder.png" id="5_5injm"]
+[ext_resource type="Texture2D" uid="uid://dlcs2chgbvxv2" path="res://assets/sprites/progressBar/healthbarProgress.png" id="6_pr30r"]
+
+[sub_resource type="GDScript" id="GDScript_3xbnb"]
+resource_name = "michiMakesProgress"
+script/source = "extends TextureProgressBar
+func update(currentHealth:float, maxHealth:int):
+	value = currentHealth * 100 / maxHealth
+"
+
+[sub_resource type="GDScript" id="GDScript_3kbci"]
+resource_name = "timer"
+script/source = "extends Timer
+
+func getTimeFromTimer() -> Array:
+	var timeLeft = time_left
+	var minute = floor(timeLeft / 60)
+	var second = int(timeLeft) % 60
+	return [minute, second]
+"
 
 [node name="root" type="Node3D"]
 
@@ -17,13 +38,50 @@ texture = ExtResource("2_xgapr")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 
-[node name="roundManager" type="Node3D" parent="." node_paths=PackedStringArray("playerWheel", "opponentWheel")]
+[node name="GameManager" type="Node3D" parent="." node_paths=PackedStringArray("timer", "timerLabel")]
+script = ExtResource("2_j851o")
+timer = NodePath("CanvasLayer/Timer")
+timerLabel = NodePath("CanvasLayer/Label")
+
+[node name="roundManager" type="Node3D" parent="GameManager" node_paths=PackedStringArray("playerWheel", "opponentWheel", "progressBar")]
 script = ExtResource("2_lq0ph")
 playerWheel = NodePath("ManualWheel")
 opponentWheel = NodePath("AutomaticWheel")
+progressBar = NodePath("CanvasLayer/TextureProgressBar")
 
-[node name="AutomaticWheel" parent="roundManager" instance=ExtResource("3_knfil")]
+[node name="AutomaticWheel" parent="GameManager/roundManager" instance=ExtResource("3_knfil")]
 transform = Transform3D(1, 0, 0, 0, 0.414693, -0.909961, 0, 0.909961, 0.414693, 1.208, 0.53, -1.245)
 
-[node name="ManualWheel" parent="roundManager" instance=ExtResource("1_p0fva")]
+[node name="ManualWheel" parent="GameManager/roundManager" instance=ExtResource("1_p0fva")]
 transform = Transform3D(1, 0, 0, 0, 0.614285, -0.789084, 0, 0.789084, 0.614285, -1.43457, 0.316572, -1.57377)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="GameManager/roundManager"]
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="GameManager/roundManager/CanvasLayer"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -322.0
+offset_top = -178.0
+offset_right = -258.0
+offset_bottom = -138.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(10, 10)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_under = ExtResource("5_5injm")
+texture_progress = ExtResource("6_pr30r")
+script = SubResource("GDScript_3xbnb")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="GameManager"]
+
+[node name="Timer" type="Timer" parent="GameManager/CanvasLayer"]
+one_shot = true
+script = SubResource("GDScript_3kbci")
+
+[node name="Label" type="Label" parent="GameManager/CanvasLayer"]
+offset_right = 40.0
+offset_bottom = 23.0

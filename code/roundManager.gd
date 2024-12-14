@@ -4,11 +4,16 @@ var playerSpins: Array
 var opponentSpins: Array
 @export var playerWheel: Node3D
 @export var opponentWheel: Node3D
+@export var progressBar: TextureProgressBar
 
 var ringCount: int
 var wheelSizes: Array
 
+var score:float
+
+const maxScore:int = 100
 const segmenctCount:int = 3
+const progressDuration:int = 20
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -19,24 +24,27 @@ func _ready() -> void:
 		wheelSizes.append(playerWheel.middleRing.segmentCount)
 	if ringCount > 2: # outerRing exists
 		wheelSizes.append(playerWheel.outerRing.segmentCount) 
+		
+	score = 50
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	var score = evaluatePosition()
+	var eval = evaluatePosition()
 	#score --> #0 falash, #1 ich akzeptiere, #2 Q1-Lösung
 	# 1 can be ignored for now, is for possible extensions with partial points
-	# TODO: Add evaluation function here
-		# if falash --> continuous -= Default*(% time till new spin) (1/3 nix, 2/3 ~50%, 3/4 ~minitest)
-		# if perfect --> continuous += Default
-			#if perfect solution bonus Points when respinning - maybe, prob not
-			# acceptable (inner ring opposite, middle ring equal, outer ring equal) (discarded idea)
-
-
-
-
-	print(score)
 	
+	if eval == 0 && score != 0:
+		#TODO: (% time till new spin) (1/3 nix, 2/3 ~50%, 3/4 ~minitest)
+		score -= maxScore * delta /progressDuration
+		if score < 0: score = 0
+	elif eval == 2 && score != maxScore:
+		score += maxScore * delta /progressDuration 
+		if score>maxScore: score = maxScore
+	
+	print(score)
+	progressBar.update(score, maxScore)
+		
 	
 func evaluatePosition() -> int: #0 falash, #1 ich akzeptiere, #2 Q1-Lösung
 	playerSpins = playerWheel.shifts
