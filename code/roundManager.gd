@@ -4,12 +4,14 @@ var playerSpins: Array
 var opponentSpins: Array
 @export var playerWheel: Node3D
 @export var opponentWheel: Node3D
-@export var progressBar: TextureProgressBar
+@export var progressBar: TextureProgressBar#
+@export var timeForRoud: int
 
 var ringCount: int
 var wheelSizes: Array
 
 var score:float
+var timeTillNewSpin: float
 
 const maxScore:int = 100
 const segmenctCount:int = 3
@@ -26,24 +28,31 @@ func _ready() -> void:
 		wheelSizes.append(playerWheel.outerRing.segmentCount) 
 		
 	score = 50
+	timeTillNewSpin = timeForRoud
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	var eval = evaluatePosition()
+	timeTillNewSpin -= delta
 	#score --> #0 falash, #1 ich akzeptiere, #2 Q1-Lösung
 	# 1 can be ignored for now, is for possible extensions with partial points
 	
 	if eval == 0 && score != 0:
-		#TODO: (% time till new spin) (1/3 nix, 2/3 ~50%, 3/4 ~minitest)
-		score -= maxScore * delta /progressDuration
+		score -= (maxScore * delta /progressDuration)*getPointsDetuctionFactor(timeTillNewSpin, timeForRoud)
 		if score < 0: score = 0
 	elif eval == 2 && score != maxScore:
-		score += maxScore * delta /progressDuration 
+		score += (maxScore * delta /progressDuration)*getBonusPointsFactor(timeTillNewSpin, timeForRoud)
 		if score>maxScore: score = maxScore
 	
 	print(score)
 	progressBar.update(score, maxScore)
+	
+	
+	#update timer
+	if timeTillNewSpin <= 0:
+		timeTillNewSpin = timeForRoud
+		opponentWheel.spin()
 		
 	
 func evaluatePosition() -> int: #0 falash, #1 ich akzeptiere, #2 Q1-Lösung
@@ -112,6 +121,26 @@ func evaluateRing(currentPlayerSpins, currentOpponentSpins, size, offset) -> boo
 	
 	return (currentPlayerSpins+offset)%size == currentOpponentSpins
 
-
-
+func getPointsDetuctionFactor(timeLeft:float, intervalSize:int) -> float:
+	# (1/3 nix, 2/3 ~50%, 3/4 ~minitest)
+	var percentLeft = timeLeft / intervalSize * 100
+	if percentLeft > 66:
+		return 0
 	
+	if percentLeft > 33:
+		return 0.5
+	
+	if percentLeft < 10:
+		return 2
+		
+	return 1
+
+func getBonusPointsFactor(timeLeft: float, intervalSize:int) -> float:
+	var percentLeft = timeLeft / intervalSize * 100
+	if percentLeft > 66:
+		return 2
+	
+	if percentLeft > 50:
+		return 1.5
+		
+	return 1

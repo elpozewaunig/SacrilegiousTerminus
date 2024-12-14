@@ -48,6 +48,7 @@ script = ExtResource("2_lq0ph")
 playerWheel = NodePath("ManualWheel")
 opponentWheel = NodePath("AutomaticWheel")
 progressBar = NodePath("CanvasLayer/TextureProgressBar")
+timeForRoud = 20
 
 [node name="AutomaticWheel" parent="GameManager/roundManager" instance=ExtResource("3_knfil")]
 transform = Transform3D(1, 0, 0, 0, 0.414693, -0.909961, 0, 0.909961, 0.414693, 1.208, 0.53, -1.245)
@@ -83,5 +84,7 @@ one_shot = true
 script = SubResource("GDScript_3kbci")
 
 [node name="Label" type="Label" parent="GameManager/CanvasLayer"]
-offset_right = 40.0
-offset_bottom = 23.0
+offset_left = 8.0
+offset_top = 6.0
+offset_right = 48.0
+offset_bottom = 29.0
