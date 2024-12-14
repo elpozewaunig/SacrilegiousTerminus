@@ -16,7 +16,7 @@ extends Node
 @export var loadingScene : PackedScene
 
 func _ready() -> void:
-	change_scene(mainMenuSene)
+	pass
 
 func change_scene(scene: PackedScene, loading_screen: bool = false) -> void:
 	print("changeing scene")
