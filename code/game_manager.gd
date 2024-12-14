@@ -20,5 +20,8 @@ func _process(delta: float) -> void:
 func getSignalThatLevelStarts() -> void:
 	inLevel = true
 
-func getSignalThatLevelEnds() -> void:
-	inLevel = false
+
+func _on_round_manager_player_won() -> void:
+	inLevel = false #pause countdown
+	# TODO: load New scene
+	

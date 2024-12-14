@@ -23,3 +23,7 @@ func _on_dialog_layer_dialog_completed() -> void:
 func _input(event: InputEvent) -> void:
 	if Input.is_action_just_released("input-before"):
 		showDialog(dialog)
+
+
+func _on_round_manager_update_progress_bar_to(score: float, maxScore: int) -> void:
+	pass #TODO: Replace with function body. #call update function in textureProgessbar....

@@ -1,10 +1,13 @@
 extends Node3D
 
+signal playerWon()
+signal updateProgressBarTo(score:float , maxScore:int)
+
 var playerSpins: Array
 var opponentSpins: Array
 @export var playerWheel: Node3D
 @export var opponentWheel: Node3D
-@export var progressBar: TextureProgressBar
+@export var hasProgressBar: bool
 @export var timeForRoud: int
 
 var ringCount: int
@@ -29,7 +32,7 @@ func _ready() -> void:
 		wheelSizes.append(playerWheel.outerRing.segmentCount) 
 		
 	score = 50
-	timeTillNewSpin = timeForRoud
+	timeTillNewSpin = 0
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -47,8 +50,8 @@ func _process(delta: float) -> void:
 		if score>maxScore: score = maxScore
 	
 	print(score)
-	if progressBar:
-		progressBar.update(score, maxScore)
+	if hasProgressBar:
+		updateProgressBarTo.emit(score, maxScore)
 	
 	
 	#update timer

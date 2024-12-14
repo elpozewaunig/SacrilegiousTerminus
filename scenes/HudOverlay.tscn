@@ -1,8 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://dvygun7k256ji"]
+[gd_scene load_steps=8 format=3 uid="uid://dvygun7k256ji"]
 
 [ext_resource type="Script" path="res://code/hudOverlay.gd" id="1_nlpga"]
 [ext_resource type="Script" path="res://code/dialogScript.gd" id="2_p562y"]
 [ext_resource type="AudioStream" uid="uid://dlvfs6xlorf1j" path="res://assets/sounds/sfx_Typewriter.ogg" id="3_o5wnl"]
+[ext_resource type="Texture2D" uid="uid://dnlq0t0f24tw0" path="res://assets/sprites/progressBar/healthbarUnder.png" id="4_7wure"]
+[ext_resource type="Texture2D" uid="uid://dlcs2chgbvxv2" path="res://assets/sprites/progressBar/healthbarProgress.png" id="5_yctng"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mc56r"]
 content_margin_left = 4.0
@@ -10,6 +12,14 @@ content_margin_top = 4.0
 content_margin_right = 4.0
 content_margin_bottom = 4.0
 bg_color = Color(0, 0, 0, 0.878431)
+
+[sub_resource type="GDScript" id="GDScript_covti"]
+resource_name = "michiMakesProgress"
+script/source = "extends TextureProgressBar	
+
+func _on_round_manager_update_progress_bar_to(score: float, maxScore: int) -> void:
+	value = score * 100 / maxScore
+"
 
 [node name="HudOverlay" type="Control"]
 layout_mode = 3
@@ -48,5 +58,25 @@ vertical_alignment = 1
 [node name="TypewriterAudio" type="AudioStreamPlayer" parent="DialogLayer"]
 unique_name_in_owner = true
 stream = ExtResource("3_o5wnl")
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -322.0
+offset_top = -178.0
+offset_right = -258.0
+offset_bottom = -138.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(10, 10)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_under = ExtResource("4_7wure")
+texture_progress = ExtResource("5_yctng")
+script = SubResource("GDScript_covti")
 
 [connection signal="dialogCompleted" from="DialogLayer" to="." method="_on_dialog_layer_dialog_completed"]
