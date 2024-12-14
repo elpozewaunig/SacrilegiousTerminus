@@ -1,0 +1,48 @@
+[gd_scene load_steps=5 format=3 uid="uid://dvygun7k256ji"]
+
+[ext_resource type="Script" path="res://code/dialogScript.gd" id="1_1dx8n"]
+[ext_resource type="AudioStream" uid="uid://dlvfs6xlorf1j" path="res://assets/sounds/sfx_Typewriter.ogg" id="1_uw1q6"]
+[ext_resource type="Script" path="res://code/ui_overlay.gd" id="1_vdoyi"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mc56r"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0, 0, 0, 1)
+
+[node name="UiOverlay" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vdoyi")
+
+[node name="DialogLayer" type="CanvasLayer" parent="."]
+unique_name_in_owner = true
+script = ExtResource("1_1dx8n")
+
+[node name="DialogLabel" type="Label" parent="DialogLayer"]
+unique_name_in_owner = true
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.99
+anchor_right = 0.5
+anchor_bottom = 0.99
+offset_left = -7.0
+offset_top = -57.0
+offset_right = 7.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_vertical = 8
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_mc56r")
+text = "f"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TypewriterAudio" type="AudioStreamPlayer" parent="DialogLayer"]
+unique_name_in_owner = true
+stream = ExtResource("1_uw1q6")
