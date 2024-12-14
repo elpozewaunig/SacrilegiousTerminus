@@ -3,10 +3,10 @@
 [ext_resource type="Script" path="res://code/hudOverlay.gd" id="1_nlpga"]
 [ext_resource type="Script" path="res://code/dialogScript.gd" id="2_p562y"]
 [ext_resource type="AudioStream" uid="uid://dlvfs6xlorf1j" path="res://assets/sounds/sfx_Typewriter.ogg" id="3_o5wnl"]
-[ext_resource type="Texture2D" uid="uid://dnlq0t0f24tw0" path="res://assets/sprites/progressBar/healthbarUnder.png" id="4_7wure"]
 [ext_resource type="AudioStream" uid="uid://m50mdiae1c0m" path="res://assets/sounds/sfx_PlayerVoice.ogg" id="4_nda3g"]
 [ext_resource type="AudioStream" uid="uid://ccdb1xll6wbh2" path="res://assets/sounds/sfx_EnemyVoice.ogg" id="5_oijn2"]
-[ext_resource type="Texture2D" uid="uid://dlcs2chgbvxv2" path="res://assets/sprites/progressBar/healthbarProgress.png" id="5_yctng"]
+[ext_resource type="Texture2D" uid="uid://b6fy8mvm3d5ht" path="res://assets/sprites/progressBar/ProgressBar.png" id="6_5qawj"]
+[ext_resource type="Texture2D" uid="uid://ur4cwlbgq8hv" path="res://assets/sprites/progressBar/HolyProgressBar.png" id="8_ynm7x"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mc56r"]
 content_margin_left = 4.0
@@ -87,7 +87,6 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_6rxup")
 
 [node name="IngameLayer" type="CanvasLayer" parent="."]
 unique_name_in_owner = true
-visible = false
 
 [node name="FightProgressBar" type="TextureProgressBar" parent="IngameLayer"]
 unique_name_in_owner = true
@@ -96,17 +95,17 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -322.0
-offset_top = -178.0
-offset_right = -258.0
-offset_bottom = -138.0
+offset_left = -1029.0
+offset_top = -1079.0
+offset_right = 971.0
+offset_bottom = 921.0
 grow_horizontal = 2
 grow_vertical = 0
-scale = Vector2(10, 10)
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture_under = ExtResource("4_7wure")
-texture_progress = ExtResource("5_yctng")
+value = 66.0
+texture_under = ExtResource("6_5qawj")
+texture_progress = ExtResource("8_ynm7x")
 script = SubResource("GDScript_covti")
 
 [node name="TimerLabel" type="Label" parent="IngameLayer"]
