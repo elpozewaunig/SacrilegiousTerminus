@@ -16,6 +16,12 @@ run/main_scene="res://maintest.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://assets/icon.png"
 
+[autoload]
+
+GameManager="*res://code/game_manager.gd"
+SceneManager="*res://scenes/SceneManager.tscn"
+SceneLoader="*res://code/SceneLoader.gd"
+
 [display]
 
 window/size/viewport_width=1920

@@ -1,0 +1,8 @@
+class_name ActionEnum
+enum {
+	START_GAME, 
+	LEVEL_FINISHED, 
+	CUTSCENE_FINISHED, 
+	QUIT_GAME,
+	SETTINGS,
+}
