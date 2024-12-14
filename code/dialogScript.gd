@@ -1,5 +1,7 @@
 extends CanvasLayer
 
+signal dialogCompleted()
+
 @export var pitch: float = 1.00
 @export var pitch_range: float = 0.05
 @export var type_speed: float = 1.2
@@ -10,33 +12,41 @@ extends CanvasLayer
 @onready var effect: AudioEffect = AudioServer.get_bus_effect(bus_index, 0)
 
 var dialogDone: bool = true;
-var dialogs = [
-	"Me: The rift is opening and Satan is casting his will upon the world. But First i should go to the church and 
-get rid of the Priest of this town. I don’t want any interferance when the new Lord assends to the earth.",
-"Priester Robert: My good child, what brings you here today?",
-"Me: I am here to help our Supremelord from the underworld Satan himself"
-]
+var dialogPartDone: bool = true;
+var dialogParts: Array[String] = []
 var currentIndex: int = 0;
+var visible_character: float = 0
 
 func _ready() -> void:
-	initDialogBox(dialogs[currentIndex])
+	if dialogParts.size() > 0:
+		resetDialogBox()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-var visible_character: float = 0
 func _process(delta: float) -> void:
-	if !dialogDone:
-		write(delta);
+	if !dialogPartDone:
+		write(delta)
+	elif dialogDone:
+		# emit the dialog completed signal
+		dialogCompleted.emit()
 
-func initDialogBox(text: String) -> void:
+func init(dialogArray: Array[String]) -> void:
+	currentIndex = 0
+	dialogParts = dialogArray
+	resetDialogBox()
+
+func resetDialogBox() -> void:
 	dialogLabel.visible_ratio = 0
-	dialogLabel.text = text
+	dialogLabel.text = dialogParts[currentIndex]
+	dialogLabel.visible_ratio = 0
+	visible_character = 0
+	dialogPartDone = false
 	dialogDone = false
 
 func write(delta: float) -> void:
 	if dialogLabel.visible_ratio < 1:
 		dialogLabel.visible_ratio += (type_speed * delta * 10) / dialogLabel.text.length()
 	else: 
-		dialogDone = true;
+		dialogPartDone = true;
 	if visible_character != dialogLabel.visible_characters:
 		visible_character = dialogLabel.visible_characters
 		if audioplayer.stream != null and currentNotWhiteSpace():
@@ -49,17 +59,18 @@ func currentNotWhiteSpace() -> bool:
 	var currentVisibility = dialogLabel.text.length() * dialogLabel.visible_ratio - 1
 	var result = regex.search(dialogLabel.text[currentVisibility])
 	return result == null
-
-
-func reset() -> void:
-	dialogLabel.visible_ratio = 0
-	visible_character = 0
+	
 	
 func _input(event: InputEvent) -> void:
 	if Input.is_action_just_released("skip-dialog"):
-		if dialogDone:
+		if dialogPartDone:
 			currentIndex += 1
-			if currentIndex < dialogs.size():
-				initDialogBox(dialogs[currentIndex])
+			if currentIndex < dialogParts.size():
+				# start next dialog
+				resetDialogBox()
+			else:
+				# All dialog parts done
+				dialogDone = true;
 		else:
+			# skip dialog
 			dialogLabel.visible_ratio = 1;
