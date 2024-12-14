@@ -12,29 +12,22 @@
 resource_name = "eyeturn"
 script/source = "extends Sprite3D
 
-var current_axis = Vector3(0, 0, 1)  # Fixed to Z-axis
-var target_angle = 0.0  # Target rotation angle
-var current_angle = 0.0  # Current rotation angle
-var blend_speed = 1.0  # Speed of blending towards the target angle (higher = faster)
+var target_angle = 0.0
+var current_angle = 0.0
+var lerpspeed = 0.8
 
 func _ready():
-	randomize()  # Seed randomness
-	_choose_new_target_angle()
+	randomize()
+	target_angle = randf_range(-180, 180)
 
 func _process(delta):
-	# Smoothly blend current angle toward the target angle
-	current_angle = lerp(current_angle, target_angle, blend_speed * delta)
-
-	# Apply the rotation (rotate only along Z-axis)
+	
+	# lerp garantiert
+	current_angle = lerp(current_angle, target_angle, lerpspeed * delta)
 	rotation.z = deg_to_rad(current_angle)
 
-	# Occasionally pick a new random target angle
-	if randf() < 0.05:  # 5% chance per frame
-		_choose_new_target_angle()
-
-func _choose_new_target_angle():
-	# Generate a new random target angle between -180 and 180 degrees
-	target_angle = randf_range(-180, 180)
+	if randf() < 0.1:
+		target_angle = randf_range(-180, 180)
 "
 
 [node name="Angle2" type="Node3D"]
