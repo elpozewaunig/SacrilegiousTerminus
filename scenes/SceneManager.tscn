@@ -1,0 +1,57 @@
+[gd_scene load_steps=11 format=3 uid="uid://c5aam42caalrh"]
+
+[ext_resource type="PackedScene" uid="uid://coj8cff6bnd1d" path="res://scenes/FightScenes/TheChurch/TheChurch.tscn" id="1_m73o3"]
+[ext_resource type="PackedScene" uid="uid://cuwok6iq6ff7t" path="res://scenes/FightScenes/TheVillage/TheVillage.tscn" id="2_yxp6k"]
+[ext_resource type="PackedScene" uid="uid://bihqmqmhy5qrk" path="res://scenes/FightScenes/TheCountrySide/TheCountrySide.tscn" id="3_ti5tm"]
+[ext_resource type="PackedScene" uid="uid://b0cfnqq0xj6ro" path="res://scenes/FightScenes/TheMountain/TheMountain.tscn" id="4_huykn"]
+[ext_resource type="PackedScene" uid="uid://icf506yysjwv" path="res://scenes/FightScenes/TheRift/TheRift.tscn" id="5_jehmd"]
+[ext_resource type="PackedScene" uid="uid://dvygun7k256ji" path="res://scenes/HudOverlay.tscn" id="6_hte6l"]
+[ext_resource type="PackedScene" uid="uid://dyvprgu04o2x5" path="res://scenes/loadingScreen.tscn" id="7_0gchl"]
+[ext_resource type="PackedScene" uid="uid://cey20murtyiss" path="res://scenes/MainMenu/MainMenu.tscn" id="8_q02g1"]
+[ext_resource type="Script" path="res://code/game_manager.gd" id="9_c1564"]
+
+[sub_resource type="GDScript" id="GDScript_3nyvt"]
+resource_name = "timer"
+script/source = "extends Timer
+
+func getTimeFromTimer() -> Array:
+	var timeLeft = time_left
+	var minute = floor(timeLeft / 60)
+	var second = int(timeLeft) % 60
+	return [minute, second]
+"
+
+[node name="SceneManager" type="Node3D"]
+
+[node name="fightingScenes" type="Node3D" parent="."]
+
+[node name="theChurch" parent="fightingScenes" instance=ExtResource("1_m73o3")]
+
+[node name="theVillage" parent="fightingScenes" instance=ExtResource("2_yxp6k")]
+
+[node name="theCountrySide" parent="fightingScenes" instance=ExtResource("3_ti5tm")]
+
+[node name="theMountain" parent="fightingScenes" instance=ExtResource("4_huykn")]
+
+[node name="theRift" parent="fightingScenes" instance=ExtResource("5_jehmd")]
+
+[node name="cutScenes" type="Node3D" parent="."]
+
+[node name="otherScenes" type="Node3D" parent="."]
+
+[node name="HudOverlay" parent="otherScenes" instance=ExtResource("6_hte6l")]
+
+[node name="LoadingScreen" parent="otherScenes" instance=ExtResource("7_0gchl")]
+
+[node name="MainMenu" parent="otherScenes" instance=ExtResource("8_q02g1")]
+
+[node name="GameManager" type="Node3D" parent="." node_paths=PackedStringArray("timer", "fightSceneList")]
+script = ExtResource("9_c1564")
+timer = NodePath("CanvasLayer/Timer")
+fightSceneList = [null, null, null, null, null]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="GameManager"]
+
+[node name="Timer" type="Timer" parent="GameManager/CanvasLayer"]
+one_shot = true
+script = SubResource("GDScript_3nyvt")

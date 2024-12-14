@@ -3,7 +3,7 @@ extends Node3D
 signal updateTheFinalCountdown(timeArray: Array)
 
 @export var timer: Timer
-@export var timerLabel: Label
+@export var fightSceneList: Array[Node3D]
 
 var inLevel: bool = false
 

@@ -33,7 +33,7 @@ texture = ExtResource("2_xgapr")
 [node name="GameManager" type="Node3D" parent="." node_paths=PackedStringArray("timer", "timerLabel")]
 script = ExtResource("2_j851o")
 timer = NodePath("CanvasLayer/Timer")
-timerLabel = NodePath("CanvasLayer/Label")
+timerLabel = NodePath("")
 
 [node name="roundManager" type="Node3D" parent="GameManager" node_paths=PackedStringArray("playerWheel", "opponentWheel")]
 script = ExtResource("2_lq0ph")
@@ -53,12 +53,6 @@ transform = Transform3D(1, 0, 0, 0, 0.614285, -0.789084, 0, 0.789084, 0.614285, 
 [node name="Timer" type="Timer" parent="GameManager/CanvasLayer"]
 one_shot = true
 script = SubResource("GDScript_3kbci")
-
-[node name="Label" type="Label" parent="GameManager/CanvasLayer"]
-offset_left = 8.0
-offset_top = 6.0
-offset_right = 48.0
-offset_bottom = 29.0
 
 [node name="HudOverlay" parent="." instance=ExtResource("6_pse0m")]
 

@@ -5,7 +5,7 @@
 [node name="MainMenu" type="Node3D"]
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.135128, 0.990828, 0, -0.990828, 0.135128, 0.0613855, 2.31918, -0.15839)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 1.89763, -0.249009)
 
 [node name="SpotLight3D" type="SpotLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -0.092388, 0.995723, 0, -0.995723, -0.092388, 0, 4.25516, 0)
@@ -13,4 +13,4 @@ light_energy = 0.0
 spot_range = 2.14
 
 [node name="ManualWheel" parent="." instance=ExtResource("1_ewt1t")]
-transform = Transform3D(0.999998, -0.00133672, 0.00168208, 0.00133716, 0.999999, -0.000258805, -0.00168173, 0.00026106, 0.999999, -0.0096097, 0, 0.0048047)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
