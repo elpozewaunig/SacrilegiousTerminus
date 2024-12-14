@@ -3,7 +3,7 @@
 [ext_resource type="ArrayMesh" uid="uid://dgxd07skcrmye" path="res://scenes/FightScenes/TheMountain/3DFront/cliffside.obj" id="1_a22vp"]
 [ext_resource type="Texture2D" uid="uid://0xx8lsd3qsf7" path="res://scenes/FightScenes/placeholders/14526816-strichmannchen-stickman-symbol-piktogramm-einfach-vektor-removebg-preview.png" id="2_u43d2"]
 [ext_resource type="Texture2D" uid="uid://c1jpuah8esq03" path="res://scenes/FightScenes/placeholders/tweet-shiraaa-picsart-02-06-06-47-29-removebg-preview.png" id="3_1ijaa"]
-[ext_resource type="PackedScene" uid="uid://ccelpifkgb5xq" path="res://scenes/SpellCastWheel/SpellCastWheel.tscn" id="4_v1hvn"]
+[ext_resource type="PackedScene" uid="uid://ccelpifkgb5xq" path="res://scenes/SpellCastWheel/ManualWheel.tscn" id="4_v1hvn"]
 [ext_resource type="Material" uid="uid://di53o2e08jnik" path="res://scenes/FightScenes/TheMountain/Skybox/SpaceSkyBox.tres" id="5_x87l0"]
 [ext_resource type="Texture2D" uid="uid://clo06kexhsdk5" path="res://scenes/FightScenes/TheMountain/ParallaxLayerTexts/layer1.png" id="6_k1qaw"]
 [ext_resource type="Texture2D" uid="uid://bqessv6mtjusq" path="res://scenes/FightScenes/TheMountain/ParallaxLayerTexts/layer2.png" id="7_3qoeg"]
@@ -25,7 +25,7 @@ fog_enabled = true
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_nx174"]
 exposure_multiplier = 0.437
 
-[node name="TheRift" type="Node3D"]
+[node name="TheRift2" type="Node3D"]
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.992546, -0.121869, 0, 0.121869, 0.992546, 0.23, 0.415, -0.435)

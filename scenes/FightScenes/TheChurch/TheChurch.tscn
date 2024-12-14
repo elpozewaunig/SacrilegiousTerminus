@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://0xx8lsd3qsf7" path="res://scenes/FightScenes/placeholders/14526816-strichmannchen-stickman-symbol-piktogramm-einfach-vektor-removebg-preview.png" id="2_t5gke"]
 [ext_resource type="ArrayMesh" uid="uid://qacqpw4p6l44" path="res://scenes/FightScenes/TheChurch/3DFront/Church1.obj" id="3_86ghy"]
-[ext_resource type="PackedScene" uid="uid://ccelpifkgb5xq" path="res://scenes/SpellCastWheel/SpellCastWheel.tscn" id="4_d7x5v"]
+[ext_resource type="PackedScene" uid="uid://ccelpifkgb5xq" path="res://scenes/SpellCastWheel/ManualWheel.tscn" id="4_d7x5v"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_xoc00"]
 

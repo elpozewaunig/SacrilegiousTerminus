@@ -3,6 +3,7 @@ extends Node3D
 var goalRotationAngle: int = 0
 @export var segmentCount: int
 @export var T: int = 1
+@export var particle: Node3D
 var angleChange: float 
 
 
@@ -14,20 +15,32 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	
 	#rotate 
 	if rotation_degrees.y < goalRotationAngle:
 		@warning_ignore("integer_division") # is intended
 		rotation_degrees.y += 360/T * delta
+		if not particle==null:
+			particle.get_child(1).emitting=true
 		if rotation_degrees.y > goalRotationAngle:
 			rotation_degrees.y = goalRotationAngle
+			if not particle==null:
+				particle.get_child(1).emitting=false
 	elif rotation_degrees.y > goalRotationAngle:
+		if not particle==null:
+			particle.get_child(1).emitting=true
 		@warning_ignore("integer_division") # is intended
 		rotation_degrees.y -= 360/T * delta
 		if rotation_degrees.y < goalRotationAngle:
-			rotation_degrees.y = goalRotationAngle
+			rotation_degrees.y = goalRotationAngle 
+			if not particle==null:
+				particle.get_child(1).emitting=false
+	else:
+		if not particle==null:
+			particle.get_child(1).emitting=false
+		
 
-	
+func turnOF(): 
+	particle.visible=false
 func changeAngle(changeToLeft: bool) -> void:
 	if changeToLeft:
 		@warning_ignore("narrowing_conversion") # is intended

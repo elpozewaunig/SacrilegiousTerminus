@@ -1,10 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://ceft1i1qvo4fl"]
+[gd_scene load_steps=8 format=3 uid="uid://ceft1i1qvo4fl"]
 
 [ext_resource type="Texture2D" uid="uid://deiwh6oq6lymh" path="res://scenes/SpellCastWheel/Material/SpellCastWheel_Texture.png" id="2_klja0"]
 [ext_resource type="ArrayMesh" uid="uid://cfkachmxoytgr" path="res://scenes/SpellCastWheel/Model/SpellCastwheel_center.obj" id="3_4hn4c"]
+[ext_resource type="Texture2D" uid="uid://cod5k6h5q11rd" path="res://assets/UI/circle.png" id="4_fd50j"]
 [ext_resource type="Script" path="res://code/rotateToAngle.gd" id="4_rik2f"]
-[ext_resource type="Texture2D" uid="uid://bl16jyy5oy70o" path="res://assets/UI/Play.png" id="4_rm2ac"]
-[ext_resource type="ArrayMesh" uid="uid://b427b71ukrqc6" path="res://scenes/SpellCastWheel/Model/SpellCastwheel_3.obj" id="7_7qfxp"]
+[ext_resource type="PackedScene" uid="uid://dee7mh3emdym1" path="res://scenes/SpellCastWheel/Particles.tscn" id="6_cgca7"]
 
 [sub_resource type="GDScript" id="GDScript_5rwoc"]
 script/source = "extends Node3D
@@ -34,8 +34,11 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
+	
+
 	# key-right turn right
 	if Input.is_action_just_pressed(\"input-right\"):
+	
 		#print(\"right\")
 		rings[currentRingIndex].changeAngle(true)
 		shifts[currentRingIndex] += 1
@@ -43,6 +46,7 @@ func _process(_delta: float) -> void:
 	# key-left turn left
 	if Input.is_action_just_pressed(\"input-left\"):
 		#print(\"left\")
+		
 		rings[currentRingIndex].changeAngle(false)
 		shifts[currentRingIndex] -= 1
 		# shifts[currentRingIndex] could be less than 0 und mod is falash implementiert :(
@@ -75,10 +79,6 @@ func mod(a: int, b:int) -> int:
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dg72n"]
 albedo_texture = ExtResource("2_klja0")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wcw1o"]
-transparency = 1
-albedo_texture = ExtResource("4_rm2ac")
-
 [node name="ManualWheel" type="Node3D" node_paths=PackedStringArray("innerRing")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0096097, 0, 0.0048047)
 script = SubResource("GDScript_5rwoc")
@@ -91,11 +91,17 @@ material_override = SubResource("StandardMaterial3D_dg72n")
 mesh = ExtResource("3_4hn4c")
 skeleton = NodePath("../..")
 
-[node name="3" type="Node3D" parent="Wheel"]
+[node name="3" type="Node3D" parent="Wheel" node_paths=PackedStringArray("particle")]
 script = ExtResource("4_rik2f")
 segmentCount = 3
+particle = NodePath("Particles")
 
-[node name="modelouter" type="MeshInstance3D" parent="Wheel/3"]
-material_override = SubResource("StandardMaterial3D_wcw1o")
-mesh = ExtResource("7_7qfxp")
-skeleton = NodePath("../../..")
+[node name="Sprite3D" type="Sprite3D" parent="Wheel/3"]
+transform = Transform3D(0.22, 0, 0, 0, -9.61651e-09, -0.22, 0, 0.22, -9.61651e-09, 0, 0, 0)
+modulate = Color(1, 0.578253, 0.445737, 1)
+texture = ExtResource("4_fd50j")
+
+[node name="Particles" parent="Wheel/3" instance=ExtResource("6_cgca7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.408029, 0, 0)
+mass = 0.001
+gravity_scale = 0.0
