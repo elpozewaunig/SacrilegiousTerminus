@@ -16,6 +16,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	timerLabel.text = "%02d:%02d" % timer.getTimeFromTimer()
 
+
 func getSignalThatLevelStarts() -> void:
 	inLevel = true
 

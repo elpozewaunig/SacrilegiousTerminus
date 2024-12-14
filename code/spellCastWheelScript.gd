@@ -25,6 +25,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
+	#Segment: for simpleInputs
 	# key-right turn right
 	if Input.is_action_just_pressed("input-right"):
 		#print("right")
@@ -50,6 +51,42 @@ func _process(_delta: float) -> void:
 		currentRingIndex -= 1
 		currentRingIndex = mod(currentRingIndex, rings.size())
 		
+	
+	
+	
+	# segment for parallel Inputs
+	if Input.is_action_just_pressed("innerWheelLeft"):
+		rings[0].changeAngle(false)
+		shifts[0] += 1
+		shifts[0] = mod(shifts[0], rings[0].segmentCount)
+	
+	if Input.is_action_just_pressed("innerWheelRight"):
+		rings[0].changeAngle(true)
+		shifts[0] += 1
+		shifts[0] = mod(shifts[0], rings[0].segmentCount)
+		
+	if Input.is_action_just_pressed("middleWheelLeft") && rings.size() > 1:
+		rings[1].changeAngle(false)
+		shifts[1] += 1
+		shifts[1] = mod(shifts[1], rings[1].segmentCount)
+		
+	if Input.is_action_just_pressed("middleWheelRight") && rings.size() > 1:
+		rings[1].changeAngle(true)
+		shifts[1] += 1
+		shifts[1] = mod(shifts[1], rings[1].segmentCount)
+	
+	if Input.is_action_just_pressed("outerWheelLeft") && rings.size() > 2:
+		rings[2].changeAngle(false)
+		shifts[2] += 1
+		shifts[2] = mod(shifts[2], rings[2].segmentCount)
+	
+	if Input.is_action_just_pressed("outerWheelRight") && rings.size() > 2:
+		rings[2].changeAngle(true)
+		shifts[2] += 1
+		shifts[2] = mod(shifts[2], rings[2].segmentCount)
+	
+	
+	
 		
 func mod(a: int, b:int) -> int:
 	assert(b > 0, "b has to be greater than 0")

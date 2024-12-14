@@ -23,12 +23,6 @@ func _ready() -> void:
 		rings = [innerRing]
 		shifts = [0]
 	
-	
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta: float) -> void:
-	if Input.is_action_just_pressed("temporaryNewSpinCommand"):
-		spin()
-	
 		
 func spin():
 	for currentRingIndex in range(rings.size()):
@@ -41,12 +35,33 @@ func spin():
 		
 		#TODO: implement fancy verwirrendes drehen von gegnerwheel, 
 		# das bei "shiftcount" endet
-		# temp start
-		if shiftCount == 0:
-			shiftCount = segmentCount
+		# temp start 	
+		
+		var stupidTempVariable = getFancyShiftcount(shiftCount, segmentCount)
+		shiftCount = stupidTempVariable[0]
+		var direction = bool(stupidTempVariable[1])
+		
 		for _i in range(shiftCount):
-			currentRing.changeAngle(true)
+			currentRing.changeAngle(direction)
 		# temp end
 		
+func getFancyShiftcount(shiftCount: int, segmentCount: int) -> Array:
+	var direction = randi_range(0, 1) # 0 false (left), 1 true(right)
+	
+	if shiftCount == 0:
+		shiftCount = segmentCount
+	
+	if direction == 0:
+		# du hast problem, jetzt kommt Mathe
+		shiftCount = segmentCount - shiftCount #pls be the right formula
+	
+	if (randi_range(1, 10) > 5):
+		shiftCount += segmentCount
+		
+	while (randi_range(1, 10) > 8):
+		shiftCount += segmentCount
+	
+		
+	return [shiftCount, direction]
 		
 		

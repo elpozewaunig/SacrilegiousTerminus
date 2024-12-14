@@ -50,7 +50,7 @@ func _process(delta: float) -> void:
 	
 	
 	#update timer
-	if timeTillNewSpin <= 0:
+	if timeTillNewSpin <= 0 || Input.is_action_just_pressed("temporaryNewSpinCommand"):
 		timeTillNewSpin = timeForRoud
 		opponentWheel.spin()
 		
