@@ -7,10 +7,7 @@ extends Node
 @export var thRift : PackedScene
 
 @export_group("Cutscene Scenes")
-@export var theChruchCutscene : PackedScene
-@export var theCountrySideCutscene : PackedScene
-@export var theMountainCutscene : PackedScene
-@export var thRiftCutscene : PackedScene
+@export var introScene : PackedScene
 
 @export_group("Settings Scenes")
 @export var mainMenuSene : PackedScene

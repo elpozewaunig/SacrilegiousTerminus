@@ -18,9 +18,16 @@ DialogOption.new(DialogOption.DIALOG_ENTITY.NARRATOR, \"With that thought in min
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	hudOverlay.showDialog(DIALOG, true)
+
+
+
+func _on_hud_overlay_dialog_completed() -> void:
+	SceneManager.change_scene(SceneManager.theChurch, true)
 "
 
 [node name="IntroScene" type="Node3D"]
 script = SubResource("GDScript_s0c5o")
 
 [node name="HudOverlay" parent="." instance=ExtResource("1_rqdsk")]
+
+[connection signal="dialogCompleted" from="HudOverlay" to="." method="_on_hud_overlay_dialog_completed"]

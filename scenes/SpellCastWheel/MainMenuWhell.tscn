@@ -58,7 +58,7 @@ func _process(_delta: float) -> void:
 		pass
 		match shifts[0]:
 			0:
-				SceneManager.change_scene(SceneManager.theChurch, true)
+				SceneManager.change_scene(SceneManager.introScene, true)
 				print(\"Play\")
 			1: 
 				print(\"Quit\")

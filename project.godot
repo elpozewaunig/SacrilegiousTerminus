@@ -14,7 +14,7 @@ config/name="Klagenfurt GSE Jam"
 config/tags=PackedStringArray("game", "jam")
 run/main_scene="res://maintest.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
-config/icon="res://assets/icon.png"
+config/icon="res://assets/sprites/icon.svg"
 
 [autoload]
 
