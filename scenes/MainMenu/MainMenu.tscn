@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://cey20murtyiss"]
+
+[ext_resource type="PackedScene" uid="uid://ceft1i1qvo4fl" path="res://scenes/SpellCastWheel/MainMenuWhell.tscn" id="1_ewt1t"]
+
+[node name="MainMenu" type="Node3D"]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.135128, 0.990828, 0, -0.990828, 0.135128, -0.236338, 3.34922, 0.0551509)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.092388, 0.995723, 0, -0.995723, -0.092388, 0, 4.25516, 0)
+light_energy = 15.222
+
+[node name="ManualWheel" parent="." instance=ExtResource("1_ewt1t")]

@@ -1,0 +1,55 @@
+[gd_scene load_steps=9 format=3 uid="uid://icf506yysjwv"]
+
+[ext_resource type="ArrayMesh" uid="uid://dgxd07skcrmye" path="res://scenes/FightScenes/TheMountain/3DFront/cliffside.obj" id="1_eq085"]
+[ext_resource type="Texture2D" uid="uid://0xx8lsd3qsf7" path="res://scenes/FightScenes/placeholders/14526816-strichmannchen-stickman-symbol-piktogramm-einfach-vektor-removebg-preview.png" id="2_8p3rk"]
+[ext_resource type="PackedScene" path="res://scenes/SpellCastWheel/SpellCastWheel.tscn" id="4_1qrmd"]
+[ext_resource type="Texture2D" uid="uid://sumv4w64qs8j" path="res://scenes/FightScenes/TheMountain/Skybox/space.jpg" id="5_85042"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_ss00f"]
+panorama = ExtResource("5_85042")
+
+[sub_resource type="Sky" id="Sky_iusol"]
+sky_material = SubResource("PanoramaSkyMaterial_ss00f")
+
+[sub_resource type="Environment" id="Environment_055ba"]
+background_mode = 2
+sky = SubResource("Sky_iusol")
+sky_custom_fov = 177.0
+ambient_light_color = Color(0.319517, 0.258109, 0.389155, 1)
+ambient_light_sky_contribution = 0.0
+ambient_light_energy = 0.4
+tonemap_exposure = 4.54
+glow_enabled = true
+glow_intensity = 2.46
+fog_enabled = true
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_nx174"]
+exposure_multiplier = 0.437
+
+[node name="TheRift" type="Node3D"]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.992546, -0.121869, 0, 0.121869, 0.992546, 0.23, 0.415, -0.435)
+fov = 50.0
+
+[node name="Cliffside" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.202, -2.04, 0.226)
+mesh = ExtResource("1_eq085")
+
+[node name="Cliffside2" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.104528, 0.404509, 0.0499698, 0, 0.913545, -0.0223705, 0.994522, -0.0425155, -0.00525203, 1.372, 2.857, -12.975)
+mesh = ExtResource("1_eq085")
+
+[node name="Protag" type="Sprite3D" parent="."]
+transform = Transform3D(0.195, 0, 0, 0, 0.195, 0, 0, 0, 0.195, 0.234, 0.091, -6.252)
+texture = ExtResource("2_8p3rk")
+
+[node name="SpellCastWheel" parent="." instance=ExtResource("4_1qrmd")]
+transform = Transform3D(1.175, 0, 0, 0, 1.08159, -0.45911, 0, 0.459109, 1.08159, 0.209, -0.65, -5.206)
+
+[node name="SpellCastWheel2" parent="." instance=ExtResource("4_1qrmd")]
+transform = Transform3D(12.675, 0, 0, 0, 8.48123, -9.41936, 0, 9.41936, 8.48123, 0.285, 0.09, -24.354)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_055ba")
+camera_attributes = SubResource("CameraAttributesPractical_nx174")

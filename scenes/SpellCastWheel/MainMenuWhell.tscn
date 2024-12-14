@@ -1,0 +1,101 @@
+[gd_scene load_steps=9 format=3 uid="uid://ceft1i1qvo4fl"]
+
+[ext_resource type="Texture2D" uid="uid://deiwh6oq6lymh" path="res://scenes/SpellCastWheel/Material/SpellCastWheel_Texture.png" id="2_klja0"]
+[ext_resource type="ArrayMesh" uid="uid://cfkachmxoytgr" path="res://scenes/SpellCastWheel/Model/SpellCastwheel_center.obj" id="3_4hn4c"]
+[ext_resource type="Script" path="res://code/rotateToAngle.gd" id="4_rik2f"]
+[ext_resource type="Texture2D" uid="uid://bl16jyy5oy70o" path="res://assets/UI/Play.png" id="4_rm2ac"]
+[ext_resource type="ArrayMesh" uid="uid://b427b71ukrqc6" path="res://scenes/SpellCastWheel/Model/SpellCastwheel_3.obj" id="7_7qfxp"]
+
+[sub_resource type="GDScript" id="GDScript_5rwoc"]
+script/source = "extends Node3D
+
+@export var innerRing: Node3D 
+@export var middleRing: Node3D
+@export var outerRing: Node3D
+
+var rings: Array
+var shifts: Array
+var currentRingIndex: int = 0
+
+var camera
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass
+	if outerRing:
+		rings = [outerRing]
+		shifts = [0, 0, 0]
+	elif middleRing:
+		rings = [innerRing, middleRing]
+		shifts = [0, 0]
+	else:
+		rings = [innerRing]
+		shifts = [0]
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(_delta: float) -> void:
+	# key-right turn right
+	if Input.is_action_just_pressed(\"input-right\"):
+		#print(\"right\")
+		rings[currentRingIndex].changeAngle(true)
+		shifts[currentRingIndex] += 1
+		shifts[currentRingIndex] = mod(shifts[currentRingIndex], rings[currentRingIndex].segmentCount)
+	# key-left turn left
+	if Input.is_action_just_pressed(\"input-left\"):
+		#print(\"left\")
+		rings[currentRingIndex].changeAngle(false)
+		shifts[currentRingIndex] -= 1
+		# shifts[currentRingIndex] could be less than 0 und mod is falash implementiert :(
+		shifts[currentRingIndex] = mod(shifts[currentRingIndex], rings[currentRingIndex].segmentCount)
+	# enter, next ring mod ringCount
+	if Input.is_action_just_pressed(\"input-next\"):
+		pass
+		match shifts[0]:
+			0:
+				print(\"play\")	
+			1: 
+				print(\"Settings\")
+			2:
+				print(\"Quit\") 
+			 
+	
+	if Input.is_action_just_pressed(\"input-before\"):
+		currentRingIndex -= 1
+		currentRingIndex = mod(currentRingIndex, rings.size())
+		
+		
+func mod(a: int, b:int) -> int:
+	assert(b > 0, \"b has to be greater than 0\")
+	while a < 0:
+		a+=b
+		
+	return a%b
+"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dg72n"]
+albedo_texture = ExtResource("2_klja0")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wcw1o"]
+transparency = 1
+albedo_texture = ExtResource("4_rm2ac")
+
+[node name="ManualWheel" type="Node3D" node_paths=PackedStringArray("innerRing")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0096097, 0, 0.0048047)
+script = SubResource("GDScript_5rwoc")
+innerRing = NodePath("Wheel/3")
+
+[node name="Wheel" type="Node3D" parent="."]
+
+[node name="modelcenter" type="MeshInstance3D" parent="Wheel"]
+material_override = SubResource("StandardMaterial3D_dg72n")
+mesh = ExtResource("3_4hn4c")
+skeleton = NodePath("../..")
+
+[node name="3" type="Node3D" parent="Wheel"]
+script = ExtResource("4_rik2f")
+segmentCount = 3
+
+[node name="modelouter" type="MeshInstance3D" parent="Wheel/3"]
+material_override = SubResource("StandardMaterial3D_wcw1o")
+mesh = ExtResource("7_7qfxp")
+skeleton = NodePath("../../..")

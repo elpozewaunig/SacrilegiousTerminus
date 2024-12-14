@@ -1,0 +1,56 @@
+[gd_scene load_steps=8 format=3 uid="uid://coj8cff6bnd1d"]
+
+[ext_resource type="Texture2D" uid="uid://0xx8lsd3qsf7" path="res://scenes/FightScenes/placeholders/14526816-strichmannchen-stickman-symbol-piktogramm-einfach-vektor-removebg-preview.png" id="2_t5gke"]
+[ext_resource type="ArrayMesh" uid="uid://qacqpw4p6l44" path="res://scenes/FightScenes/TheChurch/3DFront/Church1.obj" id="3_86ghy"]
+[ext_resource type="PackedScene" uid="uid://ccelpifkgb5xq" path="res://scenes/SpellCastWheel/SpellCastWheel.tscn" id="4_d7x5v"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_xoc00"]
+
+[sub_resource type="Sky" id="Sky_iusol"]
+sky_material = SubResource("ProceduralSkyMaterial_xoc00")
+
+[sub_resource type="Environment" id="Environment_055ba"]
+background_mode = 2
+sky = SubResource("Sky_iusol")
+sky_custom_fov = 129.8
+sky_rotation = Vector3(-0.228638, 0, 0)
+ambient_light_color = Color(0.497937, 0.417187, 0.591134, 1)
+ambient_light_sky_contribution = 0.0
+ambient_light_energy = 0.0
+tonemap_exposure = 1.92
+glow_enabled = true
+fog_enabled = true
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_nx174"]
+exposure_multiplier = 0.437
+
+[node name="TheRift" type="Node3D"]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.936948, -0.346439, 0.0459121, 0.250435, 0.757246, 0.603208, -0.243741, -0.553677, 0.796261, 1.355, 1.505, -0.675)
+fov = 74.1
+
+[node name="Protag" type="Sprite3D" parent="."]
+transform = Transform3D(0.124035, 0, 0.150467, 0, 0.195, 0, -0.150467, 0, 0.124035, 0.179, 0.008, -2.122)
+texture = ExtResource("2_t5gke")
+
+[node name="Robert" type="Sprite3D" parent="."]
+transform = Transform3D(0.139798, 0, -0.135947, 0, 0.195, 0, 0.135947, 0, 0.139798, 2.33004, 0.00887898, -2.18645)
+texture = ExtResource("2_t5gke")
+
+[node name="SpellCastWheel" parent="." instance=ExtResource("4_d7x5v")]
+transform = Transform3D(0.410222, 0, 0.159115, 0, 0.44, 0, -0.159115, 0, 0.410222, 0.213, -0.399, -2.123)
+
+[node name="SpellCastWheel2" parent="." instance=ExtResource("4_d7x5v")]
+transform = Transform3D(0.312211, 0, -0.310039, 0, 0.44, 0, 0.310039, 0, 0.312211, 2.283, -0.399, -2.123)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_055ba")
+camera_attributes = SubResource("CameraAttributesPractical_nx174")
+
+[node name="Church1" type="MeshInstance3D" parent="."]
+transform = Transform3D(-6.55671e-09, 0, 0.15, 0, 0.15, 0, -0.15, 0, -6.55671e-09, 1.16937, -2.13516, -4.12983)
+mesh = ExtResource("3_86ghy")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.0738823, 0.997267, 0, -0.997267, 0.0738823, 1.09042, 1.13716, -2.13774)

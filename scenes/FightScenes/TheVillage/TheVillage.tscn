@@ -1,0 +1,68 @@
+[gd_scene load_steps=11 format=3 uid="uid://cuwok6iq6ff7t"]
+
+[ext_resource type="Texture2D" uid="uid://0xx8lsd3qsf7" path="res://scenes/FightScenes/placeholders/14526816-strichmannchen-stickman-symbol-piktogramm-einfach-vektor-removebg-preview.png" id="1_s5lov"]
+[ext_resource type="PackedScene" uid="uid://ccelpifkgb5xq" path="res://scenes/SpellCastWheel/SpellCastWheel.tscn" id="3_7ijdh"]
+[ext_resource type="Texture2D" uid="uid://btjnrke4c1pf3" path="res://scenes/FightScenes/TheMountain/Skybox/spacenopink.jpg" id="4_uygc6"]
+[ext_resource type="ArrayMesh" uid="uid://besrpbginhriq" path="res://scenes/FightScenes/TheVillage/3DFront/Village1.obj" id="5_ugspl"]
+[ext_resource type="Texture2D" uid="uid://txddjmwdrtoo" path="res://scenes/FightScenes/TheVillage/ParallaxLayerTexts/layer1.png" id="6_p8xve"]
+[ext_resource type="Texture2D" uid="uid://dcofc1qacn0yx" path="res://scenes/FightScenes/TheVillage/ParallaxLayerTexts/layer2.png" id="7_typ2b"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_ow5hs"]
+panorama = ExtResource("4_uygc6")
+
+[sub_resource type="Sky" id="Sky_iusol"]
+sky_material = SubResource("PanoramaSkyMaterial_ow5hs")
+
+[sub_resource type="Environment" id="Environment_055ba"]
+background_mode = 2
+sky = SubResource("Sky_iusol")
+sky_rotation = Vector3(-0.228638, 0, 0)
+ambient_light_color = Color(0.497937, 0.417187, 0.591134, 1)
+ambient_light_sky_contribution = 0.0
+ambient_light_energy = 0.0
+tonemap_exposure = 1.92
+glow_enabled = true
+fog_enabled = true
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_nx174"]
+exposure_multiplier = 0.437
+
+[node name="TheRift" type="Node3D"]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.350207, 0, -0.936672, 0, 1, 0, 0.936672, 0, 0.350207, 2.641, 3.231, 9.415)
+fov = 61.2
+
+[node name="Protag" type="Sprite3D" parent="."]
+transform = Transform3D(0.0381529, 0, -0.363001, 0, 0.365, 0, 0.363001, 0, 0.0381529, 8.11, 1.896, 8.54)
+texture = ExtResource("1_s5lov")
+
+[node name="Pope" type="Sprite3D" parent="."]
+transform = Transform3D(0.241531, 0, -0.266951, 0, 0.36, 0, 0.266951, 0, 0.241531, 7.9249, 1.35132, 1.75236)
+texture = ExtResource("1_s5lov")
+
+[node name="SpellCastWheel" parent="." instance=ExtResource("3_7ijdh")]
+transform = Transform3D(-0.20935, -0.758939, -0.246594, 0, 0.254939, -0.784622, 0.797996, -0.199104, -0.0646928, 6.931, 3.214, 10.169)
+
+[node name="SpellCastWheel2" parent="." instance=ExtResource("3_7ijdh")]
+transform = Transform3D(-0.0740072, -0.728585, -0.717155, -1.01975, 0.103583, 1.79217e-07, 0.0724729, 0.713483, -0.732335, 9.755, 2.522, 1.189)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_055ba")
+camera_attributes = SubResource("CameraAttributesPractical_nx174")
+
+[node name="Village1" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.63601, 1.0264, 12.5934)
+mesh = ExtResource("5_ugspl")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(0.45109, 0, -2.189, 0, 2.235, 0, 2.189, 0, 0.45109, 38.3404, 3.49025, 11.9191)
+texture = ExtResource("6_p8xve")
+
+[node name="Sprite3D2" type="Sprite3D" parent="."]
+transform = Transform3D(6.55733, 0, -9.43512, 0, 11.49, 0, 9.43512, 0, 6.55733, 72.278, 3.49025, -64.1466)
+texture = ExtResource("7_typ2b")
+
+[node name="Sprite3D3" type="Sprite3D" parent="."]
+transform = Transform3D(1.2742, 0, 11.4191, 0, 11.49, 0, -11.4191, 0, 1.2742, 90.0211, 3.49025, 12.7107)
+texture = ExtResource("7_typ2b")

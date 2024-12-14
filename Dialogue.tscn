@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://ccoe3f64oehys"]
+
+[node name="Dialogue" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_right = 275.0
+offset_bottom = 23.0
+text = "Hello fellow comrade dasdasd"
+autowrap_mode = 3

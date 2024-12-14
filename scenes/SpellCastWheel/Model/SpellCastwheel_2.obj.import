@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bcupkd1xtaiua"
+path="res://.godot/imported/SpellCastwheel_2.obj-f5effdce343c1281f6f69a6c0495948b.mesh"
+
+[deps]
+
+files=["res://.godot/imported/SpellCastwheel_2.obj-f5effdce343c1281f6f69a6c0495948b.mesh"]
+
+source_file="res://scenes/SpellCastWheel/Model/SpellCastwheel_2.obj"
+dest_files=["res://.godot/imported/SpellCastwheel_2.obj-f5effdce343c1281f6f69a6c0495948b.mesh", "res://.godot/imported/SpellCastwheel_2.obj-f5effdce343c1281f6f69a6c0495948b.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
