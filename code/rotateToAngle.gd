@@ -2,12 +2,13 @@ extends Node3D
 
 var goalRotationAngle: int = 0
 @export var segmentCount: int
-@export var T: int = 10
+@export var T: int = 1
 var angleChange: float 
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	@warning_ignore("integer_division") # is intended
 	angleChange = 360/segmentCount
 
 
@@ -16,10 +17,12 @@ func _process(delta: float) -> void:
 	
 	#rotate 
 	if rotation_degrees.y < goalRotationAngle:
+		@warning_ignore("integer_division") # is intended
 		rotation_degrees.y += 360/T * delta
 		if rotation_degrees.y > goalRotationAngle:
 			rotation_degrees.y = goalRotationAngle
 	elif rotation_degrees.y > goalRotationAngle:
+		@warning_ignore("integer_division") # is intended
 		rotation_degrees.y -= 360/T * delta
 		if rotation_degrees.y < goalRotationAngle:
 			rotation_degrees.y = goalRotationAngle
@@ -27,11 +30,13 @@ func _process(delta: float) -> void:
 	
 func changeAngle(changeToLeft: bool) -> void:
 	if changeToLeft:
+		@warning_ignore("narrowing_conversion") # is intended
 		goalRotationAngle += angleChange
-		print("rotating left")
+		#print("rotating left")
 	else:
+		@warning_ignore("narrowing_conversion") # is intended
 		goalRotationAngle -= angleChange
-		print("rotating right")
+		#print("rotating right")
 		
 	
 

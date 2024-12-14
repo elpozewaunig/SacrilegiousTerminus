@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://8gpddvo73c18"]
+[gd_scene load_steps=5 format=3 uid="uid://8gpddvo73c18"]
 
 [ext_resource type="PackedScene" uid="uid://ccelpifkgb5xq" path="res://scenes/SpellCastWheel/ManualWheel.tscn" id="1_p0fva"]
+[ext_resource type="Script" path="res://code/roundManager.gd" id="2_lq0ph"]
 [ext_resource type="Texture2D" uid="uid://capvl4scxoh2v" path="res://scenes/SceneBackground/background.png" id="2_xgapr"]
 [ext_resource type="PackedScene" uid="uid://dqtcwmca5ongg" path="res://scenes/SpellCastWheel/AutomaticWheel.tscn" id="3_knfil"]
 
@@ -16,10 +17,13 @@ texture = ExtResource("2_xgapr")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 
-[node name="scoreEvaluator" type="Node3D" parent="."]
+[node name="roundManager" type="Node3D" parent="." node_paths=PackedStringArray("playerWheel", "opponentWheel")]
+script = ExtResource("2_lq0ph")
+playerWheel = NodePath("ManualWheel")
+opponentWheel = NodePath("AutomaticWheel")
 
-[node name="AutomaticWheel" parent="scoreEvaluator" instance=ExtResource("3_knfil")]
+[node name="AutomaticWheel" parent="roundManager" instance=ExtResource("3_knfil")]
 transform = Transform3D(1, 0, 0, 0, 0.414693, -0.909961, 0, 0.909961, 0.414693, 1.208, 0.53, -1.245)
 
-[node name="ManualWheel" parent="scoreEvaluator" instance=ExtResource("1_p0fva")]
+[node name="ManualWheel" parent="roundManager" instance=ExtResource("1_p0fva")]
 transform = Transform3D(1, 0, 0, 0, 0.614285, -0.789084, 0, 0.789084, 0.614285, -1.43457, 0.316572, -1.57377)

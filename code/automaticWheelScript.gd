@@ -35,7 +35,8 @@ func spin():
 		var currentRing = rings[currentRingIndex]
 		var segmentCount = currentRing.segmentCount
 		var shiftCount = rng.randi_range(0, segmentCount)
-		shifts[currentRingIndex] = shiftCount
+		shifts[currentRingIndex] += shiftCount
+		shifts[currentRingIndex] %= segmentCount
 		print(shiftCount)
 		
 		#TODO: implement fancy verwirrendes drehen von gegnerwheel, 
