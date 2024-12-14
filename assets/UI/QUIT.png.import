@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dur7sy1lku11"
-path.s3tc="res://.godot/imported/IMG_0184.png-3b95411d0768d28a4f646152ec87d3fe.s3tc.ctex"
+uid="uid://cwj0ditn811ca"
+path.s3tc="res://.godot/imported/QUIT.png-099df92c4c4d898982c4a36a09c9f64c.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/sprites/tarot symbole/IMG_0184.png"
-dest_files=["res://.godot/imported/IMG_0184.png-3b95411d0768d28a4f646152ec87d3fe.s3tc.ctex"]
+source_file="res://assets/UI/QUIT.png"
+dest_files=["res://.godot/imported/QUIT.png-099df92c4c4d898982c4a36a09c9f64c.s3tc.ctex"]
 
 [params]
 
