@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://dvygun7k256ji"]
 
-[ext_resource type="Script" path="res://code/ui_overlay.gd" id="1_nlpga"]
+[ext_resource type="Script" path="res://code/hudOverlay.gd" id="1_nlpga"]
 [ext_resource type="Script" path="res://code/dialogScript.gd" id="2_p562y"]
 [ext_resource type="AudioStream" uid="uid://dlvfs6xlorf1j" path="res://assets/sounds/sfx_Typewriter.ogg" id="3_o5wnl"]
 
@@ -9,7 +9,7 @@ content_margin_left = 4.0
 content_margin_top = 4.0
 content_margin_right = 4.0
 content_margin_bottom = 4.0
-bg_color = Color(0, 0, 0, 1)
+bg_color = Color(0, 0, 0, 0.878431)
 
 [node name="HudOverlay" type="Control"]
 layout_mode = 3
@@ -19,9 +19,11 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_nlpga")
+dialog = Array[String](["Me: The rift is opening and Satan is casting his will upon the world. But First i should go to the church and get rid of the Priest of this town. I don’t want any interferance when the new Lord assends to the earth.", "Priester Robert: My good child, what brings you here today?", "Me: I am here to help our Supremelord from the underworld Satan himself"])
 
 [node name="DialogLayer" type="CanvasLayer" parent="."]
 unique_name_in_owner = true
+visible = false
 script = ExtResource("2_p562y")
 
 [node name="DialogLabel" type="Label" parent="DialogLayer"]
@@ -33,16 +35,18 @@ anchor_right = 0.5
 anchor_bottom = 0.99
 offset_left = -7.0
 offset_top = -57.0
-offset_right = 7.0
+offset_right = 2.0
+offset_bottom = -34.0
 grow_horizontal = 2
 grow_vertical = 0
 size_flags_vertical = 8
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_mc56r")
-text = "f"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="TypewriterAudio" type="AudioStreamPlayer" parent="DialogLayer"]
 unique_name_in_owner = true
 stream = ExtResource("3_o5wnl")
+
+[connection signal="dialogCompleted" from="DialogLayer" to="." method="_on_dialog_layer_dialog_completed"]
