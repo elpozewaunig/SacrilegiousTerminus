@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://icf506yysjwv"]
+[gd_scene load_steps=9 format=3 uid="uid://icf506yysjwv"]
 
 [ext_resource type="Texture2D" uid="uid://0xx8lsd3qsf7" path="res://scenes/FightScenes/placeholders/14526816-strichmannchen-stickman-symbol-piktogramm-einfach-vektor-removebg-preview.png" id="2_8p3rk"]
-[ext_resource type="PackedScene" uid="uid://ucwlwrhkaopg" path="res://scenes/FightScenes/rifttear.tscn" id="3_euu3m"]
+[ext_resource type="PackedScene" path="res://scenes/FightScenes/rifttear.tscn" id="3_euu3m"]
 [ext_resource type="Texture2D" uid="uid://sumv4w64qs8j" path="res://scenes/FightScenes/TheMountain/Skybox/space.jpg" id="5_85042"]
+[ext_resource type="PackedScene" uid="uid://r020t5g1merr" path="res://gpu_particles_3d.tscn" id="6_knecr"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_ss00f"]
 panorama = ExtResource("5_85042")
@@ -39,3 +40,6 @@ environment = SubResource("Environment_055ba")
 camera_attributes = SubResource("CameraAttributesPractical_nx174")
 
 [node name="f" parent="." instance=ExtResource("3_euu3m")]
+
+[node name="GPUParticles3D" parent="." instance=ExtResource("6_knecr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.426009, 0, -15.9468)
