@@ -1,34 +1,44 @@
-[gd_scene load_steps=8 format=3 uid="uid://coj8cff6bnd1d"]
+[gd_scene load_steps=17 format=3 uid="uid://coj8cff6bnd1d"]
 
+[ext_resource type="ArrayMesh" uid="uid://mjowk7pbf55q" path="res://scenes/FightScenes/TheChurch/3DFront/Church2.obj" id="2_kdy04"]
 [ext_resource type="Texture2D" uid="uid://0xx8lsd3qsf7" path="res://scenes/FightScenes/placeholders/14526816-strichmannchen-stickman-symbol-piktogramm-einfach-vektor-removebg-preview.png" id="2_t5gke"]
-[ext_resource type="ArrayMesh" uid="uid://qacqpw4p6l44" path="res://scenes/FightScenes/TheChurch/3DFront/Church1.obj" id="3_86ghy"]
-[ext_resource type="PackedScene" uid="uid://ccelpifkgb5xq" path="res://scenes/SpellCastWheel/ManualWheel.tscn" id="4_d7x5v"]
+[ext_resource type="Texture2D" uid="uid://cstm1tsskp47v" path="res://scenes/FightScenes/TheChurch/3DFront/baketry2.png" id="3_6c8v4"]
+[ext_resource type="Texture2D" uid="uid://des0wuvfkbnu1" path="res://scenes/FightScenes/TheChurch/3DText/roberttexttext.jpg" id="4_2pns6"]
+[ext_resource type="ArrayMesh" uid="uid://4lger5fh6chq" path="res://scenes/FightScenes/TheChurch/3DText/preistroberttext1.obj" id="5_yx4t5"]
+[ext_resource type="ArrayMesh" uid="uid://dfstv50uufwrh" path="res://scenes/FightScenes/TheChurch/3DText/preistroberttext2.obj" id="6_x8mqh"]
+[ext_resource type="Texture2D" uid="uid://dyl6gtjdlb7q8" path="res://scenes/FightScenes/TheChurch/windowtry/b.png" id="7_grpge"]
+[ext_resource type="Texture2D" uid="uid://drjj4u5wcu4iu" path="res://scenes/FightScenes/TheChurch/windowtry/c.png" id="9_sovuh"]
+[ext_resource type="Texture2D" uid="uid://b7ngqhcffyhl7" path="res://scenes/FightScenes/TheChurch/windowtry/a.png" id="17_ma4jh"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_xoc00"]
+[sub_resource type="Environment" id="Environment_5k0d8"]
+background_energy_multiplier = 4.69
 
-[sub_resource type="Sky" id="Sky_iusol"]
-sky_material = SubResource("ProceduralSkyMaterial_xoc00")
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_il6o1"]
+shading_mode = 0
+albedo_texture = ExtResource("3_6c8v4")
 
-[sub_resource type="Environment" id="Environment_055ba"]
-background_mode = 2
-sky = SubResource("Sky_iusol")
-sky_custom_fov = 129.8
-sky_rotation = Vector3(-0.228638, 0, 0)
-ambient_light_color = Color(0.497937, 0.417187, 0.591134, 1)
-ambient_light_sky_contribution = 0.0
-ambient_light_energy = 0.0
-tonemap_exposure = 1.92
-glow_enabled = true
-fog_enabled = true
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a8l6r"]
+shading_mode = 0
+albedo_texture = ExtResource("4_2pns6")
 
-[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_nx174"]
-exposure_multiplier = 0.437
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lwnvl"]
+shading_mode = 0
+albedo_texture = ExtResource("4_2pns6")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fc5g0"]
+albedo_texture = ExtResource("7_grpge")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bfxik"]
+albedo_texture = ExtResource("17_ma4jh")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mgfv6"]
+albedo_texture = ExtResource("9_sovuh")
 
 [node name="TheRift" type="Node3D"]
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(0.936948, -0.346439, 0.0459121, 0.250435, 0.757246, 0.603208, -0.243741, -0.553677, 0.796261, 1.355, 1.505, -0.675)
-fov = 74.1
+transform = Transform3D(0.965925, 0.0919084, -0.241951, 0, 0.934826, 0.355107, 0.258819, -0.343007, 0.902972, 0.67, 1.17, 0.485)
+fov = 81.1
 
 [node name="Protag" type="Sprite3D" parent="."]
 transform = Transform3D(0.124035, 0, 0.150467, 0, 0.195, 0, -0.150467, 0, 0.124035, 0.179, 0.008, -2.122)
@@ -38,19 +48,43 @@ texture = ExtResource("2_t5gke")
 transform = Transform3D(0.139798, 0, -0.135947, 0, 0.195, 0, 0.135947, 0, 0.139798, 2.33004, 0.00887898, -2.18645)
 texture = ExtResource("2_t5gke")
 
-[node name="SpellCastWheel" parent="." instance=ExtResource("4_d7x5v")]
-transform = Transform3D(0.410222, 0, 0.159115, 0, 0.44, 0, -0.159115, 0, 0.410222, 0.213, -0.399, -2.123)
-
-[node name="SpellCastWheel2" parent="." instance=ExtResource("4_d7x5v")]
-transform = Transform3D(0.312211, 0, -0.310039, 0, 0.44, 0, 0.310039, 0, 0.312211, 2.283, -0.399, -2.123)
-
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_055ba")
-camera_attributes = SubResource("CameraAttributesPractical_nx174")
+environment = SubResource("Environment_5k0d8")
 
-[node name="Church1" type="MeshInstance3D" parent="."]
-transform = Transform3D(-6.55671e-09, 0, 0.15, 0, 0.15, 0, -0.15, 0, -6.55671e-09, 1.16937, -2.13516, -4.12983)
-mesh = ExtResource("3_86ghy")
+[node name="Church2" type="MeshInstance3D" parent="."]
+transform = Transform3D(-6.55671e-09, 0, 0.15, 0, 0.15, 0, -0.15, 0, -6.55671e-09, 1.17549, -2.10379, -4.11712)
+material_override = SubResource("StandardMaterial3D_il6o1")
+mesh = ExtResource("2_kdy04")
 
-[node name="SpotLight3D" type="SpotLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.0738823, 0.997267, 0, -0.997267, 0.0738823, 1.09042, 1.13716, -2.13774)
+[node name="Preistroberttext1" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.996228, -0.0771879, -0.0396436, 0, 0.456865, -0.889536, 0.0867733, 0.886181, 0.455142, 2.35177, 0.958624, -3.60574)
+material_override = SubResource("StandardMaterial3D_a8l6r")
+mesh = ExtResource("5_yx4t5")
+
+[node name="Preistroberttext2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.454768, -0.89061, 0, 0.89061, 0.454768, 2.85698, 1.32161, -3.59261)
+material_override = SubResource("StandardMaterial3D_lwnvl")
+mesh = ExtResource("6_x8mqh")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(0.095, 0, 0, 0, 0.095, 0, 0, 0, 0.095, 2.42263, 0.853289, -4.6087)
+material_override = SubResource("StandardMaterial3D_fc5g0")
+texture = ExtResource("17_ma4jh")
+
+[node name="Sprite3D2" type="Sprite3D" parent="."]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0.121008, 0.853289, -4.6087)
+material_override = SubResource("StandardMaterial3D_bfxik")
+texture = ExtResource("17_ma4jh")
+
+[node name="Sprite3D3" type="Sprite3D" parent="."]
+transform = Transform3D(0.105, 0, 0, 0, 0.105, 0, 0, 0, 0.105, 4.75532, 0.853289, -4.6087)
+material_override = SubResource("StandardMaterial3D_mgfv6")
+texture = ExtResource("17_ma4jh")
+
+[node name="Sprite3D4" type="Sprite3D" parent="."]
+transform = Transform3D(0.10253, 0, -0.10253, 0, 0.145, 0, 0.10253, 0, 0.10253, 8.53207, 2.69119, -3.54027)
+texture = ExtResource("17_ma4jh")
+
+[node name="Sprite3D5" type="Sprite3D" parent="."]
+transform = Transform3D(0.10253, 0, 0.10253, 0, 0.145, 0, -0.10253, 0, 0.10253, 8.50128, 2.69119, -0.720936)
+texture = ExtResource("17_ma4jh")
