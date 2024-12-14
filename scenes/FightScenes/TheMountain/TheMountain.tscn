@@ -1,11 +1,17 @@
-[gd_scene load_steps=10 format=3 uid="uid://b0cfnqq0xj6ro"]
+[gd_scene load_steps=13 format=3 uid="uid://b0cfnqq0xj6ro"]
 
-[ext_resource type="ArrayMesh" uid="uid://dgxd07skcrmye" path="res://scenes/FightScenes/TheMountain/3DFront/cliffside.obj" id="1_a22vp"]
-[ext_resource type="Texture2D" uid="uid://0xx8lsd3qsf7" path="res://scenes/FightScenes/placeholders/14526816-strichmannchen-stickman-symbol-piktogramm-einfach-vektor-removebg-preview.png" id="2_u43d2"]
+[ext_resource type="ArrayMesh" uid="uid://sdnkjicuuag3" path="res://scenes/FightScenes/TheMountain/3DFront/rock.obj" id="1_2bq0v"]
+[ext_resource type="Texture2D" uid="uid://b4gbrrmj35ey2" path="res://scenes/FightScenes/TheMountain/3DFront/rockbake.png" id="1_3jns5"]
 [ext_resource type="Texture2D" uid="uid://c1jpuah8esq03" path="res://scenes/FightScenes/placeholders/tweet-shiraaa-picsart-02-06-06-47-29-removebg-preview.png" id="3_1ijaa"]
+[ext_resource type="Texture2D" uid="uid://b3frq2g06mlbx" path="res://assets/sprites/characters/protagonist.png" id="3_d530i"]
 [ext_resource type="Material" uid="uid://di53o2e08jnik" path="res://scenes/FightScenes/TheMountain/Skybox/SpaceSkyBox.tres" id="5_x87l0"]
 [ext_resource type="Texture2D" uid="uid://clo06kexhsdk5" path="res://scenes/FightScenes/TheMountain/ParallaxLayerTexts/layer1.png" id="6_k1qaw"]
 [ext_resource type="Texture2D" uid="uid://bqessv6mtjusq" path="res://scenes/FightScenes/TheMountain/ParallaxLayerTexts/layer2.png" id="7_3qoeg"]
+[ext_resource type="PackedScene" uid="uid://ucwlwrhkaopg" path="res://scenes/FightScenes/rifttear.tscn" id="8_1773n"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qcgot"]
+albedo_texture = ExtResource("1_3jns5")
+metallic_specular = 0.0
 
 [sub_resource type="Sky" id="Sky_iusol"]
 sky_material = ExtResource("5_x87l0")
@@ -18,8 +24,6 @@ ambient_light_color = Color(0.497937, 0.417187, 0.591134, 1)
 ambient_light_sky_contribution = 0.0
 ambient_light_energy = 0.4
 tonemap_exposure = 1.13
-glow_enabled = true
-fog_enabled = true
 
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_nx174"]
 exposure_multiplier = 0.437
@@ -32,11 +36,12 @@ fov = 50.0
 
 [node name="Cliffside" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.253, 0.01, 0.226)
-mesh = ExtResource("1_a22vp")
+material_override = SubResource("StandardMaterial3D_qcgot")
+mesh = ExtResource("1_2bq0v")
 
 [node name="Protag" type="Sprite3D" parent="."]
-transform = Transform3D(0.195, 0, 0, 0, 0.195, 0, 0, 0, 0.195, -1.516, 0.091, -4.197)
-texture = ExtResource("2_u43d2")
+transform = Transform3D(0.055, 0, 0, 0, 0.055, 0, 0, 0, 0.055, -1.516, 0.091, -4.197)
+texture = ExtResource("3_d530i")
 
 [node name="Enemy" type="Sprite3D" parent="."]
 transform = Transform3D(0.88, 0, 0, 0, 0.88, 0, 0, 0, 0.88, 4.37, 2.287, -9.541)
@@ -53,3 +58,6 @@ texture = ExtResource("6_k1qaw")
 [node name="PrallaxLayer2" type="Sprite3D" parent="."]
 transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, -242.35, -87.25, -643.267)
 texture = ExtResource("7_3qoeg")
+
+[node name="f" parent="." instance=ExtResource("8_1773n")]
+transform = Transform3D(3.03074, -3.6119, 1.57881e-07, 0, -2.06099e-07, -4.715, 3.6119, 3.03074, -1.32478e-07, 99.208, 33.988, -130.859)

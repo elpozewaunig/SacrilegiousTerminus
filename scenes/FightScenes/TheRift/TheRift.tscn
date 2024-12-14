@@ -1,10 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://icf506yysjwv"]
+[gd_scene load_steps=8 format=3 uid="uid://icf506yysjwv"]
 
 [ext_resource type="Texture2D" uid="uid://0xx8lsd3qsf7" path="res://scenes/FightScenes/placeholders/14526816-strichmannchen-stickman-symbol-piktogramm-einfach-vektor-removebg-preview.png" id="2_8p3rk"]
-[ext_resource type="PackedScene" uid="uid://dtwx7c3aehut3" path="res://scenes/FightScenes/TheRift/3DFront/f.blend" id="3_5vfsm"]
-[ext_resource type="Shader" path="res://scenes/FightScenes/TheRift/TheRift.gdshader" id="4_hwsw7"]
+[ext_resource type="PackedScene" uid="uid://ucwlwrhkaopg" path="res://scenes/FightScenes/rifttear.tscn" id="3_euu3m"]
 [ext_resource type="Texture2D" uid="uid://sumv4w64qs8j" path="res://scenes/FightScenes/TheMountain/Skybox/space.jpg" id="5_85042"]
-[ext_resource type="Texture2D" uid="uid://bqdmlqulrjco2" path="res://scenes/FightScenes/a0001.png" id="5_xryh1"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_ss00f"]
 panorama = ExtResource("5_85042")
@@ -26,11 +24,6 @@ fog_enabled = true
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_nx174"]
 exposure_multiplier = 0.437
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_o67fh"]
-render_priority = 0
-shader = ExtResource("4_hwsw7")
-shader_parameter/viewport_texture = ExtResource("5_xryh1")
-
 [node name="TheRift" type="Node3D"]
 
 [node name="Camera3D" type="Camera3D" parent="."]
@@ -45,14 +38,4 @@ texture = ExtResource("2_8p3rk")
 environment = SubResource("Environment_055ba")
 camera_attributes = SubResource("CameraAttributesPractical_nx174")
 
-[node name="f" parent="." instance=ExtResource("3_5vfsm")]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -0.017, 2, -17.132)
-
-[node name="Plane_001" parent="f" index="0"]
-material_override = SubResource("ShaderMaterial_o67fh")
-
-[node name="AnimationPlayer" parent="f" index="1"]
-autoplay = "KeyAction"
-speed_scale = 0.1
-
-[editable path="f"]
+[node name="f" parent="." instance=ExtResource("3_euu3m")]

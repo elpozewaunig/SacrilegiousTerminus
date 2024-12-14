@@ -1,0 +1,70 @@
+[gd_scene load_steps=8 format=4 uid="uid://ucwlwrhkaopg"]
+
+[ext_resource type="Shader" path="res://scenes/FightScenes/TheRift/TheRift.gdshader" id="1_cxjw8"]
+[ext_resource type="Texture2D" uid="uid://bqdmlqulrjco2" path="res://scenes/FightScenes/a0001.png" id="2_fip4j"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_o67fh"]
+render_priority = 0
+shader = ExtResource("1_cxjw8")
+shader_parameter/viewport_texture = ExtResource("2_fip4j")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ltkwe"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_yjpim"]
+resource_name = "f_Plane_003"
+_blend_shape_names = PackedStringArray("Key 1", "Key 2")
+_surfaces = [{
+"aabb": AABB(-0.236604, -1.49012e-08, -1.02627, 0.548684, 1.00149e-05, 2.00403),
+"attribute_data": PackedByteArray("5ob+PgAAAADxkiE/sJdWPtCnBT9kAZI+DtYhP8SU8T55sAg/gScWP+0xJj8s5zo/bQgPP7v4ST/mgPo+L8deP6v1Bj9KBXA/bHv9PkInfT/fV+k+1ShrPzLS5j5JSF0/RNrvPngaOz8nUv8+/rclPyso/z7g4gw/6lLyPo4h3T5SNgg/lp7CPpPdpj4YeLM+6W3DPhgdTD6dMOs+aG/hPRvs2z5gJCE9"),
+"blend_shapes": PackedByteArray("ay2OPQAAwDFXAXC/sj4PPgAAADKPNB2/APo0PQAAAAA4/du+yzU8PgAAgLIxXPy9SWEyPgAAYLIdIBI+wk5fPgAAAABMltI+13W/PQAAAAAOvP4+MJeEuwCAFjLjUz0/z+rEPQAAALKfNGM/kCQhvAAAAACDTno/sU3FvQAAADESYyw//N0PvgAAgLIw1BI/aX26vQAAALJKwOQ+471GPQAAQLJH67A+slE9vQAAADIaaEk+I+6xvQAAgDFaQAK9ABrruwAAgDF7JYy+hTZZvgAAAAD9Ndq+dQz6vQAA8DHCxBm/VRC8vQAAgLJzclK/ZzGAvQAAWDEBLm6//3///3/d/7//f///9v//v/9///985v+//3//////As3/f///////0f9///+c7f+//3//////zNz/f///2Lr/v/9////18f+//3///ybd/7//f///X7f/v/9///9Q3f+//3//////vcr/f//////D2P9//////9Lg/3//////8uX/f/////8Swf9////33P+//3///wAAXQr/f///6+7/v/9////j4v+/NfiIPQAAQDLhXIO/68ifPgAAALLVB0W/APo0PQAAAAA4/du+OFiHPgAAAACgs2a9hBn6PQAAtjGBQC8+tMeYPgAAAACynOs+13W/PQAAAAAOvP4+BMnlPQAAgDJsQDY/PhRTPgAAADG+els/kCQhvAAAAACDTno/BAx3vQAAwDHuHxo/PmhKvgAAwLE/pxY/coecvQAAwLHd7dk+0KlnuwAAAABq350+ANZXuwAAAAAALs49bdEPvQAAALIApcI7dMeevAAAcLEnfXi+hTZZvgAAAAD9Ndq+UZgbvgAAALJ99we/D53UvQAAgDCiIkO/DuoJvQAAADIa31C//3//////neH/f/////+x2v9//////5fI/3///27+/7//f/////8Hw/9///8B4/+//3//////P97/f///ncn/v/9//////xPC/3///1LU/7//f///Hdb/v/9//////y7Q/3///wAATQr/f//////Ayv9///+nRP8//3///////Pf/f///yPf/v/9///8U0v+//3//////cAT/f/////9VzP9//////7HS"),
+"format": 34359742487,
+"index_count": 57,
+"index_data": PackedByteArray("AQAUAAAAEwARABIAAQATABQAAgATAAEAEwAQABEAEAAOAA8ADQALAAwAEAANAA4AAgAQABMABgAEAAUACQAHAAgAAwAQAAIADQAKAAsABAAQAAMACgAHAAkABAANABAADQAHAAoABgANAAQADQAGAAcA"),
+"material": SubResource("StandardMaterial3D_ltkwe"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 21,
+"vertex_data": PackedByteArray("AI28uwAAAAAAAIC/xEuGPgAAAAAotBS/APo0PQAAAAA4/du+OFiHPgAAAACgs2a9iAeLPQAAAAAIPDE+tMeYPgAAAACynOs+13W/PQAAAAAOvP4+cOOvvAAAAABejj0/iofcPQAAAADDNlA/kCQhvAAAAACDTno/BjqyvQAAAAD8jSc/7F0wvgAAAACi1SE/dah/vQAAAAA7Ubo+hflnPQAAAADxFrc+ANZXuwAAAAAALs49cNFavQAAAADFeQu+MGWDPQAAAACrhXW+hTZZvgAAAAD9Ndq+XEhyvgAAAAB08Rm/AOGjOQAAAAAKtze/mE8QvgAAAABy22u//3///////7//f/////+by/9//////0fo/3////7//7//f/////8I5/9////o5P+//3//////u9b/f///Tbv/v/9//////3XV/3//////X8r/f///9sj/v/9///////3C/3///2ie/7//f/////+h4/9////q0v+//3///////7//f///lPX/v/9///9i4v+//3//////H8P/f//////G2v9//////9zJ")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="Animation" id="Animation_7l375"]
+resource_name = "KeyAction"
+length = 4.58333
+tracks/0/type = "blend_shape"
+tracks/0/imported = true
+tracks/0/enabled = true
+tracks/0/path = NodePath("Plane_001:Key 1")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0.0416667, 1, 0, 0.0833333, 1, 0.0553936, 0.125, 1, 0.198251, 0.166667, 1, 0.393586, 0.208333, 1, 0.606414, 0.25, 1, 0.801749, 0.291667, 1, 0.944606, 0.333333, 1, 1, 0.375, 1, 0.98877, 0.416667, 1, 0.957031, 0.458333, 1, 0.907715, 0.5, 1, 0.84375, 0.541667, 1, 0.768066, 0.583333, 1, 0.683594, 0.625, 1, 0.593262, 0.708333, 1, 0.406738, 0.75, 1, 0.316406, 0.791667, 1, 0.231934, 0.833333, 1, 0.15625, 0.875, 1, 0.0922852, 0.916667, 1, 0.0429688, 0.958333, 1, 0.0112305, 1, 1, 0, 1.04167, 1, 0.0168411, 1.08333, 1, 0.0637232, 1.125, 1, 0.135184, 1.16667, 1, 0.225762, 1.20833, 1, 0.329995, 1.25, 1, 0.442421, 1.29167, 1, 0.557578, 1.33333, 1, 0.670005, 1.375, 1, 0.774238, 1.41667, 1, 0.864816, 1.45833, 1, 0.936277, 1.5, 1, 0.983159, 1.54167, 1, 1, 1.58333, 1, 0.963994, 1.625, 1, 0.871137, 1.66667, 1, 0.744169, 1.70833, 1, 0.605831, 1.75, 1, 0.478863, 1.79167, 1, 0.386006, 1.83333, 1, 0.35, 1.875, 1, 0.365107, 1.91667, 1, 0.404068, 1.95833, 1, 0.457342, 2, 1, 0.515386, 2.04167, 1, 0.568659, 2.08333, 1, 0.60762, 2.125, 1, 0.622727, 2.16667, 1, 0.601372, 2.20833, 1, 0.544139, 2.25, 1, 0.461279, 2.29167, 1, 0.363044, 2.33333, 1, 0.259683, 2.375, 1, 0.161448, 2.41667, 1, 0.0785884, 2.45833, 1, 0.0213556, 2.5, 1, 0, 2.54167, 1, 0.0174364, 2.58333, 1, 0.0647637, 2.625, 1, 0.134509, 2.66667, 1, 0.2192, 2.75, 1, 0.403527, 2.79167, 1, 0.488218, 2.83333, 1, 0.557964, 2.875, 1, 0.605291, 2.91667, 1, 0.622727, 2.95833, 1, 0.608223, 3, 1, 0.568455, 3.04167, 1, 0.509036, 3.08333, 1, 0.435582, 3.125, 1, 0.353705, 3.16667, 1, 0.269022, 3.20833, 1, 0.187146, 3.25, 1, 0.113691, 3.29167, 1, 0.0542723, 3.33333, 1, 0.0145038, 3.375, 1, 0, 3.41667, 1, 0.000159308, 3.45833, 1, 0.00127446, 3.5, 1, 0.00430132, 3.54167, 1, 0.0101957, 3.58333, 1, 0.0199135, 3.625, 1, 0.0344106, 3.66667, 1, 0.0546427, 3.70833, 1, 0.0815658, 3.75, 1, 0.116136, 3.79167, 1, 0.159308, 3.83333, 1, 0.212039, 3.875, 1, 0.275285, 3.91667, 1, 0.35, 3.95833, 1, 0.439769, 4, 1, 0.542428, 4.04167, 1, 0.650316, 4.08333, 1, 0.755769, 4.125, 1, 0.851127, 4.16667, 1, 0.928726, 4.20833, 1, 0.980904, 4.25, 1, 1, 4.29167, 1, 0.957031, 4.33333, 1, 0.84375, 4.375, 1, 0.683594, 4.45833, 1, 0.316406, 4.5, 1, 0.15625, 4.54167, 1, 0.0429689, 4.58333, 1, 0)
+tracks/1/type = "blend_shape"
+tracks/1/imported = true
+tracks/1/enabled = true
+tracks/1/path = NodePath("Plane_001:Key 2")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0.0416667, 1, 0, 0.0833333, 1, 0.0112305, 0.125, 1, 0.0429688, 0.166667, 1, 0.0922852, 0.208333, 1, 0.15625, 0.25, 1, 0.231934, 0.291667, 1, 0.316406, 0.333333, 1, 0.406738, 0.416667, 1, 0.593262, 0.458333, 1, 0.683594, 0.5, 1, 0.768066, 0.541667, 1, 0.84375, 0.583333, 1, 0.907715, 0.625, 1, 0.957031, 0.666667, 1, 0.98877, 0.708333, 1, 1, 0.75, 1, 0.983159, 0.791667, 1, 0.936277, 0.833333, 1, 0.864816, 0.875, 1, 0.774238, 0.916667, 1, 0.670005, 0.958333, 1, 0.557579, 1, 1, 0.442421, 1.04167, 1, 0.329995, 1.08333, 1, 0.225762, 1.125, 1, 0.135184, 1.16667, 1, 0.0637231, 1.20833, 1, 0.0168413, 1.25, 1, 0, 1.29167, 1, 0.0125894, 1.33333, 1, 0.0478399, 1.375, 1, 0.101975, 1.41667, 1, 0.171217, 1.45833, 1, 0.251789, 1.5, 1, 0.339915, 1.58333, 1, 0.523721, 1.625, 1, 0.611847, 1.66667, 1, 0.69242, 1.70833, 1, 0.761662, 1.75, 1, 0.815796, 1.79167, 1, 0.851047, 1.83333, 1, 0.863636, 1.875, 1, 0.85738, 1.91667, 1, 0.838947, 1.95833, 1, 0.808842, 2, 1, 0.767572, 2.04167, 1, 0.715641, 2.08333, 1, 0.653555, 2.125, 1, 0.581818, 2.16667, 1, 0.501505, 2.20833, 1, 0.415966, 2.25, 1, 0.329119, 2.29167, 1, 0.244882, 2.33333, 1, 0.167174, 2.375, 1, 0.0999129, 2.41667, 1, 0.0470181, 2.45833, 1, 0.0124076, 2.5, 1, 0, 2.54167, 1, 0.0162909, 2.58333, 1, 0.0605091, 2.625, 1, 0.125673, 2.66667, 1, 0.2048, 2.75, 1, 0.377018, 2.79167, 1, 0.456146, 2.83333, 1, 0.521309, 2.875, 1, 0.565527, 2.91667, 1, 0.581818, 2.95833, 1, 0.568267, 3, 1, 0.531111, 3.04167, 1, 0.475596, 3.08333, 1, 0.406967, 3.125, 1, 0.330469, 3.16667, 1, 0.251349, 3.20833, 1, 0.174852, 3.25, 1, 0.106222, 3.29167, 1, 0.050707, 3.33333, 1, 0.013551, 3.375, 1, 0, 3.41667, 1, 0.0145446, 3.45833, 1, 0.0550337, 3.5, 1, 0.11675, 3.54167, 1, 0.194977, 3.58333, 1, 0.284996, 3.625, 1, 0.382091, 3.66667, 1, 0.481545, 3.70833, 1, 0.57864, 3.75, 1, 0.66866, 3.79167, 1, 0.746886, 3.83333, 1, 0.808603, 3.875, 1, 0.849092, 3.91667, 1, 0.863636, 3.95833, 1, 0.853937, 4, 1, 0.826527, 4.04167, 1, 0.783936, 4.08333, 1, 0.728693, 4.125, 1, 0.66333, 4.16667, 1, 0.590376, 4.20833, 1, 0.512362, 4.29167, 1, 0.351274, 4.33333, 1, 0.27326, 4.375, 1, 0.200306, 4.41667, 1, 0.134943, 4.45833, 1, 0.0797007, 4.5, 1, 0.0371094, 4.54167, 1, 0.00969899, 4.58333, 1, 0)
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ikixv"]
+_data = {
+"KeyAction": SubResource("Animation_7l375")
+}
+
+[node name="f" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -0.017, 2, -17.132)
+
+[node name="Plane_001" type="MeshInstance3D" parent="."]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 1.00882, 0)
+material_override = SubResource("ShaderMaterial_o67fh")
+mesh = SubResource("ArrayMesh_yjpim")
+skeleton = NodePath("")
+"blend_shapes/Key 1" = 0.0
+"blend_shapes/Key 2" = 0.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_ikixv")
+}
+autoplay = "KeyAction"
+speed_scale = 0.1
