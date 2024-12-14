@@ -1,0 +1,6 @@
+[gd_resource type="PanoramaSkyMaterial" load_steps=2 format=3 uid="uid://di53o2e08jnik"]
+
+[ext_resource type="Texture2D" uid="uid://sumv4w64qs8j" path="res://scenes/FightScenes/TheMountain/Skybox/space.jpg" id="1_gof7n"]
+
+[resource]
+panorama = ExtResource("1_gof7n")

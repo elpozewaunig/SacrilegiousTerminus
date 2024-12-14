@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://besrpbginhriq"
+path="res://.godot/imported/Village1.obj-a671072737dda1b34114693408cd080d.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Village1.obj-a671072737dda1b34114693408cd080d.mesh"]
+
+source_file="res://scenes/FightScenes/TheVillage/3DFront/Village1.obj"
+dest_files=["res://.godot/imported/Village1.obj-a671072737dda1b34114693408cd080d.mesh", "res://.godot/imported/Village1.obj-a671072737dda1b34114693408cd080d.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
