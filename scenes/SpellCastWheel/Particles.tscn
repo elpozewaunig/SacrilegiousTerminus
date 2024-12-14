@@ -1,4 +1,6 @@
-[gd_scene load_steps=11 format=3 uid="uid://dee7mh3emdym1"]
+[gd_scene load_steps=12 format=3 uid="uid://dee7mh3emdym1"]
+
+[ext_resource type="Texture2D" uid="uid://cce6jlv17vbvl" path="res://assets/UI/Particl.png" id="1_3riy8"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_3vmtg"]
 
@@ -51,13 +53,15 @@ turbulence_initial_displacement_max = 1.49012e-06
 turbulence_influence_over_life = SubResource("CurveTexture_thxal")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hb0gl"]
+transparency = 1
+albedo_texture = ExtResource("1_3riy8")
 metallic_specular = 0.0
 emission_enabled = true
-emission = Color(1, 0.489241, 0.117624, 1)
+emission = Color(1, 0.313726, 0.223529, 1)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_iqj3q"]
 material = SubResource("StandardMaterial3D_hb0gl")
-size = Vector2(0.06, 0.02)
+size = Vector2(0.06, 0.06)
 
 [node name="Particles" type="RigidBody3D"]
 

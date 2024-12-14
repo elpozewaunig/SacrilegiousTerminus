@@ -5,7 +5,7 @@
 [node name="MainMenu" type="Node3D"]
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.135128, 0.990828, 0, -0.990828, 0.135128, -0.236338, 3.34922, 0.0551509)
+transform = Transform3D(1, 0, 0, 0, 0.135128, 0.990828, 0, -0.990828, 0.135128, 0.0613855, 2.31918, -0.15839)
 
 [node name="SpotLight3D" type="SpotLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -0.092388, 0.995723, 0, -0.995723, -0.092388, 0, 4.25516, 0)
