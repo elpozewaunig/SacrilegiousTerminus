@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://s6fyuocg113s"]
+
+[ext_resource type="PackedScene" uid="uid://bihqmqmhy5qrk" path="res://scenes/FightScenes/TheCountrySide/TheCountrySide.tscn" id="1_p43w5"]
+
+[node name="Main" type="Node3D"]
+
+[node name="TheRift" parent="." instance=ExtResource("1_p43w5")]
