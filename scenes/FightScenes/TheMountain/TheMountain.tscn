@@ -2,7 +2,7 @@
 
 [ext_resource type="ArrayMesh" uid="uid://sdnkjicuuag3" path="res://scenes/FightScenes/TheMountain/3DFront/rock.obj" id="1_2bq0v"]
 [ext_resource type="Texture2D" uid="uid://b4gbrrmj35ey2" path="res://scenes/FightScenes/TheMountain/3DFront/rockbake.png" id="1_3jns5"]
-[ext_resource type="Material" uid="uid://di53o2e08jnik" path="res://scenes/FightScenes/TheMountain/Skybox/SpaceSkyBox.tres" id="5_x87l0"]
+[ext_resource type="Material" uid="uid://cry5503xare3w" path="res://scenes/FightScenes/TheMountain/Skybox/mainmenuskybox.tres" id="3_02s2g"]
 [ext_resource type="Texture2D" uid="uid://clo06kexhsdk5" path="res://scenes/FightScenes/TheMountain/ParallaxLayerTexts/layer1.png" id="6_k1qaw"]
 [ext_resource type="Texture2D" uid="uid://bqessv6mtjusq" path="res://scenes/FightScenes/TheMountain/ParallaxLayerTexts/layer2.png" id="7_3qoeg"]
 [ext_resource type="PackedScene" uid="uid://dtjng8jtop7ed" path="res://assets/sprites/protag/protag.tscn" id="8_48wte"]
@@ -60,7 +60,7 @@ albedo_texture = ExtResource("1_3jns5")
 metallic_specular = 0.0
 
 [sub_resource type="Sky" id="Sky_iusol"]
-sky_material = ExtResource("5_x87l0")
+sky_material = ExtResource("3_02s2g")
 
 [sub_resource type="Environment" id="Environment_055ba"]
 background_mode = 2
