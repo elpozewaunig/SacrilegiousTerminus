@@ -18,6 +18,7 @@ extends Node
 @export var mainMenuSene : PackedScene
 @export var credits : PackedScene
 @export var pauseScene : PackedScene
+@export var mainMenuTutorial: PackedScene
 
 @export_group("Loading Screen")
 @export var loadingScene : PackedScene
