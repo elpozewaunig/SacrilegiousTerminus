@@ -804,7 +804,7 @@ script = ExtResource("14_wpcgj")
 playerWheel = NodePath("ManualWheel")
 opponentWheel = NodePath("AutomaticWheel")
 hasProgressBar = true
-timeForRoud = 20
+timeForRoud = 17
 
 [node name="AutomaticWheel" type="Node3D" parent="roundManager" node_paths=PackedStringArray("innerRing", "middleRing")]
 transform = Transform3D(0.01, 0, 0, 0, -3.61999e-08, -0.01, 0, 0.01, -3.61999e-08, 1.08, 1.16, -1.496)
