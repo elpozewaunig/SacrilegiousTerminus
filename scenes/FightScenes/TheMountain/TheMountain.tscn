@@ -56,7 +56,7 @@ transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, -242.35, -87.25, -643.2
 texture = ExtResource("7_3qoeg")
 
 [node name="f" parent="." instance=ExtResource("8_1773n")]
-transform = Transform3D(3.03074, -3.6119, 1.57881e-07, 0, -2.06099e-07, -4.715, 3.6119, 3.03074, -1.32478e-07, 99.208, 33.988, -130.859)
+transform = Transform3D(3.03074, -3.6119, 1.57881e-07, 0, -2.06099e-07, -4.715, 3.6119, 3.03074, -1.32478e-07, 62.5352, 33.988, -57.5611)
 
 [node name="Angle2" parent="." instance=ExtResource("8_5qb5g")]
 transform = Transform3D(0.669131, -0.177265, -0.721693, 0, 0.971134, -0.238533, 0.743145, 0.15961, 0.649816, 16.694, 6.095, -36.692)
