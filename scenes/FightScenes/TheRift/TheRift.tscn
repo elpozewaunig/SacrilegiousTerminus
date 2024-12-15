@@ -195,10 +195,22 @@ tracks/11/path = NodePath("roundManager/AutomaticWheel:visible")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/keys = {
-"times": PackedFloat32Array(19.8667, 20.9),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0.233333, 19.6333, 20.9),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [false, true]
+"values": [false, false, true]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("roundManager/ManualWheel:visible")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0.966667),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_3557y"]
@@ -333,7 +345,19 @@ tracks/10/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [false]
+"values": [true]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("roundManager/ManualWheel:visible")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0.0666667),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_uil50"]
@@ -417,7 +441,6 @@ timeForRoud = 20
 
 [node name="AutomaticWheel" parent="roundManager" instance=ExtResource("9_hn1ih")]
 transform = Transform3D(3.565, 0, 0, 0, 2.92384, -2.0397, 0, 2.0397, 2.92384, 0.005, 2.95, -8.201)
-visible = false
 
 [node name="ManualWheel" parent="roundManager" instance=ExtResource("10_f0vt0")]
 transform = Transform3D(4.52, 0, 0, 0, 1.75884, -4.16376, 0, 4.16376, 1.75884, 0, -1.63, -18.407)
