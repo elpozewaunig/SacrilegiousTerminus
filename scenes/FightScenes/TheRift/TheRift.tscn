@@ -408,7 +408,7 @@ tracks/14/path = NodePath("Camera3D/CutsceneMusic:volume_db")
 tracks/14/interp = 1
 tracks/14/loop_wrap = true
 tracks/14/keys = {
-"times": PackedFloat32Array(24.4333, 25.1),
+"times": PackedFloat32Array(21.8, 25.1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [-10.0, -80.0]
