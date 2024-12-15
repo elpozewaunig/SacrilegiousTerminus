@@ -58,14 +58,14 @@ func _process(_delta: float) -> void:
 		pass
 		match shifts[0]:
 			0:
-				SceneManager.change_scene(SceneManager.introScene, true)
+				SceneManager.change_scene(SceneManager.introScene, false)
 				print(\"start\")
 			1: 
 				SceneManager.quit_game()	
 				
 			2: 
 				print(\"Settings\")
-				SceneManager.change_scene(SceneManager.mainMenuSene, true)
+				SceneManager.change_scene(SceneManager.mainMenuSene, false)
 			 
 	
 	if Input.is_action_just_pressed(\"input-before\"):
