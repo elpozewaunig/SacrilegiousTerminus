@@ -1,26 +1,25 @@
-[gd_scene load_steps=3 format=3 uid="uid://dqobsf7e8f7y3"]
+[gd_scene load_steps=4 format=3 uid="uid://bbqw6wj7d55e"]
 
-[sub_resource type="FontFile" id="FontFile_w4a8p"]
-cache/0/100/0/ascent = 0.0
-cache/0/100/0/descent = 0.0
-cache/0/100/0/underline_position = 0.0
-cache/0/100/0/underline_thickness = 0.0
-cache/0/100/0/scale = 1.0
-cache/0/16/0/ascent = 0.0
-cache/0/16/0/descent = 0.0
-cache/0/16/0/underline_position = 0.0
-cache/0/16/0/underline_thickness = 0.0
-cache/0/16/0/scale = 1.0
-cache/0/200/0/ascent = 0.0
-cache/0/200/0/descent = 0.0
-cache/0/200/0/underline_position = 0.0
-cache/0/200/0/underline_thickness = 0.0
-cache/0/200/0/scale = 1.0
+[ext_resource type="PackedScene" uid="uid://dgurl1u1gb0ly" path="res://scenes/DialogScene.tscn" id="1_nn72u"]
+[ext_resource type="Texture2D" uid="uid://cbatqhg6u1i6m" path="res://assets/cutscenebackgrounds/youlose.jpg" id="2_db0x7"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_vhii3"]
-font = SubResource("FontFile_w4a8p")
-font_size = 200
-font_color = Color(1, 0, 0, 1)
+[sub_resource type="GDScript" id="GDScript_rsjad"]
+script/source = "extends Control
+
+@onready var dialogScene: Control = $DialogScene
+
+var DIALOG: Array[DialogOption] = [
+DialogOption.new(DialogOption.DIALOG_ENTITY.NARRATOR, \"You failed your mission, so the world lived to see another day\"),
+]
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	dialogScene.showDialog(DIALOG)
+	
+func _on_dialog_scene_dialog_completed() -> void:
+	# load next Scene = fightingScene
+	SceneManager.change_scene(SceneManager.mainMenuSene, true)
+"
 
 [node name="Death" type="Control"]
 layout_mode = 3
@@ -29,19 +28,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = SubResource("GDScript_rsjad")
 
-[node name="Label" type="Label" parent="."]
+[node name="DialogScene" parent="." instance=ExtResource("1_nn72u")]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -241.5
-offset_top = -50.0
-offset_right = 241.5
-offset_bottom = 50.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "YOU DIED"
-label_settings = SubResource("LabelSettings_vhii3")
+background = ExtResource("2_db0x7")
+
+[connection signal="dialogCompleted" from="DialogScene" to="." method="_on_dialog_scene_dialog_completed"]

@@ -1,8 +1,24 @@
-[gd_scene load_steps=2 format=3 uid="uid://bh7x518qp5kka"]
+[gd_scene load_steps=4 format=3 uid="uid://51126e6b5hp2"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_3xxwn"]
-font_size = 100
-font_color = Color(0.964989, 0.38478, 0, 1)
+[ext_resource type="PackedScene" uid="uid://dgurl1u1gb0ly" path="res://scenes/DialogScene.tscn" id="1_3g24g"]
+[ext_resource type="Texture2D" uid="uid://de0oh122gsoku" path="res://assets/cutscenebackgrounds/ending.jpg" id="2_gfyqx"]
+
+[sub_resource type="GDScript" id="GDScript_m0rce"]
+script/source = "extends Control
+
+@onready var dialogScene: Control = $DialogScene
+
+var DIALOG: Array[DialogOption] = [
+DialogOption.new(DialogOption.DIALOG_ENTITY.NARRATOR, \"Satan congured the world!\"),
+]
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	dialogScene.showDialog(DIALOG)
+	
+func _on_dialog_scene_dialog_completed() -> void:
+	SceneManager.change_scene(SceneManager.mainMenuSene, true)
+"
 
 [node name="Win" type="Control"]
 layout_mode = 3
@@ -11,19 +27,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = SubResource("GDScript_m0rce")
 
-[node name="Label" type="Label" parent="."]
+[node name="DialogScene" parent="." instance=ExtResource("1_3g24g")]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -11.5
-offset_right = 20.0
-offset_bottom = 11.5
-grow_horizontal = 2
-grow_vertical = 2
-text = "SATAN CONGURED THE WORLD ;)"
-label_settings = SubResource("LabelSettings_3xxwn")
+background = ExtResource("2_gfyqx")
+
+[connection signal="dialogCompleted" from="DialogScene" to="." method="_on_dialog_scene_dialog_completed"]
