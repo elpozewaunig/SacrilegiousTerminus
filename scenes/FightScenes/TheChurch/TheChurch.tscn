@@ -624,7 +624,7 @@ tracks/25/path = NodePath("AnimationPlayer/cutscenemusic:volume_db")
 tracks/25/interp = 1
 tracks/25/loop_wrap = true
 tracks/25/keys = {
-"times": PackedFloat32Array(11.85, 13.9),
+"times": PackedFloat32Array(13.6, 14.1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [-10.0, -80.0]
