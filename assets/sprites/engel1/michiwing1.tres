@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://bxm13mm7binlh"]
+
+[ext_resource type="Texture2D" uid="uid://d1rfojq1tfq43" path="res://assets/sprites/engel1/michiLW.png" id="1_ryubw"]
+
+[resource]
+transparency = 1
+cull_mode = 2
+shading_mode = 0
+albedo_texture = ExtResource("1_ryubw")

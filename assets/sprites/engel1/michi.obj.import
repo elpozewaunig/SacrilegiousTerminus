@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cq72vxlrkxxre"
+path="res://.godot/imported/michi.obj-ff1698188d1d90b2408f8c20bda39603.mesh"
+
+[deps]
+
+files=["res://.godot/imported/michi.obj-ff1698188d1d90b2408f8c20bda39603.mesh"]
+
+source_file="res://assets/sprites/engel1/michi.obj"
+dest_files=["res://.godot/imported/michi.obj-ff1698188d1d90b2408f8c20bda39603.mesh", "res://.godot/imported/michi.obj-ff1698188d1d90b2408f8c20bda39603.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

@@ -1,15 +1,15 @@
 [gd_scene load_steps=15 format=3 uid="uid://bihqmqmhy5qrk"]
 
-[ext_resource type="Texture2D" uid="uid://0xx8lsd3qsf7" path="res://scenes/FightScenes/placeholders/14526816-strichmannchen-stickman-symbol-piktogramm-einfach-vektor-removebg-preview.png" id="1_jmr8u"]
-[ext_resource type="Texture2D" uid="uid://c1jpuah8esq03" path="res://scenes/FightScenes/placeholders/tweet-shiraaa-picsart-02-06-06-47-29-removebg-preview.png" id="2_8jbw0"]
 [ext_resource type="Texture2D" uid="uid://btjnrke4c1pf3" path="res://scenes/FightScenes/TheMountain/Skybox/spacenopink.jpg" id="3_g3qk6"]
 [ext_resource type="ArrayMesh" uid="uid://bk3lbs6yirhyf" path="res://scenes/FightScenes/TheCountrySide/CountrySide6.obj" id="4_bhs08"]
 [ext_resource type="Material" uid="uid://dxvag2u3lnpos" path="res://scenes/FightScenes/TheCountrySide/materials/mctrees1.tres" id="5_ctxml"]
 [ext_resource type="Material" uid="uid://b32y7a4ql1syx" path="res://scenes/FightScenes/TheCountrySide/materials/mctrees2.tres" id="6_ocwp7"]
 [ext_resource type="Material" uid="uid://b2secrb3fmurf" path="res://scenes/FightScenes/TheCountrySide/materials/ground.tres" id="7_nre7i"]
 [ext_resource type="Material" uid="uid://o78cu66xwawa" path="res://scenes/FightScenes/TheCountrySide/materials/leaf.tres" id="8_1hqu0"]
+[ext_resource type="PackedScene" uid="uid://dtjng8jtop7ed" path="res://assets/sprites/protag/protag.tscn" id="9_r8s6v"]
 [ext_resource type="Material" uid="uid://cikbnrbgbhmk2" path="res://scenes/FightScenes/TheCountrySide/materials/trunks.tres" id="9_vr3ul"]
 [ext_resource type="Texture2D" uid="uid://mnxcbjjfsn4n" path="res://scenes/FightScenes/TheCountrySide/materials/mctreemulti.png" id="10_h5gba"]
+[ext_resource type="PackedScene" uid="uid://ccvejgfug7j0b" path="res://assets/sprites/engel1/angel1.tscn" id="10_xtemg"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_ow5hs"]
 panorama = ExtResource("3_g3qk6")
@@ -35,14 +35,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.147749, 0.0364075, -0.01626
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.968583, -0.24869, 0, 0.24869, 0.968583, 1.016, -1.154, 2.384)
 fov = 61.2
-
-[node name="Protag" type="Sprite3D" parent="."]
-transform = Transform3D(0.182756, 0.0256697, -0.0629777, -0.0320894, 0.191759, -0.0149602, 0.0599616, 0.0243846, 0.183943, 1.61, -1.078, 1.562)
-texture = ExtResource("1_jmr8u")
-
-[node name="Enemy" type="Sprite3D" parent="."]
-transform = Transform3D(0.357826, 0, -0.0395044, 0, 0.36, 0, 0.0395044, 0, 0.357826, 0.489, 0.044, -2.186)
-texture = ExtResource("2_8jbw0")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_055ba")
@@ -88,3 +80,9 @@ texture = ExtResource("10_h5gba")
 [node name="Sprite3D4" type="Sprite3D" parent="Node3D"]
 transform = Transform3D(12.56, 0, 0, 0, 12.1946, 3.00769, 0, -3.00769, 12.1946, 220.489, 249.972, -142.52)
 texture = ExtResource("10_h5gba")
+
+[node name="Protag" parent="." instance=ExtResource("9_r8s6v")]
+transform = Transform3D(-0.959072, 0, -0.283162, 0, 1, 0, 0.283162, 0, -0.959072, 2.31883, -0.709036, 2.14352)
+
+[node name="Angel1" parent="." instance=ExtResource("10_xtemg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.729042, -0.0364075, -3.45947)

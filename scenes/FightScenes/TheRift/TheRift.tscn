@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://icf506yysjwv"]
 
-[ext_resource type="Texture2D" uid="uid://0xx8lsd3qsf7" path="res://scenes/FightScenes/placeholders/14526816-strichmannchen-stickman-symbol-piktogramm-einfach-vektor-removebg-preview.png" id="2_8p3rk"]
-[ext_resource type="PackedScene" path="res://scenes/FightScenes/rifttear.tscn" id="3_euu3m"]
+[ext_resource type="PackedScene" uid="uid://ucwlwrhkaopg" path="res://scenes/FightScenes/rifttear.tscn" id="3_euu3m"]
+[ext_resource type="PackedScene" uid="uid://dtjng8jtop7ed" path="res://assets/sprites/protag/protag.tscn" id="4_vbt65"]
 [ext_resource type="Texture2D" uid="uid://sumv4w64qs8j" path="res://scenes/FightScenes/TheMountain/Skybox/space.jpg" id="5_85042"]
 [ext_resource type="PackedScene" uid="uid://r020t5g1merr" path="res://gpu_particles_3d.tscn" id="6_knecr"]
 
@@ -31,10 +31,6 @@ exposure_multiplier = 0.437
 transform = Transform3D(1, 0, 0, 0, 0.992546, -0.121869, 0, 0.121869, 0.992546, 0.23, 0.415, -0.435)
 fov = 50.0
 
-[node name="Protag" type="Sprite3D" parent="."]
-transform = Transform3D(0.195, 0, 0, 0, 0.195, 0, 0, 0, 0.195, -0.941, 0.101, -3.252)
-texture = ExtResource("2_8p3rk")
-
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_055ba")
 camera_attributes = SubResource("CameraAttributesPractical_nx174")
@@ -43,3 +39,6 @@ camera_attributes = SubResource("CameraAttributesPractical_nx174")
 
 [node name="GPUParticles3D" parent="." instance=ExtResource("6_knecr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.426009, 0, -15.9468)
+
+[node name="Protag" parent="." instance=ExtResource("4_vbt65")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.494565, 0, -3.53006)

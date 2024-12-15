@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://ccvejgfug7j0b"]
+
+[ext_resource type="ArrayMesh" uid="uid://cq72vxlrkxxre" path="res://assets/sprites/engel1/michi.obj" id="1_0vq5b"]
+[ext_resource type="Material" uid="uid://pc6up2rjq71h" path="res://assets/sprites/engel1/michiwingmaterial.tres" id="2_c0l4j"]
+[ext_resource type="Material" uid="uid://bxm13mm7binlh" path="res://assets/sprites/engel1/michiwing1.tres" id="3_2gjwf"]
+[ext_resource type="Material" uid="uid://ligw4v00ne36" path="res://assets/sprites/engel1/michiwing2.tres" id="4_kotxs"]
+
+[node name="Angel1" type="Node3D"]
+
+[node name="Michi" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.0655926, 0, 0.3157)
+mesh = ExtResource("1_0vq5b")
+surface_material_override/0 = ExtResource("2_c0l4j")
+
+[node name="Michi2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -0.368457, 0.28435, 0.166523)
+mesh = ExtResource("1_0vq5b")
+surface_material_override/0 = ExtResource("3_2gjwf")
+
+[node name="Michi3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.182561, 0.28435, 0.166523)
+mesh = ExtResource("1_0vq5b")
+surface_material_override/0 = ExtResource("4_kotxs")

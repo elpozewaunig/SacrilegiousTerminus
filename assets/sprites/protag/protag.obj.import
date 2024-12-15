@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://crftt0iilnlmc"
+path="res://.godot/imported/protag.obj-cf3c27dc84b2d9d4aa0a54780e3fe331.mesh"
+
+[deps]
+
+files=["res://.godot/imported/protag.obj-cf3c27dc84b2d9d4aa0a54780e3fe331.mesh"]
+
+source_file="res://assets/sprites/protag/protag.obj"
+dest_files=["res://.godot/imported/protag.obj-cf3c27dc84b2d9d4aa0a54780e3fe331.mesh", "res://.godot/imported/protag.obj-cf3c27dc84b2d9d4aa0a54780e3fe331.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

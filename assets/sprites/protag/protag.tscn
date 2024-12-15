@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://dtjng8jtop7ed"]
+
+[ext_resource type="Material" uid="uid://iqgh384udxnf" path="res://assets/sprites/protag/protagmat.tres" id="1_rw721"]
+[ext_resource type="ArrayMesh" uid="uid://crftt0iilnlmc" path="res://assets/sprites/protag/protag.obj" id="2_n38yr"]
+
+[node name="Protag" type="Node3D"]
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+
+[node name="Protag" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+material_override = ExtResource("1_rw721")
+mesh = ExtResource("2_n38yr")

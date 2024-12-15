@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://b56djjhxj0crg"]
+
+[ext_resource type="Material" uid="uid://b2ywg1kxw2y5y" path="res://assets/sprites/robert/robertmat.tres" id="1_kouts"]
+[ext_resource type="ArrayMesh" uid="uid://mdtygi144csf" path="res://assets/sprites/robert/robert.obj" id="2_nusmj"]
+
+[node name="Robert" type="Node3D"]
+
+[node name="Robert" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+material_override = ExtResource("1_kouts")
+mesh = ExtResource("2_nusmj")

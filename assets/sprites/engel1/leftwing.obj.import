@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://fuso1oj4v8y"
+path="res://.godot/imported/leftwing.obj-00745aa834b8b03f27f5d9896259b93e.mesh"
+
+[deps]
+
+files=["res://.godot/imported/leftwing.obj-00745aa834b8b03f27f5d9896259b93e.mesh"]
+
+source_file="res://assets/sprites/engel1/leftwing.obj"
+dest_files=["res://.godot/imported/leftwing.obj-00745aa834b8b03f27f5d9896259b93e.mesh", "res://.godot/imported/leftwing.obj-00745aa834b8b03f27f5d9896259b93e.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
