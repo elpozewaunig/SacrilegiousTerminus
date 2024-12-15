@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://icf506yysjwv"]
+[gd_scene load_steps=26 format=3 uid="uid://icf506yysjwv"]
 
 [ext_resource type="PackedScene" uid="uid://d3e5kcc82viwq" path="res://scenes/FightScenes/rifttear.tscn" id="3_euu3m"]
 [ext_resource type="PackedScene" uid="uid://dtjng8jtop7ed" path="res://assets/sprites/protag/protag.tscn" id="4_vbt65"]
@@ -12,7 +12,6 @@
 [ext_resource type="PackedScene" uid="uid://ccelpifkgb5xq" path="res://scenes/SpellCastWheel/SpellCastWheel.tscn" id="10_f0vt0"]
 [ext_resource type="PackedScene" uid="uid://dvygun7k256ji" path="res://scenes/HudOverlay.tscn" id="11_dkq56"]
 [ext_resource type="Texture2D" uid="uid://bqiwd7amcn3cr" path="res://scenes/FightScenes/TheChurch/black.png" id="12_lewcg"]
-[ext_resource type="AudioStream" uid="uid://c50px6he1apgi" path="res://assets/music/battle1_loop.ogg" id="13_1xtld"]
 
 [sub_resource type="GDScript" id="GDScript_0bvbl"]
 resource_name = "riftController"
@@ -464,11 +463,6 @@ libraries = {
 "": SubResource("AnimationLibrary_wogte")
 }
 autoplay = "space"
-
-[node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("13_1xtld")
-autoplay = true
-parameters/looping = true
 
 [connection signal="playerWon" from="roundManager" to="." method="_on_round_manager_player_won"]
 [connection signal="updateProgressBarTo" from="roundManager" to="roundManager/HudOverlay" method="_on_round_manager_update_progress_bar_to"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://coj8cff6bnd1d"]
+[gd_scene load_steps=46 format=3 uid="uid://coj8cff6bnd1d"]
 
 [ext_resource type="Script" path="res://scenes/FightScenes/TheChurch/theChurchController.gd" id="1_dt4df"]
 [ext_resource type="ArrayMesh" uid="uid://mjowk7pbf55q" path="res://scenes/FightScenes/TheChurch/3DFront/Church2.obj" id="2_kdy04"]
@@ -34,7 +34,6 @@
 [ext_resource type="Texture2D" uid="uid://b8ojtanlxaubm" path="res://assets/sprites/sternzeichen/virgo.png" id="34_2lixm"]
 [ext_resource type="AudioStream" uid="uid://xrk21k534jba" path="res://assets/sounds/wheel_turn.wav" id="35_5ays5"]
 [ext_resource type="Texture2D" uid="uid://cuw82befexakv" path="res://assets/UI/goodwheel.png" id="36_7p6h6"]
-[ext_resource type="AudioStream" uid="uid://c50px6he1apgi" path="res://assets/music/battle1_loop.ogg" id="36_lox8o"]
 [ext_resource type="Texture2D" uid="uid://deiox7dda12bd" path="res://assets/sprites/tarot symbole/Pentagram.png" id="38_nklhs"]
 
 [sub_resource type="Animation" id="Animation_f7oct"]
@@ -862,11 +861,6 @@ stream = ExtResource("35_5ays5")
 [node name="Sprite3D6" type="Sprite3D" parent="."]
 transform = Transform3D(0.335, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 1.153, 4.267, -5.388)
 texture = ExtResource("22_iyxtr")
-
-[node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("36_lox8o")
-autoplay = true
-parameters/looping = true
 
 [connection signal="playerWon" from="roundManager" to="." method="_on_round_manager_player_won"]
 [connection signal="updateProgressBarTo" from="roundManager" to="roundManager/HudOverlay" method="_on_round_manager_update_progress_bar_to"]
