@@ -575,7 +575,7 @@ script = ExtResource("11_f7krs")
 playerWheel = NodePath("ManualWheel")
 opponentWheel = NodePath("AutomaticWheel")
 hasProgressBar = true
-timeForRoud = 20
+timeForRoud = 8
 
 [node name="AutomaticWheel" type="Node3D" parent="roundManager" node_paths=PackedStringArray("innerRing")]
 transform = Transform3D(0.0973712, -0.00100819, 0.995247, 0.737738, 0.67129, -0.0714974, -0.668028, 0.741193, 0.066108, 1.919, 0.945, -2.175)
