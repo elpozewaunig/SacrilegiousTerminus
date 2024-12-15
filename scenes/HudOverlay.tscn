@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://dvygun7k256ji"]
+[gd_scene load_steps=18 format=3 uid="uid://dvygun7k256ji"]
 
 [ext_resource type="Script" path="res://code/hudOverlay.gd" id="1_nlpga"]
 [ext_resource type="Script" path="res://code/dialogScript.gd" id="2_p562y"]
@@ -27,6 +27,10 @@ script/source = "extends TextureProgressBar
 func update(score: float, maxScore: int) -> void:
 	value = score * 100 / maxScore
 "
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eh6jv"]
+content_margin_left = 8.0
+bg_color = Color(0, 0, 0, 0.788235)
 
 [sub_resource type="FontFile" id="FontFile_ch2gh"]
 subpixel_positioning = 0
@@ -149,13 +153,14 @@ script = SubResource("GDScript_covti")
 
 [node name="TimerLabel" type="Label" parent="IngameLayer"]
 unique_name_in_owner = true
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -167.0
-offset_right = 167.0
-offset_bottom = 100.0
-grow_horizontal = 2
+anchors_preset = -1
+anchor_left = 0.01
+anchor_top = 0.01
+anchor_right = 0.01
+anchor_bottom = 0.01
+offset_right = 334.0
+offset_bottom = 134.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_eh6jv")
 text = "0:00:00"
 label_settings = SubResource("LabelSettings_86xpp")
 script = SubResource("GDScript_7wjds")
