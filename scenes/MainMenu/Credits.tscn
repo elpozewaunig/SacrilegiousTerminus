@@ -1,6 +1,7 @@
-[gd_scene load_steps=24 format=3 uid="uid://dtmyikqg47gst"]
+[gd_scene load_steps=25 format=3 uid="uid://o142xdjjr58r"]
 
 [ext_resource type="PackedScene" uid="uid://dqtcwmca5ongg" path="res://scenes/SpellCastWheel/AutomaticWheel.tscn" id="1_6ietl"]
+[ext_resource type="Script" path="res://scenes/MainMenu/creditsController.gd" id="1_d66vi"]
 [ext_resource type="Texture2D" uid="uid://c3gwugk5p7d25" path="res://assets/UI/Q1Glow.png" id="1_op6y3"]
 [ext_resource type="Texture2D" uid="uid://cwipda4lseqyo" path="res://assets/UI/David.png" id="2_7etpv"]
 [ext_resource type="Texture2D" uid="uid://bdqyeba8m64k6" path="res://assets/UI/Markus.png" id="3_5jc48"]
@@ -113,6 +114,7 @@ _data = {
 }
 
 [node name="Credits" type="Node3D"]
+script = ExtResource("1_d66vi")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0373757, 1.18043)
