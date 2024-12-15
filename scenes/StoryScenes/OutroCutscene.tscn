@@ -9,13 +9,15 @@ script/source = "extends Node3D
 @onready var dialogScene: Control = $DialogScene
 
 var DIALOG: Array[DialogOption] = [
-	DialogOption.new(DialogOption.DIALOG_ENTITY.NARRATOR, \"Example Text\"),
+	DialogOption.new(DialogOption.DIALOG_ENTITY.NARRATOR, \"As you open the rift, the black-violet light pulses violently, and the ground trembles beneath your feet.\"),
+	DialogOption.new(DialogOption.DIALOG_ENTITY.PLAYER, \"At last… the gateway to the new world opens. Satan’s will shall be done.\"),
+	DialogOption.new(DialogOption.DIALOG_ENTITY.NARRATOR, \"The crack widens, consuming the sky, and a monstrous roar echoes as creatures from the abyss spill forth.\"),
+	DialogOption.new(DialogOption.DIALOG_ENTITY.NARRATOR, \"The world plunges into chaos as the rift’s power overtakes everything, extinguishing hope and light.\"),
+	DialogOption.new(DialogOption.DIALOG_ENTITY.NARRATOR, \"And thus, the world is doomed, heralding the reign of darkness eternal.\")
 ]
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	dialogScene.setEnemyStartPosition(Vector2(2500,200))
-	dialogScene.setEnemyEndPosition(Vector2(1600,600))
 	dialogScene.showDialog(DIALOG)
 
 

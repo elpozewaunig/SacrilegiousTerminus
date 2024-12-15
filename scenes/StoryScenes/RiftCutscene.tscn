@@ -9,7 +9,14 @@ script/source = "extends Node3D
 @onready var dialogScene: Control = $DialogScene
 
 var DIALOG: Array[DialogOption] = [
-	DialogOption.new(DialogOption.DIALOG_ENTITY.NARRATOR, \"Example Text\"),
+		DialogOption.new(DialogOption.DIALOG_ENTITY.NARRATOR, \"After battling through divine resistance, you stand at the edge of the glowing rift, its black-violet light pulsating with increasing intensity.\"),
+	DialogOption.new(DialogOption.DIALOG_ENTITY.NARRATOR, \"The wind howls around you as the ground trembles violently, the rift seeming to grow in anticipation of your presence.\"),
+	DialogOption.new(DialogOption.DIALOG_ENTITY.PLAYER, \"This is it. The moment I was destined for. The doorway between realms... and the key to Satan's return.
+I must complete the ritual.\"),
+	DialogOption.new(DialogOption.DIALOG_ENTITY.NARRATOR, \"Before you, ancient symbols appear on the ground, glowing crimson as the energy of the rift seeps into the earth.\"),
+	DialogOption.new(DialogOption.DIALOG_ENTITY.NARRATOR, \"A booming voice echoes from the depths of the rift, neither human nor fully comprehensible. It fills you with both dread and exhilaration.\"),
+	DialogOption.new(DialogOption.DIALOG_ENTITY.PLAYER, \"I have vanquished the holy, shattered their light, and silenced their champions. I am ready. Open the gate and let the world be remade.\"),
+	DialogOption.new(DialogOption.DIALOG_ENTITY.NARRATOR, \"The symbols beneath your feet ignite, and a wave of searing energy shoots into the rift, widening its gaping maw.\"),
 ]
 
 # Called when the node enters the scene tree for the first time.

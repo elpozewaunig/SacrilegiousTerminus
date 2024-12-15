@@ -8,12 +8,12 @@ script/source = "extends Node3D
 @onready var hudOverlay: Control = $HudOverlay
 
 var DIALOG: Array[DialogOption] = [
-	DialogOption.new(DialogOption.DIALOG_ENTITY.NARRATOR, \"It was a beautiful day in a village when suddenly a deafening sound cracked the silence and a black violet crack opened in the sky. 
-A man looked up into the sky and started to smile.\"),
-DialogOption.new(DialogOption.DIALOG_ENTITY.PLAYER, \"Finally the day I have long awaited has arrived. The rift is opening and Satan is casting his will upon the world. But First i should go to the church and 
-get rid of the Priest of this town. I don’t want any interferance when the new Lord assends to the earth.\"),
-DialogOption.new(DialogOption.DIALOG_ENTITY.NARRATOR, \"With that thought in mind, you head for the church...\")
-]
+	DialogOption.new(DialogOption.DIALOG_ENTITY.NARRATOR, \"It was a beautiful day in a village when suddenly a deafening sound shattered the silence, and a black-violet crack opened in the sky. 
+A man looked up at the sky and started to smile.\"),
+	DialogOption.new(DialogOption.DIALOG_ENTITY.PLAYER, \"Finally, the day I have long awaited has arrived. The rift is opening, and Satan is casting his will upon the world. But first, I should go to the church and 
+get rid of the priest of this town. I don’t want any interference when the new Lord ascends to the earth.\"),
+	DialogOption.new(DialogOption.DIALOG_ENTITY.NARRATOR, \"With that thought in mind, you head for the church...\")
+];
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

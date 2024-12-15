@@ -20,10 +20,10 @@ var DIALOG: Array[DialogOption] = [
 	DialogOption.new(DialogOption.DIALOG_ENTITY.PLAYER, \"You’re quite confident, considering I just defeated your brother mere seconds ago.\"),
 	DialogOption.new(DialogOption.DIALOG_ENTITY.NARRATOR, \"The angel lets out a low, mirthless laugh, ancient and echoing like the sound of distant chimes.\"),
 	DialogOption.new(DialogOption.DIALOG_ENTITY.ENEMY, \"That one? A shadow of what he was meant to be. A weakling who disgraced his own light. Had I wished, I could have ended him in the briefest of my thoughts.\"),
-	DialogOption.new(DialogOption.DIALOG_ENTITY.NARRATOR, \"His expression hardens, his eyes gleaming with divine wrath\"),
+	DialogOption.new(DialogOption.DIALOG_ENTITY.NARRATOR, \"His expression hardens, his eyes gleaming with divine wrath.\"),
 	DialogOption.new(DialogOption.DIALOG_ENTITY.ENEMY, \"But you… you have earned my full attention. Now, your time has come.\"),
 	DialogOption.new(DialogOption.DIALOG_ENTITY.NARRATOR, \"The air around you grows heavy, as if the heavens themselves bear down upon your very soul. 
-	You begin to feel the crushing pressure radiating from the angel, but instead of fear, a dark grin spreads across your face.\"),
+You begin to feel the crushing pressure radiating from the angel, but instead of fear, a dark grin spreads across your face.\"),
 ]
 
 # Called when the node enters the scene tree for the first time.
