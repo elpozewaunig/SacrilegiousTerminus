@@ -25,7 +25,9 @@ resource_name = "michiMakesProgress"
 script/source = "extends TextureProgressBar	
 
 func update(score: float, maxScore: int) -> void:
-	value = score * 100 / maxScore
+	var percentage: int = floori(score * 100 / maxScore);
+	print(\"Score: %s, MaxScore: %s, Percentage: %s\" % [score, maxScore, percentage])
+	self.value = percentage
 "
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eh6jv"]
@@ -130,23 +132,18 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_6rxup")
 
 [node name="IngameLayer" type="CanvasLayer" parent="."]
 unique_name_in_owner = true
-visible = false
 
 [node name="FightProgressBar" type="TextureProgressBar" parent="IngameLayer"]
 unique_name_in_owner = true
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -1023.0
-offset_top = -1078.0
-offset_right = 977.0
-offset_bottom = 922.0
-grow_horizontal = 2
-grow_vertical = 0
-size_flags_horizontal = 4
-size_flags_vertical = 4
+anchors_preset = -1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -1670.0
+offset_top = -920.0
+offset_right = 330.0
+offset_bottom = 1080.0
+grow_horizontal = 0
+rounded = true
 texture_under = ExtResource("6_5qawj")
 texture_progress = ExtResource("8_ynm7x")
 script = SubResource("GDScript_covti")
