@@ -1,0 +1,33 @@
+[gd_scene load_steps=11 format=3 uid="uid://bnmu8y7sw3xs6"]
+
+[ext_resource type="Script" path="res://code/button_sound_player.gd" id="1_ofhgu"]
+[ext_resource type="AudioStream" uid="uid://dqc624wpuy34p" path="res://assets/sounds/tock/tock_1.ogg" id="2_4wdkh"]
+[ext_resource type="AudioStream" uid="uid://dm6rib54ewpdg" path="res://assets/sounds/tock/tock_2.ogg" id="3_2ls0a"]
+[ext_resource type="AudioStream" uid="uid://wi4wxeiyh8gs" path="res://assets/sounds/tock/tock_3.ogg" id="4_hjheh"]
+[ext_resource type="AudioStream" uid="uid://by8yc2k02hyfm" path="res://assets/sounds/tock/tock_4.ogg" id="5_kb8bi"]
+[ext_resource type="AudioStream" uid="uid://cf6nupy6ltvdj" path="res://assets/sounds/wheel_click/wheel_click_2.ogg" id="6_a34uy"]
+[ext_resource type="AudioStream" uid="uid://bjrc4dyyho47j" path="res://assets/sounds/wheel_click/wheel_click_6.ogg" id="7_lhava"]
+[ext_resource type="AudioStream" uid="uid://o2khwvs0pw75" path="res://assets/sounds/wheel_click/wheel_click_9.ogg" id="8_q35cn"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_w81sf"]
+streams_count = 4
+stream_0/stream = ExtResource("2_4wdkh")
+stream_1/stream = ExtResource("3_2ls0a")
+stream_2/stream = ExtResource("4_hjheh")
+stream_3/stream = ExtResource("5_kb8bi")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_wk7r1"]
+streams_count = 3
+stream_0/stream = ExtResource("6_a34uy")
+stream_1/stream = ExtResource("7_lhava")
+stream_2/stream = ExtResource("8_q35cn")
+
+[node name="ResumeBtn" type="Button"]
+z_index = 20
+text = "Resume"
+script = ExtResource("1_ofhgu")
+hover_sound = SubResource("AudioStreamRandomizer_w81sf")
+click_sound = SubResource("AudioStreamRandomizer_wk7r1")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="pressed" from="." to="." method="_on_pressed"]
