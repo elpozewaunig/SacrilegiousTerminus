@@ -1,22 +1,141 @@
-[gd_scene load_steps=3 format=3 uid="uid://cey20murtyiss"]
+[gd_scene load_steps=18 format=3 uid="uid://cey20murtyiss"]
 
 [ext_resource type="PackedScene" uid="uid://ceft1i1qvo4fl" path="res://scenes/SpellCastWheel/MainMenuWhell.tscn" id="1_ewt1t"]
 [ext_resource type="AudioStream" uid="uid://2pf5cga2akch" path="res://assets/music/loading_loop.ogg" id="2_fi0y8"]
+[ext_resource type="ArrayMesh" uid="uid://dbeddpemneiye" path="res://assets/Chevron.obj" id="3_o50ab"]
+[ext_resource type="Shader" path="res://scenes/FightScenes/TheRift/TheRift.gdshader" id="4_el3ny"]
+[ext_resource type="Texture2D" uid="uid://bqdmlqulrjco2" path="res://scenes/FightScenes/a0001.png" id="5_bp0j2"]
+[ext_resource type="Material" uid="uid://cry5503xare3w" path="res://scenes/FightScenes/TheMountain/Skybox/mainmenuskybox.tres" id="6_esobt"]
+[ext_resource type="Texture2D" uid="uid://clo06kexhsdk5" path="res://scenes/FightScenes/TheMountain/ParallaxLayerTexts/layer1.png" id="7_lxc0g"]
+[ext_resource type="Texture2D" uid="uid://cjfxex8vd3byn" path="res://scenes/FightScenes/glowtry2.png" id="8_vjx6n"]
+[ext_resource type="Texture2D" uid="uid://mnxcbjjfsn4n" path="res://scenes/FightScenes/TheCountrySide/materials/mctreemulti.png" id="9_vunlc"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_f280o"]
+render_priority = 0
+shader = ExtResource("4_el3ny")
+shader_parameter/viewport_texture = ExtResource("5_bp0j2")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ynxxo"]
+shading_mode = 0
+albedo_color = Color(0.226707, 0.226707, 0.226707, 1)
+
+[sub_resource type="Sky" id="Sky_uyae2"]
+sky_material = ExtResource("6_esobt")
+
+[sub_resource type="Environment" id="Environment_7gu80"]
+background_mode = 2
+sky = SubResource("Sky_uyae2")
+sky_rotation = Vector3(-1.53589, 0, 0)
+fog_light_color = Color(0.273481, 0.299251, 0.33976, 1)
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_w2ypg"]
+exposure_multiplier = 1.429
+
+[sub_resource type="Animation" id="Animation_gjay3"]
+resource_name = "spiiin"
+length = 69.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:environment:sky_custom_fov")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 26.8333, 64.4667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [52.6, 115.9, 52.6]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Camera3D:fov")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 28.3667, 64.8667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [67.9, 82.7, 67.9]
+}
+
+[sub_resource type="Animation" id="Animation_m824m"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:environment:sky_custom_fov")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Camera3D:fov")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [75.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qs2vt"]
+_data = {
+"RESET": SubResource("Animation_m824m"),
+"spiiin": SubResource("Animation_gjay3")
+}
 
 [node name="MainMenu" type="Node3D"]
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 1.89763, -0.249009)
-
-[node name="SpotLight3D" type="SpotLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -0.092388, 0.995723, 0, -0.995723, -0.092388, 0, 4.25516, 0)
-light_energy = 0.0
-spot_range = 2.14
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 1.898, -0.249)
 
 [node name="ManualWheel" parent="." instance=ExtResource("1_ewt1t")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.035, 0, -0.5)
 
 [node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_fi0y8")
+volume_db = -8.0
 autoplay = true
 parameters/looping = true
+
+[node name="Chevron" type="MeshInstance3D" parent="."]
+transform = Transform3D(-2.05444e-08, 0, 0.47, 0, 0.47, 0, -0.47, 0, -2.05444e-08, -0.04, -0.625, 0.78)
+mesh = ExtResource("3_o50ab")
+surface_material_override/0 = SubResource("ShaderMaterial_f280o")
+
+[node name="Chevron2" type="MeshInstance3D" parent="."]
+transform = Transform3D(-2.3167e-08, 0, 0.53, 0, 0.53, 0, -0.53, 0, -2.3167e-08, -0.04, -0.68, 0.78)
+mesh = ExtResource("3_o50ab")
+surface_material_override/0 = SubResource("StandardMaterial3D_ynxxo")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_7gu80")
+camera_attributes = SubResource("CameraAttributesPractical_w2ypg")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="WorldEnvironment"]
+libraries = {
+"": SubResource("AnimationLibrary_qs2vt")
+}
+autoplay = "spiiin"
+
+[node name="PrallaxLayer1" type="Sprite3D" parent="."]
+transform = Transform3D(7.545, 0, 0, 0, -0.390667, 7.53488, 0, -7.53488, -0.390667, -0.637, -34.101, 19.052)
+modulate = Color(0.442911, 0.442911, 0.442911, 1)
+texture = ExtResource("7_lxc0g")
+
+[node name="PrallaxLayer3" type="Sprite3D" parent="."]
+transform = Transform3D(3.74, 0, 0, 0, -0.19365, 3.73498, 0, -3.73498, -0.19365, 2.91, -13.538, 12.279)
+modulate = Color(0.442911, 0.442911, 0.442911, 1)
+texture = ExtResource("9_vunlc")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(0.285, 0, 0, 0, -1.24577e-08, -0.285, 0, 0.285, -1.24577e-08, 0, -0.769345, 1.05762)
+texture = ExtResource("8_vjx6n")
