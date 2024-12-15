@@ -13,7 +13,7 @@ content_margin_left = 4.0
 content_margin_top = 4.0
 content_margin_right = 4.0
 content_margin_bottom = 4.0
-bg_color = Color(0, 0, 0, 0.878431)
+bg_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6rxup"]
 bg_color = Color(0, 0, 0, 1)
@@ -131,4 +131,5 @@ text = "0:00"
 label_settings = SubResource("LabelSettings_ne4do")
 script = SubResource("GDScript_7wjds")
 
+[connection signal="currentEntity" from="DialogLayer" to="." method="_on_dialog_layer_current_entity"]
 [connection signal="dialogCompleted" from="DialogLayer" to="." method="_on_dialog_layer_dialog_completed"]

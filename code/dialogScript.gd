@@ -1,10 +1,11 @@
 extends CanvasLayer
 
 signal dialogCompleted()
+signal currentEntity(entity: DialogOption.DIALOG_ENTITY)
 
 @export var pitch: float = 1.00
 @export var pitch_range: float = 0.05
-@export var type_speed: float = 0.8
+@export var type_speed: float = 1.0
 
 @onready var dialogLabel: Label = $DialogLabel
 @onready var backgroundLabel: Label = $BackgroundLabel
@@ -63,6 +64,7 @@ func resetDialogBox() -> void:
 	visible_character = 0
 	dialogPartDone = false
 	dialogDone = false
+	currentEntity.emit(dialogParts[currentIndex].entity)
 
 func write(delta: float) -> void:
 	if dialogLabel.visible_ratio < 1:
