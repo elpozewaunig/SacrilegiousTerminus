@@ -54,12 +54,15 @@
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dg72n"]
 albedo_texture = ExtResource("2_4a4d3")
 
-[node name="AutomaticWheel" type="Node3D" node_paths=PackedStringArray("innerRing", "middleRing", "outerRing")]
+[node name="AutomaticWheel" type="Node3D" node_paths=PackedStringArray("innerRing", "middleRing", "outerRing", "elements", "sprites")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0096097, 0, 0.0048047)
 script = ExtResource("1_t76au")
 innerRing = NodePath("Wheel/1")
 middleRing = NodePath("Wheel/2")
 outerRing = NodePath("Wheel/3")
+color = Color(1, 0.0426171, 0.69859, 1)
+elements = [NodePath("Wheel/1/Signs"), NodePath("Wheel/3/Signs")]
+sprites = [NodePath("Wheel/Sprite3D"), NodePath("Wheel/3/Sprite3D"), NodePath("Wheel/3/s"), NodePath("Wheel/1/s"), NodePath("Wheel/1/Sprite3D"), NodePath("Wheel/2/Sprite3D"), NodePath("Wheel/2/s")]
 
 [node name="Wheel" type="Node3D" parent="."]
 
@@ -228,6 +231,11 @@ stream = ExtResource("8_y7vdy")
 
 [node name="Signs" type="Node3D" parent="Wheel/3"]
 
+[node name="Particles" parent="Wheel/3/Signs" instance=ExtResource("7_loy21")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.41112, 0, 0.970702)
+mass = 0.001
+gravity_scale = 0.0
+
 [node name="Sign1" type="Node3D" parent="Wheel/3/Signs"]
 
 [node name="Sprite3D" type="Sprite3D" parent="Wheel/3/Signs/Sign1"]
@@ -386,11 +394,6 @@ transform = Transform3D(0.951057, 0, -0.309017, 0, 1, 0, 0.309017, 0, 0.951057, 
 transform = Transform3D(0.043, 0, 0, 0, -1.87959e-09, -0.043, 0, 0.043, -1.87959e-09, 0, 2.54737e-09, 0.897844)
 modulate = Color(1, 0.313726, 0.223529, 1)
 texture = ExtResource("48_mb3n7")
-
-[node name="Particles" parent="Wheel/3/Signs" instance=ExtResource("7_loy21")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.41112, 0, 0.970702)
-mass = 0.001
-gravity_scale = 0.0
 
 [node name="2" type="Node3D" parent="Wheel" node_paths=PackedStringArray("particle")]
 script = ExtResource("4_nyiiv")

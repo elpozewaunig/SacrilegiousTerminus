@@ -4,6 +4,11 @@ extends Node3D
 @export var middleRing: Node3D
 @export var outerRing: Node3D
 
+@export var color:Color
+@export var elements:Array[Node3D]
+@export var sprites:Array[Sprite3D]
+@export var particles: Array[RigidBody3D]
+
 var rng = RandomNumberGenerator.new()
 
 var rings: Array
@@ -23,6 +28,15 @@ func _ready() -> void:
 		rings = [innerRing]
 		shifts = [0]
 	
+	#get_child(0).get_child(0).modulate = color 
+	for i in range(0,elements.size()):
+		for j in range(1,elements[i].get_child_count()):
+			elements[i].get_child(j).get_child(0).modulate = color
+	for sp in sprites: 
+		sp.modulate=color
+	#for particle in particles: 
+		#particle.get_child(1).draw_pass_1.material.emission=color
+
 		
 func spin():
 	for currentRingIndex in range(rings.size()):

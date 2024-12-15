@@ -441,6 +441,7 @@ timeForRoud = 23
 
 [node name="AutomaticWheel" parent="roundManager" instance=ExtResource("9_hn1ih")]
 transform = Transform3D(3.565, 0, 0, 0, 2.92384, -2.0397, 0, 2.0397, 2.92384, 0.005, 2.95, -8.201)
+color = Color(0.818766, 0.587334, 0, 1)
 
 [node name="ManualWheel" parent="roundManager" instance=ExtResource("10_f0vt0")]
 transform = Transform3D(4.52, 0, 0, 0, 1.75882, -4.16377, 0, 4.16377, 1.75882, 0, -1.63, -18.407)
