@@ -5,6 +5,7 @@ signal currentEntity(entity: DialogOption.DIALOG_ENTITY)
 
 @onready var dialogLayer: CanvasLayer = $"%DialogLayer"
 @onready var ingameLayer: CanvasLayer = $"%IngameLayer"
+@onready var tutorialLayer: CanvasLayer = $"%TutorialLayer"
 @onready var textureProgressBar: TextureProgressBar = $"%FightProgressBar"
 @onready var timerLabel: Label = $"%TimerLabel"
 
@@ -16,8 +17,6 @@ func showDialog(dialog: Array[DialogOption], showFullscreen: bool = false) -> vo
 func _on_dialog_layer_dialog_completed() -> void:
 	dialogLayer.visible = false
 	dialogCompleted.emit()
-	#TODO: Remove after tests
-	#displayIngameHud()
 
 	
 func displayIngameHud() -> void:
@@ -26,6 +25,16 @@ func displayIngameHud() -> void:
 	
 func hideIngameHud() -> void:
 	ingameLayer.visible = false
+	
+	
+func displayTutorial() -> void:
+	GameManager.stopTimer()
+	tutorialLayer.visible = true;
+
+
+func hideTutorial() -> void:
+	GameManager.startTimer()
+	tutorialLayer.visible = false;
 
 
 func _on_round_manager_update_progress_bar_to(score: float, maxScore: int) -> void:

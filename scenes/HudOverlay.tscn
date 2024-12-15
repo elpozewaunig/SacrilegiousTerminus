@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dvygun7k256ji"]
+[gd_scene load_steps=14 format=3 uid="uid://dvygun7k256ji"]
 
 [ext_resource type="Script" path="res://code/hudOverlay.gd" id="1_nlpga"]
 [ext_resource type="Script" path="res://code/dialogScript.gd" id="2_p562y"]
@@ -7,6 +7,7 @@
 [ext_resource type="AudioStream" uid="uid://m50mdiae1c0m" path="res://assets/sounds/sfx_PlayerVoice.ogg" id="4_nda3g"]
 [ext_resource type="AudioStream" uid="uid://ccdb1xll6wbh2" path="res://assets/sounds/sfx_EnemyVoice.ogg" id="5_oijn2"]
 [ext_resource type="Texture2D" uid="uid://dlcs2chgbvxv2" path="res://assets/sprites/progressBar/healthbarProgress.png" id="5_yctng"]
+[ext_resource type="Script" path="res://scenes/tutorialScript.gd" id="8_rd4og"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mc56r"]
 content_margin_left = 4.0
@@ -32,6 +33,14 @@ script/source = "extends Label
 func update(timeArray: Array) -> void:
 	text = \"%02d:%02d\" % timeArray
 "
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tsvbg"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
 
 [node name="HudOverlay" type="Control"]
 layout_mode = 3
@@ -117,5 +126,61 @@ offset_right = 48.0
 offset_bottom = 29.0
 script = SubResource("GDScript_7wjds")
 
+[node name="TutorialLayer" type="CanvasLayer" parent="."]
+unique_name_in_owner = true
+visible = false
+script = ExtResource("8_rd4og")
+
+[node name="Background" type="ColorRect" parent="TutorialLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.882353)
+
+[node name="DialogContainer" type="CenterContainer" parent="TutorialLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="DialogBox" type="Panel" parent="TutorialLayer/DialogContainer"]
+z_index = 1
+custom_minimum_size = Vector2(600, 300)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_tsvbg")
+
+[node name="TutorialLabel" type="Label" parent="TutorialLayer/DialogContainer/DialogBox"]
+z_index = 10
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -275.0
+offset_right = 275.0
+offset_bottom = 150.0
+grow_horizontal = 2
+text = "Placeholder Tutoral Text Placeholder Tutoral Text Placeholder Tutoral Text Placeholder Tutoral Text Placeholder Tutoral Text Placeholder Tutoral Text"
+vertical_alignment = 1
+autowrap_mode = 1
+
+[node name="Button" type="Button" parent="TutorialLayer/DialogContainer/DialogBox"]
+z_index = 20
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.98
+anchor_right = 0.5
+anchor_bottom = 0.98
+offset_left = -60.0
+offset_top = -31.0
+offset_right = 60.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Alright, got it"
+
 [connection signal="currentEntity" from="DialogLayer" to="." method="_on_dialog_layer_current_entity"]
 [connection signal="dialogCompleted" from="DialogLayer" to="." method="_on_dialog_layer_dialog_completed"]
+[connection signal="closeTutorial" from="TutorialLayer" to="." method="hideTutorial"]

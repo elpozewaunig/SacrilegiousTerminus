@@ -41,6 +41,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("ultraCheatingMove3000"):
 		playerWon.emit()
+		GameManager.stopTimer()
 	
 	
 	if !gameStarted:
@@ -59,6 +60,7 @@ func _process(delta: float) -> void:
 	
 	if score >= maxScore:
 		playerWon.emit()
+		GameManager.stopTimer()
 		
 		
 	print(score)
@@ -169,3 +171,4 @@ func gameStartsNow():
 	if hudoverlay != null:
 		hudoverlay.displayIngameHud()
 	gameStarted = true
+	GameManager.startTimer()
