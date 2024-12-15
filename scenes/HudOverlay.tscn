@@ -165,6 +165,7 @@ script = SubResource("GDScript_7wjds")
 
 [node name="TutorialLayer" type="CanvasLayer" parent="."]
 unique_name_in_owner = true
+visible = false
 script = ExtResource("8_rd4og")
 
 [node name="Background" type="ColorRect" parent="TutorialLayer"]
