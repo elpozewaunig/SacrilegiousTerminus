@@ -12,8 +12,13 @@ var DIALOG: Array[DialogOption] = [
 	DialogOption.new(DialogOption.DIALOG_ENTITY.NARRATOR, \"As you open the rift, the black-violet light pulses violently, and the ground trembles beneath your feet.\"),
 	DialogOption.new(DialogOption.DIALOG_ENTITY.PLAYER, \"At last… the gateway to the new world opens. Satan’s will shall be done.\"),
 	DialogOption.new(DialogOption.DIALOG_ENTITY.NARRATOR, \"The crack widens, consuming the sky, and a monstrous roar echoes as creatures from the abyss spill forth.\"),
-	DialogOption.new(DialogOption.DIALOG_ENTITY.NARRATOR, \"The world plunges into chaos as the rift’s power overtakes everything, extinguishing hope and light.\"),
-	DialogOption.new(DialogOption.DIALOG_ENTITY.NARRATOR, \"And thus, the world is doomed, heralding the reign of darkness eternal.\")
+	DialogOption.new(DialogOption.DIALOG_ENTITY.PLAYER, \"The seal is broken. The time of the light has ended. Prepare to kneel before the true ruler of existence!\"),
+	DialogOption.new(DialogOption.DIALOG_ENTITY.PLAYER, \"Come forth, my Lord! Your knight has paved the way for your triumphant return!\"),
+	DialogOption.new(DialogOption.DIALOG_ENTITY.NARRATOR, \"As the rift fully opens, a colossal shadow rises, its form obscured by the sheer magnitude of its presence.
+The earth quakes, the sky darkens, and reality itself begins to warp under the overwhelming power of Satan's ascension.\"),
+	DialogOption.new(DialogOption.DIALOG_ENTITY.NARRATOR, \"And thus, the hero's mission is complete. The rift stands open, and the world descends into chaos, heralding an era of eternal darkness.\")
+	
+		
 ]
 
 # Called when the node enters the scene tree for the first time.
