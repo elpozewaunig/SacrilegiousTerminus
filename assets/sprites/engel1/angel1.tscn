@@ -1,23 +1,166 @@
-[gd_scene load_steps=5 format=3 uid="uid://ccvejgfug7j0b"]
+[gd_scene load_steps=8 format=3 uid="uid://ccvejgfug7j0b"]
 
 [ext_resource type="ArrayMesh" uid="uid://cq72vxlrkxxre" path="res://assets/sprites/engel1/michi.obj" id="1_0vq5b"]
 [ext_resource type="Material" uid="uid://pc6up2rjq71h" path="res://assets/sprites/engel1/michiwingmaterial.tres" id="2_c0l4j"]
 [ext_resource type="Material" uid="uid://bxm13mm7binlh" path="res://assets/sprites/engel1/michiwing1.tres" id="3_2gjwf"]
 [ext_resource type="Material" uid="uid://ligw4v00ne36" path="res://assets/sprites/engel1/michiwing2.tres" id="4_kotxs"]
 
+[sub_resource type="Animation" id="Animation_26bx6"]
+resource_name = "michifly"
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Michi/Michi2:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(6.2154e-13, 0.00534072, -2.33451e-10), Vector3(0.452988, 0.406555, 0.186244), Vector3(8.29812e-10, -0.195163, 8.47678e-09)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Michi/Michi2:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.487543, -0.127536, -0.28435), Vector3(-0.542944, -0.127536, -0.170786), Vector3(-0.434077, -0.127536, -0.307584)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Michi/Michi3:rotation")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0.336157, -0.525718, -0.277531), Vector3(-0.0194062, 0.204442, -0.076)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Michi/Michi3:position")
+tracks/3/interp = 2
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0.186322, -0.149177, -0.28435), Vector3(0.253811, -0.149177, -0.158804), Vector3(0.143277, -0.149177, -0.330621)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Michi:position")
+tracks/4/interp = 2
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.1, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0.0655926, 0, 0.3157), Vector3(0.066, 0.038, 0.316)]
+}
+
+[sub_resource type="Animation" id="Animation_7iw27"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Michi/Michi2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.502689, -0.149177, -0.28435)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Michi/Michi2:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(5.86537e-09, 0.524018, -2.18716e-08)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Michi/Michi3:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.186322, -0.149177, -0.28435)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Michi/Michi3:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Michi:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.0655926, 0, 0.3157)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nbprq"]
+_data = {
+"RESET": SubResource("Animation_7iw27"),
+"michifly": SubResource("Animation_26bx6")
+}
+
 [node name="Angel1" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.0219596)
 
 [node name="Michi" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.0655926, 0, 0.3157)
 mesh = ExtResource("1_0vq5b")
 surface_material_override/0 = ExtResource("2_c0l4j")
 
-[node name="Michi2" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -0.368457, 0.28435, 0.166523)
+[node name="Michi2" type="MeshInstance3D" parent="Michi"]
+transform = Transform3D(0.865816, 2.18716e-08, 0.500363, -2.18716e-08, 1, -5.86537e-09, -0.500363, -5.86538e-09, 0.865816, -0.502689, -0.149177, -0.28435)
 mesh = ExtResource("1_0vq5b")
+skeleton = NodePath("../..")
 surface_material_override/0 = ExtResource("3_2gjwf")
 
-[node name="Michi3" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.182561, 0.28435, 0.166523)
+[node name="Michi3" type="MeshInstance3D" parent="Michi"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.186322, -0.149177, -0.28435)
 mesh = ExtResource("1_0vq5b")
+skeleton = NodePath("../..")
 surface_material_override/0 = ExtResource("4_kotxs")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_nbprq")
+}
+autoplay = "michifly"
