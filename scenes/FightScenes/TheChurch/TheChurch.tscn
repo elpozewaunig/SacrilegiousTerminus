@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://coj8cff6bnd1d"]
+[gd_scene load_steps=37 format=3 uid="uid://coj8cff6bnd1d"]
 
 [ext_resource type="Script" path="res://scenes/FightScenes/TheChurch/theChurchController.gd" id="1_dt4df"]
 [ext_resource type="ArrayMesh" uid="uid://mjowk7pbf55q" path="res://scenes/FightScenes/TheChurch/3DFront/Church2.obj" id="2_kdy04"]
@@ -11,10 +11,16 @@
 [ext_resource type="Texture2D" uid="uid://drjj4u5wcu4iu" path="res://scenes/FightScenes/TheChurch/windowtry/c.png" id="9_sovuh"]
 [ext_resource type="PackedScene" uid="uid://b56djjhxj0crg" path="res://assets/sprites/robert/robert.tscn" id="10_3523r"]
 [ext_resource type="Script" path="res://code/roundManager.gd" id="11_f7krs"]
-[ext_resource type="PackedScene" uid="uid://dqtcwmca5ongg" path="res://scenes/SpellCastWheel/AutomaticWheel.tscn" id="12_rx0ef"]
-[ext_resource type="PackedScene" uid="uid://ccelpifkgb5xq" path="res://scenes/SpellCastWheel/SpellCastWheel.tscn" id="13_c4rce"]
+[ext_resource type="Script" path="res://code/automaticWheelScript.gd" id="13_gnysx"]
+[ext_resource type="Texture2D" uid="uid://deiwh6oq6lymh" path="res://scenes/SpellCastWheel/Material/SpellCastWheel_Texture.png" id="14_i44pv"]
 [ext_resource type="PackedScene" uid="uid://dvygun7k256ji" path="res://scenes/HudOverlay.tscn" id="14_yx326"]
+[ext_resource type="ArrayMesh" uid="uid://cfkachmxoytgr" path="res://scenes/SpellCastWheel/Model/SpellCastwheel_center.obj" id="15_cl73m"]
+[ext_resource type="Script" path="res://code/rotateToAngle.gd" id="16_hac5y"]
+[ext_resource type="ArrayMesh" uid="uid://c16sqhbuq784l" path="res://scenes/SpellCastWheel/Model/SpellCastwheel_1.obj" id="17_cj7du"]
 [ext_resource type="Texture2D" uid="uid://b7ngqhcffyhl7" path="res://scenes/FightScenes/TheChurch/windowtry/a.png" id="17_ma4jh"]
+[ext_resource type="ArrayMesh" uid="uid://bcupkd1xtaiua" path="res://scenes/SpellCastWheel/Model/SpellCastwheel_2.obj" id="18_nhiem"]
+[ext_resource type="ArrayMesh" uid="uid://b427b71ukrqc6" path="res://scenes/SpellCastWheel/Model/SpellCastwheel_3.obj" id="19_jqv1x"]
+[ext_resource type="Script" path="res://code/spellCastWheelScript.gd" id="20_jntfy"]
 
 [sub_resource type="Environment" id="Environment_5k0d8"]
 background_energy_multiplier = 4.69
@@ -39,6 +45,30 @@ albedo_texture = ExtResource("17_ma4jh")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mgfv6"]
 albedo_texture = ExtResource("9_sovuh")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dg72n"]
+albedo_texture = ExtResource("14_i44pv")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b2osm"]
+albedo_texture = ExtResource("14_i44pv")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ve1k3"]
+albedo_texture = ExtResource("14_i44pv")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wr8tb"]
+albedo_texture = ExtResource("14_i44pv")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0xrgf"]
+albedo_texture = ExtResource("14_i44pv")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xugpv"]
+albedo_texture = ExtResource("14_i44pv")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nmokv"]
+albedo_texture = ExtResource("14_i44pv")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0buj4"]
+albedo_texture = ExtResource("14_i44pv")
 
 [node name="TheRift" type="Node3D"]
 script = ExtResource("1_dt4df")
@@ -101,42 +131,97 @@ opponentWheel = NodePath("AutomaticWheel")
 hasProgressBar = true
 timeForRoud = 20
 
-[node name="AutomaticWheel" parent="roundManager" instance=ExtResource("12_rx0ef")]
+[node name="AutomaticWheel" type="Node3D" parent="roundManager" node_paths=PackedStringArray("innerRing")]
 transform = Transform3D(1, 0, 0, 0, 0.683273, -0.730162, 0, 0.730162, 0.683273, 2, 0.5, -1.336)
+script = ExtResource("13_gnysx")
+innerRing = NodePath("Wheel/1")
 middleRing = NodePath("")
 outerRing = NodePath("")
 
-[node name="2" parent="roundManager/AutomaticWheel/Wheel" index="2"]
-visible = false
+[node name="Wheel" type="Node3D" parent="roundManager/AutomaticWheel"]
 
-[node name="modelmid" parent="roundManager/AutomaticWheel/Wheel/2" index="0"]
-visible = false
+[node name="modelcenter" type="MeshInstance3D" parent="roundManager/AutomaticWheel/Wheel"]
+material_override = SubResource("StandardMaterial3D_dg72n")
+mesh = ExtResource("15_cl73m")
+skeleton = NodePath("../..")
 
-[node name="3" parent="roundManager/AutomaticWheel/Wheel" index="3"]
-visible = false
+[node name="1" type="Node3D" parent="roundManager/AutomaticWheel/Wheel"]
+script = ExtResource("16_hac5y")
+segmentCount = 12
 
-[node name="modelouter" parent="roundManager/AutomaticWheel/Wheel/3" index="0"]
-visible = false
+[node name="modelinner" type="MeshInstance3D" parent="roundManager/AutomaticWheel/Wheel/1"]
+material_override = SubResource("StandardMaterial3D_b2osm")
+mesh = ExtResource("17_cj7du")
+skeleton = NodePath("../../..")
 
-[node name="ManualWheel" parent="roundManager" instance=ExtResource("13_c4rce")]
+[node name="2" type="Node3D" parent="roundManager/AutomaticWheel/Wheel"]
+visible = false
+script = ExtResource("16_hac5y")
+segmentCount = 9
+
+[node name="modelmid" type="MeshInstance3D" parent="roundManager/AutomaticWheel/Wheel/2"]
+visible = false
+material_override = SubResource("StandardMaterial3D_ve1k3")
+mesh = ExtResource("18_nhiem")
+skeleton = NodePath("../../..")
+
+[node name="3" type="Node3D" parent="roundManager/AutomaticWheel/Wheel"]
+visible = false
+script = ExtResource("16_hac5y")
+segmentCount = 24
+
+[node name="modelouter" type="MeshInstance3D" parent="roundManager/AutomaticWheel/Wheel/3"]
+visible = false
+material_override = SubResource("StandardMaterial3D_wr8tb")
+mesh = ExtResource("19_jqv1x")
+skeleton = NodePath("../../..")
+
+[node name="ManualWheel" type="Node3D" parent="roundManager" node_paths=PackedStringArray("innerRing")]
 transform = Transform3D(1, 0, 0, 0, 0.786935, -0.617036, 0, 0.617036, 0.786935, 0, 0.5, -1.574)
+script = ExtResource("20_jntfy")
+innerRing = NodePath("Wheel/1")
+middleRing = NodePath("")
+outerRing = NodePath("")
 
-[node name="2" parent="roundManager/ManualWheel/Wheel" index="2"]
-visible = false
+[node name="Wheel" type="Node3D" parent="roundManager/ManualWheel"]
 
-[node name="modelmid" parent="roundManager/ManualWheel/Wheel/2" index="0"]
-visible = false
+[node name="modelcenter" type="MeshInstance3D" parent="roundManager/ManualWheel/Wheel"]
+material_override = SubResource("StandardMaterial3D_0xrgf")
+mesh = ExtResource("15_cl73m")
+skeleton = NodePath("../..")
 
-[node name="3" parent="roundManager/ManualWheel/Wheel" index="3"]
-visible = false
+[node name="1" type="Node3D" parent="roundManager/ManualWheel/Wheel"]
+script = ExtResource("16_hac5y")
+segmentCount = 12
 
-[node name="modelouter" parent="roundManager/ManualWheel/Wheel/3" index="0"]
+[node name="modelinner" type="MeshInstance3D" parent="roundManager/ManualWheel/Wheel/1"]
+material_override = SubResource("StandardMaterial3D_xugpv")
+mesh = ExtResource("17_cj7du")
+skeleton = NodePath("../../..")
+
+[node name="2" type="Node3D" parent="roundManager/ManualWheel/Wheel"]
 visible = false
+script = ExtResource("16_hac5y")
+segmentCount = 9
+
+[node name="modelmid" type="MeshInstance3D" parent="roundManager/ManualWheel/Wheel/2"]
+visible = false
+material_override = SubResource("StandardMaterial3D_nmokv")
+mesh = ExtResource("18_nhiem")
+skeleton = NodePath("../../..")
+
+[node name="3" type="Node3D" parent="roundManager/ManualWheel/Wheel"]
+visible = false
+script = ExtResource("16_hac5y")
+segmentCount = 24
+
+[node name="modelouter" type="MeshInstance3D" parent="roundManager/ManualWheel/Wheel/3"]
+visible = false
+material_override = SubResource("StandardMaterial3D_0buj4")
+mesh = ExtResource("19_jqv1x")
+skeleton = NodePath("../../..")
 
 [node name="HudOverlay" parent="roundManager" instance=ExtResource("14_yx326")]
 
 [connection signal="playerWon" from="roundManager" to="." method="_on_round_manager_player_won"]
 [connection signal="updateProgressBarTo" from="roundManager" to="roundManager/HudOverlay" method="_on_round_manager_update_progress_bar_to"]
-
-[editable path="roundManager/AutomaticWheel"]
-[editable path="roundManager/ManualWheel"]

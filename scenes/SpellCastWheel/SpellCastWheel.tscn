@@ -8,16 +8,16 @@
 [ext_resource type="ArrayMesh" uid="uid://bcupkd1xtaiua" path="res://scenes/SpellCastWheel/Model/SpellCastwheel_2.obj" id="4_r0ijm"]
 [ext_resource type="ArrayMesh" uid="uid://b427b71ukrqc6" path="res://scenes/SpellCastWheel/Model/SpellCastwheel_3.obj" id="5_68njf"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dg72n"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0xrgf"]
 albedo_texture = ExtResource("1_gku87")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b2osm"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xugpv"]
 albedo_texture = ExtResource("1_gku87")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ve1k3"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nmokv"]
 albedo_texture = ExtResource("1_gku87")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wr8tb"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0buj4"]
 albedo_texture = ExtResource("1_gku87")
 
 [node name="ManualWheel" type="Node3D" node_paths=PackedStringArray("innerRing", "middleRing", "outerRing")]
@@ -30,7 +30,7 @@ outerRing = NodePath("Wheel/3")
 [node name="Wheel" type="Node3D" parent="."]
 
 [node name="modelcenter" type="MeshInstance3D" parent="Wheel"]
-material_override = SubResource("StandardMaterial3D_dg72n")
+material_override = SubResource("StandardMaterial3D_0xrgf")
 mesh = ExtResource("2_88er2")
 skeleton = NodePath("../..")
 
@@ -39,7 +39,7 @@ script = ExtResource("4_3pldr")
 segmentCount = 12
 
 [node name="modelinner" type="MeshInstance3D" parent="Wheel/1"]
-material_override = SubResource("StandardMaterial3D_b2osm")
+material_override = SubResource("StandardMaterial3D_xugpv")
 mesh = ExtResource("3_1jw7d")
 skeleton = NodePath("../../..")
 
@@ -48,7 +48,7 @@ script = ExtResource("4_3pldr")
 segmentCount = 9
 
 [node name="modelmid" type="MeshInstance3D" parent="Wheel/2"]
-material_override = SubResource("StandardMaterial3D_ve1k3")
+material_override = SubResource("StandardMaterial3D_nmokv")
 mesh = ExtResource("4_r0ijm")
 skeleton = NodePath("../../..")
 
@@ -57,6 +57,6 @@ script = ExtResource("4_3pldr")
 segmentCount = 24
 
 [node name="modelouter" type="MeshInstance3D" parent="Wheel/3"]
-material_override = SubResource("StandardMaterial3D_wr8tb")
+material_override = SubResource("StandardMaterial3D_0buj4")
 mesh = ExtResource("5_68njf")
 skeleton = NodePath("../../..")

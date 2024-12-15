@@ -18,6 +18,9 @@ var wheelSizes: Array
 var score:float
 var timeTillNewSpin: float
 
+var gameStarted: bool = false
+
+
 const maxScore:int = 100
 const segmenctCount:int = 3
 const progressDuration:int = 20
@@ -32,17 +35,16 @@ func _ready() -> void:
 		wheelSizes.append(playerWheel.middleRing.segmentCount)
 	if ringCount > 2: # outerRing exists
 		wheelSizes.append(playerWheel.outerRing.segmentCount) 
-		
-	score = 50
-	timeTillNewSpin = 0
-	if hudoverlay != null:
-		hudoverlay.displayIngameHud()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("ultraCheatingMove3000"):
 		playerWon.emit()
+	
+	
+	if !gameStarted:
+		return
 	var eval = evaluatePosition()
 	timeTillNewSpin -= delta
 	#score --> #0 falash, #1 ich akzeptiere, #2 Q1-Lösung
@@ -159,3 +161,11 @@ func getBonusPointsFactor(timeLeft: float, intervalSize:int) -> float:
 		return 1.5
 		
 	return 1
+	
+	
+func gameStartsNow():
+	score = 50
+	timeTillNewSpin = 0
+	if hudoverlay != null:
+		hudoverlay.displayIngameHud()
+	gameStarted = true
