@@ -5,7 +5,7 @@
 [ext_resource type="ArrayMesh" uid="uid://dbeddpemneiye" path="res://assets/Chevron.obj" id="3_o50ab"]
 [ext_resource type="Shader" path="res://scenes/FightScenes/TheRift/TheRift.gdshader" id="4_el3ny"]
 [ext_resource type="Texture2D" uid="uid://bqdmlqulrjco2" path="res://scenes/FightScenes/a0001.png" id="5_bp0j2"]
-[ext_resource type="Material" uid="uid://cry5503xare3w" path="res://scenes/FightScenes/TheMountain/Skybox/mainmenuskybox.tres" id="6_esobt"]
+[ext_resource type="Material" path="res://scenes/FightScenes/TheMountain/Skybox/mainmenuskybox.tres" id="6_esobt"]
 [ext_resource type="Texture2D" uid="uid://clo06kexhsdk5" path="res://scenes/FightScenes/TheMountain/ParallaxLayerTexts/layer1.png" id="7_lxc0g"]
 [ext_resource type="Texture2D" uid="uid://cjfxex8vd3byn" path="res://scenes/FightScenes/glowtry2.png" id="8_vjx6n"]
 [ext_resource type="Texture2D" uid="uid://mnxcbjjfsn4n" path="res://scenes/FightScenes/TheCountrySide/materials/mctreemulti.png" id="9_vunlc"]

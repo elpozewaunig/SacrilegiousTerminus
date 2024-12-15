@@ -16,7 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://cuw82befexakv" path="res://assets/UI/goodwheel.png" id="14_l18yr"]
 [ext_resource type="Texture2D" uid="uid://deiwh6oq6lymh" path="res://scenes/SpellCastWheel/Material/SpellCastWheel_Texture.png" id="15_gg1jm"]
 [ext_resource type="PackedScene" uid="uid://dvygun7k256ji" path="res://scenes/HudOverlay.tscn" id="16_fjhqi"]
-[ext_resource type="PackedScene" uid="uid://ccwx42uifhfce" path="res://assets/sprites/engel2/Angel2.tscn" id="16_m6crs"]
+[ext_resource type="PackedScene" path="res://assets/sprites/engel2/Angel2.tscn" id="16_m6crs"]
 [ext_resource type="ArrayMesh" uid="uid://cfkachmxoytgr" path="res://scenes/SpellCastWheel/Model/SpellCastwheel_center.obj" id="16_u6xfl"]
 [ext_resource type="Texture2D" uid="uid://cevqxsd6mf03f" path="res://assets/UI/Choose.png" id="17_uip76"]
 [ext_resource type="Script" path="res://code/rotateToAngle.gd" id="18_gk7f6"]
@@ -775,12 +775,13 @@ libraries = {
 }
 autoplay = "cloudmovemountain"
 
-[node name="roundManager" type="Node3D" parent="." node_paths=PackedStringArray("playerWheel", "opponentWheel")]
+[node name="roundManager" type="Node3D" parent="." node_paths=PackedStringArray("playerWheel", "opponentWheel", "musicPlayer")]
 script = ExtResource("13_2kmek")
 playerWheel = NodePath("ManualWheel")
 opponentWheel = NodePath("AutomaticWheel")
 hasProgressBar = true
 timeForRoud = 12
+musicPlayer = NodePath("Music")
 
 [node name="AutomaticWheel" type="Node3D" parent="roundManager" node_paths=PackedStringArray("innerRing", "middleRing", "elements", "sprites")]
 transform = Transform3D(0.541634, -0.604854, -0.38831, 0, 0.486216, -0.75736, 0.718772, 0.45579, 0.292612, 1.055, 0.5, -2.161)
@@ -1280,6 +1281,10 @@ texture = ExtResource("41_a3qfw")
 
 [node name="HudOverlay" parent="roundManager" instance=ExtResource("16_fjhqi")]
 
+[node name="Music" type="AudioStreamPlayer" parent="roundManager"]
+stream = ExtResource("46_epgyi")
+parameters/looping = true
+
 [node name="Angle3" parent="." instance=ExtResource("16_m6crs")]
 transform = Transform3D(2.27488, -0.4301, -2.59814, -1.01264, 3.02645, -1.38765, 2.43103, 1.66313, 1.85324, 10.441, 4.532, -23.225)
 
@@ -1288,11 +1293,6 @@ libraries = {
 "": SubResource("AnimationLibrary_2auk1")
 }
 autoplay = "epicintro"
-
-[node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("46_epgyi")
-autoplay = true
-parameters/looping = true
 
 [connection signal="playerWon" from="roundManager" to="." method="_on_round_manager_player_won"]
 [connection signal="updateProgressBarTo" from="roundManager" to="roundManager/HudOverlay" method="_on_round_manager_update_progress_bar_to"]

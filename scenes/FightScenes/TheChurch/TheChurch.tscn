@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=3 uid="uid://coj8cff6bnd1d"]
+[gd_scene load_steps=54 format=3 uid="uid://coj8cff6bnd1d"]
 
 [ext_resource type="Script" path="res://scenes/FightScenes/TheChurch/theChurchController.gd" id="1_dt4df"]
 [ext_resource type="AudioStream" uid="uid://p3j8kkj1er87" path="res://assets/sounds/long_whoosh/long_whoosh_4.ogg" id="2_chogk"]
@@ -24,6 +24,7 @@
 [ext_resource type="Texture2D" uid="uid://b7ngqhcffyhl7" path="res://scenes/FightScenes/TheChurch/windowtry/a.png" id="17_ma4jh"]
 [ext_resource type="Texture2D" uid="uid://cevqxsd6mf03f" path="res://assets/UI/Choose.png" id="20_ixb5g"]
 [ext_resource type="Script" path="res://code/spellCastWheelScript.gd" id="20_jntfy"]
+[ext_resource type="AudioStream" uid="uid://c50px6he1apgi" path="res://assets/music/battle1_loop.ogg" id="20_r22xg"]
 [ext_resource type="Texture2D" uid="uid://cod5k6h5q11rd" path="res://assets/UI/circle.png" id="21_cioqy"]
 [ext_resource type="PackedScene" uid="uid://dee7mh3emdym1" path="res://scenes/SpellCastWheel/Particles.tscn" id="22_i1pd3"]
 [ext_resource type="Texture2D" uid="uid://bqiwd7amcn3cr" path="res://scenes/FightScenes/TheChurch/black.png" id="22_iyxtr"]
@@ -732,12 +733,17 @@ transform = Transform3D(0.623102, 0, 0.782141, 0, 1, 0, -0.782141, 0, 0.623102, 
 [node name="Robert" parent="." instance=ExtResource("10_3523r")]
 transform = Transform3D(0.840406, 0, -0.541958, 0, 1, 0, 0.541958, 0, 0.840406, 2.52137, 0.107922, -2.08806)
 
-[node name="roundManager" type="Node3D" parent="." node_paths=PackedStringArray("playerWheel", "opponentWheel")]
+[node name="roundManager" type="Node3D" parent="." node_paths=PackedStringArray("playerWheel", "opponentWheel", "musicPlayer")]
 script = ExtResource("11_f7krs")
 playerWheel = NodePath("ManualWheel")
 opponentWheel = NodePath("AutomaticWheel")
 hasProgressBar = true
 timeForRoud = 10
+musicPlayer = NodePath("Music")
+
+[node name="Music" type="AudioStreamPlayer" parent="roundManager"]
+stream = ExtResource("20_r22xg")
+parameters/looping = true
 
 [node name="AutomaticWheel" type="Node3D" parent="roundManager" node_paths=PackedStringArray("innerRing", "elements", "sprites")]
 transform = Transform3D(0.0973712, -0.00100819, 0.995247, 0.737738, 0.67129, -0.0714974, -0.668028, 0.741193, 0.066108, 1.919, 0.945, -2.175)

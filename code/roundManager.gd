@@ -9,6 +9,7 @@ var opponentSpins: Array
 @export var opponentWheel: Node3D
 @export var hasProgressBar: bool
 @export var timeForRoud: int
+@export var musicPlayer: AudioStreamPlayer
 
 @onready var hudoverlay: Control = $HudOverlay
 
@@ -173,3 +174,4 @@ func gameStartsNow():
 		hudoverlay.displayIngameHud()
 	gameStarted = true
 	GameManager.startTimer()
+	musicPlayer.play()

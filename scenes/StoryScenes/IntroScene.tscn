@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://bsle2e6xv3vdw"]
+[gd_scene load_steps=4 format=3 uid="uid://bsle2e6xv3vdw"]
 
 [ext_resource type="PackedScene" uid="uid://dvygun7k256ji" path="res://scenes/HudOverlay.tscn" id="1_rqdsk"]
+[ext_resource type="AudioStream" uid="uid://2pf5cga2akch" path="res://assets/music/loading_loop.ogg" id="2_kbhhq"]
 
 [sub_resource type="GDScript" id="GDScript_s0c5o"]
 script/source = "extends Node3D
@@ -36,5 +37,11 @@ func _on_hud_overlay_dialog_completed() -> void:
 script = SubResource("GDScript_s0c5o")
 
 [node name="HudOverlay" parent="." instance=ExtResource("1_rqdsk")]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_kbhhq")
+volume_db = 5.0
+autoplay = true
+parameters/looping = true
 
 [connection signal="dialogCompleted" from="HudOverlay" to="." method="_on_hud_overlay_dialog_completed"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=68 format=3 uid="uid://bihqmqmhy5qrk"]
+[gd_scene load_steps=69 format=3 uid="uid://bihqmqmhy5qrk"]
 
 [ext_resource type="Texture2D" uid="uid://btjnrke4c1pf3" path="res://scenes/FightScenes/TheMountain/Skybox/spacenopink.jpg" id="3_g3qk6"]
 [ext_resource type="ArrayMesh" uid="uid://bk3lbs6yirhyf" path="res://scenes/FightScenes/TheCountrySide/CountrySide6.obj" id="4_bhs08"]
@@ -51,6 +51,7 @@
 [ext_resource type="Texture2D" uid="uid://bhnu44u0bjfo0" path="res://assets/sprites/tarot symbole/tarotGlow/Swordwaage.png" id="47_q5p86"]
 [ext_resource type="Script" path="res://code/spellCastWheelScript.gd" id="48_73kq5"]
 [ext_resource type="AudioStream" uid="uid://p3j8kkj1er87" path="res://assets/sounds/long_whoosh/long_whoosh_4.ogg" id="50_36iff"]
+[ext_resource type="AudioStream" uid="uid://c50px6he1apgi" path="res://assets/music/battle1_loop.ogg" id="50_k6svf"]
 [ext_resource type="AudioStream" uid="uid://dhkav2k7ma0dh" path="res://assets/sounds/rumble/rumble.ogg" id="51_dn8wp"]
 
 [sub_resource type="GDScript" id="GDScript_os87n"]
@@ -861,12 +862,13 @@ texture = ExtResource("15_hxuq5")
 [node name="f" parent="." instance=ExtResource("16_offic")]
 transform = Transform3D(0.295, 0, 0, 0, -1.28949e-08, -0.295, 0, 0.295, -1.28949e-08, 26.8468, 92.1612, -224.973)
 
-[node name="roundManager" type="Node3D" parent="." node_paths=PackedStringArray("playerWheel", "opponentWheel")]
+[node name="roundManager" type="Node3D" parent="." node_paths=PackedStringArray("playerWheel", "opponentWheel", "musicPlayer")]
 script = ExtResource("14_wpcgj")
 playerWheel = NodePath("ManualWheel")
 opponentWheel = NodePath("AutomaticWheel")
 hasProgressBar = true
 timeForRoud = 17
+musicPlayer = NodePath("Music")
 
 [node name="AutomaticWheel" type="Node3D" parent="roundManager" node_paths=PackedStringArray("innerRing", "middleRing", "elements", "sprites")]
 transform = Transform3D(0.01, 0, 0, 0, -3.61999e-08, -0.01, 0, 0.01, -3.61999e-08, 1.08, 1.16, -1.496)
@@ -1364,6 +1366,10 @@ mass = 0.001
 gravity_scale = 0.0
 
 [node name="HudOverlay" parent="roundManager" instance=ExtResource("17_fyugo")]
+
+[node name="Music" type="AudioStreamPlayer" parent="roundManager"]
+stream = ExtResource("50_k6svf")
+parameters/looping = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

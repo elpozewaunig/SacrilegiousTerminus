@@ -1,16 +1,17 @@
-[gd_scene load_steps=26 format=3 uid="uid://icf506yysjwv"]
+[gd_scene load_steps=27 format=3 uid="uid://icf506yysjwv"]
 
 [ext_resource type="PackedScene" uid="uid://d3e5kcc82viwq" path="res://scenes/FightScenes/rifttear.tscn" id="3_euu3m"]
 [ext_resource type="PackedScene" uid="uid://dtjng8jtop7ed" path="res://assets/sprites/protag/protag.tscn" id="4_vbt65"]
 [ext_resource type="Texture2D" uid="uid://sumv4w64qs8j" path="res://scenes/FightScenes/TheMountain/Skybox/space.jpg" id="5_85042"]
 [ext_resource type="Texture2D" uid="uid://bvqt6w3di3vcd" path="res://scenes/FightScenes/TheChurch/3DText/rifttextext.jpg" id="5_lb28q"]
-[ext_resource type="PackedScene" uid="uid://r020t5g1merr" path="res://gpu_particles_3d.tscn" id="6_knecr"]
+[ext_resource type="PackedScene" path="res://gpu_particles_3d.tscn" id="6_knecr"]
 [ext_resource type="ArrayMesh" uid="uid://4lger5fh6chq" path="res://scenes/FightScenes/TheChurch/3DText/preistroberttext1.obj" id="6_rjpab"]
 [ext_resource type="ArrayMesh" uid="uid://dfstv50uufwrh" path="res://scenes/FightScenes/TheChurch/3DText/preistroberttext2.obj" id="7_7ijst"]
 [ext_resource type="Script" path="res://code/roundManager.gd" id="8_i72os"]
 [ext_resource type="PackedScene" uid="uid://dqtcwmca5ongg" path="res://scenes/SpellCastWheel/AutomaticWheel.tscn" id="9_hn1ih"]
 [ext_resource type="PackedScene" uid="uid://ccelpifkgb5xq" path="res://scenes/SpellCastWheel/SpellCastWheel.tscn" id="10_f0vt0"]
 [ext_resource type="PackedScene" uid="uid://dvygun7k256ji" path="res://scenes/HudOverlay.tscn" id="11_dkq56"]
+[ext_resource type="AudioStream" uid="uid://c50px6he1apgi" path="res://assets/music/battle1_loop.ogg" id="12_d7crm"]
 [ext_resource type="Texture2D" uid="uid://bqiwd7amcn3cr" path="res://scenes/FightScenes/TheChurch/black.png" id="12_lewcg"]
 
 [sub_resource type="GDScript" id="GDScript_0bvbl"]
@@ -432,12 +433,13 @@ transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -2.241
 material_override = SubResource("StandardMaterial3D_2sex3")
 mesh = ExtResource("7_7ijst")
 
-[node name="roundManager" type="Node3D" parent="." node_paths=PackedStringArray("playerWheel", "opponentWheel")]
+[node name="roundManager" type="Node3D" parent="." node_paths=PackedStringArray("playerWheel", "opponentWheel", "musicPlayer")]
 script = ExtResource("8_i72os")
 playerWheel = NodePath("ManualWheel")
 opponentWheel = NodePath("AutomaticWheel")
 hasProgressBar = true
 timeForRoud = 20
+musicPlayer = NodePath("Music")
 
 [node name="AutomaticWheel" parent="roundManager" instance=ExtResource("9_hn1ih")]
 transform = Transform3D(3.565, 0, 0, 0, 2.92384, -2.0397, 0, 2.0397, 2.92384, 0.005, 2.95, -8.201)
@@ -447,6 +449,10 @@ color = Color(0.818766, 0.587334, 0, 1)
 transform = Transform3D(4.52, 0, 0, 0, 1.75882, -4.16377, 0, 4.16377, 1.75882, 0, -1.63, -18.407)
 
 [node name="HudOverlay" parent="roundManager" instance=ExtResource("11_dkq56")]
+
+[node name="Music" type="AudioStreamPlayer" parent="roundManager"]
+stream = ExtResource("12_d7crm")
+parameters/looping = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

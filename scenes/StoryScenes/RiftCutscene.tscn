@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://nukwwpr5axtc"]
+[gd_scene load_steps=5 format=3 uid="uid://nukwwpr5axtc"]
 
 [ext_resource type="PackedScene" uid="uid://dgurl1u1gb0ly" path="res://scenes/DialogScene.tscn" id="1_mjeo2"]
 [ext_resource type="Texture2D" uid="uid://b2n213s6icibw" path="res://assets/cutscenebackgrounds/bg4.jpg" id="2_07t7d"]
+[ext_resource type="AudioStream" uid="uid://dd05jecp8xjjr" path="res://assets/music/dialogue_loop.ogg" id="3_32x8c"]
 
 [sub_resource type="GDScript" id="GDScript_fu138"]
 script/source = "extends Node3D
@@ -35,5 +36,10 @@ script = SubResource("GDScript_fu138")
 
 [node name="DialogScene" parent="." instance=ExtResource("1_mjeo2")]
 background = ExtResource("2_07t7d")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_32x8c")
+autoplay = true
+parameters/looping = true
 
 [connection signal="dialogCompleted" from="DialogScene" to="." method="_on_dialog_scene_dialog_completed"]
