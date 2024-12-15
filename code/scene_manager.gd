@@ -11,12 +11,19 @@ extends Node
 
 @export_group("Settings Scenes")
 @export var mainMenuSene : PackedScene
+@export var credits : PackedScene
+@export var pauseScene : PackedScene
 
 @export_group("Loading Screen")
 @export var loadingScene : PackedScene
 
+
 func _ready() -> void:
 	pass
+	
+func _process(delta: float) -> void:
+	if Input.is_action_just_pressed("pause"):
+		pause()
 
 func change_scene(scene: PackedScene, loading_screen: bool = false) -> void:
 	print("changeing scene")
@@ -40,3 +47,8 @@ func change_scene(scene: PackedScene, loading_screen: bool = false) -> void:
 
 func quit_game():
 	get_tree().quit()
+
+func pause() -> void:
+	print("pause")
+#	get_tree().paused = true
+	

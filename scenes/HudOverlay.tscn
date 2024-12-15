@@ -1,19 +1,19 @@
-[gd_scene load_steps=14 format=3 uid="uid://dvygun7k256ji"]
+[gd_scene load_steps=12 format=3 uid="uid://dvygun7k256ji"]
 
 [ext_resource type="Script" path="res://code/hudOverlay.gd" id="1_nlpga"]
 [ext_resource type="Script" path="res://code/dialogScript.gd" id="2_p562y"]
 [ext_resource type="AudioStream" uid="uid://dlvfs6xlorf1j" path="res://assets/sounds/sfx_Typewriter.ogg" id="3_o5wnl"]
+[ext_resource type="Texture2D" uid="uid://dnlq0t0f24tw0" path="res://assets/sprites/progressBar/healthbarUnder.png" id="4_7wure"]
 [ext_resource type="AudioStream" uid="uid://m50mdiae1c0m" path="res://assets/sounds/sfx_PlayerVoice.ogg" id="4_nda3g"]
 [ext_resource type="AudioStream" uid="uid://ccdb1xll6wbh2" path="res://assets/sounds/sfx_EnemyVoice.ogg" id="5_oijn2"]
-[ext_resource type="Texture2D" uid="uid://b6fy8mvm3d5ht" path="res://assets/sprites/progressBar/ProgressBar.png" id="6_5qawj"]
-[ext_resource type="Texture2D" uid="uid://ur4cwlbgq8hv" path="res://assets/sprites/progressBar/HolyProgressBar.png" id="8_ynm7x"]
+[ext_resource type="Texture2D" uid="uid://dlcs2chgbvxv2" path="res://assets/sprites/progressBar/healthbarProgress.png" id="5_yctng"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mc56r"]
 content_margin_left = 4.0
 content_margin_top = 4.0
 content_margin_right = 4.0
 content_margin_bottom = 4.0
-bg_color = Color(0, 0, 0, 0.878431)
+bg_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6rxup"]
 bg_color = Color(0, 0, 0, 1)
@@ -25,16 +25,6 @@ script/source = "extends TextureProgressBar
 func update(score: float, maxScore: int) -> void:
 	value = score * 100 / maxScore
 "
-
-[sub_resource type="SystemFont" id="SystemFont_ckmbc"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_ne4do"]
-font = SubResource("SystemFont_ckmbc")
-font_size = 70
-font_color = Color(1, 0.313726, 0.223529, 1)
-shadow_size = 9
-shadow_color = Color(0.854902, 0.27451, 0, 0.666667)
-shadow_offset = Vector2(0, 0)
 
 [sub_resource type="GDScript" id="GDScript_7wjds"]
 script/source = "extends Label
@@ -97,6 +87,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_6rxup")
 
 [node name="IngameLayer" type="CanvasLayer" parent="."]
 unique_name_in_owner = true
+visible = false
 
 [node name="FightProgressBar" type="TextureProgressBar" parent="IngameLayer"]
 unique_name_in_owner = true
@@ -105,30 +96,26 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -1029.0
-offset_top = -1079.0
-offset_right = 971.0
-offset_bottom = 921.0
+offset_left = -322.0
+offset_top = -178.0
+offset_right = -258.0
+offset_bottom = -138.0
 grow_horizontal = 2
 grow_vertical = 0
+scale = Vector2(10, 10)
 size_flags_horizontal = 4
 size_flags_vertical = 4
-value = 66.0
-texture_under = ExtResource("6_5qawj")
-texture_progress = ExtResource("8_ynm7x")
+texture_under = ExtResource("4_7wure")
+texture_progress = ExtResource("5_yctng")
 script = SubResource("GDScript_covti")
 
 [node name="TimerLabel" type="Label" parent="IngameLayer"]
 unique_name_in_owner = true
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -69.5
-offset_right = 69.5
-offset_bottom = 96.0
-grow_horizontal = 2
-text = "0:00"
-label_settings = SubResource("LabelSettings_ne4do")
+offset_left = 8.0
+offset_top = 6.0
+offset_right = 48.0
+offset_bottom = 29.0
 script = SubResource("GDScript_7wjds")
 
+[connection signal="currentEntity" from="DialogLayer" to="." method="_on_dialog_layer_current_entity"]
 [connection signal="dialogCompleted" from="DialogLayer" to="." method="_on_dialog_layer_dialog_completed"]

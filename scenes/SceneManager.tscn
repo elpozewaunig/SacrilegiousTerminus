@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://c5aam42caalrh"]
+[gd_scene load_steps=12 format=3 uid="uid://c5aam42caalrh"]
 
 [ext_resource type="PackedScene" uid="uid://coj8cff6bnd1d" path="res://scenes/FightScenes/TheChurch/TheChurch.tscn" id="1_m73o3"]
 [ext_resource type="Script" path="res://code/scene_manager.gd" id="2_t1nbp"]
@@ -7,7 +7,22 @@
 [ext_resource type="PackedScene" uid="uid://icf506yysjwv" path="res://scenes/FightScenes/TheRift/TheRift.tscn" id="5_jehmd"]
 [ext_resource type="PackedScene" uid="uid://bsle2e6xv3vdw" path="res://scenes/StoryScenes/IntroScene.tscn" id="6_jo66l"]
 [ext_resource type="PackedScene" uid="uid://dyvprgu04o2x5" path="res://scenes/loadingScreen.tscn" id="7_0gchl"]
+[ext_resource type="PackedScene" uid="uid://o142xdjjr58r" path="res://scenes/MainMenu/Credits.tscn" id="8_drxk5"]
 [ext_resource type="PackedScene" uid="uid://cey20murtyiss" path="res://scenes/MainMenu/MainMenu.tscn" id="8_q02g1"]
+[ext_resource type="PackedScene" uid="uid://ceft1i1qvo4fl" path="res://scenes/SpellCastWheel/MainMenuWhell.tscn" id="9_aatf2"]
+
+[sub_resource type="PackedScene" id="PackedScene_sersr"]
+_bundled = {
+"conn_count": 0,
+"conns": PackedInt32Array(),
+"editable_instances": [],
+"names": PackedStringArray("Pause", "process_mode", "Node3D", "Camera3D", "transform", "SpotLight3D", "light_energy", "spot_range", "ManualWheel"),
+"node_count": 4,
+"node_paths": [],
+"nodes": PackedInt32Array(-1, -1, 2, 0, -1, 1, 1, 0, 0, 0, 0, 3, 3, -1, 1, 4, 1, 0, 0, 0, 5, 5, -1, 3, 4, 2, 6, 3, 7, 4, 0, 0, 0, 2147483647, 8, 5, 1, 4, 6, 0),
+"variants": [3, Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 1.89763, -0.249009), Transform3D(1, 0, 0, 0, -0.092388, 0.995723, 0, -0.995723, -0.092388, 0, 4.25516, 0), 0.0, 2.14, ExtResource("9_aatf2"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)],
+"version": 3
+}
 
 [node name="SceneManager" type="Node3D"]
 script = ExtResource("2_t1nbp")
@@ -17,4 +32,6 @@ theMountain = ExtResource("4_huykn")
 thRift = ExtResource("5_jehmd")
 introScene = ExtResource("6_jo66l")
 mainMenuSene = ExtResource("8_q02g1")
+credits = ExtResource("8_drxk5")
+pauseScene = SubResource("PackedScene_sersr")
 loadingScene = ExtResource("7_0gchl")

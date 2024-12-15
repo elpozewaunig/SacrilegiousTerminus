@@ -1,6 +1,7 @@
 extends Control
 
 signal dialogCompleted()
+signal currentEntity(entity: DialogOption.DIALOG_ENTITY)
 
 @onready var dialogLayer: CanvasLayer = $"%DialogLayer"
 @onready var ingameLayer: CanvasLayer = $"%IngameLayer"
@@ -16,7 +17,7 @@ signal dialogCompleted()
 	#DialogOption.new(DialogOption.DIALOG_ENTITY.PLAYER, "I am here to help our Supremelord from the underworld Satan himself")
 #]
 
-func showDialog(dialog: Array[DialogOption], showFullscreen: bool) -> void:
+func showDialog(dialog: Array[DialogOption], showFullscreen: bool = false) -> void:
 	dialogLayer.init(dialog, showFullscreen)
 	dialogLayer.visible = true
 
@@ -50,3 +51,7 @@ func _on_round_manager_update_progress_bar_to(score: float, maxScore: int) -> vo
 	
 func _on_game_manager_update_the_final_countdown(timeArray: Array) -> void:
 	timerLabel.update(timeArray)
+
+
+func _on_dialog_layer_current_entity(entity: DialogOption.DIALOG_ENTITY) -> void:
+	currentEntity.emit(entity)

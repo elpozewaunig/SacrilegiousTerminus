@@ -36,7 +36,6 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	
 
 	# key-right turn right
 	if Input.is_action_just_pressed(\"input-right\"):
@@ -59,13 +58,10 @@ func _process(_delta: float) -> void:
 		match shifts[0]:
 			0:
 				SceneManager.change_scene(SceneManager.introScene, true)
-				print(\"Play\")
+				print(\"Resume\")
 			1: 
-				print(\"Quit\")
-				SceneManager.quit_game()
-			2:
-				print(\"Settings\")
-				# TODO Load Settings
+				print(\"Main Menu\")
+				SceneManager.change_scene(SceneManager.mainMenuSene, true)
 				
 			 
 	
@@ -91,7 +87,7 @@ innerRing = NodePath("Wheel/3")
 
 [node name="3" type="Node3D" parent="Wheel" node_paths=PackedStringArray("particle")]
 script = ExtResource("4_rik2f")
-segmentCount = 3
+segmentCount = 2
 particle = NodePath("Particles")
 
 [node name="Sprite3D" type="Sprite3D" parent="Wheel/3"]
