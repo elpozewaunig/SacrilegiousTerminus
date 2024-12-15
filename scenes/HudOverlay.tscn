@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dvygun7k256ji"]
+[gd_scene load_steps=14 format=3 uid="uid://dvygun7k256ji"]
 
 [ext_resource type="Script" path="res://code/hudOverlay.gd" id="1_nlpga"]
 [ext_resource type="Script" path="res://code/dialogScript.gd" id="2_p562y"]
@@ -25,6 +25,16 @@ script/source = "extends TextureProgressBar
 func update(score: float, maxScore: int) -> void:
 	value = score * 100 / maxScore
 "
+
+[sub_resource type="SystemFont" id="SystemFont_ckmbc"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ne4do"]
+font = SubResource("SystemFont_ckmbc")
+font_size = 70
+font_color = Color(1, 0.313726, 0.223529, 1)
+shadow_size = 9
+shadow_color = Color(0.854902, 0.27451, 0, 0.666667)
+shadow_offset = Vector2(0, 0)
 
 [sub_resource type="GDScript" id="GDScript_7wjds"]
 script/source = "extends Label
@@ -110,10 +120,15 @@ script = SubResource("GDScript_covti")
 
 [node name="TimerLabel" type="Label" parent="IngameLayer"]
 unique_name_in_owner = true
-offset_left = 8.0
-offset_top = 6.0
-offset_right = 48.0
-offset_bottom = 29.0
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -69.5
+offset_right = 69.5
+offset_bottom = 96.0
+grow_horizontal = 2
+text = "0:00"
+label_settings = SubResource("LabelSettings_ne4do")
 script = SubResource("GDScript_7wjds")
 
 [connection signal="dialogCompleted" from="DialogLayer" to="." method="_on_dialog_layer_dialog_completed"]
