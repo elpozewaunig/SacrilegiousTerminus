@@ -226,7 +226,7 @@ stream = ExtResource("7_xb16b")
 
 [node name="Sprite3D8" type="Sprite3D" parent="Wheel/2/Signs/Sign1"]
 transform = Transform3D(0.017, 0, 0, 0, -7.43094e-10, -0.017, 0, 0.017, -7.43094e-10, 0.00916624, 0, 0.530655)
-modulate = Color(0.231373, 0.67451, 0.552941, 1)
+modulate = Color(0.815686, 0.423529, 0.745098, 1)
 texture = ExtResource("29_2tmir")
 
 [node name="Sign2" type="Node3D" parent="Wheel/2/Signs"]
@@ -250,7 +250,7 @@ transform = Transform3D(-0.5, 0, 0.866026, 0, 1, 0, -0.866026, 0, -0.5, 0, 0, 0)
 
 [node name="Sprite3D8" type="Sprite3D" parent="Wheel/2/Signs/Sign4"]
 transform = Transform3D(0.017, 0, 0, 0, -7.43094e-10, -0.017, 0, 0.017, -7.43094e-10, 0.00916624, -7.45113e-10, 0.547701)
-modulate = Color(0.811765, 0.501961, 0.262745, 1)
+modulate = Color(0.231373, 0.67451, 0.552941, 1)
 texture = ExtResource("32_2hwod")
 
 [node name="Sign5" type="Node3D" parent="Wheel/2/Signs"]
@@ -274,7 +274,7 @@ transform = Transform3D(-0.5, 0, -0.866026, 0, 1, 0, 0.866026, 0, -0.5, 0, 0, 0)
 
 [node name="Sprite3D8" type="Sprite3D" parent="Wheel/2/Signs/Sign7"]
 transform = Transform3D(0.017, 0, 0, 0, -7.43094e-10, -0.017, 0, 0.017, -7.43094e-10, 0.00916624, -1.65503e-09, 0.568518)
-modulate = Color(0.815686, 0.423529, 0.745098, 1)
+modulate = Color(0.811765, 0.501961, 0.262745, 1)
 texture = ExtResource("35_t58k2")
 
 [node name="Sign8" type="Node3D" parent="Wheel/2/Signs"]
