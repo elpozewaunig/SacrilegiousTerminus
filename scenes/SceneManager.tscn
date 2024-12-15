@@ -12,9 +12,9 @@
 [ext_resource type="PackedScene" uid="uid://o142xdjjr58r" path="res://scenes/MainMenu/Credits.tscn" id="8_drxk5"]
 [ext_resource type="PackedScene" uid="uid://cey20murtyiss" path="res://scenes/MainMenu/MainMenu.tscn" id="8_q02g1"]
 [ext_resource type="PackedScene" uid="uid://ceft1i1qvo4fl" path="res://scenes/SpellCastWheel/MainMenuWhell.tscn" id="9_aatf2"]
-[ext_resource type="PackedScene" path="res://scenes/StoryScenes/MountainCutscene.tscn" id="9_p70bq"]
-[ext_resource type="PackedScene" path="res://scenes/StoryScenes/RiftCutscene.tscn" id="10_hlcak"]
-[ext_resource type="PackedScene" path="res://scenes/StoryScenes/OutroCutscene.tscn" id="11_wm21b"]
+[ext_resource type="PackedScene" uid="uid://viemoqeg4yt6" path="res://scenes/StoryScenes/MountainCutscene.tscn" id="9_p70bq"]
+[ext_resource type="PackedScene" uid="uid://nukwwpr5axtc" path="res://scenes/StoryScenes/RiftCutscene.tscn" id="10_hlcak"]
+[ext_resource type="PackedScene" uid="uid://xn78ag3l5ltx" path="res://scenes/StoryScenes/OutroCutscene.tscn" id="11_wm21b"]
 [ext_resource type="PackedScene" path="res://scenes/DEATH.tscn" id="13_kp2q1"]
 [ext_resource type="PackedScene" path="res://scenes/WIN.tscn" id="14_lki48"]
 

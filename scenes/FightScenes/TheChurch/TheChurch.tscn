@@ -103,11 +103,40 @@ timeForRoud = 20
 
 [node name="AutomaticWheel" parent="roundManager" instance=ExtResource("12_rx0ef")]
 transform = Transform3D(1, 0, 0, 0, 0.683273, -0.730162, 0, 0.730162, 0.683273, 2, 0.5, -1.336)
+middleRing = NodePath("")
+outerRing = NodePath("")
+
+[node name="2" parent="roundManager/AutomaticWheel/Wheel" index="2"]
+visible = false
+
+[node name="modelmid" parent="roundManager/AutomaticWheel/Wheel/2" index="0"]
+visible = false
+
+[node name="3" parent="roundManager/AutomaticWheel/Wheel" index="3"]
+visible = false
+
+[node name="modelouter" parent="roundManager/AutomaticWheel/Wheel/3" index="0"]
+visible = false
 
 [node name="ManualWheel" parent="roundManager" instance=ExtResource("13_c4rce")]
 transform = Transform3D(1, 0, 0, 0, 0.786935, -0.617036, 0, 0.617036, 0.786935, 0, 0.5, -1.574)
+
+[node name="2" parent="roundManager/ManualWheel/Wheel" index="2"]
+visible = false
+
+[node name="modelmid" parent="roundManager/ManualWheel/Wheel/2" index="0"]
+visible = false
+
+[node name="3" parent="roundManager/ManualWheel/Wheel" index="3"]
+visible = false
+
+[node name="modelouter" parent="roundManager/ManualWheel/Wheel/3" index="0"]
+visible = false
 
 [node name="HudOverlay" parent="roundManager" instance=ExtResource("14_yx326")]
 
 [connection signal="playerWon" from="roundManager" to="." method="_on_round_manager_player_won"]
 [connection signal="updateProgressBarTo" from="roundManager" to="roundManager/HudOverlay" method="_on_round_manager_update_progress_bar_to"]
+
+[editable path="roundManager/AutomaticWheel"]
+[editable path="roundManager/ManualWheel"]
