@@ -5,9 +5,8 @@
 [ext_resource type="Material" uid="uid://di53o2e08jnik" path="res://scenes/FightScenes/TheMountain/Skybox/SpaceSkyBox.tres" id="5_x87l0"]
 [ext_resource type="Texture2D" uid="uid://clo06kexhsdk5" path="res://scenes/FightScenes/TheMountain/ParallaxLayerTexts/layer1.png" id="6_k1qaw"]
 [ext_resource type="Texture2D" uid="uid://bqessv6mtjusq" path="res://scenes/FightScenes/TheMountain/ParallaxLayerTexts/layer2.png" id="7_3qoeg"]
-[ext_resource type="PackedScene" path="res://assets/sprites/engel2/Angle2.tscn" id="8_5qb5g"]
 [ext_resource type="PackedScene" uid="uid://dtjng8jtop7ed" path="res://assets/sprites/protag/protag.tscn" id="8_48wte"]
-[ext_resource type="PackedScene" path="res://scenes/FightScenes/rifttear.tscn" id="8_1773n"]
+[ext_resource type="PackedScene" uid="uid://ucwlwrhkaopg" path="res://scenes/FightScenes/rifttear.tscn" id="8_1773n"]
 [ext_resource type="Texture2D" uid="uid://b7e850fwn6mnj" path="res://scenes/FightScenes/TheChurch/3DText/raphaeltexttext.jpg" id="9_u68kx"]
 [ext_resource type="ArrayMesh" uid="uid://4lger5fh6chq" path="res://scenes/FightScenes/TheChurch/3DText/preistroberttext1.obj" id="10_12yff"]
 [ext_resource type="ArrayMesh" uid="uid://dfstv50uufwrh" path="res://scenes/FightScenes/TheChurch/3DText/preistroberttext2.obj" id="11_0cgdh"]
@@ -16,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://dqtcwmca5ongg" path="res://scenes/SpellCastWheel/AutomaticWheel.tscn" id="14_r47fu"]
 [ext_resource type="PackedScene" uid="uid://ccelpifkgb5xq" path="res://scenes/SpellCastWheel/SpellCastWheel.tscn" id="15_dh38p"]
 [ext_resource type="PackedScene" uid="uid://dvygun7k256ji" path="res://scenes/HudOverlay.tscn" id="16_fjhqi"]
+[ext_resource type="PackedScene" uid="uid://ccwx42uifhfce" path="res://assets/sprites/engel2/Angel2.tscn" id="16_m6crs"]
 
 [sub_resource type="GDScript" id="GDScript_yrvts"]
 resource_name = "mountainController"
@@ -141,9 +141,6 @@ texture = ExtResource("7_3qoeg")
 [node name="f" parent="." instance=ExtResource("8_1773n")]
 transform = Transform3D(1.54616, -1.04289, 4.55864e-08, 0, -8.15217e-08, -1.865, 1.04289, 1.54616, -6.75846e-08, 34.705, 24.473, -57.561)
 
-[node name="Angle2" parent="." instance=ExtResource("8_5qb5g")]
-transform = Transform3D(0.669131, -0.177265, -0.721693, 0, 0.971134, -0.238533, 0.743145, 0.15961, 0.649816, 16.694, 6.095, -36.692)
-
 [node name="Protag" parent="." instance=ExtResource("8_48wte")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.64512, 0.106066, -4.44892)
 
@@ -182,6 +179,9 @@ transform = Transform3D(1, 0, 0, 0, 0.683273, -0.730162, 0, 0.730162, 0.683273, 
 transform = Transform3D(1, 0, 0, 0, 0.786935, -0.617036, 0, 0.617036, 0.786935, 0, 0.5, -1.574)
 
 [node name="HudOverlay" parent="roundManager" instance=ExtResource("16_fjhqi")]
+
+[node name="Angle3" parent="." instance=ExtResource("16_m6crs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.6714, 4.53164, -23.2248)
 
 [connection signal="playerWon" from="roundManager" to="." method="_on_round_manager_player_won"]
 [connection signal="updateProgressBarTo" from="roundManager" to="roundManager/HudOverlay" method="_on_round_manager_update_progress_bar_to"]
