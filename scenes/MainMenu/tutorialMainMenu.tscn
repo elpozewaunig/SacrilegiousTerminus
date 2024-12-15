@@ -88,4 +88,4 @@ You can adjust the rings using two different input methods:
 [node name="BackToMenuBtn" type="Button" parent="CanvasLayer/ScrollContainer/PanelContainer"]
 layout_mode = 2
 size_flags_vertical = 8
-text = "Back to main mein"
+text = "Back to menu"
