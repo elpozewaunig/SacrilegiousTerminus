@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=3 uid="uid://coj8cff6bnd1d"]
+[gd_scene load_steps=53 format=3 uid="uid://coj8cff6bnd1d"]
 
 [ext_resource type="Script" path="res://scenes/FightScenes/TheChurch/theChurchController.gd" id="1_dt4df"]
 [ext_resource type="AudioStream" uid="uid://p3j8kkj1er87" path="res://assets/sounds/long_whoosh/long_whoosh_4.ogg" id="2_chogk"]
@@ -6,10 +6,14 @@
 [ext_resource type="AudioStream" uid="uid://u8glnl0syi8r" path="res://assets/sounds/long_whoosh/long_whoosh_1.ogg" id="3_3mow5"]
 [ext_resource type="Texture2D" uid="uid://cstm1tsskp47v" path="res://scenes/FightScenes/TheChurch/3DFront/baketry2.png" id="3_6c8v4"]
 [ext_resource type="Texture2D" uid="uid://des0wuvfkbnu1" path="res://scenes/FightScenes/TheChurch/3DText/roberttexttext.jpg" id="4_2pns6"]
+[ext_resource type="AudioStream" uid="uid://d1wnq2ekqf7hr" path="res://assets/sounds/wheel_correct/wheel_correct_1.ogg" id="4_hhiyg"]
 [ext_resource type="AudioStream" uid="uid://dhkav2k7ma0dh" path="res://assets/sounds/rumble/rumble.ogg" id="4_y5mv2"]
+[ext_resource type="AudioStream" uid="uid://11otsyph44dg" path="res://assets/sounds/wheel_correct/wheel_correct_3.ogg" id="5_fiqwy"]
 [ext_resource type="ArrayMesh" uid="uid://4lger5fh6chq" path="res://scenes/FightScenes/TheChurch/3DText/preistroberttext1.obj" id="5_yx4t5"]
 [ext_resource type="ArrayMesh" uid="uid://dfstv50uufwrh" path="res://scenes/FightScenes/TheChurch/3DText/preistroberttext2.obj" id="6_x8mqh"]
 [ext_resource type="Texture2D" uid="uid://dyl6gtjdlb7q8" path="res://scenes/FightScenes/TheChurch/windowtry/b.png" id="7_grpge"]
+[ext_resource type="AudioStream" uid="uid://b8flt6yy81hcx" path="res://assets/sounds/wheel_turn/wheel_turn.ogg" id="7_qx13e"]
+[ext_resource type="AudioStream" uid="uid://2pf5cga2akch" path="res://assets/music/loading_loop.ogg" id="8_am3ih"]
 [ext_resource type="PackedScene" uid="uid://dtjng8jtop7ed" path="res://assets/sprites/protag/protag.tscn" id="9_1r7st"]
 [ext_resource type="Texture2D" uid="uid://drjj4u5wcu4iu" path="res://scenes/FightScenes/TheChurch/windowtry/c.png" id="9_sovuh"]
 [ext_resource type="PackedScene" uid="uid://b56djjhxj0crg" path="res://assets/sprites/robert/robert.tscn" id="10_3523r"]
@@ -257,10 +261,34 @@ tracks/17/keys = {
 "update": 0,
 "values": [0.0]
 }
+tracks/18/type = "value"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("AnimationPlayer/wheelspinsfxcutscene:volume_db")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-5.0]
+}
+tracks/19/type = "value"
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/path = NodePath("AnimationPlayer/cutscenemusic:volume_db")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-12.71]
+}
 
 [sub_resource type="Animation" id="Animation_ygplw"]
 resource_name = "epicorganicintro"
-length = 15.0
+length = 14.1325
 step = 0.05
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -269,10 +297,10 @@ tracks/0/path = NodePath("Camera3D:fov")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1, 3, 5, 6.5, 7, 8, 9.6, 11, 12.5, 15),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 1, 3, 5, 6.5, 7, 7.65, 8.4, 9.6, 11, 12.5, 15),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [40.0, 40.0, 66.7, 66.7, 66.7, 66.7, 66.7, 35.9, 65.7, 63.3, 65.4]
+"values": [40.0, 40.0, 66.7, 66.7, 66.7, 66.7, 66.7, 66.7, 35.9, 65.7, 63.3, 65.4]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -281,10 +309,10 @@ tracks/1/path = NodePath("Camera3D:position")
 tracks/1/interp = 2
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 1, 3, 5, 6.5, 7, 8, 9.6, 11, 12.5, 15),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 1, 3, 5, 6.5, 7, 7.65, 8.65, 9.6, 11, 12.5, 15),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector3(1.11, 4.51, -4.165), Vector3(1.11, 4.51, -3.92), Vector3(1.11, 1.55, -0.685), Vector3(2.215, -0.035, -1.755), Vector3(2.44, 0.385, -1.755), Vector3(2.44, 0.385, -1.755), Vector3(1.26, 2.215, -1.575), Vector3(1.26, 2.215, -1.575), Vector3(1.76, 1.69, -1.155), Vector3(1.855, 1.69, -1.155), Vector3(1.55, 1.69, -1.155)]
+"values": [Vector3(1.11, 4.51, -4.165), Vector3(1.11, 4.51, -3.92), Vector3(1.11, 1.55, -0.685), Vector3(2.215, -0.035, -1.755), Vector3(2.44, 0.385, -1.755), Vector3(2.44, 0.385, -1.755), Vector3(2.44, 0.385, -1.755), Vector3(1.26, 2.215, -1.575), Vector3(1.26, 2.215, -1.575), Vector3(1.76, 1.69, -1.155), Vector3(1.855, 1.69, -1.155), Vector3(1.55, 1.69, -1.155)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -293,10 +321,10 @@ tracks/2/path = NodePath("Camera3D:rotation")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 1, 3, 5, 6.5, 7, 8, 11, 12.5, 15),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 1, 3, 5, 6.5, 7, 7.65, 8.4, 11, 12.5, 15),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector3(-1.5708, 0, 0), Vector3(-1.5708, 0, 0), Vector3(-0.593412, 0, 0), Vector3(-0.0593412, -0.410152, 0), Vector3(0.153589, -0.366519, 0.31765), Vector3(0.153589, -0.366519, 0.31765), Vector3(-1.34565, 0.10472, 3.09272), Vector3(-0.92677, 0.401426, -0.0785398), Vector3(-0.877901, 0.401426, 0.0994838), Vector3(-1.01753, 0.244346, 0.0994838)]
+"values": [Vector3(-1.5708, 0, 0), Vector3(-1.5708, 0, 0), Vector3(-0.593412, 0, 0), Vector3(-0.0593412, -0.410152, 0), Vector3(0.153589, -0.366519, 0.31765), Vector3(0.153589, -0.366519, 0.31765), Vector3(0.153589, -0.366519, 0.31765), Vector3(-1.34565, 0.10472, 3.09272), Vector3(-0.92677, 0.401426, -0.0785398), Vector3(-0.877901, 0.401426, 0.0994838), Vector3(-1.01753, 0.244346, 0.0994838)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -305,7 +333,7 @@ tracks/3/path = NodePath("Preistroberttext1:position")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(5.5, 6.2, 6.9, 7.1),
+"times": PackedFloat32Array(5.5, 6.2, 8.25, 8.45),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [Vector3(0.812365, 0.979, -5.63573), Vector3(3.113, 0.979, -3.471), Vector3(3.113, 0.979, -3.471), Vector3(5.89265, 0.979, -1.29789)]
@@ -329,7 +357,7 @@ tracks/5/path = NodePath("Preistroberttext2:position")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(6, 6.5, 6.9, 7.1),
+"times": PackedFloat32Array(6, 6.5, 8.15, 8.35),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [Vector3(0.91447, 1.142, -5.84141), Vector3(3.312, 1.142, -3.593), Vector3(3.312, 1.142, -3.593), Vector3(7.247, 1.142, 0.177)]
@@ -353,7 +381,7 @@ tracks/7/path = NodePath("roundManager/AutomaticWheel:position")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
-"times": PackedFloat32Array(7.5, 8.1, 8.7),
+"times": PackedFloat32Array(8.55, 9.15, 9.75),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector3(1.919, 0.945, -2.175), Vector3(1.169, 1.69, -1.79), Vector3(2.51111, -0.34877, -2.11821)]
@@ -365,10 +393,10 @@ tracks/8/path = NodePath("roundManager/AutomaticWheel:rotation")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
-"times": PackedFloat32Array(7.5, 8.1, 8.7, 10.1, 10.7, 12.5, 15),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(8.55, 9.75, 11.15, 12.25, 13.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector3(0.0715585, 1.50447, 0.832522), Vector3(-0.464258, -2.18864, -0.397935), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, -2.03331, 0), Vector3(0, -4.28478, 0), Vector3(0, 0, 0)]
+"values": [Vector3(-0.464258, -2.18864, -0.397935), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, -4.28478, 0), Vector3(0, 0, 0)]
 }
 tracks/9/type = "value"
 tracks/9/imported = false
@@ -377,7 +405,7 @@ tracks/9/path = NodePath("roundManager/AutomaticWheel:scale")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
-"times": PackedFloat32Array(7, 7.5, 8.1, 8.7),
+"times": PackedFloat32Array(8.05, 8.55, 9.15, 9.75),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [Vector3(0.01, 0.01, 0.01), Vector3(1, 0.999999, 0.999999), Vector3(1, 0.999999, 0.999999), Vector3(1.76, 1.76, 1.76)]
@@ -389,7 +417,7 @@ tracks/10/path = NodePath("roundManager/AutomaticWheel:visible")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
-"times": PackedFloat32Array(7, 7.5),
+"times": PackedFloat32Array(8.05, 8.55),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [false, true]
@@ -401,10 +429,10 @@ tracks/11/path = NodePath("Preistroberttext1:visible")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/keys = {
-"times": PackedFloat32Array(6, 6.1, 7.6),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(6, 6.1, 8.8, 9.25),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": [false, true, false]
+"values": [false, true, true, false]
 }
 tracks/12/type = "value"
 tracks/12/imported = false
@@ -413,7 +441,7 @@ tracks/12/path = NodePath("Preistroberttext2:visible")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/keys = {
-"times": PackedFloat32Array(6.3, 6.4, 7.5, 7.6),
+"times": PackedFloat32Array(6.3, 6.4, 9.1, 9.4),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
 "values": [false, true, true, false]
@@ -422,13 +450,13 @@ tracks/13/type = "value"
 tracks/13/imported = false
 tracks/13/enabled = true
 tracks/13/path = NodePath("roundManager/ManualWheel:position")
-tracks/13/interp = 1
+tracks/13/interp = 2
 tracks/13/loop_wrap = true
 tracks/13/keys = {
-"times": PackedFloat32Array(8.3, 9),
+"times": PackedFloat32Array(9.3, 10.4),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector3(0.906, 1.83, -1.748), Vector3(-0.112086, -0.265787, -2.06709)]
+"values": [Vector3(0.906, 1.44, -1.748), Vector3(-0.112086, -0.265787, -2.06709)]
 }
 tracks/14/type = "value"
 tracks/14/imported = false
@@ -446,13 +474,13 @@ tracks/15/type = "value"
 tracks/15/imported = false
 tracks/15/enabled = true
 tracks/15/path = NodePath("roundManager/ManualWheel:rotation")
-tracks/15/interp = 1
+tracks/15/interp = 2
 tracks/15/loop_wrap = true
 tracks/15/keys = {
-"times": PackedFloat32Array(8.3, 8.5, 9, 10.7, 12.5, 15),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(7.9, 10.4, 11.55, 13.95),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Vector3(0.356047, 0, 0), Vector3(-0.155334, -1.42419, -0.445059), Vector3(0, 0, 0), Vector3(0, -1.64934, 0), Vector3(0, 3.83274, 0), Vector3(0, 0, 0)]
+"values": [Vector3(0.596903, -6.30064, 0), Vector3(-0.0925025, 0.253073, 0.0244346), Vector3(0, 3.83274, 0), Vector3(0, 0, 0)]
 }
 tracks/16/type = "value"
 tracks/16/imported = false
@@ -461,7 +489,7 @@ tracks/16/path = NodePath("roundManager/ManualWheel:scale")
 tracks/16/interp = 1
 tracks/16/loop_wrap = true
 tracks/16/keys = {
-"times": PackedFloat32Array(7.9, 8, 9),
+"times": PackedFloat32Array(8.95, 9.05, 10.05),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector3(0.1, 0.1, 0.1), Vector3(1, 1, 1), Vector3(1.76, 1.76, 1.76)]
@@ -473,7 +501,7 @@ tracks/17/path = NodePath("roundManager/ManualWheel:visible")
 tracks/17/interp = 1
 tracks/17/loop_wrap = true
 tracks/17/keys = {
-"times": PackedFloat32Array(7.8, 8),
+"times": PackedFloat32Array(8.85, 9.05),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [false, true]
@@ -485,7 +513,7 @@ tracks/18/path = NodePath("roundManager")
 tracks/18/interp = 1
 tracks/18/loop_wrap = true
 tracks/18/keys = {
-"times": PackedFloat32Array(15),
+"times": PackedFloat32Array(13.95),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [],
@@ -507,8 +535,16 @@ tracks/19/keys = {
 "end_offset": 0.0,
 "start_offset": 0.0,
 "stream": ExtResource("3_3mow5")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("4_hhiyg")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("5_fiqwy")
 }],
-"times": PackedFloat32Array(6.1, 6.55)
+"times": PackedFloat32Array(6.1, 6.55, 8.4, 8.95)
 }
 tracks/19/use_blend = true
 tracks/20/type = "audio"
@@ -533,10 +569,64 @@ tracks/21/path = NodePath("AnimationPlayer/RumbleSFX:volume_db")
 tracks/21/interp = 1
 tracks/21/loop_wrap = true
 tracks/21/keys = {
-"times": PackedFloat32Array(0, 3, 4.9, 6.75, 7.2, 8.1, 8.4, 10.75, 14.3, 15.3),
+"times": PackedFloat32Array(0, 3, 4.9, 6.75, 7.2, 8.1, 8.4, 10.75, 13.55, 14),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [-10.0, 5.0, 5.0, -15.0, 5.0, 5.0, -5.0, -5.0, -10.0, -40.0]
+}
+tracks/22/type = "audio"
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/path = NodePath("AnimationPlayer/wheelspinsfxcutscene")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/keys = {
+"clips": [{
+"end_offset": 1.76,
+"start_offset": 0.0,
+"stream": ExtResource("7_qx13e")
+}],
+"times": PackedFloat32Array(7.9)
+}
+tracks/22/use_blend = true
+tracks/23/type = "value"
+tracks/23/imported = false
+tracks/23/enabled = true
+tracks/23/path = NodePath("AnimationPlayer/wheelspinsfxcutscene:volume_db")
+tracks/23/interp = 1
+tracks/23/loop_wrap = true
+tracks/23/keys = {
+"times": PackedFloat32Array(8.1, 9.43322, 11.65, 12.35),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [-80.0, -5.0, -5.0, -80.0]
+}
+tracks/24/type = "audio"
+tracks/24/imported = false
+tracks/24/enabled = true
+tracks/24/path = NodePath("AnimationPlayer/cutscenemusic")
+tracks/24/interp = 1
+tracks/24/loop_wrap = true
+tracks/24/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("8_am3ih")
+}],
+"times": PackedFloat32Array(0.7)
+}
+tracks/24/use_blend = true
+tracks/25/type = "value"
+tracks/25/imported = false
+tracks/25/enabled = true
+tracks/25/path = NodePath("AnimationPlayer/cutscenemusic:volume_db")
+tracks/25/interp = 1
+tracks/25/loop_wrap = true
+tracks/25/keys = {
+"times": PackedFloat32Array(11.85, 13.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-12.71, -80.0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_y7gr0"]
@@ -580,6 +670,12 @@ autoplay = "epicorganicintro"
 
 [node name="WhooshSFX" type="AudioStreamPlayer" parent="AnimationPlayer"]
 volume_db = 15.0
+
+[node name="cutscenemusic" type="AudioStreamPlayer" parent="AnimationPlayer"]
+volume_db = -12.71
+
+[node name="wheelspinsfxcutscene" type="AudioStreamPlayer" parent="AnimationPlayer"]
+volume_db = -5.0
 
 [node name="RumbleSFX" type="AudioStreamPlayer" parent="AnimationPlayer"]
 

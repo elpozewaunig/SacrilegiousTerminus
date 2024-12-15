@@ -3,14 +3,11 @@
 [sub_resource type="GDScript" id="GDScript_p7hlj"]
 script/source = "extends Node3D
 
-@onready var backButton: Button = $CanvasLayer/ScrollContainer/PanelContainer/BackToMenuBtn
+func _process(_delta: float) -> void:
+	if Input.is_action_just_pressed(\"pause\") || Input.is_action_just_pressed(\"skip-dialog\"):
+		_on_back_to_menu_btn_pressed()
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	backButton.pressed.connect(self.backToMenu)
-
-
-func backToMenu() -> void:
+func _on_back_to_menu_btn_pressed() -> void:
 	SceneManager.change_scene(SceneManager.mainMenuSene)
 "
 
@@ -27,19 +24,19 @@ script = SubResource("GDScript_p7hlj")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="ScrollContainer" type="ScrollContainer" parent="CanvasLayer"]
-custom_minimum_size = Vector2(944, 400)
-anchors_preset = 15
-anchor_right = 1.0
+custom_minimum_size = Vector2(1920, 1080)
+anchors_preset = -1
+anchor_left = -0.00208333
+anchor_right = 1.00208
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 horizontal_scroll_mode = 0
+metadata/_edit_use_anchors_ = true
 
 [node name="PanelContainer" type="PanelContainer" parent="CanvasLayer/ScrollContainer"]
-custom_minimum_size = Vector2(944, 470)
+custom_minimum_size = Vector2(1920, 1080)
 layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_f8o4f")
 
 [node name="TutorialLabel" type="RichTextLabel" parent="CanvasLayer/ScrollContainer/PanelContainer"]
@@ -73,19 +70,31 @@ In the final level, a third, outer ring is introduced. The outer ring is indepen
 [center][font_size={18}][b]Controls[/b][/font_size][/center]
 You can adjust the rings using two different input methods:
 
-    [b]Keypad Controls[/b]
-[indent][ul] Inner ring: Press 1 or 3
- Middle ring: Press 8 or 0
- Outer ring: Press 2 or 9[/ul][/indent]
     
     [b]Arrow Key Controls[/b]
 [indent][ul] → Right Arrow: Move the selection clockwise
  ← Left Arrow: Move the selection counterclockwise
  ↑ Up Arrow: Move to the next outer ring
  ↓ Down Arrow: Move to the next inner ring[/ul][/indent]
+
+    [b]Keypad Controls[/b]
+[indent][ul] Inner ring: Press 1 or 3
+ Middle ring: Press 8 or 0
+ Outer ring: Press 2 or 9[/ul][/indent]
+
+    [b]Keyboard Controls[/b]
+[indent][ul] Inner ring: Press W or S
+ Middle ring: Press E or D
+ Outer ring: Press R or F[/ul][/indent]
+
+
+
 "
 
 [node name="BackToMenuBtn" type="Button" parent="CanvasLayer/ScrollContainer/PanelContainer"]
+z_index = 11
 layout_mode = 2
 size_flags_vertical = 8
 text = "Back to menu"
+
+[connection signal="pressed" from="CanvasLayer/ScrollContainer/PanelContainer/BackToMenuBtn" to="." method="_on_back_to_menu_btn_pressed"]
