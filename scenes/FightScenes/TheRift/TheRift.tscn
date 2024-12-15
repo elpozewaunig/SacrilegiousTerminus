@@ -438,7 +438,7 @@ script = ExtResource("8_i72os")
 playerWheel = NodePath("ManualWheel")
 opponentWheel = NodePath("AutomaticWheel")
 hasProgressBar = true
-timeForRoud = 20
+timeForRoud = 21
 musicPlayer = NodePath("Music")
 
 [node name="AutomaticWheel" parent="roundManager" instance=ExtResource("9_hn1ih")]
