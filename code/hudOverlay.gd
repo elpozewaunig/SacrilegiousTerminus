@@ -2,7 +2,6 @@ extends Control
 
 signal dialogCompleted()
 signal currentEntity(entity: DialogOption.DIALOG_ENTITY)
-signal tutorialVisibilityChanged(closed: bool)
 
 @onready var dialogLayer: CanvasLayer = $"%DialogLayer"
 @onready var ingameLayer: CanvasLayer = $"%IngameLayer"
@@ -29,13 +28,13 @@ func hideIngameHud() -> void:
 	
 	
 func displayTutorial() -> void:
+	GameManager.stopTimer()
 	tutorialLayer.visible = true;
-	tutorialVisibilityChanged.emit(!tutorialLayer.visible)
 
 
 func hideTutorial() -> void:
+	GameManager.startTimer()
 	tutorialLayer.visible = false;
-	tutorialVisibilityChanged.emit(!tutorialLayer.visible)
 
 
 func _on_round_manager_update_progress_bar_to(score: float, maxScore: int) -> void:
