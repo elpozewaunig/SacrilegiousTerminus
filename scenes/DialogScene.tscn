@@ -14,7 +14,7 @@ signal dialogCompleted()
 @onready var playerSprite: Sprite2D = $CanvasLayer/PlayerSprite
 @onready var enemySprite: Sprite2D = $CanvasLayer/EnemySprite
 
-const PLAYER_END_POSITION: Vector2 = Vector2(250,1230)
+const PLAYER_END_POSITION: Vector2 = Vector2(200,1230)
 const ENEMY_END_POSITION: Vector2 = Vector2(1600,1230)
 
 var currentSprite: Sprite2D;
@@ -36,11 +36,6 @@ func _physics_process(delta: float) -> void:
 		time += delta * speed
 		currentSprite.position.y = start_y + sin(time) * amplitude
 		
-
-func entitiesInPlace() -> bool:
-	var expectedPlayerX: float = PLAYER_END_POSITION.x
-	var actualPlayerX: float = playerSprite.position.x
-	return (expectedPlayerX - actualPlayerX) < 1
 
 func _on_hud_overlay_current_entity(entity: DialogOption.DIALOG_ENTITY) -> void:
 	if currentSprite != null:
@@ -78,12 +73,14 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0, 0, 0)
+color = Color(0, 0, 0, 0.733333)
 
 [node name="PlayerSprite" type="Sprite2D" parent="CanvasLayer"]
+z_index = 1
 position = Vector2(-650, 1230)
 
 [node name="EnemySprite" type="Sprite2D" parent="CanvasLayer"]
+z_index = 1
 position = Vector2(2500, 1230)
 
 [node name="HudOverlay" parent="." instance=ExtResource("1_hnrpo")]
