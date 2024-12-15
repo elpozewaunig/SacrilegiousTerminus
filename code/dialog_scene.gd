@@ -1,9 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://dgurl1u1gb0ly"]
-
-[ext_resource type="PackedScene" uid="uid://dvygun7k256ji" path="res://scenes/HudOverlay.tscn" id="1_hnrpo"]
-
-[sub_resource type="GDScript" id="GDScript_3k0fr"]
-script/source = "extends Control
+extends Control
 
 signal dialogCompleted()
 
@@ -46,8 +41,6 @@ func _physics_process(delta: float) -> void:
 	
 	playerSprite.position = playerSprite.position.lerp(PLAYER_END_POSITION , 3 * delta)
 	enemySprite.position = enemySprite.position.lerp(ENEMY_END_POSITION, 3 * delta)
-	print(\"Enemy position: %s\" % enemySprite.position.y)
-	print(\"Enemy end position: %s\" % ENEMY_END_POSITION.y)
 	if currentSprite != null:
 		# move sprite slightly up and down to mimic talking
 		time += delta * speed
@@ -85,34 +78,3 @@ func setPlayerStartPosition(vector: Vector2) -> void:
 
 func setEnemyStartPosition(vector: Vector2) -> void:
 	ENEMY_START_POSITION = vector 		
-"
-
-[node name="DialogScene" type="Control"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-script = SubResource("GDScript_3k0fr")
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="PlayerSprite" type="Sprite2D" parent="CanvasLayer"]
-z_index = 1
-position = Vector2(-650, 1230)
-
-[node name="EnemySprite" type="Sprite2D" parent="CanvasLayer"]
-z_index = 1
-position = Vector2(2500, 1230)
-
-[node name="BackgroundSprite" type="Sprite2D" parent="CanvasLayer"]
-z_index = -1
-position = Vector2(960, 540)
-
-[node name="HudOverlay" parent="." instance=ExtResource("1_hnrpo")]
-z_index = 10
-layout_mode = 1
-
-[connection signal="currentEntity" from="HudOverlay" to="." method="_on_hud_overlay_current_entity"]
-[connection signal="dialogCompleted" from="HudOverlay" to="." method="_on_hud_overlay_dialog_completed"]

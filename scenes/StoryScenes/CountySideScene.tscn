@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://caddljvqemfkx"]
+[gd_scene load_steps=7 format=3 uid="uid://caddljvqemfkx"]
 
 [ext_resource type="PackedScene" uid="uid://dgurl1u1gb0ly" path="res://scenes/DialogScene.tscn" id="1_5gvbm"]
 [ext_resource type="Texture2D" uid="uid://b3frq2g06mlbx" path="res://assets/sprites/protag/protagonist.png" id="2_0r7u8"]
+[ext_resource type="Script" path="res://code/dialog_scene.gd" id="2_cfj3l"]
 [ext_resource type="Texture2D" uid="uid://dmhdn1f3c11hg" path="res://assets/sprites/engel1/michi_full.png" id="3_o75ml"]
 [ext_resource type="Texture2D" uid="uid://mrfi42ussman" path="res://assets/cutscenebackgrounds/bg2.jpg" id="4_pje5e"]
 
@@ -12,7 +13,8 @@ script/source = "extends Node3D
 @onready var dialogScene: Control = $DialogScene
 
 var DIALOG: Array[DialogOption] = [
-	DialogOption.new(DialogOption.DIALOG_ENTITY.NARRATOR, \"An angel descends from the heavens, radiant and imposing, wings outstretched.\"),
+	DialogOption.new(DialogOption.DIALOG_ENTITY.NARRATOR, \"After you defeated the priest, you continue your journey in direction of the mysterious glowing crack in the sky\"),
+	DialogOption.new(DialogOption.DIALOG_ENTITY.NARRATOR, \"But just as you reach the country side, an angel descends from the heavens, radiant and imposing, wings outstretched...\"),
 	DialogOption.new(DialogOption.DIALOG_ENTITY.ENEMY, \"How brazen… you’ve stirred chaos where it does not belong. But know this: your defiance ends now.\"),
 	DialogOption.new(DialogOption.DIALOG_ENTITY.PLAYER, \"Not even an angel can stand against Satan and his most trusted soldier\"),
 	DialogOption.new(DialogOption.DIALOG_ENTITY.NARRATOR, \"The angel releases a soft, knowing laugh, a sound both serene and ominous.\"),
@@ -35,6 +37,7 @@ func _on_dialog_scene_dialog_completed() -> void:
 script = SubResource("GDScript_7xsqi")
 
 [node name="DialogScene" parent="." instance=ExtResource("1_5gvbm")]
+script = ExtResource("2_cfj3l")
 player = ExtResource("2_0r7u8")
 enemy = ExtResource("3_o75ml")
 background = ExtResource("4_pje5e")

@@ -57,14 +57,23 @@ func init(dialogArray: Array[DialogOption], showFullscreen: bool = true) -> void
 	resetDialogBox()
 
 func resetDialogBox() -> void:
+	var entity: DialogOption.DIALOG_ENTITY = dialogParts[currentIndex].entity
+	var text: String = dialogParts[currentIndex].text
 	dialogLabel.visible_ratio = 0
-	dialogLabel.text = dialogParts[currentIndex].text
+	var fontColor: Color;
+	if entity == DialogOption.DIALOG_ENTITY.NARRATOR && !backgroundLabel.visible:
+		text = "(%s)" % text
+		fontColor = Color.GRAY
+	else:
+		fontColor = Color.WHITE
+	dialogLabel.set("theme_override_colors/font_color", fontColor)
+	dialogLabel.text = text
 	audioplayer = getAudioplayer()
 	dialogLabel.visible_ratio = 0
 	visible_character = 0
 	dialogPartDone = false
 	dialogDone = false
-	currentEntity.emit(dialogParts[currentIndex].entity)
+	currentEntity.emit(entity)
 
 func write(delta: float) -> void:
 	if dialogLabel.visible_ratio < 1:
