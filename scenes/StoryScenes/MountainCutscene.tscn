@@ -1,0 +1,42 @@
+[gd_scene load_steps=6 format=3 uid="uid://clyl60ed8hapa"]
+
+[ext_resource type="PackedScene" uid="uid://dgurl1u1gb0ly" path="res://scenes/DialogScene.tscn" id="1_ayubt"]
+[ext_resource type="Texture2D" uid="uid://b3frq2g06mlbx" path="res://assets/sprites/protag/protagonist.png" id="2_k22er"]
+[ext_resource type="Texture2D" uid="uid://dka4v3tdll4uw" path="res://assets/sprites/engel2/IMG_0207.png" id="3_dihtk"]
+[ext_resource type="Texture2D" uid="uid://chqqwl1pfpokh" path="res://assets/cutscenebackgrounds/bg3.jpg" id="4_aqnbr"]
+
+[sub_resource type="GDScript" id="GDScript_uv2tw"]
+script/source = "extends Node3D
+
+@onready var dialogScene: Control = $DialogScene
+
+var DIALOG: Array[DialogOption] = [
+	DialogOption.new(DialogOption.DIALOG_ENTITY.NARRATOR, \"As you stand triumphantly over the defeated angel, a second one suddenly appears behind you, his wings unfurling with a deafening sound.\"),
+	DialogOption.new(DialogOption.DIALOG_ENTITY.ENEMY, \"Ah, how the mighty have fallen. My brother… reduced to this?\"),
+	DialogOption.new(DialogOption.DIALOG_ENTITY.NARRATOR, \"He gazes down at the defeated angel, his eyes a mix of disdain and sorrow.\"),
+	DialogOption.new(DialogOption.DIALOG_ENTITY.ENEMY, \"But such things are of little consequence now.\"),
+	DialogOption.new(DialogOption.DIALOG_ENTITY.NARRATOR, \"His lips curl into a cold, knowing smile.\"),
+	DialogOption.new(DialogOption.DIALOG_ENTITY.ENEMY, \"I have come to return you to the pit from whence you crawled, ensuring you are never to trouble this world again.\"),
+	DialogOption.new(DialogOption.DIALOG_ENTITY.PLAYER, \"You’re quite confident, considering I just defeated your brother mere seconds ago.\"),
+	DialogOption.new(DialogOption.DIALOG_ENTITY.NARRATOR, \"The angel lets out a low, mirthless laugh, ancient and echoing like the sound of distant chimes.\"),
+	DialogOption.new(DialogOption.DIALOG_ENTITY.ENEMY, \"That one? A shadow of what he was meant to be. A weakling who disgraced his own light. Had I wished, I could have ended him in the briefest of my thoughts.\"),
+	DialogOption.new(DialogOption.DIALOG_ENTITY.NARRATOR, \"His expression hardens, his eyes gleaming with divine wrath\"),
+	DialogOption.new(DialogOption.DIALOG_ENTITY.ENEMY, \"But you… you have earned my full attention. Now, your time has come.\"),
+	DialogOption.new(DialogOption.DIALOG_ENTITY.NARRATOR, \"The air around you grows heavy, as if the heavens themselves bear down upon your very soul. 
+	You begin to feel the crushing pressure radiating from the angel, but instead of fear, a dark grin spreads across your face.\"),
+]
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	dialogScene.setEnemyStartPosition(Vector2(2500,200))
+	dialogScene.setEnemyEndPosition(Vector2(1600,600))
+	dialogScene.showDialog(DIALOG)
+"
+
+[node name="MountainCutscene" type="Node3D"]
+script = SubResource("GDScript_uv2tw")
+
+[node name="DialogScene" parent="." instance=ExtResource("1_ayubt")]
+player = ExtResource("2_k22er")
+enemy = ExtResource("3_dihtk")
+background = ExtResource("4_aqnbr")

@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://ci8b46tjfjrir"]
+
+[ext_resource type="PackedScene" uid="uid://dgurl1u1gb0ly" path="res://scenes/DialogScene.tscn" id="1_mjeo2"]
+[ext_resource type="Texture2D" uid="uid://b2n213s6icibw" path="res://assets/cutscenebackgrounds/bg4.jpg" id="2_fjir3"]
+
+[sub_resource type="GDScript" id="GDScript_fu138"]
+script/source = "extends Node3D
+
+@onready var dialogScene: Control = $DialogScene
+
+var DIALOG: Array[DialogOption] = [
+	DialogOption.new(DialogOption.DIALOG_ENTITY.NARRATOR, \"Example Text\"),
+]
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	dialogScene.setEnemyStartPosition(Vector2(2500,200))
+	dialogScene.setEnemyEndPosition(Vector2(1600,600))
+	dialogScene.showDialog(DIALOG)
+"
+
+[node name="RiftCutscene" type="Node3D"]
+script = SubResource("GDScript_fu138")
+
+[node name="DialogScene" parent="." instance=ExtResource("1_mjeo2")]
+background = ExtResource("2_fjir3")
