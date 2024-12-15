@@ -1,5 +1,6 @@
-[gd_scene load_steps=69 format=3 uid="uid://bihqmqmhy5qrk"]
+[gd_scene load_steps=71 format=3 uid="uid://bihqmqmhy5qrk"]
 
+[ext_resource type="AudioStream" uid="uid://2pf5cga2akch" path="res://assets/music/loading_loop.ogg" id="1_vmvtw"]
 [ext_resource type="Texture2D" uid="uid://btjnrke4c1pf3" path="res://scenes/FightScenes/TheMountain/Skybox/spacenopink.jpg" id="3_g3qk6"]
 [ext_resource type="ArrayMesh" uid="uid://bk3lbs6yirhyf" path="res://scenes/FightScenes/TheCountrySide/CountrySide6.obj" id="4_bhs08"]
 [ext_resource type="Material" uid="uid://dxvag2u3lnpos" path="res://scenes/FightScenes/TheCountrySide/materials/mctrees1.tres" id="5_ctxml"]
@@ -53,6 +54,7 @@
 [ext_resource type="AudioStream" uid="uid://p3j8kkj1er87" path="res://assets/sounds/long_whoosh/long_whoosh_4.ogg" id="50_36iff"]
 [ext_resource type="AudioStream" uid="uid://c50px6he1apgi" path="res://assets/music/battle1_loop.ogg" id="50_k6svf"]
 [ext_resource type="AudioStream" uid="uid://dhkav2k7ma0dh" path="res://assets/sounds/rumble/rumble.ogg" id="51_dn8wp"]
+[ext_resource type="AudioStream" uid="uid://11otsyph44dg" path="res://assets/sounds/wheel_correct/wheel_correct_3.ogg" id="54_u1f88"]
 
 [sub_resource type="GDScript" id="GDScript_os87n"]
 resource_name = "countrySideController"
@@ -424,6 +426,40 @@ tracks/23/keys = {
 "update": 0,
 "values": [-10.0]
 }
+tracks/24/type = "value"
+tracks/24/imported = false
+tracks/24/enabled = true
+tracks/24/path = NodePath("Camera3D/CutsceneMusic:volume_db")
+tracks/24/interp = 1
+tracks/24/loop_wrap = true
+tracks/24/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-10.0]
+}
+tracks/25/type = "audio"
+tracks/25/imported = false
+tracks/25/enabled = true
+tracks/25/path = NodePath("Camera3D/CutsceneMusic")
+tracks/25/interp = 1
+tracks/25/loop_wrap = true
+tracks/25/keys = {
+"clips": [],
+"times": PackedFloat32Array()
+}
+tracks/25/use_blend = true
+tracks/26/type = "audio"
+tracks/26/imported = false
+tracks/26/enabled = true
+tracks/26/path = NodePath("Camera3D/wheeldingsound")
+tracks/26/interp = 1
+tracks/26/loop_wrap = true
+tracks/26/keys = {
+"clips": [],
+"times": PackedFloat32Array()
+}
+tracks/26/use_blend = true
 
 [sub_resource type="Animation" id="Animation_80vof"]
 resource_name = "epicintro"
@@ -761,6 +797,52 @@ tracks/26/keys = {
 "update": 0,
 "values": [-5.0, -5.0, -15.0, -15.0, 5.0, 5.0, -15.0]
 }
+tracks/27/type = "audio"
+tracks/27/imported = false
+tracks/27/enabled = true
+tracks/27/path = NodePath("Camera3D/CutsceneMusic")
+tracks/27/interp = 1
+tracks/27/loop_wrap = true
+tracks/27/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("1_vmvtw")
+}],
+"times": PackedFloat32Array(0.53)
+}
+tracks/27/use_blend = true
+tracks/28/type = "value"
+tracks/28/imported = false
+tracks/28/enabled = true
+tracks/28/path = NodePath("Camera3D/CutsceneMusic:volume_db")
+tracks/28/interp = 1
+tracks/28/loop_wrap = true
+tracks/28/keys = {
+"times": PackedFloat32Array(9.3, 9.91),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-10.0, -80.0]
+}
+tracks/29/type = "audio"
+tracks/29/imported = false
+tracks/29/enabled = true
+tracks/29/path = NodePath("Camera3D/wheeldingsound")
+tracks/29/interp = 1
+tracks/29/loop_wrap = true
+tracks/29/keys = {
+"clips": [{
+"end_offset": 6.38,
+"start_offset": 0.0,
+"stream": ExtResource("54_u1f88")
+}, {
+"end_offset": 6.38,
+"start_offset": 0.0,
+"stream": ExtResource("54_u1f88")
+}],
+"times": PackedFloat32Array(5.87, 8.92)
+}
+tracks/29/use_blend = true
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_x7yax"]
 _data = {
@@ -781,6 +863,12 @@ volume_db = 15.0
 
 [node name="RumbleSFX" type="AudioStreamPlayer" parent="Camera3D"]
 volume_db = -10.0
+
+[node name="CutsceneMusic" type="AudioStreamPlayer" parent="Camera3D"]
+volume_db = -10.0
+
+[node name="wheeldingsound" type="AudioStreamPlayer" parent="Camera3D"]
+volume_db = 10.0
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_055ba")

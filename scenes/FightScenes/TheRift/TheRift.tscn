@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://icf506yysjwv"]
+[gd_scene load_steps=29 format=3 uid="uid://icf506yysjwv"]
 
 [ext_resource type="PackedScene" uid="uid://d3e5kcc82viwq" path="res://scenes/FightScenes/rifttear.tscn" id="3_euu3m"]
 [ext_resource type="PackedScene" uid="uid://dtjng8jtop7ed" path="res://assets/sprites/protag/protag.tscn" id="4_vbt65"]
@@ -13,6 +13,8 @@
 [ext_resource type="PackedScene" uid="uid://dvygun7k256ji" path="res://scenes/HudOverlay.tscn" id="11_dkq56"]
 [ext_resource type="AudioStream" uid="uid://c50px6he1apgi" path="res://assets/music/battle1_loop.ogg" id="12_d7crm"]
 [ext_resource type="Texture2D" uid="uid://bqiwd7amcn3cr" path="res://scenes/FightScenes/TheChurch/black.png" id="12_lewcg"]
+[ext_resource type="AudioStream" uid="uid://2pf5cga2akch" path="res://assets/music/loading_loop.ogg" id="13_3behg"]
+[ext_resource type="AudioStream" uid="uid://dhkav2k7ma0dh" path="res://assets/sounds/rumble/rumble.ogg" id="14_m2iga"]
 
 [sub_resource type="GDScript" id="GDScript_0bvbl"]
 resource_name = "riftController"
@@ -198,6 +200,30 @@ tracks/11/keys = {
 "update": 1,
 "values": [true]
 }
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Camera3D/CutsceneMusic:volume_db")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-10.0]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("Camera3D/RumbleSFX:volume_db")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-10.0]
+}
 
 [sub_resource type="Animation" id="Animation_agft1"]
 resource_name = "epicintro"
@@ -360,6 +386,60 @@ tracks/12/keys = {
 "update": 1,
 "values": [true]
 }
+tracks/13/type = "audio"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("Camera3D/CutsceneMusic")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("13_3behg")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/13/use_blend = true
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("Camera3D/CutsceneMusic:volume_db")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(24.4333, 25.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-10.0, -80.0]
+}
+tracks/15/type = "audio"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("Camera3D/RumbleSFX")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("14_m2iga")
+}],
+"times": PackedFloat32Array(0.0666667)
+}
+tracks/15/use_blend = true
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("Camera3D/RumbleSFX:volume_db")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0.0666667, 9.13333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 0.0]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_uil50"]
 _data = {
@@ -410,6 +490,18 @@ script = SubResource("GDScript_0bvbl")
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.522496, -0.852641, 0, 0.852641, 0.522496, 0, 1.95, 0)
 fov = 50.0
+
+[node name="WhooshSFX" type="AudioStreamPlayer" parent="Camera3D"]
+volume_db = 15.0
+
+[node name="wheeldingsound" type="AudioStreamPlayer" parent="Camera3D"]
+volume_db = 10.0
+
+[node name="RumbleSFX" type="AudioStreamPlayer" parent="Camera3D"]
+volume_db = -10.0
+
+[node name="CutsceneMusic" type="AudioStreamPlayer" parent="Camera3D"]
+volume_db = -10.0
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_055ba")
