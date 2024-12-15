@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://dvygun7k256ji"]
+[gd_scene load_steps=18 format=3 uid="uid://dvygun7k256ji"]
 
 [ext_resource type="Script" path="res://code/hudOverlay.gd" id="1_nlpga"]
 [ext_resource type="Script" path="res://code/dialogScript.gd" id="2_p562y"]
@@ -37,28 +37,7 @@ func update(score: float, maxScore: int) -> void:
 content_margin_left = 8.0
 bg_color = Color(0, 0, 0, 0.788235)
 
-[sub_resource type="FontFile" id="FontFile_ch2gh"]
-subpixel_positioning = 0
-msdf_pixel_range = 14
-msdf_size = 128
-cache/0/16/0/ascent = 0.0
-cache/0/16/0/descent = 0.0
-cache/0/16/0/underline_position = 0.0
-cache/0/16/0/underline_thickness = 0.0
-cache/0/16/0/scale = 1.0
-cache/0/50/0/ascent = 0.0
-cache/0/50/0/descent = 0.0
-cache/0/50/0/underline_position = 0.0
-cache/0/50/0/underline_thickness = 0.0
-cache/0/50/0/scale = 1.0
-cache/0/100/0/ascent = 0.0
-cache/0/100/0/descent = 0.0
-cache/0/100/0/underline_position = 0.0
-cache/0/100/0/underline_thickness = 0.0
-cache/0/100/0/scale = 1.0
-
 [sub_resource type="LabelSettings" id="LabelSettings_86xpp"]
-font = SubResource("FontFile_ch2gh")
 font_size = 100
 font_color = Color(1, 0.313726, 0.223529, 1)
 shadow_size = 10
@@ -68,6 +47,7 @@ shadow_color = Color(1, 0.311, 0.22, 0.309804)
 script/source = "extends Label
 
 func update(timeArray: Array) -> void:
+	print(timeArray);
 	text = \"%02d:%02d:%02d\" % timeArray
 "
 
