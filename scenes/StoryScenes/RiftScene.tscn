@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://caddljvqemfkx"]
+
+[ext_resource type="PackedScene" uid="uid://dgurl1u1gb0ly" path="res://scenes/DialogScene.tscn" id="1_5gvbm"]
+[ext_resource type="Texture2D" uid="uid://b3frq2g06mlbx" path="res://assets/sprites/protag/protagonist.png" id="2_0r7u8"]
+[ext_resource type="Texture2D" uid="uid://ddbiab4ysa40q" path="res://assets/sprites/engel1/michi.png" id="3_1uv3o"]
+
+[sub_resource type="GDScript" id="GDScript_7xsqi"]
+script/source = "extends Node3D
+
+
+@onready var dialogScene: Control = $DialogScene
+
+var DIALOG: Array[DialogOption] = [
+	DialogOption.new(DialogOption.DIALOG_ENTITY.NARRATOR, \"An angel descends from the heavens, radiant and imposing, wings outstretched.\"),
+	DialogOption.new(DialogOption.DIALOG_ENTITY.ENEMY, \"How brazen… you’ve stirred chaos where it does not belong. But know this: your defiance ends now.\"),
+	DialogOption.new(DialogOption.DIALOG_ENTITY.PLAYER, \"Not even an angel can stand against Satan and his most trusted soldier\"),
+	DialogOption.new(DialogOption.DIALOG_ENTITY.NARRATOR, \"The angel releases a soft, knowing laugh, a sound both serene and ominous.\"),
+	DialogOption.new(DialogOption.DIALOG_ENTITY.ENEMY, \"Such hubris… it is always the same. You dare to challenge the will of the Almighty? Foolish mortal, you shall learn the price of your arrogance.\"),
+	DialogOption.new(DialogOption.DIALOG_ENTITY.NARRATOR, \"FIGHT!\"),
+]
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	dialogScene.setEnemyStartPosition(Vector2(2500,200))
+	dialogScene.setEnemyEndPosition(Vector2(1600,600))
+	dialogScene.showDialog(DIALOG)
+"
+
+[node name="RiftScene" type="Node3D"]
+script = SubResource("GDScript_7xsqi")
+
+[node name="DialogScene" parent="." instance=ExtResource("1_5gvbm")]
+player = ExtResource("2_0r7u8")
+enemy = ExtResource("3_1uv3o")

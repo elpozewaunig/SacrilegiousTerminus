@@ -22,11 +22,6 @@ DialogOption.new(DialogOption.DIALOG_ENTITY.NARRATOR, \"FIGHT!\"),
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	dialogScene.showDialog(DIALOG)
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
 "
 
 [node name="ChurchScene" type="Node3D"]

@@ -14,8 +14,10 @@ signal dialogCompleted()
 @onready var playerSprite: Sprite2D = $CanvasLayer/PlayerSprite
 @onready var enemySprite: Sprite2D = $CanvasLayer/EnemySprite
 
-const PLAYER_END_POSITION: Vector2 = Vector2(200,1230)
-const ENEMY_END_POSITION: Vector2 = Vector2(1600,1230)
+var PLAYER_START_POSITION: Vector2 = Vector2(-650,1230)
+var ENEMY_START_POSITION: Vector2 = Vector2(2500,1230)
+var PLAYER_END_POSITION: Vector2 = Vector2(200,1230)
+var ENEMY_END_POSITION: Vector2 = Vector2(1600,1230)
 
 var currentSprite: Sprite2D;
 var speed: float = 25.0 # Pixel pro Sekunde
@@ -25,6 +27,8 @@ var start_y: float;
 
 # Called when the node enters the scene tree for the first time.
 func showDialog(dialogOptions: Array[DialogOption]) -> void:
+	playerSprite.position = PLAYER_START_POSITION
+	enemySprite.position = ENEMY_START_POSITION
 	playerSprite.texture = player;
 	enemySprite.texture = enemy;
 	hudOverlay.showDialog(dialogOptions, false)
@@ -33,6 +37,7 @@ func _physics_process(delta: float) -> void:
 	playerSprite.position = lerp(playerSprite.position, PLAYER_END_POSITION , 3 * delta)
 	enemySprite.position = lerp(enemySprite.position, ENEMY_END_POSITION, 3 * delta)
 	if currentSprite != null:
+		# move sprite slightly up and down to mimic talking
 		time += delta * speed
 		currentSprite.position.y = start_y + sin(time) * amplitude
 		
@@ -52,7 +57,22 @@ func _on_hud_overlay_dialog_completed() -> void:
 		currentSprite.position = PLAYER_END_POSITION if currentSprite == playerSprite else ENEMY_END_POSITION
 		currentSprite = null
 	dialogCompleted.emit()
-		
+
+	
+func setPlayerEndPosition(vector: Vector2) -> void:
+	PLAYER_END_POSITION = vector 
+
+
+func setEnemyEndPosition(vector: Vector2) -> void:
+	ENEMY_END_POSITION = vector
+
+
+func setPlayerStartPosition(vector: Vector2) -> void:
+	PLAYER_START_POSITION = vector 
+
+
+func setEnemyStartPosition(vector: Vector2) -> void:
+	ENEMY_START_POSITION = vector 		
 "
 
 [node name="DialogScene" type="Control"]
