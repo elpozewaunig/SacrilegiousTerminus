@@ -10,7 +10,7 @@ func getTimeFromTimer(timeLeft) -> Array:
 	return [minute, second, millisecond]
 
 var inLevel: bool = false
-var timeLeft: float = 10
+var timeLeft: float = 300
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

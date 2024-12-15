@@ -1,0 +1,91 @@
+[gd_scene load_steps=3 format=3 uid="uid://dfj7crbv06vkm"]
+
+[sub_resource type="GDScript" id="GDScript_p7hlj"]
+script/source = "extends Node3D
+
+@onready var backButton: Button = $CanvasLayer/ScrollContainer/PanelContainer/BackToMenuBtn
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	backButton.pressed.connect(self.backToMenu)
+
+
+func backToMenu() -> void:
+	SceneManager.change_scene(SceneManager.mainMenuSene)
+"
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f8o4f"]
+content_margin_left = 8.0
+content_margin_top = 8.0
+content_margin_right = 8.0
+content_margin_bottom = 8.0
+bg_color = Color(0, 0, 0, 1)
+
+[node name="TutorialMainMenu" type="Node3D"]
+script = SubResource("GDScript_p7hlj")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ScrollContainer" type="ScrollContainer" parent="CanvasLayer"]
+custom_minimum_size = Vector2(944, 400)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_scroll_mode = 0
+
+[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer/ScrollContainer"]
+custom_minimum_size = Vector2(944, 470)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_f8o4f")
+
+[node name="TutorialLabel" type="RichTextLabel" parent="CanvasLayer/ScrollContainer/PanelContainer"]
+unique_name_in_owner = true
+z_index = 10
+layout_mode = 2
+bbcode_enabled = true
+text = "
+[center][font_size={24}][b]Game Objective and Rules[/b][/font_size][/center]
+
+To win the game, you must align your wheel to match your opponent's wheel. The opponent’s wheel can consist of up to three rings, and the matching rules vary depending on the number of rings:
+
+[center][font_size={18}][b]Single Ring[/b][/font_size][/center]
+If the opponent’s wheel has only one ring, select the icon directly opposite the one chosen by your opponent.
+
+[center][font_size={18}][b]Two Rings[/b][/font_size][/center]
+For a wheel with two rings:
+
+    [b]Inner Ring[/b]
+        The rule for selecting the inner ring depends on the icon shown in the middle (second) ring:
+[indent][ul] [color=TURQUOISE]Turquoise Icon:[/color] Match the inner ring icon exactly.
+ [color=YELLOW]Yellow Icon:[/color] Select the icon that is one position away from matching the inner ring.
+ [color=PURPLE]Purple Icon:[/color] Select the icon opposite to the inner ring. [/ul][/indent]
+ 
+    [b]Middle Ring[/b]
+[indent][ul] Match the middle ring icon exactly, with no additional rules.[/ul][/indent]
+
+[center][font_size={18}][b]Three Rings (Final Level)[/b][/font_size][/center]
+In the final level, a third, outer ring is introduced. The outer ring is independent of the other two and does [color=RED]NOT[/color] influence their rules. Simply match the outer ring icon exactly.
+
+[center][font_size={18}][b]Controls[/b][/font_size][/center]
+You can adjust the rings using two different input methods:
+
+    [b]Keypad Controls[/b]
+[indent][ul] Inner ring: Press 1 or 3
+ Middle ring: Press 8 or 0
+ Outer ring: Press 2 or 9[/ul][/indent]
+    
+    [b]Arrow Key Controls[/b]
+[indent][ul] → Right Arrow: Move the selection clockwise
+ ← Left Arrow: Move the selection counterclockwise
+ ↑ Up Arrow: Move to the next outer ring
+ ↓ Down Arrow: Move to the next inner ring[/ul][/indent]
+"
+
+[node name="BackToMenuBtn" type="Button" parent="CanvasLayer/ScrollContainer/PanelContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+text = "Back to main mein"

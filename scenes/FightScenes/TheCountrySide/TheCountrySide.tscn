@@ -1,4 +1,4 @@
-[gd_scene load_steps=66 format=3 uid="uid://bihqmqmhy5qrk"]
+[gd_scene load_steps=67 format=3 uid="uid://bihqmqmhy5qrk"]
 
 [ext_resource type="Texture2D" uid="uid://btjnrke4c1pf3" path="res://scenes/FightScenes/TheMountain/Skybox/spacenopink.jpg" id="3_g3qk6"]
 [ext_resource type="ArrayMesh" uid="uid://bk3lbs6yirhyf" path="res://scenes/FightScenes/TheCountrySide/CountrySide6.obj" id="4_bhs08"]
@@ -50,6 +50,7 @@
 [ext_resource type="Texture2D" uid="uid://deiox7dda12bd" path="res://assets/sprites/tarot symbole/Pentagram.png" id="46_n1oip"]
 [ext_resource type="Texture2D" uid="uid://bhnu44u0bjfo0" path="res://assets/sprites/tarot symbole/tarotGlow/Swordwaage.png" id="47_q5p86"]
 [ext_resource type="Script" path="res://code/spellCastWheelScript.gd" id="48_73kq5"]
+[ext_resource type="AudioStream" uid="uid://c50px6he1apgi" path="res://assets/music/battle1_loop.ogg" id="51_f8rlf"]
 
 [sub_resource type="GDScript" id="GDScript_os87n"]
 resource_name = "countrySideController"
@@ -1316,6 +1317,11 @@ texture = ExtResource("21_xk5bm")
 transform = Transform3D(1, 0, 0, 0, 0.258836, 0.965921, 0, -0.965921, 0.258836, 0, 29.2006, 0)
 light_color = Color(0.43589, 0.535081, 0.956143, 1)
 light_energy = 0.0
+
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("51_f8rlf")
+autoplay = true
+parameters/looping = true
 
 [connection signal="playerWon" from="roundManager" to="." method="_on_round_manager_player_won"]
 [connection signal="updateProgressBarTo" from="roundManager" to="roundManager/HudOverlay" method="_on_round_manager_update_progress_bar_to"]
