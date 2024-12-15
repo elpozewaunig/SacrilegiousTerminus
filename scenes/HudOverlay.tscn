@@ -236,17 +236,22 @@ In the final level, a third, outer ring is introduced. The outer ring is indepen
 [center][font_size={18}][b]Controls[/b][/font_size][/center]
 You can adjust the rings using two different input methods:
 
-    [b]Keypad Controls[/b]
-[indent][ul] Inner ring: Press 1 or 3
- Middle ring: Press 8 or 0
- Outer ring: Press 2 or 9[/ul][/indent]
     
     [b]Arrow Key Controls[/b]
 [indent][ul] → Right Arrow: Move the selection clockwise
  ← Left Arrow: Move the selection counterclockwise
  ↑ Up Arrow: Move to the next outer ring
  ↓ Down Arrow: Move to the next inner ring[/ul][/indent]
-"
+
+    [b]Keypad Controls[/b]
+[indent][ul] Inner ring: Press 1 or 3
+ Middle ring: Press 8 or 0
+ Outer ring: Press 2 or 9[/ul][/indent]
+
+    [b]Keyboard Controls[/b]
+[indent][ul] Inner ring: Press W or S
+ Middle ring: Press E or D
+ Outer ring: Press R or F[/ul][/indent]"
 
 [node name="PauseMenuLayer" type="CanvasLayer" parent="."]
 unique_name_in_owner = true
