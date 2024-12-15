@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://bihqmqmhy5qrk"]
+[gd_scene load_steps=25 format=3 uid="uid://bihqmqmhy5qrk"]
 
 [ext_resource type="Texture2D" uid="uid://btjnrke4c1pf3" path="res://scenes/FightScenes/TheMountain/Skybox/spacenopink.jpg" id="3_g3qk6"]
 [ext_resource type="ArrayMesh" uid="uid://bk3lbs6yirhyf" path="res://scenes/FightScenes/TheCountrySide/CountrySide6.obj" id="4_bhs08"]
@@ -13,6 +13,18 @@
 [ext_resource type="Texture2D" uid="uid://sarwg0s46bs2" path="res://scenes/FightScenes/TheChurch/3DText/michaelttexttext.jpg" id="11_twke2"]
 [ext_resource type="ArrayMesh" uid="uid://4lger5fh6chq" path="res://scenes/FightScenes/TheChurch/3DText/preistroberttext1.obj" id="12_t5pfc"]
 [ext_resource type="ArrayMesh" uid="uid://dfstv50uufwrh" path="res://scenes/FightScenes/TheChurch/3DText/preistroberttext2.obj" id="13_16pfr"]
+[ext_resource type="Script" path="res://code/roundManager.gd" id="14_wpcgj"]
+[ext_resource type="PackedScene" uid="uid://dqtcwmca5ongg" path="res://scenes/SpellCastWheel/AutomaticWheel.tscn" id="15_l0ucd"]
+[ext_resource type="PackedScene" uid="uid://ccelpifkgb5xq" path="res://scenes/SpellCastWheel/SpellCastWheel.tscn" id="16_xy2c7"]
+[ext_resource type="PackedScene" uid="uid://dvygun7k256ji" path="res://scenes/HudOverlay.tscn" id="17_fyugo"]
+
+[sub_resource type="GDScript" id="GDScript_finwt"]
+resource_name = "theCountrySideController"
+script/source = "extends Node3D
+
+func _on_round_manager_player_won() -> void:
+	SceneManager.change_scene(SceneManager.mountainCutScene, true)
+"
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_ow5hs"]
 panorama = ExtResource("3_g3qk6")
@@ -42,6 +54,7 @@ albedo_texture = ExtResource("11_twke2")
 
 [node name="TheRift" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.147749, 0.0364075, -0.0162697)
+script = SubResource("GDScript_finwt")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.968583, -0.24869, 0, 0.24869, 0.968583, 1.016, -1.154, 2.384)
@@ -107,3 +120,21 @@ mesh = ExtResource("12_t5pfc")
 transform = Transform3D(1, 0, 0, 0, 0.73015, -0.683287, 0, 0.683287, 0.73015, 0.801404, 0.923181, -4.87205)
 material_override = SubResource("StandardMaterial3D_omdaq")
 mesh = ExtResource("13_16pfr")
+
+[node name="roundManager" type="Node3D" parent="." node_paths=PackedStringArray("playerWheel", "opponentWheel")]
+script = ExtResource("14_wpcgj")
+playerWheel = NodePath("ManualWheel")
+opponentWheel = NodePath("AutomaticWheel")
+hasProgressBar = true
+timeForRoud = 20
+
+[node name="AutomaticWheel" parent="roundManager" instance=ExtResource("15_l0ucd")]
+transform = Transform3D(1, 0, 0, 0, 0.683273, -0.730162, 0, 0.730162, 0.683273, 2, 0.5, -1.336)
+
+[node name="ManualWheel" parent="roundManager" instance=ExtResource("16_xy2c7")]
+transform = Transform3D(1, 0, 0, 0, 0.786935, -0.617036, 0, 0.617036, 0.786935, 0, 0.5, -1.574)
+
+[node name="HudOverlay" parent="roundManager" instance=ExtResource("17_fyugo")]
+
+[connection signal="playerWon" from="roundManager" to="." method="_on_round_manager_player_won"]
+[connection signal="updateProgressBarTo" from="roundManager" to="roundManager/HudOverlay" method="_on_round_manager_update_progress_bar_to"]
