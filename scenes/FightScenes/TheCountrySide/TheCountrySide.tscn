@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bihqmqmhy5qrk"]
+[gd_scene load_steps=20 format=3 uid="uid://bihqmqmhy5qrk"]
 
 [ext_resource type="Texture2D" uid="uid://btjnrke4c1pf3" path="res://scenes/FightScenes/TheMountain/Skybox/spacenopink.jpg" id="3_g3qk6"]
 [ext_resource type="ArrayMesh" uid="uid://bk3lbs6yirhyf" path="res://scenes/FightScenes/TheCountrySide/CountrySide6.obj" id="4_bhs08"]
@@ -10,6 +10,9 @@
 [ext_resource type="Material" uid="uid://cikbnrbgbhmk2" path="res://scenes/FightScenes/TheCountrySide/materials/trunks.tres" id="9_vr3ul"]
 [ext_resource type="Texture2D" uid="uid://mnxcbjjfsn4n" path="res://scenes/FightScenes/TheCountrySide/materials/mctreemulti.png" id="10_h5gba"]
 [ext_resource type="PackedScene" uid="uid://ccvejgfug7j0b" path="res://assets/sprites/engel1/angel1.tscn" id="10_xtemg"]
+[ext_resource type="Texture2D" uid="uid://sarwg0s46bs2" path="res://scenes/FightScenes/TheChurch/3DText/michaelttexttext.jpg" id="11_twke2"]
+[ext_resource type="ArrayMesh" uid="uid://4lger5fh6chq" path="res://scenes/FightScenes/TheChurch/3DText/preistroberttext1.obj" id="12_t5pfc"]
+[ext_resource type="ArrayMesh" uid="uid://dfstv50uufwrh" path="res://scenes/FightScenes/TheChurch/3DText/preistroberttext2.obj" id="13_16pfr"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_ow5hs"]
 panorama = ExtResource("3_g3qk6")
@@ -28,6 +31,14 @@ tonemap_exposure = 1.92
 
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_nx174"]
 exposure_multiplier = 0.437
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pksl3"]
+shading_mode = 0
+albedo_texture = ExtResource("11_twke2")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_omdaq"]
+shading_mode = 0
+albedo_texture = ExtResource("11_twke2")
 
 [node name="TheRift" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.147749, 0.0364075, -0.0162697)
@@ -86,3 +97,13 @@ transform = Transform3D(-0.959072, 0, -0.283162, 0, 1, 0, 0.283162, 0, -0.959072
 
 [node name="Angel1" parent="." instance=ExtResource("10_xtemg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.729042, -0.0364075, -3.45947)
+
+[node name="Preistroberttext1" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.556209, -0.831043, 0, 0.831043, 0.556209, 0.825812, 0.454169, -5.17585)
+material_override = SubResource("StandardMaterial3D_pksl3")
+mesh = ExtResource("12_t5pfc")
+
+[node name="Preistroberttext2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.73015, -0.683287, 0, 0.683287, 0.73015, 0.801404, 0.923181, -4.87205)
+material_override = SubResource("StandardMaterial3D_omdaq")
+mesh = ExtResource("13_16pfr")
