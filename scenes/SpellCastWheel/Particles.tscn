@@ -54,6 +54,7 @@ turbulence_influence_over_life = SubResource("CurveTexture_thxal")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hb0gl"]
 transparency = 1
+albedo_color = Color(1, 0.313726, 0.223529, 1)
 albedo_texture = ExtResource("1_3riy8")
 metallic_specular = 0.0
 emission_enabled = true
