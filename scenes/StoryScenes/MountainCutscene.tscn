@@ -13,7 +13,7 @@ script/source = "extends Node3D
 var DIALOG: Array[DialogOption] = [
 	DialogOption.new(DialogOption.DIALOG_ENTITY.NARRATOR, \"As you stand triumphantly upon the mountain range, a second angel suddenly appears to you.\"),
 	DialogOption.new(DialogOption.DIALOG_ENTITY.ENEMY, \"Ah, how the mighty have fallen. My brother… reduced to this?\"),
-	DialogOption.new(DialogOption.DIALOG_ENTITY.NARRATOR, \"He gazes down upon you, his eyes a mix of disdain and sorrow.\"),
+	DialogOption.new(DialogOption.DIALOG_ENTITY.NARRATOR, \"He gazes down upon you, his many many eyes a mix of disdain and sorrow.\"),
 	DialogOption.new(DialogOption.DIALOG_ENTITY.ENEMY, \"But such things are of little consequence now.\"),
 	DialogOption.new(DialogOption.DIALOG_ENTITY.ENEMY, \"I have come to return you to the pit from whence you crawled, ensuring you are never to trouble this world again.\"),
 	DialogOption.new(DialogOption.DIALOG_ENTITY.PLAYER, \"(This cannot be happening - the rift is starting to close i have time for this!)\"),
