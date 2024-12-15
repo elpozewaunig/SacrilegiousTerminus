@@ -9,10 +9,12 @@ signal dialogCompleted()
 
 @export var player: Texture;
 @export var enemy: Texture;
+@export var background: Texture
 
 @onready var hudOverlay: Control = $HudOverlay
 @onready var playerSprite: Sprite2D = $CanvasLayer/PlayerSprite
 @onready var enemySprite: Sprite2D = $CanvasLayer/EnemySprite
+@onready var backgroundSprite: Sprite2D = $CanvasLayer/BackgroundSprite
 
 var PLAYER_START_POSITION: Vector2 = Vector2(-650,1230)
 var ENEMY_START_POSITION: Vector2 = Vector2(2500,1230)
@@ -27,10 +29,15 @@ var start_y: float;
 
 # Called when the node enters the scene tree for the first time.
 func showDialog(dialogOptions: Array[DialogOption]) -> void:
-	playerSprite.position = PLAYER_START_POSITION
-	enemySprite.position = ENEMY_START_POSITION
-	playerSprite.texture = player;
-	enemySprite.texture = enemy;
+	if playerSprite != null:
+		playerSprite.position = PLAYER_START_POSITION
+		playerSprite.texture = player;
+	
+	if enemySprite != null:
+		enemySprite.position = ENEMY_START_POSITION
+		enemySprite.texture = enemy;
+		
+	backgroundSprite.texture = background
 	hudOverlay.showDialog(dialogOptions, false)
 	
 func _physics_process(delta: float) -> void:
@@ -86,15 +93,6 @@ script = SubResource("GDScript_qletp")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
-z_index = -1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0, 0, 0, 0.733333)
-
 [node name="PlayerSprite" type="Sprite2D" parent="CanvasLayer"]
 z_index = 1
 position = Vector2(-650, 1230)
@@ -102,6 +100,10 @@ position = Vector2(-650, 1230)
 [node name="EnemySprite" type="Sprite2D" parent="CanvasLayer"]
 z_index = 1
 position = Vector2(2500, 1230)
+
+[node name="BackgroundSprite" type="Sprite2D" parent="CanvasLayer"]
+z_index = -1
+position = Vector2(960, 540)
 
 [node name="HudOverlay" parent="." instance=ExtResource("1_hnrpo")]
 z_index = 10

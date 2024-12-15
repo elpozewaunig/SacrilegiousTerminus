@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://ceft1i1qvo4fl"]
+[gd_scene load_steps=10 format=3 uid="uid://ceft1i1qvo4fl"]
 
 [ext_resource type="Texture2D" uid="uid://cod5k6h5q11rd" path="res://assets/UI/circle.png" id="4_fd50j"]
 [ext_resource type="Script" path="res://code/rotateToAngle.gd" id="4_rik2f"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://mcff0etvguxc" path="res://assets/UI/Settings.png" id="6_sjuc7"]
 [ext_resource type="Texture2D" uid="uid://bl16jyy5oy70o" path="res://assets/UI/Play.png" id="6_vf6fn"]
 [ext_resource type="Texture2D" uid="uid://cwj0ditn811ca" path="res://assets/UI/QUIT.png" id="7_8pqsf"]
+[ext_resource type="AudioStream" uid="uid://xrk21k534jba" path="res://assets/sounds/wheel_turn.wav" id="8_qmpg1"]
 
 [sub_resource type="GDScript" id="GDScript_5rwoc"]
 script/source = "extends Node3D
@@ -126,3 +127,6 @@ texture = ExtResource("7_8pqsf")
 transform = Transform3D(0.025, 0, 0, 0, -1.09278e-09, 0.02, 0, -0.025, -8.74228e-10, 0, 0, 0.789066)
 modulate = Color(1, 0.314748, 0.224306, 1)
 texture = ExtResource("6_vf6fn")
+
+[node name="WheelSpinAudioPlayer" type="AudioStreamPlayer" parent="Wheel/3"]
+stream = ExtResource("8_qmpg1")
