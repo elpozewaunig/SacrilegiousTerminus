@@ -132,10 +132,11 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_6rxup")
 
 [node name="IngameLayer" type="CanvasLayer" parent="."]
 unique_name_in_owner = true
+visible = false
 
 [node name="FightProgressBar" type="TextureProgressBar" parent="IngameLayer"]
 unique_name_in_owner = true
-anchors_preset = -1
+anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
 offset_left = -1670.0
