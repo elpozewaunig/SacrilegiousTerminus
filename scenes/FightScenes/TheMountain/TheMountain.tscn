@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://b0cfnqq0xj6ro"]
+[gd_scene load_steps=22 format=3 uid="uid://b0cfnqq0xj6ro"]
 
 [ext_resource type="ArrayMesh" uid="uid://sdnkjicuuag3" path="res://scenes/FightScenes/TheMountain/3DFront/rock.obj" id="1_2bq0v"]
 [ext_resource type="Texture2D" uid="uid://b4gbrrmj35ey2" path="res://scenes/FightScenes/TheMountain/3DFront/rockbake.png" id="1_3jns5"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://b7e850fwn6mnj" path="res://scenes/FightScenes/TheChurch/3DText/raphaeltexttext.jpg" id="9_u68kx"]
 [ext_resource type="ArrayMesh" uid="uid://4lger5fh6chq" path="res://scenes/FightScenes/TheChurch/3DText/preistroberttext1.obj" id="10_12yff"]
 [ext_resource type="ArrayMesh" uid="uid://dfstv50uufwrh" path="res://scenes/FightScenes/TheChurch/3DText/preistroberttext2.obj" id="11_0cgdh"]
+[ext_resource type="Texture2D" uid="uid://ci1ey5q7nrstp" path="res://scenes/FightScenes/TheMountain/clouds2.png" id="12_lnx8s"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qcgot"]
 albedo_texture = ExtResource("1_3jns5")
@@ -38,6 +39,67 @@ albedo_texture = ExtResource("9_u68kx")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ddo3o"]
 shading_mode = 0
 albedo_texture = ExtResource("9_u68kx")
+
+[sub_resource type="Animation" id="Animation_n60wm"]
+resource_name = "cloudmovemountain"
+length = 250.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 247.967),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 918.971, -1348.19), Vector3(0, 571.271, -2982.84)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 247.867),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(1.02974, 0, 0), Vector3(0.767945, -0.279253, 0.0785398)]
+}
+
+[sub_resource type="Animation" id="Animation_l0o3e"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 918.971, -1348.19)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1.02974, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lw031"]
+_data = {
+"RESET": SubResource("Animation_l0o3e"),
+"cloudmovemountain": SubResource("Animation_n60wm")
+}
 
 [node name="TheRift2" type="Node3D"]
 
@@ -80,3 +142,14 @@ mesh = ExtResource("10_12yff")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -7)
 material_override = SubResource("StandardMaterial3D_ddo3o")
 mesh = ExtResource("11_0cgdh")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(439.585, 0, 0, 0, 226.403, -376.798, 0, 376.798, 226.403, 0, 918.971, -1348.19)
+modulate = Color(1, 1, 1, 0.360784)
+texture = ExtResource("12_lnx8s")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite3D"]
+libraries = {
+"": SubResource("AnimationLibrary_lw031")
+}
+autoplay = "cloudmovemountain"

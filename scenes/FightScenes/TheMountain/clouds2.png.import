@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d1qfbpx8ym8rd"
-path.s3tc="res://.godot/imported/clouds.png-777c15ee4cd7bed84b83440cf6a5e123.s3tc.ctex"
+uid="uid://ci1ey5q7nrstp"
+path.s3tc="res://.godot/imported/clouds2.png-bdbf63c5e53ca5d4f7de377bc858af4e.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://scenes/FightScenes/TheMountain/Skybox/clouds.png"
-dest_files=["res://.godot/imported/clouds.png-777c15ee4cd7bed84b83440cf6a5e123.s3tc.ctex"]
+source_file="res://scenes/FightScenes/TheMountain/clouds2.png"
+dest_files=["res://.godot/imported/clouds2.png-bdbf63c5e53ca5d4f7de377bc858af4e.s3tc.ctex"]
 
 [params]
 
