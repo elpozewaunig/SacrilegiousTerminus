@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="Klagenfurt GSE Jam"
+config/name="Sacrilegious Terminus"
 config/tags=PackedStringArray("game", "jam")
 run/main_scene="res://scenes/MainMenu/MainMenu.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
@@ -120,3 +120,4 @@ ultraCheatingMove3000={
 
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+textures/vram_compression/import_etc2_astc=true
