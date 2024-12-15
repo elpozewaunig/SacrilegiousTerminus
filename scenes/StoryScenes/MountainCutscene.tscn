@@ -11,19 +11,19 @@ script/source = "extends Node3D
 @onready var dialogScene: Control = $DialogScene
 
 var DIALOG: Array[DialogOption] = [
-	DialogOption.new(DialogOption.DIALOG_ENTITY.NARRATOR, \"As you stand triumphantly over the defeated angel, a second one suddenly appears behind you, his wings unfurling with a deafening sound.\"),
+	DialogOption.new(DialogOption.DIALOG_ENTITY.NARRATOR, \"As you stand triumphantly upon the mountain range, a second angel suddenly appears to you.\"),
 	DialogOption.new(DialogOption.DIALOG_ENTITY.ENEMY, \"Ah, how the mighty have fallen. My brother… reduced to this?\"),
-	DialogOption.new(DialogOption.DIALOG_ENTITY.NARRATOR, \"He gazes down at the defeated angel, his eyes a mix of disdain and sorrow.\"),
+	DialogOption.new(DialogOption.DIALOG_ENTITY.NARRATOR, \"He gazes down upon you, his eyes a mix of disdain and sorrow.\"),
 	DialogOption.new(DialogOption.DIALOG_ENTITY.ENEMY, \"But such things are of little consequence now.\"),
-	DialogOption.new(DialogOption.DIALOG_ENTITY.NARRATOR, \"His lips curl into a cold, knowing smile.\"),
 	DialogOption.new(DialogOption.DIALOG_ENTITY.ENEMY, \"I have come to return you to the pit from whence you crawled, ensuring you are never to trouble this world again.\"),
-	DialogOption.new(DialogOption.DIALOG_ENTITY.PLAYER, \"You’re quite confident, considering I just defeated your brother mere seconds ago.\"),
-	DialogOption.new(DialogOption.DIALOG_ENTITY.NARRATOR, \"The angel lets out a low, mirthless laugh, ancient and echoing like the sound of distant chimes.\"),
-	DialogOption.new(DialogOption.DIALOG_ENTITY.ENEMY, \"That one? A shadow of what he was meant to be. A weakling who disgraced his own light. Had I wished, I could have ended him in the briefest of my thoughts.\"),
+	DialogOption.new(DialogOption.DIALOG_ENTITY.PLAYER, \"(This cannot be happening - the rift is starting to close i have time for this!)\"),
+	DialogOption.new(DialogOption.DIALOG_ENTITY.PLAYER, \"'You’re quite confident, considering I just defeated your brother mere seconds ago.'\"),
+	DialogOption.new(DialogOption.DIALOG_ENTITY.NARRATOR, \"The angel lets out a shrill, roaring screech, ancient and echoing like the sound of distant chimes.\"),
 	DialogOption.new(DialogOption.DIALOG_ENTITY.NARRATOR, \"His expression hardens, his eyes gleaming with divine wrath.\"),
-	DialogOption.new(DialogOption.DIALOG_ENTITY.ENEMY, \"But you… you have earned my full attention. Now, your time has come.\"),
+	DialogOption.new(DialogOption.DIALOG_ENTITY.ENEMY, \"Thy end, is upon you.\"),
 	DialogOption.new(DialogOption.DIALOG_ENTITY.NARRATOR, \"The air around you grows heavy, as if the heavens themselves bear down upon your very soul. 
 You begin to feel the crushing pressure radiating from the angel, but instead of fear, a dark grin spreads across your face.\"),
+DialogOption.new(DialogOption.DIALOG_ENTITY.NARRATOR, \"FIGHT!\")
 ]
 
 # Called when the node enters the scene tree for the first time.

@@ -11,12 +11,13 @@ script/source = "extends Node3D
 @onready var dialogScene: Control = $DialogScene
 
 var DIALOG: Array[DialogOption] = [
-	DialogOption.new(DialogOption.DIALOG_ENTITY.ENEMY, \"My good child, what brings you here today?\"),
-	DialogOption.new(DialogOption.DIALOG_ENTITY.PLAYER, \"I am here to help our Supreme Lord from the underworld, Satan himself. 
-There is this voice... It urges me to venture eastward... To unleash great disaster.\"),
-	DialogOption.new(DialogOption.DIALOG_ENTITY.ENEMY, \"Evil resides within you. You shall not pass. I cannot allow you to assist the Devil.\"),
+	DialogOption.new(DialogOption.DIALOG_ENTITY.ENEMY, \"My child, where are you going?\"),
+	DialogOption.new(DialogOption.DIALOG_ENTITY.PLAYER, \"(I cannot allow myself any delays - there is no room for error)\"),
+	DialogOption.new(DialogOption.DIALOG_ENTITY.PLAYER, \"'To the mountains.'\"),
+	DialogOption.new(DialogOption.DIALOG_ENTITY.ENEMY, \"The evil that has befallen your soul has consumed you whole. I shall vanquish it in it's place before it can hurt oth-\"),
 	DialogOption.new(DialogOption.DIALOG_ENTITY.PLAYER, \"Do you really think you can stand against me, the personal knight of Lucifer himself? 
 If you think you can stand against me, you’re welcome to try and stop me.\"),
+	DialogOption.new(DialogOption.DIALOG_ENTITY.ENEMY, \"So it be.\"),
 	DialogOption.new(DialogOption.DIALOG_ENTITY.NARRATOR, \"FIGHT!\")
 ]
 
