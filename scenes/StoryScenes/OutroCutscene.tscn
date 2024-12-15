@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://482uaqq2slia"]
+[gd_scene load_steps=4 format=3 uid="uid://xn78ag3l5ltx"]
 
-[ext_resource type="PackedScene" path="res://scenes/DialogScene.tscn" id="1_v26rx"]
+[ext_resource type="PackedScene" uid="uid://dgurl1u1gb0ly" path="res://scenes/DialogScene.tscn" id="1_v26rx"]
+[ext_resource type="Texture2D" uid="uid://de0oh122gsoku" path="res://assets/cutscenebackgrounds/ending.jpg" id="2_xs2v2"]
 
 [sub_resource type="GDScript" id="GDScript_1f4x1"]
 script/source = "extends Node3D
@@ -26,5 +27,6 @@ func _on_dialog_scene_dialog_completed() -> void:
 script = SubResource("GDScript_1f4x1")
 
 [node name="DialogScene" parent="." instance=ExtResource("1_v26rx")]
+background = ExtResource("2_xs2v2")
 
 [connection signal="dialogCompleted" from="DialogScene" to="." method="_on_dialog_scene_dialog_completed"]
