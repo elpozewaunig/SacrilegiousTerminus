@@ -6,7 +6,8 @@ signal updateTheFinalCountdown(timeArray: Array)
 func getTimeFromTimer(timeLeft) -> Array:
 	var minute = floor(timeLeft / 60)
 	var second = int(timeLeft) % 60
-	return [minute, second]
+	var millisecond = int((timeLeft-int(timeLeft))*100)
+	return [minute, second, millisecond]
 
 var inLevel: bool = false
 var timeLeft: float = 300
