@@ -14,7 +14,7 @@ script/source = "extends Node3D
 
 var DIALOG: Array[DialogOption] = [
 	DialogOption.new(DialogOption.DIALOG_ENTITY.NARRATOR, \"Hastily, running up the hillside, you continue your journey.\"),
-	DialogOption.new(DialogOption.DIALOG_ENTITY.NARRATOR, \"As suddenly,, an angel descends from the heavens, radiant and imposing, wings outstretched...\"),
+	DialogOption.new(DialogOption.DIALOG_ENTITY.NARRATOR, \"As suddenly, an angel descends from the heavens, radiant and imposing, wings outstretched...\"),
 	DialogOption.new(DialogOption.DIALOG_ENTITY.ENEMY, \"How brazen… you’ve stirred chaos where it does not belong. But know this: your defiance ends now.\"),
 	DialogOption.new(DialogOption.DIALOG_ENTITY.PLAYER, \"(Dammit! I hadn't planned enough spare time for these distractions ...)\"),
 	DialogOption.new(DialogOption.DIALOG_ENTITY.PLAYER, \"'Not even an angel can stand against Satan and his most trusted soldier, I-'\"),

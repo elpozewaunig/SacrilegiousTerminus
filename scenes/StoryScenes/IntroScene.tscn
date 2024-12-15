@@ -8,14 +8,18 @@ script/source = "extends Node3D
 @onready var hudOverlay: Control = $HudOverlay
 
 var DIALOG: Array[DialogOption] = [
+	DialogOption.new(DialogOption.DIALOG_ENTITY.NARRATOR, \"It appeared in a different location.\"),
+	DialogOption.new(DialogOption.DIALOG_ENTITY.NARRATOR, \"But that shall be no issue for you.\"),
+	DialogOption.new(DialogOption.DIALOG_ENTITY.NARRATOR, \"Your meticulous planning leaves just enough time.\"),
+	DialogOption.new(DialogOption.DIALOG_ENTITY.NARRATOR, \" \"),
 	DialogOption.new(DialogOption.DIALOG_ENTITY.NARRATOR, \"It was a starry night in a small village, as suddenly a deafening sound shattered the silence ... 
 You look up at the sky and start to smile.\"),
 DialogOption.new(DialogOption.DIALOG_ENTITY.NARRATOR, \"Every 10.000 Years, a dark crimson rift emerges upon the night sky.\"),
 	DialogOption.new(DialogOption.DIALOG_ENTITY.NARRATOR, \"This very day. This very town. Everything as the prophecy foretold - The rift's energy begins destabilizing the fabric of reality itself.\"),
 	DialogOption.new(DialogOption.DIALOG_ENTITY.NARRATOR,\"This was it. The moment you have been waiting for your entire life. For you are no ordinary man - but the chosen knight of Lucifer himself.\"),
 	DialogOption.new(DialogOption.DIALOG_ENTITY.PLAYER, \"Finally, the day I have long awaited has arrived. The rift is opening, and Satan shall cast his will upon the world.\"),
-	DialogOption.new(DialogOption.DIALOG_ENTITY.NARRATOR, \"Filled with determination, you prepare to exit the church to start the final countdown...\"),
-	DialogOption.new(DialogOption.DIALOG_ENTITY.NARRATOR, \"Until\")
+	DialogOption.new(DialogOption.DIALOG_ENTITY.NARRATOR, \"Filled with determination, you prepare to exit the church to start the FINAL COUNTDOWN...\"),
+	DialogOption.new(DialogOption.DIALOG_ENTITY.NARRATOR, \"Until:\")
 ];
 
 # Called when the node enters the scene tree for the first time.

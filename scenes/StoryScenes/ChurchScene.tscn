@@ -12,7 +12,7 @@ script/source = "extends Node3D
 
 var DIALOG: Array[DialogOption] = [
 	DialogOption.new(DialogOption.DIALOG_ENTITY.ENEMY, \"My child, where are you going?\"),
-	DialogOption.new(DialogOption.DIALOG_ENTITY.PLAYER, \"(I cannot allow myself any delays - there is no room for error)\"),
+	DialogOption.new(DialogOption.DIALOG_ENTITY.PLAYER, \"(I cannot allow myself any delays - the rift appeared further away than expected)\"),
 	DialogOption.new(DialogOption.DIALOG_ENTITY.PLAYER, \"'To the mountains.'\"),
 	DialogOption.new(DialogOption.DIALOG_ENTITY.ENEMY, \"The evil that has befallen your soul has consumed you whole. I shall vanquish it in it's place before it can hurt oth-\"),
 	DialogOption.new(DialogOption.DIALOG_ENTITY.PLAYER, \"Do you really think you can stand against me, the personal knight of Lucifer himself? 
