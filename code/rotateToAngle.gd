@@ -1,5 +1,7 @@
 extends Node3D
 
+@onready var audioplayer: AudioStreamPlayer = $WheelSpinAudioPlayer
+
 var goalRotationAngle: int = 0
 @export var segmentCount: int
 @export var T: int = 1
@@ -15,6 +17,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	
 	#rotate 
 	if rotation_degrees.y < goalRotationAngle:
 		@warning_ignore("integer_division") # is intended
@@ -25,6 +28,7 @@ func _process(delta: float) -> void:
 			rotation_degrees.y = goalRotationAngle
 			if not particle==null:
 				particle.get_child(1).emitting=false
+				stopAudio();
 	elif rotation_degrees.y > goalRotationAngle:
 		if not particle==null:
 			particle.get_child(1).emitting=true
@@ -34,14 +38,24 @@ func _process(delta: float) -> void:
 			rotation_degrees.y = goalRotationAngle 
 			if not particle==null:
 				particle.get_child(1).emitting=false
+				stopAudio();
 	else:
 		if not particle==null:
 			particle.get_child(1).emitting=false
-		
-
+			stopAudio();
+			
+	
 func turnOF(): 
-	particle.visible=false
+	particle.visible = false
+
+func stopAudio() -> void:
+	if audioplayer != null:
+		audioplayer.stop();		
+	
 func changeAngle(changeToLeft: bool) -> void:
+	if audioplayer != null:
+		audioplayer.play();
+	
 	if changeToLeft:
 		@warning_ignore("narrowing_conversion") # is intended
 		goalRotationAngle += angleChange
