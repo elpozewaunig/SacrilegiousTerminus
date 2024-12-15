@@ -26,6 +26,8 @@ func _process(delta: float) -> void:
 	
 
 func editTimer(timeLeft, delta):
+	print(timeLeft)
+	
 	timeLeft -= delta
 		
 	if timeLeft <= 0:

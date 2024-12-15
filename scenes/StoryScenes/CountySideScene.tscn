@@ -12,7 +12,8 @@ script/source = "extends Node3D
 @onready var dialogScene: Control = $DialogScene
 
 var DIALOG: Array[DialogOption] = [
-	DialogOption.new(DialogOption.DIALOG_ENTITY.NARRATOR, \"An angel descends from the heavens, radiant and imposing, wings outstretched.\"),
+	DialogOption.new(DialogOption.DIALOG_ENTITY.NARRATOR, \"After you defeated the priest, you continue your journey in direction of the mysterious glowing crack in the sky\"),
+	DialogOption.new(DialogOption.DIALOG_ENTITY.NARRATOR, \"But just as you reach the country side, an angel descends from the heavens, radiant and imposing, wings outstretched...\"),
 	DialogOption.new(DialogOption.DIALOG_ENTITY.ENEMY, \"How brazen… you’ve stirred chaos where it does not belong. But know this: your defiance ends now.\"),
 	DialogOption.new(DialogOption.DIALOG_ENTITY.PLAYER, \"Not even an angel can stand against Satan and his most trusted soldier\"),
 	DialogOption.new(DialogOption.DIALOG_ENTITY.NARRATOR, \"The angel releases a soft, knowing laugh, a sound both serene and ominous.\"),

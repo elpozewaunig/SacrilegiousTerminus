@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://dvygun7k256ji"]
+[gd_scene load_steps=17 format=3 uid="uid://dvygun7k256ji"]
 
 [ext_resource type="Script" path="res://code/hudOverlay.gd" id="1_nlpga"]
 [ext_resource type="Script" path="res://code/dialogScript.gd" id="2_p562y"]
@@ -25,14 +25,8 @@ resource_name = "michiMakesProgress"
 script/source = "extends TextureProgressBar	
 
 func update(score: float, maxScore: int) -> void:
-	var percentage: int = floori(score * 100 / maxScore);
-	print(\"Score: %s, MaxScore: %s, Percentage: %s\" % [score, maxScore, percentage])
-	self.value = percentage
+	value = score * 100 / maxScore
 "
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eh6jv"]
-content_margin_left = 8.0
-bg_color = Color(0, 0, 0, 0.788235)
 
 [sub_resource type="FontFile" id="FontFile_ch2gh"]
 subpixel_positioning = 0
@@ -136,29 +130,32 @@ visible = false
 
 [node name="FightProgressBar" type="TextureProgressBar" parent="IngameLayer"]
 unique_name_in_owner = true
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -1670.0
-offset_top = -920.0
-offset_right = 330.0
-offset_bottom = 1080.0
-grow_horizontal = 0
-rounded = true
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -1023.0
+offset_top = -1078.0
+offset_right = 977.0
+offset_bottom = 922.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+size_flags_vertical = 4
 texture_under = ExtResource("6_5qawj")
 texture_progress = ExtResource("8_ynm7x")
 script = SubResource("GDScript_covti")
 
 [node name="TimerLabel" type="Label" parent="IngameLayer"]
 unique_name_in_owner = true
-anchors_preset = -1
-anchor_left = 0.01
-anchor_top = 0.01
-anchor_right = 0.01
-anchor_bottom = 0.01
-offset_right = 334.0
-offset_bottom = 134.0
-theme_override_styles/normal = SubResource("StyleBoxFlat_eh6jv")
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -167.0
+offset_right = 167.0
+offset_bottom = 100.0
+grow_horizontal = 2
 text = "0:00:00"
 label_settings = SubResource("LabelSettings_86xpp")
 script = SubResource("GDScript_7wjds")
@@ -185,9 +182,23 @@ grow_vertical = 2
 
 [node name="DialogBox" type="Panel" parent="TutorialLayer/DialogContainer"]
 z_index = 1
-custom_minimum_size = Vector2(960, 540)
+custom_minimum_size = Vector2(600, 300)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_tsvbg")
+
+[node name="TutorialLabel" type="Label" parent="TutorialLayer/DialogContainer/DialogBox"]
+z_index = 10
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -275.0
+offset_right = 275.0
+offset_bottom = 150.0
+grow_horizontal = 2
+text = "Placeholder Tutoral Text Placeholder Tutoral Text Placeholder Tutoral Text Placeholder Tutoral Text Placeholder Tutoral Text Placeholder Tutoral Text"
+vertical_alignment = 1
+autowrap_mode = 1
 
 [node name="Button" type="Button" parent="TutorialLayer/DialogContainer/DialogBox"]
 z_index = 20
@@ -203,65 +214,6 @@ offset_right = 60.0
 grow_horizontal = 2
 grow_vertical = 0
 text = "Alright, got it"
-
-[node name="ScrollContainer" type="ScrollContainer" parent="TutorialLayer/DialogContainer/DialogBox"]
-custom_minimum_size = Vector2(944, 400)
-layout_mode = 1
-anchors_preset = -1
-anchor_top = 0.02
-anchor_right = 1.0
-anchor_bottom = 0.02
-offset_bottom = 470.0
-grow_horizontal = 2
-horizontal_scroll_mode = 0
-
-[node name="PanelContainer" type="PanelContainer" parent="TutorialLayer/DialogContainer/DialogBox/ScrollContainer"]
-custom_minimum_size = Vector2(944, 470)
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="TutorialLabel" type="RichTextLabel" parent="TutorialLayer/DialogContainer/DialogBox/ScrollContainer/PanelContainer"]
-unique_name_in_owner = true
-z_index = 10
-layout_mode = 2
-bbcode_enabled = true
-text = "
-[center][font_size={24}][b]Game Objective and Rules[/b][/font_size][/center]
-
-To win the game, you must align your wheel to match your opponent's wheel. The opponent’s wheel can consist of up to three rings, and the matching rules vary depending on the number of rings:
-
-[center][font_size={18}][b]Single Ring[/b][/font_size][/center]
-If the opponent’s wheel has only one ring, select the icon directly opposite the one chosen by your opponent.
-
-[center][font_size={18}][b]Two Rings[/b][/font_size][/center]
-For a wheel with two rings:
-
-    [b]Inner Ring[/b]
-        The rule for selecting the inner ring depends on the icon shown in the middle (second) ring:
-[indent][ul] [color=TURQUOISE]Turquoise Icon:[/color] Match the inner ring icon exactly.
- [color=YELLOW]Yellow Icon:[/color] Select the icon that is one position away from matching the inner ring.
- [color=PURPLE]Purple Icon:[/color] Select the icon opposite to the inner ring. [/ul][/indent]
- 
-    [b]Middle Ring[/b]
-[indent][ul] Match the middle ring icon exactly, with no additional rules.[/ul][/indent]
-
-[center][font_size={18}][b]Three Rings (Final Level)[/b][/font_size][/center]
-In the final level, a third, outer ring is introduced. The outer ring is independent of the other two and does [color=RED]NOT[/color] influence their rules. Simply match the outer ring icon exactly.
-
-[center][font_size={18}][b]Controls[/b][/font_size][/center]
-You can adjust the rings using two different input methods:
-
-    [b]Keypad Controls[/b]
-[indent][ul] Inner ring: Press 1 or 3
- Middle ring: Press 8 or 0
- Outer ring: Press 2 or 9[/ul][/indent]
-    
-    [b]Arrow Key Controls[/b]
-[indent][ul] → Right Arrow: Move the selection clockwise
- ← Left Arrow: Move the selection counterclockwise
- ↑ Up Arrow: Move to the next outer ring
- ↓ Down Arrow: Move to the next inner ring[/ul][/indent]
-"
 
 [node name="PauseMenuLayer" type="CanvasLayer" parent="."]
 unique_name_in_owner = true

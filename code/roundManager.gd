@@ -54,17 +54,19 @@ func _process(delta: float) -> void:
 	#score --> #0 falash, #1 ich akzeptiere, #2 Q1-Lösung
 	# 1 can be ignored for now, is for possible extensions with partial points
 	
-	if eval == 0 && score != 20:
-		score -= (maxScore * delta / progressDuration )* getPointsDetuctionFactor(timeTillNewSpin, timeForRoud) / roundsTillFullToEmpty
-		if score < 20: score = 20
-	elif eval == 2 && score != maxScore-15:
-		score += (maxScore * delta / progressDuration) * getBonusPointsFactor(timeTillNewSpin, timeForRoud) / roundsTillFullToEmpty
-		if score>maxScore-15: score = maxScore-15
+	if eval == 0 && score != 0:
+		score -= (maxScore * delta /progressDuration )*getPointsDetuctionFactor(timeTillNewSpin, timeForRoud)/roundsTillFullToEmpty
+		if score < 0: score = 0
+	elif eval == 2 && score != maxScore:
+		score += (maxScore * delta /progressDuration)*getBonusPointsFactor(timeTillNewSpin, timeForRoud)/roundsTillFullToEmpty
+		if score>maxScore: score = maxScore
 	
-	if score >= maxScore-15:
+	if score >= maxScore:
 		playerWon.emit()
 		GameManager.stopTimer()
 		
+		
+	print(score)
 	if hasProgressBar:
 		updateProgressBarTo.emit(score, maxScore)
 	
