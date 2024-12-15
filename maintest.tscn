@@ -33,15 +33,19 @@ texture = ExtResource("2_xgapr")
 [node name="GameManager" type="Node3D" parent="."]
 script = ExtResource("2_j851o")
 
-[node name="roundManager" type="Node3D" parent="GameManager" node_paths=PackedStringArray("playerWheel", "opponentWheel")]
+[node name="roundManager" type="Node3D" parent="GameManager" node_paths=PackedStringArray("playerWheel")]
 script = ExtResource("2_lq0ph")
 playerWheel = NodePath("ManualWheel")
-opponentWheel = NodePath("AutomaticWheel")
 hasProgressBar = true
 timeForRoud = 20
 
 [node name="AutomaticWheel" parent="GameManager/roundManager" instance=ExtResource("3_knfil")]
-transform = Transform3D(1, 0, 0, 0, 0.414693, -0.909961, 0, 0.909961, 0.414693, 1.208, 0.53, -1.245)
+transform = Transform3D(0.978321, -0.182639, -0.0976226, 0, 0.471397, -0.881921, 0.207092, 0.862802, 0.461178, 0.923341, 0.104202, -1.25455)
+color = Color(0.953712, 0.393462, 1, 1)
+
+[node name="AutomaticWheel2" parent="GameManager/roundManager" instance=ExtResource("3_knfil")]
+transform = Transform3D(0.978321, -0.182639, -0.0976226, 0, 0.471397, -0.881921, 0.207092, 0.862802, 0.461178, 3.27172, 0.104202, -1.25455)
+color = Color(0.369778, 0.690705, 1, 1)
 
 [node name="ManualWheel" parent="GameManager/roundManager" instance=ExtResource("1_p0fva")]
 transform = Transform3D(1, 0, 0, 0, 0.614285, -0.789084, 0, 0.789084, 0.614285, -1.43457, 0.316572, -1.57377)

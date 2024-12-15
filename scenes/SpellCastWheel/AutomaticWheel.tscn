@@ -1,6 +1,5 @@
 [gd_scene load_steps=52 format=3 uid="uid://dqtcwmca5ongg"]
 
-[ext_resource type="Script" path="res://code/automaticWheelScript.gd" id="1_t76au"]
 [ext_resource type="Texture2D" uid="uid://cuw82befexakv" path="res://assets/UI/goodwheel.png" id="2_3woc4"]
 [ext_resource type="Texture2D" uid="uid://deiwh6oq6lymh" path="res://scenes/SpellCastWheel/Material/SpellCastWheel_Texture.png" id="2_4a4d3"]
 [ext_resource type="ArrayMesh" uid="uid://cfkachmxoytgr" path="res://scenes/SpellCastWheel/Model/SpellCastwheel_center.obj" id="3_c8nyk"]
@@ -51,15 +50,42 @@
 [ext_resource type="Texture2D" uid="uid://dduqosyrxj3wr" path="res://assets/sprites/alphabet/glow/tau.png" id="47_vhhki"]
 [ext_resource type="Texture2D" uid="uid://bd4qyu05cvr4y" path="res://assets/sprites/alphabet/glow/theta.png" id="48_mb3n7"]
 
+[sub_resource type="GDScript" id="GDScript_5owi8"]
+resource_name = "color"
+script/source = "extends Node3D
+@export var color:Color
+@export var elements:Array[Node3D]
+@export var sprites:Array[Sprite3D]
+@export var particles: Array[RigidBody3D]
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	get_child(0).get_child(0).modulate = color 
+	for i in range(0,elements.size()):
+		for j in range(1,elements[i].get_child_count()):
+			elements[i].get_child(j).get_child(0).modulate = color
+	for sp in sprites: 
+		sp.modulate=color
+	#for particle in particles: 
+		#particle.get_child(1).draw_pass_1.material.emission=color
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dg72n"]
 albedo_texture = ExtResource("2_4a4d3")
 
-[node name="AutomaticWheel" type="Node3D" node_paths=PackedStringArray("innerRing", "middleRing", "outerRing")]
+[node name="AutomaticWheel" type="Node3D" node_paths=PackedStringArray("elements", "sprites", "particles")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0096097, 0, 0.0048047)
-script = ExtResource("1_t76au")
-innerRing = NodePath("Wheel/1")
-middleRing = NodePath("Wheel/2")
-outerRing = NodePath("Wheel/3")
+script = SubResource("GDScript_5owi8")
+color = Color(0, 0.688966, 0.450081, 1)
+elements = [NodePath("Wheel/1/Signs"), NodePath("Wheel/3/Signs")]
+sprites = [NodePath("Wheel/1/Sprite3D"), NodePath("Wheel/1/s"), NodePath("Wheel/3/Sprite3D"), NodePath("Wheel/3/s"), NodePath("Wheel/2/Sprite3D"), NodePath("Wheel/2/s")]
+particles = [NodePath("Wheel/1/Signs/Particles"), NodePath("Wheel/2/Signs/Particles"), NodePath("Wheel/3/Signs/Particles")]
 
 [node name="Wheel" type="Node3D" parent="."]
 
@@ -324,6 +350,11 @@ stream = ExtResource("8_y7vdy")
 
 [node name="Signs" type="Node3D" parent="Wheel/3"]
 
+[node name="Particles" parent="Wheel/3/Signs" instance=ExtResource("7_loy21")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.41112, 0, 0.970702)
+mass = 0.001
+gravity_scale = 0.0
+
 [node name="Sign1" type="Node3D" parent="Wheel/3/Signs"]
 
 [node name="Sprite3D" type="Sprite3D" parent="Wheel/3/Signs/Sign1"]
@@ -482,8 +513,3 @@ transform = Transform3D(0.951057, 0, -0.309017, 0, 1, 0, 0.309017, 0, 0.951057, 
 transform = Transform3D(0.043, 0, 0, 0, -1.87959e-09, -0.043, 0, 0.043, -1.87959e-09, 0, 2.54737e-09, 0.897844)
 modulate = Color(1, 0.313726, 0.223529, 1)
 texture = ExtResource("48_mb3n7")
-
-[node name="Particles" parent="Wheel/3/Signs" instance=ExtResource("7_loy21")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.41112, 0, 0.970702)
-mass = 0.001
-gravity_scale = 0.0

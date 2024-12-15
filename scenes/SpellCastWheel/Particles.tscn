@@ -58,7 +58,7 @@ albedo_color = Color(1, 0.313726, 0.223529, 1)
 albedo_texture = ExtResource("1_3riy8")
 metallic_specular = 0.0
 emission_enabled = true
-emission = Color(1, 0.313726, 0.223529, 1)
+emission = Color(0.757782, 0.218854, 9.62615e-08, 1)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_iqj3q"]
 material = SubResource("StandardMaterial3D_hb0gl")
