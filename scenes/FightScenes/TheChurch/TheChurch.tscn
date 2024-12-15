@@ -1,9 +1,12 @@
-[gd_scene load_steps=46 format=3 uid="uid://coj8cff6bnd1d"]
+[gd_scene load_steps=49 format=3 uid="uid://coj8cff6bnd1d"]
 
 [ext_resource type="Script" path="res://scenes/FightScenes/TheChurch/theChurchController.gd" id="1_dt4df"]
+[ext_resource type="AudioStream" uid="uid://p3j8kkj1er87" path="res://assets/sounds/long_whoosh/long_whoosh_4.ogg" id="2_chogk"]
 [ext_resource type="ArrayMesh" uid="uid://mjowk7pbf55q" path="res://scenes/FightScenes/TheChurch/3DFront/Church2.obj" id="2_kdy04"]
+[ext_resource type="AudioStream" uid="uid://u8glnl0syi8r" path="res://assets/sounds/long_whoosh/long_whoosh_1.ogg" id="3_3mow5"]
 [ext_resource type="Texture2D" uid="uid://cstm1tsskp47v" path="res://scenes/FightScenes/TheChurch/3DFront/baketry2.png" id="3_6c8v4"]
 [ext_resource type="Texture2D" uid="uid://des0wuvfkbnu1" path="res://scenes/FightScenes/TheChurch/3DText/roberttexttext.jpg" id="4_2pns6"]
+[ext_resource type="AudioStream" uid="uid://dhkav2k7ma0dh" path="res://assets/sounds/rumble/rumble.ogg" id="4_y5mv2"]
 [ext_resource type="ArrayMesh" uid="uid://4lger5fh6chq" path="res://scenes/FightScenes/TheChurch/3DText/preistroberttext1.obj" id="5_yx4t5"]
 [ext_resource type="ArrayMesh" uid="uid://dfstv50uufwrh" path="res://scenes/FightScenes/TheChurch/3DText/preistroberttext2.obj" id="6_x8mqh"]
 [ext_resource type="Texture2D" uid="uid://dyl6gtjdlb7q8" path="res://scenes/FightScenes/TheChurch/windowtry/b.png" id="7_grpge"]
@@ -242,11 +245,23 @@ tracks/16/keys = {
 "update": 1,
 "values": [true]
 }
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("AnimationPlayer/RumbleSFX:volume_db")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
 
 [sub_resource type="Animation" id="Animation_ygplw"]
 resource_name = "epicorganicintro"
 length = 15.0
-step = 0.1
+step = 0.05
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -477,6 +492,52 @@ tracks/18/keys = {
 "method": &"gameStartsNow"
 }]
 }
+tracks/19/type = "audio"
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/path = NodePath("AnimationPlayer/WhooshSFX")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("2_chogk")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("3_3mow5")
+}],
+"times": PackedFloat32Array(6.1, 6.55)
+}
+tracks/19/use_blend = true
+tracks/20/type = "audio"
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/path = NodePath("AnimationPlayer/RumbleSFX")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/keys = {
+"clips": [{
+"end_offset": 3.35984,
+"start_offset": 0.0,
+"stream": ExtResource("4_y5mv2")
+}],
+"times": PackedFloat32Array(0.15)
+}
+tracks/20/use_blend = true
+tracks/21/type = "value"
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/path = NodePath("AnimationPlayer/RumbleSFX:volume_db")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/keys = {
+"times": PackedFloat32Array(0, 3, 4.9, 6.75, 7.2, 8.1, 8.4, 10.75, 14.3, 15.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [-10.0, 5.0, 5.0, -15.0, 5.0, 5.0, -5.0, -5.0, -10.0, -40.0]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_y7gr0"]
 _data = {
@@ -508,7 +569,7 @@ albedo_texture = ExtResource("17_ma4jh")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mgfv6"]
 albedo_texture = ExtResource("9_sovuh")
 
-[node name="TheRift2" type="Node3D"]
+[node name="TheRift3" type="Node3D"]
 script = ExtResource("1_dt4df")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -516,6 +577,11 @@ libraries = {
 "": SubResource("AnimationLibrary_y7gr0")
 }
 autoplay = "epicorganicintro"
+
+[node name="WhooshSFX" type="AudioStreamPlayer" parent="AnimationPlayer"]
+volume_db = 15.0
+
+[node name="RumbleSFX" type="AudioStreamPlayer" parent="AnimationPlayer"]
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(0.999999, 0, 0, 0, -3.61999e-06, 1, 0, -1, -3.61999e-06, 1.11, 4.51, -4.165)

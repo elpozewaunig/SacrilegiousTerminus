@@ -1,8 +1,8 @@
-[gd_scene load_steps=61 format=3 uid="uid://b0cfnqq0xj6ro"]
+[gd_scene load_steps=64 format=3 uid="uid://b0cfnqq0xj6ro"]
 
 [ext_resource type="ArrayMesh" uid="uid://sdnkjicuuag3" path="res://scenes/FightScenes/TheMountain/3DFront/rock.obj" id="1_2bq0v"]
 [ext_resource type="Texture2D" uid="uid://b4gbrrmj35ey2" path="res://scenes/FightScenes/TheMountain/3DFront/rockbake.png" id="1_3jns5"]
-[ext_resource type="Material" uid="uid://cry5503xare3w" path="res://scenes/FightScenes/TheMountain/Skybox/mainmenuskybox.tres" id="3_02s2g"]
+[ext_resource type="Material" uid="uid://di53o2e08jnik" path="res://scenes/FightScenes/TheMountain/Skybox/SpaceSkyBox.tres" id="5_x87l0"]
 [ext_resource type="Texture2D" uid="uid://clo06kexhsdk5" path="res://scenes/FightScenes/TheMountain/ParallaxLayerTexts/layer1.png" id="6_k1qaw"]
 [ext_resource type="Texture2D" uid="uid://bqessv6mtjusq" path="res://scenes/FightScenes/TheMountain/ParallaxLayerTexts/layer2.png" id="7_3qoeg"]
 [ext_resource type="PackedScene" uid="uid://dtjng8jtop7ed" path="res://assets/sprites/protag/protag.tscn" id="8_48wte"]
@@ -16,7 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://cuw82befexakv" path="res://assets/UI/goodwheel.png" id="14_l18yr"]
 [ext_resource type="Texture2D" uid="uid://deiwh6oq6lymh" path="res://scenes/SpellCastWheel/Material/SpellCastWheel_Texture.png" id="15_gg1jm"]
 [ext_resource type="PackedScene" uid="uid://dvygun7k256ji" path="res://scenes/HudOverlay.tscn" id="16_fjhqi"]
-[ext_resource type="PackedScene" uid="uid://ccwx42uifhfce" path="res://assets/sprites/engel2/Angel2.tscn" id="16_m6crs"]
+[ext_resource type="PackedScene" path="res://assets/sprites/engel2/Angel2.tscn" id="16_m6crs"]
 [ext_resource type="ArrayMesh" uid="uid://cfkachmxoytgr" path="res://scenes/SpellCastWheel/Model/SpellCastwheel_center.obj" id="16_u6xfl"]
 [ext_resource type="Texture2D" uid="uid://cevqxsd6mf03f" path="res://assets/UI/Choose.png" id="17_uip76"]
 [ext_resource type="Script" path="res://code/rotateToAngle.gd" id="18_gk7f6"]
@@ -45,6 +45,9 @@
 [ext_resource type="Texture2D" uid="uid://deiox7dda12bd" path="res://assets/sprites/tarot symbole/Pentagram.png" id="41_a3qfw"]
 [ext_resource type="Texture2D" uid="uid://bhnu44u0bjfo0" path="res://assets/sprites/tarot symbole/tarotGlow/Swordwaage.png" id="42_840ck"]
 [ext_resource type="Script" path="res://code/spellCastWheelScript.gd" id="43_13kqg"]
+[ext_resource type="AudioStream" uid="uid://p3j8kkj1er87" path="res://assets/sounds/long_whoosh/long_whoosh_4.ogg" id="46_8i7tv"]
+[ext_resource type="AudioStream" uid="uid://c50px6he1apgi" path="res://assets/music/battle1_loop.ogg" id="46_epgyi"]
+[ext_resource type="AudioStream" uid="uid://ba240676qg75s" path="res://assets/sounds/angel_incomprehensible/angel_sfx.ogg" id="47_kct0j"]
 
 [sub_resource type="GDScript" id="GDScript_yrvts"]
 resource_name = "mountainController"
@@ -60,7 +63,7 @@ albedo_texture = ExtResource("1_3jns5")
 metallic_specular = 0.0
 
 [sub_resource type="Sky" id="Sky_iusol"]
-sky_material = ExtResource("3_02s2g")
+sky_material = ExtResource("5_x87l0")
 
 [sub_resource type="Environment" id="Environment_055ba"]
 background_mode = 2
@@ -295,30 +298,6 @@ tracks/11/keys = {
 "update": 0,
 "values": [129.8]
 }
-tracks/12/type = "value"
-tracks/12/imported = false
-tracks/12/enabled = true
-tracks/12/path = NodePath("roundManager/AutomaticWheel:visible")
-tracks/12/interp = 1
-tracks/12/loop_wrap = true
-tracks/12/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/13/type = "value"
-tracks/13/imported = false
-tracks/13/enabled = true
-tracks/13/path = NodePath("roundManager/ManualWheel:visible")
-tracks/13/interp = 1
-tracks/13/loop_wrap = true
-tracks/13/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
 
 [sub_resource type="Animation" id="Animation_lxrb8"]
 resource_name = "epicintro"
@@ -366,7 +345,7 @@ tracks/3/path = NodePath("Angle3:visible")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 7.86667, 8.1),
+"times": PackedFloat32Array(0.2, 7.86667, 8.1),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [false, false, true]
@@ -481,30 +460,36 @@ tracks/12/keys = {
 "method": &"gameStartsNow"
 }]
 }
-tracks/13/type = "value"
+tracks/13/type = "audio"
 tracks/13/imported = false
 tracks/13/enabled = true
-tracks/13/path = NodePath("roundManager/AutomaticWheel:visible")
+tracks/13/path = NodePath("Camera3D/WhooshSFX")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/keys = {
-"times": PackedFloat32Array(14.2, 14.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [false, true]
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("46_8i7tv")
+}],
+"times": PackedFloat32Array(8.56667)
 }
-tracks/14/type = "value"
+tracks/13/use_blend = true
+tracks/14/type = "audio"
 tracks/14/imported = false
 tracks/14/enabled = true
-tracks/14/path = NodePath("roundManager/ManualWheel:visible")
+tracks/14/path = NodePath("Camera3D/AppearSFX")
 tracks/14/interp = 1
 tracks/14/loop_wrap = true
 tracks/14/keys = {
-"times": PackedFloat32Array(14.2, 14.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [false, true]
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("47_kct0j")
+}],
+"times": PackedFloat32Array(6.36667)
 }
+tracks/14/use_blend = true
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_2auk1"]
 _data = {
@@ -512,12 +497,20 @@ _data = {
 "epicintro": SubResource("Animation_lxrb8")
 }
 
-[node name="TheRift2" type="Node3D"]
+[node name="TheRift3" type="Node3D"]
 script = SubResource("GDScript_yrvts")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(0.940288, -0.0414819, -0.337843, 0, 0.992546, -0.121869, 0.34038, 0.114592, 0.933279, 0.23, 0.415, -0.435)
 fov = 50.0
+
+[node name="WhooshSFX" type="AudioStreamPlayer" parent="Camera3D"]
+volume_db = 15.0
+
+[node name="RumbleSFX" type="AudioStreamPlayer" parent="Camera3D"]
+volume_db = -15.0
+
+[node name="AppearSFX" type="AudioStreamPlayer" parent="Camera3D"]
 
 [node name="Cliffside" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.253, 0.01, 0.226)
@@ -571,7 +564,7 @@ hasProgressBar = true
 timeForRoud = 12
 
 [node name="AutomaticWheel" type="Node3D" parent="roundManager" node_paths=PackedStringArray("innerRing", "middleRing", "elements", "sprites")]
-transform = Transform3D(0.406693, -0.54578, -0.370608, 0.0154749, 0.443143, -0.635618, 0.659535, 0.32615, 0.243444, 1.13, 0.345, -2.166)
+transform = Transform3D(1, 0, 0, 0, 0.683273, -0.730162, 0, 0.730162, 0.683273, 2, 0.5, -1.336)
 visible = false
 script = ExtResource("13_82uqp")
 innerRing = NodePath("Wheel/1")
@@ -602,6 +595,10 @@ texture = ExtResource("17_uip76")
 
 [node name="Chevron2" type="Sprite3D" parent="roundManager/AutomaticWheel/Wheel/Chevrons"]
 transform = Transform3D(0.015, 0, 0, 0, -6.55671e-10, 0.015, 0, -0.015, -6.55671e-10, 0.0102239, 0, 0.564491)
+texture = ExtResource("17_uip76")
+
+[node name="Chevron3" type="Sprite3D" parent="roundManager/AutomaticWheel/Wheel/Chevrons"]
+transform = Transform3D(0.016, 0, 0, 0, -6.99382e-10, 0.016, 0, -0.016, -6.99382e-10, 0, 0, 0.918)
 texture = ExtResource("17_uip76")
 
 [node name="1" type="Node3D" parent="roundManager/AutomaticWheel/Wheel" node_paths=PackedStringArray("particle")]
@@ -821,7 +818,7 @@ mass = 0.001
 gravity_scale = 0.0
 
 [node name="ManualWheel" type="Node3D" parent="roundManager" node_paths=PackedStringArray("innerRing", "middleRing")]
-transform = Transform3D(0.435123, 0.235404, 0.101381, 0, 0.19975, -0.463815, -0.256307, 0.399637, 0.172111, -0.25, 0.38, -1.574)
+transform = Transform3D(1, 0, 0, 0, 0.786935, -0.617036, 0, 0.617036, 0.786935, 0, 0.5, -1.574)
 visible = false
 script = ExtResource("43_13kqg")
 innerRing = NodePath("Wheel/1")
@@ -837,6 +834,10 @@ texture = ExtResource("17_uip76")
 
 [node name="Chevron2" type="Sprite3D" parent="roundManager/ManualWheel/Wheel/Chevrons"]
 transform = Transform3D(0.015, 0, 0, 0, -6.55671e-10, 0.015, 0, -0.015, -6.55671e-10, 0.0102239, 0, 0.564491)
+texture = ExtResource("17_uip76")
+
+[node name="Chevron3" type="Sprite3D" parent="roundManager/ManualWheel/Wheel/Chevrons"]
+transform = Transform3D(0.016, 0, 0, 0, -6.99382e-10, 0.016, 0, -0.016, -6.99382e-10, 0, 0, 0.918)
 texture = ExtResource("17_uip76")
 
 [node name="modelcenter" type="MeshInstance3D" parent="roundManager/ManualWheel/Wheel"]
@@ -1076,6 +1077,11 @@ libraries = {
 "": SubResource("AnimationLibrary_2auk1")
 }
 autoplay = "epicintro"
+
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("46_epgyi")
+autoplay = true
+parameters/looping = true
 
 [connection signal="playerWon" from="roundManager" to="." method="_on_round_manager_player_won"]
 [connection signal="updateProgressBarTo" from="roundManager" to="roundManager/HudOverlay" method="_on_round_manager_update_progress_bar_to"]
