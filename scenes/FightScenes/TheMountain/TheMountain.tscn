@@ -1,4 +1,4 @@
-[gd_scene load_steps=64 format=3 uid="uid://b0cfnqq0xj6ro"]
+[gd_scene load_steps=65 format=3 uid="uid://b0cfnqq0xj6ro"]
 
 [ext_resource type="ArrayMesh" uid="uid://sdnkjicuuag3" path="res://scenes/FightScenes/TheMountain/3DFront/rock.obj" id="1_2bq0v"]
 [ext_resource type="Texture2D" uid="uid://b4gbrrmj35ey2" path="res://scenes/FightScenes/TheMountain/3DFront/rockbake.png" id="1_3jns5"]
@@ -48,6 +48,7 @@
 [ext_resource type="AudioStream" uid="uid://p3j8kkj1er87" path="res://assets/sounds/long_whoosh/long_whoosh_4.ogg" id="46_8i7tv"]
 [ext_resource type="AudioStream" uid="uid://c50px6he1apgi" path="res://assets/music/battle1_loop.ogg" id="46_epgyi"]
 [ext_resource type="AudioStream" uid="uid://ba240676qg75s" path="res://assets/sounds/angel_incomprehensible/angel_sfx.ogg" id="47_kct0j"]
+[ext_resource type="AudioStream" uid="uid://11otsyph44dg" path="res://assets/sounds/wheel_correct/wheel_correct_3.ogg" id="48_m8o8l"]
 
 [sub_resource type="GDScript" id="GDScript_yrvts"]
 resource_name = "mountainController"
@@ -298,6 +299,102 @@ tracks/11/keys = {
 "update": 0,
 "values": [129.8]
 }
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("roundManager/AutomaticWheel:visible")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("roundManager/ManualWheel:visible")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("roundManager/ManualWheel:position")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.255, 0.855, -1.574)]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("roundManager/ManualWheel:rotation")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1.27584, 0.778417, 0)]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("roundManager/ManualWheel:scale")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.46, 0.46, 0.46)]
+}
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("roundManager/AutomaticWheel:position")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1.055, 0.5, -2.161)]
+}
+tracks/18/type = "value"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("roundManager/AutomaticWheel:rotation")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1.00007, -0.925025, 0)]
+}
+tracks/19/type = "value"
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/path = NodePath("roundManager/AutomaticWheel:scale")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.9, 0.9, 0.9)]
+}
 
 [sub_resource type="Animation" id="Animation_lxrb8"]
 resource_name = "epicintro"
@@ -333,7 +430,7 @@ tracks/2/path = NodePath("Camera3D:fov")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 6.03333, 7.03333, 7.86667, 8.16667),
+"times": PackedFloat32Array(0, 6.03333, 7.03333, 7.86667, 8.4),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
 "values": [37.5, 60.1, 60.1, 35.9, 60.1]
@@ -345,10 +442,10 @@ tracks/3/path = NodePath("Angle3:visible")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0.2, 7.86667, 8.1),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.333333, 7.86667, 8.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": [false, false, true]
+"values": [false, false, false, true]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -393,7 +490,7 @@ tracks/7/path = NodePath("Preistroberttext1:position")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
-"times": PackedFloat32Array(8.53333, 9, 12.5333, 14.0667),
+"times": PackedFloat32Array(8.53333, 9, 12.7667, 13.3333),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [Vector3(-8.08, -0.72, -7), Vector3(-1.325, -0.72, -7), Vector3(-1.325, -0.72, -7), Vector3(7.76, -3.32, -7)]
@@ -405,10 +502,10 @@ tracks/8/path = NodePath("Preistroberttext2:position")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
-"times": PackedFloat32Array(8.53333, 9.13333, 12.5333, 14.0667, 14.2333),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"times": PackedFloat32Array(8.53333, 9.13333, 12.7667, 13.1667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Vector3(-6.385, -0.42, -7), Vector3(-0.725, -0.42, -7), Vector3(-0.725, -0.42, -7), Vector3(7.54, -2.395, -7), Vector3(7.88, -3.13, -7)]
+"values": [Vector3(-6.385, -0.42, -7), Vector3(-0.725, -0.42, -7), Vector3(-0.725, -0.42, -7), Vector3(7.88, -3.13, -7)]
 }
 tracks/9/type = "value"
 tracks/9/imported = false
@@ -441,7 +538,7 @@ tracks/11/path = NodePath("WorldEnvironment:environment:sky_custom_fov")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/keys = {
-"times": PackedFloat32Array(7.4, 7.83333, 8.36667, 9.63333),
+"times": PackedFloat32Array(6.93333, 7.83333, 8.36667, 9.63333),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [0.0, 180.0, 129.8, 0.0]
@@ -453,7 +550,7 @@ tracks/12/path = NodePath("roundManager")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/keys = {
-"times": PackedFloat32Array(14.3),
+"times": PackedFloat32Array(14.4667),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [],
@@ -471,8 +568,12 @@ tracks/13/keys = {
 "end_offset": 0.0,
 "start_offset": 0.0,
 "stream": ExtResource("46_8i7tv")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("46_8i7tv")
 }],
-"times": PackedFloat32Array(8.56667)
+"times": PackedFloat32Array(8.56667, 12.8)
 }
 tracks/13/use_blend = true
 tracks/14/type = "audio"
@@ -490,6 +591,121 @@ tracks/14/keys = {
 "times": PackedFloat32Array(6.36667)
 }
 tracks/14/use_blend = true
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("roundManager/AutomaticWheel:visible")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(10.9333, 11.4333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("roundManager/ManualWheel:visible")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(10.9, 11.4667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("roundManager/AutomaticWheel:position")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(11.1, 12.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(1.055, 0.5, -2.161), Vector3(1.055, 0.5, -2.161)]
+}
+tracks/18/type = "value"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("roundManager/AutomaticWheel:rotation")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
+"times": PackedFloat32Array(11.0667, 12.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-3.27075, -2.83267, 0.663225), Vector3(1.00007, -0.925025, 0)]
+}
+tracks/19/type = "value"
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/path = NodePath("roundManager/AutomaticWheel:scale")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/keys = {
+"times": PackedFloat32Array(11.1, 12.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0.04, 0.04, 0.04), Vector3(0.9, 0.9, 0.9)]
+}
+tracks/20/type = "value"
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/path = NodePath("roundManager/ManualWheel:position")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/keys = {
+"times": PackedFloat32Array(10.9667, 12.1667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-0.255, 0.855, -1.574), Vector3(-0.255, 0.855, -1.574)]
+}
+tracks/21/type = "value"
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/path = NodePath("roundManager/ManualWheel:rotation")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/keys = {
+"times": PackedFloat32Array(11.1667, 12.1667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(3.90256, -6.75268, -5.41052), Vector3(1.27584, 0.778417, 0)]
+}
+tracks/22/type = "value"
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/path = NodePath("roundManager/ManualWheel:scale")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/keys = {
+"times": PackedFloat32Array(11.0667, 12.1667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0.05, 0.05, 0.05), Vector3(0.46, 0.46, 0.46)]
+}
+tracks/23/type = "audio"
+tracks/23/imported = false
+tracks/23/enabled = true
+tracks/23/path = NodePath("Camera3D/wheeldingsound")
+tracks/23/interp = 1
+tracks/23/loop_wrap = true
+tracks/23/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("48_m8o8l")
+}, {
+"end_offset": 4.6632,
+"start_offset": 0.0,
+"stream": ExtResource("48_m8o8l")
+}],
+"times": PackedFloat32Array(11.4, 11.5667)
+}
+tracks/23/use_blend = true
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_2auk1"]
 _data = {
@@ -506,6 +722,9 @@ fov = 50.0
 
 [node name="WhooshSFX" type="AudioStreamPlayer" parent="Camera3D"]
 volume_db = 15.0
+
+[node name="wheeldingsound" type="AudioStreamPlayer" parent="Camera3D"]
+volume_db = 10.0
 
 [node name="RumbleSFX" type="AudioStreamPlayer" parent="Camera3D"]
 volume_db = -15.0
@@ -564,7 +783,7 @@ hasProgressBar = true
 timeForRoud = 12
 
 [node name="AutomaticWheel" type="Node3D" parent="roundManager" node_paths=PackedStringArray("innerRing", "middleRing", "elements", "sprites")]
-transform = Transform3D(1, 0, 0, 0, 0.683273, -0.730162, 0, 0.730162, 0.683273, 2, 0.5, -1.336)
+transform = Transform3D(0.541634, -0.604854, -0.38831, 0, 0.486216, -0.75736, 0.718772, 0.45579, 0.292612, 1.055, 0.5, -2.161)
 visible = false
 script = ExtResource("13_82uqp")
 innerRing = NodePath("Wheel/1")
@@ -595,10 +814,6 @@ texture = ExtResource("17_uip76")
 
 [node name="Chevron2" type="Sprite3D" parent="roundManager/AutomaticWheel/Wheel/Chevrons"]
 transform = Transform3D(0.015, 0, 0, 0, -6.55671e-10, 0.015, 0, -0.015, -6.55671e-10, 0.0102239, 0, 0.564491)
-texture = ExtResource("17_uip76")
-
-[node name="Chevron3" type="Sprite3D" parent="roundManager/AutomaticWheel/Wheel/Chevrons"]
-transform = Transform3D(0.016, 0, 0, 0, -6.99382e-10, 0.016, 0, -0.016, -6.99382e-10, 0, 0, 0.918)
 texture = ExtResource("17_uip76")
 
 [node name="1" type="Node3D" parent="roundManager/AutomaticWheel/Wheel" node_paths=PackedStringArray("particle")]
@@ -818,7 +1033,7 @@ mass = 0.001
 gravity_scale = 0.0
 
 [node name="ManualWheel" type="Node3D" parent="roundManager" node_paths=PackedStringArray("innerRing", "middleRing")]
-transform = Transform3D(1, 0, 0, 0, 0.786935, -0.617036, 0, 0.617036, 0.786935, 0, 0.5, -1.574)
+transform = Transform3D(0.327532, 0.309042, 0.093894, 0, 0.133723, -0.440134, -0.32299, 0.313387, 0.0952143, -0.255, 0.855, -1.574)
 visible = false
 script = ExtResource("43_13kqg")
 innerRing = NodePath("Wheel/1")
@@ -834,10 +1049,6 @@ texture = ExtResource("17_uip76")
 
 [node name="Chevron2" type="Sprite3D" parent="roundManager/ManualWheel/Wheel/Chevrons"]
 transform = Transform3D(0.015, 0, 0, 0, -6.55671e-10, 0.015, 0, -0.015, -6.55671e-10, 0.0102239, 0, 0.564491)
-texture = ExtResource("17_uip76")
-
-[node name="Chevron3" type="Sprite3D" parent="roundManager/ManualWheel/Wheel/Chevrons"]
-transform = Transform3D(0.016, 0, 0, 0, -6.99382e-10, 0.016, 0, -0.016, -6.99382e-10, 0, 0, 0.918)
 texture = ExtResource("17_uip76")
 
 [node name="modelcenter" type="MeshInstance3D" parent="roundManager/ManualWheel/Wheel"]
