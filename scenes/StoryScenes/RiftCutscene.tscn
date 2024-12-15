@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://nukwwpr5axtc"]
 
-[ext_resource type="PackedScene" uid="uid://dgurl1u1gb0ly" path="res://scenes/DialogScene.tscn" id="1_mjeo2"]
+[ext_resource type="PackedScene" path="res://scenes/DialogScene.tscn" id="1_mjeo2"]
 [ext_resource type="Texture2D" uid="uid://b2n213s6icibw" path="res://assets/cutscenebackgrounds/bg4.jpg" id="2_07t7d"]
 
 [sub_resource type="GDScript" id="GDScript_fu138"]

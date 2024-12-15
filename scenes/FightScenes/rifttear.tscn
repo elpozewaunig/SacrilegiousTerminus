@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=4 uid="uid://ucwlwrhkaopg"]
+[gd_scene load_steps=10 format=4 uid="uid://d3e5kcc82viwq"]
 
 [ext_resource type="Shader" path="res://scenes/FightScenes/TheRift/TheRift.gdshader" id="1_cxjw8"]
 [ext_resource type="Texture2D" uid="uid://bqdmlqulrjco2" path="res://scenes/FightScenes/a0001.png" id="2_fip4j"]
