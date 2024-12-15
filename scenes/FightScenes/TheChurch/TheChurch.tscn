@@ -1,5 +1,6 @@
-[gd_scene load_steps=22 format=3 uid="uid://coj8cff6bnd1d"]
+[gd_scene load_steps=23 format=3 uid="uid://coj8cff6bnd1d"]
 
+[ext_resource type="Script" path="res://scenes/FightScenes/TheChurch/theChurchController.gd" id="1_dt4df"]
 [ext_resource type="ArrayMesh" uid="uid://mjowk7pbf55q" path="res://scenes/FightScenes/TheChurch/3DFront/Church2.obj" id="2_kdy04"]
 [ext_resource type="Texture2D" uid="uid://cstm1tsskp47v" path="res://scenes/FightScenes/TheChurch/3DFront/baketry2.png" id="3_6c8v4"]
 [ext_resource type="Texture2D" uid="uid://des0wuvfkbnu1" path="res://scenes/FightScenes/TheChurch/3DText/roberttexttext.jpg" id="4_2pns6"]
@@ -40,6 +41,7 @@ albedo_texture = ExtResource("17_ma4jh")
 albedo_texture = ExtResource("9_sovuh")
 
 [node name="TheRift" type="Node3D"]
+script = ExtResource("1_dt4df")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(0.965925, 0.0919084, -0.241951, 0, 0.934826, 0.355107, 0.258819, -0.343007, 0.902972, 0.67, 1.17, 0.485)
@@ -107,4 +109,5 @@ transform = Transform3D(1, 0, 0, 0, 0.786935, -0.617036, 0, 0.617036, 0.786935, 
 
 [node name="HudOverlay" parent="roundManager" instance=ExtResource("14_yx326")]
 
+[connection signal="playerWon" from="roundManager" to="." method="_on_round_manager_player_won"]
 [connection signal="updateProgressBarTo" from="roundManager" to="roundManager/HudOverlay" method="_on_round_manager_update_progress_bar_to"]

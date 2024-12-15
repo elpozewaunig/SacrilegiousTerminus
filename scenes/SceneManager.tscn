@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://c5aam42caalrh"]
+[gd_scene load_steps=14 format=3 uid="uid://c5aam42caalrh"]
 
 [ext_resource type="PackedScene" uid="uid://coj8cff6bnd1d" path="res://scenes/FightScenes/TheChurch/TheChurch.tscn" id="1_m73o3"]
 [ext_resource type="Script" path="res://code/scene_manager.gd" id="2_t1nbp"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://bsle2e6xv3vdw" path="res://scenes/StoryScenes/IntroScene.tscn" id="6_jo66l"]
 [ext_resource type="PackedScene" uid="uid://dyvprgu04o2x5" path="res://scenes/loadingScreen.tscn" id="7_0gchl"]
 [ext_resource type="PackedScene" uid="uid://dv1unxewmnwds" path="res://scenes/StoryScenes/ChurchScene.tscn" id="7_jj2iq"]
+[ext_resource type="PackedScene" uid="uid://caddljvqemfkx" path="res://scenes/StoryScenes/CountySideScene.tscn" id="8_5pvgo"]
 [ext_resource type="PackedScene" uid="uid://o142xdjjr58r" path="res://scenes/MainMenu/Credits.tscn" id="8_drxk5"]
 [ext_resource type="PackedScene" uid="uid://cey20murtyiss" path="res://scenes/MainMenu/MainMenu.tscn" id="8_q02g1"]
 [ext_resource type="PackedScene" uid="uid://ceft1i1qvo4fl" path="res://scenes/SpellCastWheel/MainMenuWhell.tscn" id="9_aatf2"]
@@ -33,6 +34,7 @@ theMountain = ExtResource("4_huykn")
 thRift = ExtResource("5_jehmd")
 introScene = ExtResource("6_jo66l")
 churchCutSceneTillDeathHelpMePls = ExtResource("7_jj2iq")
+countrySideCutScene = ExtResource("8_5pvgo")
 mainMenuSene = ExtResource("8_q02g1")
 credits = ExtResource("8_drxk5")
 pauseScene = SubResource("PackedScene_sersr")

@@ -41,6 +41,8 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	if Input.is_action_just_pressed("ultraCheatingMove3000"):
+		playerWon.emit()
 	var eval = evaluatePosition()
 	timeTillNewSpin -= delta
 	#score --> #0 falash, #1 ich akzeptiere, #2 Q1-Lösung
@@ -53,7 +55,7 @@ func _process(delta: float) -> void:
 		score += (maxScore * delta /progressDuration)*getBonusPointsFactor(timeTillNewSpin, timeForRoud)/roundsTillFullToEmpty
 		if score>maxScore: score = maxScore
 	
-	if score == maxScore:
+	if score >= maxScore:
 		playerWon.emit()
 		
 		

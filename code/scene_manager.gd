@@ -9,6 +9,8 @@ extends Node
 @export_group("Cutscene Scenes")
 @export var introScene : PackedScene
 @export var churchCutSceneTillDeathHelpMePls: PackedScene
+@export var countrySideCutScene: PackedScene
+@export var mountainCutScene: PackedScene
 
 @export_group("Settings Scenes")
 @export var mainMenuSene : PackedScene
