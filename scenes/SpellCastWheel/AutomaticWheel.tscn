@@ -1,6 +1,7 @@
-[gd_scene load_steps=51 format=3 uid="uid://dqtcwmca5ongg"]
+[gd_scene load_steps=52 format=3 uid="uid://dqtcwmca5ongg"]
 
 [ext_resource type="Script" path="res://code/automaticWheelScript.gd" id="1_t76au"]
+[ext_resource type="Texture2D" uid="uid://cuw82befexakv" path="res://assets/UI/goodwheel.png" id="2_3woc4"]
 [ext_resource type="Texture2D" uid="uid://deiwh6oq6lymh" path="res://scenes/SpellCastWheel/Material/SpellCastWheel_Texture.png" id="2_4a4d3"]
 [ext_resource type="ArrayMesh" uid="uid://cfkachmxoytgr" path="res://scenes/SpellCastWheel/Model/SpellCastwheel_center.obj" id="3_c8nyk"]
 [ext_resource type="Texture2D" uid="uid://cevqxsd6mf03f" path="res://assets/UI/Choose.png" id="4_7wy6y"]
@@ -62,7 +63,13 @@ outerRing = NodePath("Wheel/3")
 
 [node name="Wheel" type="Node3D" parent="."]
 
+[node name="Sprite3D" type="Sprite3D" parent="Wheel"]
+transform = Transform3D(0.035, 0, 0, 0, -1.5299e-09, -0.035, 0, 0.035, -1.5299e-09, 0, 0, 0)
+modulate = Color(1, 0.313726, 0.223529, 1)
+texture = ExtResource("2_3woc4")
+
 [node name="modelcenter" type="MeshInstance3D" parent="Wheel"]
+visible = false
 material_override = SubResource("StandardMaterial3D_dg72n")
 mesh = ExtResource("3_c8nyk")
 skeleton = NodePath("../..")
@@ -71,17 +78,14 @@ skeleton = NodePath("../..")
 
 [node name="Chevron" type="Sprite3D" parent="Wheel/Chevrons"]
 transform = Transform3D(0.01, 0, 0, 0, -4.37114e-10, 0.001, 0, -0.01, -4.37114e-11, 0.00569239, 0, 0.268578)
-modulate = Color(1, 0.313726, 0.223529, 1)
 texture = ExtResource("4_7wy6y")
 
 [node name="Chevron2" type="Sprite3D" parent="Wheel/Chevrons"]
 transform = Transform3D(0.015, 0, 0, 0, -6.55671e-10, 0.015, 0, -0.015, -6.55671e-10, 0.0102239, 0, 0.564491)
-modulate = Color(1, 0.313726, 0.223529, 1)
 texture = ExtResource("4_7wy6y")
 
 [node name="Chevron3" type="Sprite3D" parent="Wheel/Chevrons"]
 transform = Transform3D(0.016, 0, 0, 0, -6.99382e-10, 0.016, 0, -0.016, -6.99382e-10, 0, 0, 0.918)
-modulate = Color(1, 0.313726, 0.223529, 1)
 texture = ExtResource("4_7wy6y")
 
 [node name="1" type="Node3D" parent="Wheel" node_paths=PackedStringArray("particle")]
