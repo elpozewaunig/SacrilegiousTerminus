@@ -40,7 +40,7 @@ script = SubResource("GDScript_s0c5o")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_kbhhq")
-volume_db = 5.0
+volume_db = -5.0
 autoplay = true
 parameters/looping = true
 
