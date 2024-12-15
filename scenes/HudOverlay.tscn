@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dvygun7k256ji"]
+[gd_scene load_steps=17 format=3 uid="uid://dvygun7k256ji"]
 
 [ext_resource type="Script" path="res://code/hudOverlay.gd" id="1_nlpga"]
 [ext_resource type="Script" path="res://code/dialogScript.gd" id="2_p562y"]
@@ -6,7 +6,9 @@
 [ext_resource type="AudioStream" uid="uid://m50mdiae1c0m" path="res://assets/sounds/sfx_PlayerVoice.ogg" id="4_nda3g"]
 [ext_resource type="AudioStream" uid="uid://ccdb1xll6wbh2" path="res://assets/sounds/sfx_EnemyVoice.ogg" id="5_oijn2"]
 [ext_resource type="Texture2D" uid="uid://b6fy8mvm3d5ht" path="res://assets/sprites/progressBar/ProgressBar.png" id="6_5qawj"]
+[ext_resource type="Script" path="res://code/tutorialScript.gd" id="8_rd4og"]
 [ext_resource type="Texture2D" uid="uid://ur4cwlbgq8hv" path="res://assets/sprites/progressBar/HolyProgressBar.png" id="8_ynm7x"]
+[ext_resource type="Script" path="res://code/pauseMenuScript.gd" id="9_ompl7"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mc56r"]
 content_margin_left = 4.0
@@ -27,6 +29,9 @@ func update(score: float, maxScore: int) -> void:
 "
 
 [sub_resource type="FontFile" id="FontFile_ch2gh"]
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
 cache/0/16/0/ascent = 0.0
 cache/0/16/0/descent = 0.0
 cache/0/16/0/underline_position = 0.0
@@ -56,6 +61,16 @@ script/source = "extends Label
 func update(timeArray: Array) -> void:
 	text = \"%02d:%02d:%02d\" % timeArray
 "
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tsvbg"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+expand_margin_left = 12.0
+expand_margin_right = 12.0
 
 [node name="HudOverlay" type="Control"]
 layout_mode = 3
@@ -145,5 +160,132 @@ text = "0:00:00"
 label_settings = SubResource("LabelSettings_86xpp")
 script = SubResource("GDScript_7wjds")
 
+[node name="TutorialLayer" type="CanvasLayer" parent="."]
+unique_name_in_owner = true
+visible = false
+script = ExtResource("8_rd4og")
+
+[node name="Background" type="ColorRect" parent="TutorialLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.882353)
+
+[node name="DialogContainer" type="CenterContainer" parent="TutorialLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="DialogBox" type="Panel" parent="TutorialLayer/DialogContainer"]
+z_index = 1
+custom_minimum_size = Vector2(600, 300)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_tsvbg")
+
+[node name="TutorialLabel" type="Label" parent="TutorialLayer/DialogContainer/DialogBox"]
+z_index = 10
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -275.0
+offset_right = 275.0
+offset_bottom = 150.0
+grow_horizontal = 2
+text = "Placeholder Tutoral Text Placeholder Tutoral Text Placeholder Tutoral Text Placeholder Tutoral Text Placeholder Tutoral Text Placeholder Tutoral Text"
+vertical_alignment = 1
+autowrap_mode = 1
+
+[node name="Button" type="Button" parent="TutorialLayer/DialogContainer/DialogBox"]
+z_index = 20
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.98
+anchor_right = 0.5
+anchor_bottom = 0.98
+offset_left = -60.0
+offset_top = -31.0
+offset_right = 60.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Alright, got it"
+
+[node name="PauseMenuLayer" type="CanvasLayer" parent="."]
+unique_name_in_owner = true
+visible = false
+script = ExtResource("9_ompl7")
+
+[node name="Background" type="ColorRect" parent="PauseMenuLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.882353)
+
+[node name="DialogContainer" type="CenterContainer" parent="PauseMenuLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="DialogBox" type="Panel" parent="PauseMenuLayer/DialogContainer"]
+z_index = 1
+custom_minimum_size = Vector2(600, 300)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_tsvbg")
+
+[node name="MenuTitle" type="Label" parent="PauseMenuLayer/DialogContainer/DialogBox"]
+z_index = 10
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.02
+anchor_right = 0.5
+anchor_bottom = 0.02
+offset_left = -53.0
+offset_right = 53.0
+offset_bottom = 23.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 24
+text = "Paused Game"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PauseMenuLayer/DialogContainer/DialogBox"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -50.5
+offset_bottom = 50.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 16
+
+[node name="ResumeBtn" type="Button" parent="PauseMenuLayer/DialogContainer/DialogBox/VBoxContainer"]
+z_index = 20
+layout_mode = 2
+text = "Resume"
+
+[node name="TutorialBtn" type="Button" parent="PauseMenuLayer/DialogContainer/DialogBox/VBoxContainer"]
+layout_mode = 2
+text = "Show Tutorial"
+
+[node name="MainMenuBtn" type="Button" parent="PauseMenuLayer/DialogContainer/DialogBox/VBoxContainer"]
+layout_mode = 2
+text = "Back to main menu"
+
 [connection signal="currentEntity" from="DialogLayer" to="." method="_on_dialog_layer_current_entity"]
 [connection signal="dialogCompleted" from="DialogLayer" to="." method="_on_dialog_layer_dialog_completed"]
+[connection signal="closeTutorial" from="TutorialLayer" to="." method="hideTutorial"]
+[connection signal="resumeGame" from="PauseMenuLayer" to="." method="_on_pause_menu_layer_resume_game"]
+[connection signal="returnToMenu" from="PauseMenuLayer" to="." method="_on_pause_menu_layer_return_to_menu"]
+[connection signal="showTutorial" from="PauseMenuLayer" to="." method="_on_pause_menu_layer_show_tutorial"]

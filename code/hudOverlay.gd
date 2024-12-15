@@ -16,7 +16,7 @@ func showDialog(dialog: Array[DialogOption], showFullscreen: bool = false) -> vo
 	dialogLayer.visible = true
 
 func _input(event: InputEvent) -> void:
-	if Input.is_action_pressed("open-pause-menu"):
+	if Input.is_action_pressed("pause"):
 		displayPauseMenu()
 	
 func _process(_delta: float) -> void:
