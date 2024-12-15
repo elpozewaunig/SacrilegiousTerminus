@@ -11,7 +11,6 @@ var currentRingIndex: int = 0
 var camera
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass
 	if outerRing:
 		rings = [innerRing, middleRing, outerRing]
 		shifts = [0, 0, 0]

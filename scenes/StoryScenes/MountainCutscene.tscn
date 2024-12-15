@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://viemoqeg4yt6"]
+[gd_scene load_steps=6 format=3 uid="uid://clyl60ed8hapa"]
 
-[ext_resource type="PackedScene" path="res://scenes/DialogScene.tscn" id="1_ayubt"]
+[ext_resource type="PackedScene" uid="uid://dgurl1u1gb0ly" path="res://scenes/DialogScene.tscn" id="1_ayubt"]
 [ext_resource type="Texture2D" uid="uid://b3frq2g06mlbx" path="res://assets/sprites/protag/protagonist.png" id="2_k22er"]
-[ext_resource type="Texture2D" uid="uid://dka4v3tdll4uw" path="res://assets/sprites/engel2/IMG_0207.png" id="3_dihtk"]
+[ext_resource type="Texture2D" uid="uid://b87p17jmjgx3x" path="res://assets/sprites/engel2/raphael.png" id="3_hqlv2"]
+[ext_resource type="Texture2D" uid="uid://chqqwl1pfpokh" path="res://assets/cutscenebackgrounds/bg3.jpg" id="4_aqnbr"]
 
 [sub_resource type="GDScript" id="GDScript_uv2tw"]
 script/source = "extends Node3D
@@ -41,6 +42,7 @@ script = SubResource("GDScript_uv2tw")
 
 [node name="DialogScene" parent="." instance=ExtResource("1_ayubt")]
 player = ExtResource("2_k22er")
-enemy = ExtResource("3_dihtk")
+enemy = ExtResource("3_hqlv2")
+background = ExtResource("4_aqnbr")
 
 [connection signal="dialogCompleted" from="DialogScene" to="." method="_on_dialog_scene_dialog_completed"]
