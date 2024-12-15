@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dtjng8jtop7ed" path="res://assets/sprites/protag/protag.tscn" id="4_vbt65"]
 [ext_resource type="Texture2D" uid="uid://sumv4w64qs8j" path="res://scenes/FightScenes/TheMountain/Skybox/space.jpg" id="5_85042"]
 [ext_resource type="Texture2D" uid="uid://bvqt6w3di3vcd" path="res://scenes/FightScenes/TheChurch/3DText/rifttextext.jpg" id="5_lb28q"]
-[ext_resource type="PackedScene" uid="uid://r020t5g1merr" path="res://gpu_particles_3d.tscn" id="6_knecr"]
+[ext_resource type="PackedScene" path="res://gpu_particles_3d.tscn" id="6_knecr"]
 [ext_resource type="ArrayMesh" uid="uid://4lger5fh6chq" path="res://scenes/FightScenes/TheChurch/3DText/preistroberttext1.obj" id="6_rjpab"]
 [ext_resource type="ArrayMesh" uid="uid://dfstv50uufwrh" path="res://scenes/FightScenes/TheChurch/3DText/preistroberttext2.obj" id="7_7ijst"]
 [ext_resource type="Script" path="res://code/roundManager.gd" id="8_i72os"]
@@ -437,7 +437,7 @@ script = ExtResource("8_i72os")
 playerWheel = NodePath("ManualWheel")
 opponentWheel = NodePath("AutomaticWheel")
 hasProgressBar = true
-timeForRoud = 23
+timeForRoud = 20
 
 [node name="AutomaticWheel" parent="roundManager" instance=ExtResource("9_hn1ih")]
 transform = Transform3D(3.565, 0, 0, 0, 2.92384, -2.0397, 0, 2.0397, 2.92384, 0.005, 2.95, -8.201)
