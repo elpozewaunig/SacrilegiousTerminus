@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://dvygun7k256ji"]
+[gd_scene load_steps=20 format=3 uid="uid://dvygun7k256ji"]
 
 [ext_resource type="Script" path="res://code/hudOverlay.gd" id="1_nlpga"]
 [ext_resource type="Script" path="res://code/dialogScript.gd" id="2_p562y"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" path="res://code/tutorialScript.gd" id="8_rd4og"]
 [ext_resource type="Texture2D" uid="uid://ur4cwlbgq8hv" path="res://assets/sprites/progressBar/HolyProgressBar.png" id="8_ynm7x"]
 [ext_resource type="Script" path="res://code/pauseMenuScript.gd" id="9_ompl7"]
+[ext_resource type="PackedScene" uid="uid://bnmu8y7sw3xs6" path="res://scenes/button_with_sfx.tscn" id="10_ly6oa"]
 
 [sub_resource type="SystemFont" id="SystemFont_baf6o"]
 font_italic = true
@@ -194,19 +195,16 @@ custom_minimum_size = Vector2(960, 540)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_tsvbg")
 
-[node name="Button" type="Button" parent="TutorialLayer/DialogContainer/DialogBox"]
-z_index = 20
+[node name="Button" parent="TutorialLayer/DialogContainer/DialogBox" instance=ExtResource("10_ly6oa")]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.5
 anchor_top = 0.98
 anchor_right = 0.5
 anchor_bottom = 0.98
-offset_left = -60.0
+offset_left = -61.0
 offset_top = -31.0
-offset_right = 60.0
-grow_horizontal = 2
-grow_vertical = 0
+offset_right = -60.0
 text = "Alright, got it"
 
 [node name="ScrollContainer" type="ScrollContainer" parent="TutorialLayer/DialogContainer/DialogBox"]
@@ -323,18 +321,17 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 16
 
-[node name="ResumeBtn" type="Button" parent="PauseMenuLayer/DialogContainer/DialogBox/VBoxContainer"]
-z_index = 20
+[node name="ResumeBtn" parent="PauseMenuLayer/DialogContainer/DialogBox/VBoxContainer" instance=ExtResource("10_ly6oa")]
 layout_mode = 2
-text = "Resume"
 
-[node name="TutorialBtn" type="Button" parent="PauseMenuLayer/DialogContainer/DialogBox/VBoxContainer"]
+[node name="TutorialBtn" parent="PauseMenuLayer/DialogContainer/DialogBox/VBoxContainer" instance=ExtResource("10_ly6oa")]
 layout_mode = 2
 text = "Show Tutorial"
 
-[node name="MainMenuBtn" type="Button" parent="PauseMenuLayer/DialogContainer/DialogBox/VBoxContainer"]
+[node name="MainMenuBtn" parent="PauseMenuLayer/DialogContainer/DialogBox/VBoxContainer" instance=ExtResource("10_ly6oa")]
 layout_mode = 2
-text = "Back to main menu"
+text = "Back to main menu
+"
 
 [connection signal="currentEntity" from="DialogLayer" to="." method="_on_dialog_layer_current_entity"]
 [connection signal="dialogCompleted" from="DialogLayer" to="." method="_on_dialog_layer_dialog_completed"]
