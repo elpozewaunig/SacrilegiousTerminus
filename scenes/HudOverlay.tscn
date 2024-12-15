@@ -186,6 +186,7 @@ text = "Alright, got it"
 
 [node name="PauseMenuLayer" type="CanvasLayer" parent="."]
 unique_name_in_owner = true
+visible = false
 script = ExtResource("9_ompl7")
 
 [node name="Background" type="ColorRect" parent="PauseMenuLayer"]
