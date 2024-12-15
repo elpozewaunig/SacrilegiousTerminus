@@ -165,7 +165,6 @@ script = SubResource("GDScript_7wjds")
 
 [node name="TutorialLayer" type="CanvasLayer" parent="."]
 unique_name_in_owner = true
-visible = false
 script = ExtResource("8_rd4og")
 
 [node name="Background" type="ColorRect" parent="TutorialLayer"]
@@ -241,15 +240,14 @@ For a wheel with two rings:
 [indent][ul] [color=TURQUOISE]Turquoise Icon:[/color] Match the inner ring icon exactly.
  [color=YELLOW]Yellow Icon:[/color] Select the icon that is one position away from matching the inner ring.
  [color=PURPLE]Purple Icon:[/color] Select the icon opposite to the inner ring. [/ul][/indent]
+ 
     [b]Middle Ring[/b]
-
 [indent][ul] Match the middle ring icon exactly, with no additional rules.[/ul][/indent]
 
 [center][font_size={18}][b]Three Rings (Final Level)[/b][/font_size][/center]
 In the final level, a third, outer ring is introduced. The outer ring is independent of the other two and does [color=RED]NOT[/color] influence their rules. Simply match the outer ring icon exactly.
 
 [center][font_size={18}][b]Controls[/b][/font_size][/center]
-
 You can adjust the rings using two different input methods:
 
     [b]Keypad Controls[/b]
