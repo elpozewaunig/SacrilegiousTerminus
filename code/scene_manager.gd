@@ -25,7 +25,6 @@ extends Node
 
 @export_group("endings")
 @export var loseScene : PackedScene
-@export var winScene : PackedScene
 
 func _ready() -> void:
 	pass

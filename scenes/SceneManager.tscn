@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://c5aam42caalrh"]
+[gd_scene load_steps=19 format=3 uid="uid://c5aam42caalrh"]
 
 [ext_resource type="PackedScene" uid="uid://coj8cff6bnd1d" path="res://scenes/FightScenes/TheChurch/TheChurch.tscn" id="1_m73o3"]
 [ext_resource type="Script" path="res://code/scene_manager.gd" id="2_t1nbp"]
@@ -12,12 +12,11 @@
 [ext_resource type="PackedScene" uid="uid://o142xdjjr58r" path="res://scenes/MainMenu/Credits.tscn" id="8_drxk5"]
 [ext_resource type="PackedScene" uid="uid://cey20murtyiss" path="res://scenes/MainMenu/MainMenu.tscn" id="8_q02g1"]
 [ext_resource type="PackedScene" uid="uid://ceft1i1qvo4fl" path="res://scenes/SpellCastWheel/MainMenuWhell.tscn" id="9_aatf2"]
-[ext_resource type="PackedScene" uid="uid://viemoqeg4yt6" path="res://scenes/StoryScenes/MountainCutscene.tscn" id="9_p70bq"]
+[ext_resource type="PackedScene" uid="uid://clyl60ed8hapa" path="res://scenes/StoryScenes/MountainCutscene.tscn" id="9_p70bq"]
 [ext_resource type="PackedScene" uid="uid://nukwwpr5axtc" path="res://scenes/StoryScenes/RiftCutscene.tscn" id="10_hlcak"]
 [ext_resource type="PackedScene" uid="uid://xn78ag3l5ltx" path="res://scenes/StoryScenes/OutroCutscene.tscn" id="11_wm21b"]
 [ext_resource type="PackedScene" uid="uid://bbqw6wj7d55e" path="res://scenes/DEATH.tscn" id="13_kp2q1"]
-[ext_resource type="PackedScene" uid="uid://51126e6b5hp2" path="res://scenes/WIN.tscn" id="14_lki48"]
-[ext_resource type="PackedScene" uid="uid://c0gwkp8m0m7m2" path="res://scenes/MainMenu/tutorialMainMenu.tscn" id="15_mom8j"]
+[ext_resource type="PackedScene" uid="uid://dfj7crbv06vkm" path="res://scenes/MainMenu/tutorialMainMenu.tscn" id="15_mom8j"]
 
 [sub_resource type="PackedScene" id="PackedScene_sersr"]
 _bundled = {
@@ -50,4 +49,3 @@ pauseScene = SubResource("PackedScene_sersr")
 mainMenuTutorial = ExtResource("15_mom8j")
 loadingScene = ExtResource("7_0gchl")
 loseScene = ExtResource("13_kp2q1")
-winScene = ExtResource("14_lki48")
