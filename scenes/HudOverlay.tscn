@@ -87,7 +87,6 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_6rxup")
 
 [node name="IngameLayer" type="CanvasLayer" parent="."]
 unique_name_in_owner = true
-visible = false
 
 [node name="FightProgressBar" type="TextureProgressBar" parent="IngameLayer"]
 unique_name_in_owner = true

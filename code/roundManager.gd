@@ -35,6 +35,9 @@ func _ready() -> void:
 		wheelSizes.append(playerWheel.middleRing.segmentCount)
 	if ringCount > 2: # outerRing exists
 		wheelSizes.append(playerWheel.outerRing.segmentCount) 
+	
+	if hudoverlay != null:
+		hudoverlay.hideIngameHud()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -44,7 +47,7 @@ func _process(delta: float) -> void:
 		GameManager.stopTimer()
 	
 	
-	if !gameStarted:
+	if !gameStarted || !GameManager.inLevel:
 		return
 	var eval = evaluatePosition()
 	timeTillNewSpin -= delta

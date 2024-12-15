@@ -18,6 +18,9 @@ func showDialog(dialog: Array[DialogOption], showFullscreen: bool = false) -> vo
 func _input(event: InputEvent) -> void:
 	if Input.is_action_pressed("open-pause-menu"):
 		displayPauseMenu()
+	
+func _process(_delta: float) -> void:
+	timerLabel.update(GameManager.getTimerSignal())
 
 func _on_dialog_layer_dialog_completed() -> void:
 	dialogLayer.visible = false
@@ -57,10 +60,6 @@ func hidePauseMenu() -> void:
 
 func _on_round_manager_update_progress_bar_to(score: float, maxScore: int) -> void:
 	textureProgressBar.update(score, maxScore)
-	
-	
-func _on_game_manager_update_the_final_countdown(timeArray: Array) -> void:
-	timerLabel.update(timeArray)
 
 
 func _on_dialog_layer_current_entity(entity: DialogOption.DIALOG_ENTITY) -> void:

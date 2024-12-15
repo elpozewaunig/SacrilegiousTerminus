@@ -39,6 +39,8 @@ func editTimer(timeLeft, delta):
 func sendTimerSignal():
 	updateTheFinalCountdown.emit(getTimeFromTimer(timeLeft))
 
+func getTimerSignal():
+	return getTimeFromTimer(timeLeft)
 
 func startTimer() -> void:
 	inLevel = true
