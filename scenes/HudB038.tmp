@@ -42,8 +42,8 @@ border_width_top = 2
 border_width_right = 2
 border_width_bottom = 2
 border_color = Color(1, 1, 1, 1)
-expand_margin_left = 12.0
-expand_margin_right = 12.0
+expand_margin_left = 8.0
+expand_margin_right = 8.0
 
 [node name="HudOverlay" type="Control"]
 layout_mode = 3
@@ -186,6 +186,7 @@ text = "Alright, got it"
 
 [node name="PauseMenuLayer" type="CanvasLayer" parent="."]
 unique_name_in_owner = true
+visible = false
 script = ExtResource("9_ompl7")
 
 [node name="Background" type="ColorRect" parent="PauseMenuLayer"]
