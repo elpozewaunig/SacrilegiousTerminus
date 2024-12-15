@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://bihqmqmhy5qrk"]
+[gd_scene load_steps=24 format=3 uid="uid://bihqmqmhy5qrk"]
 
 [ext_resource type="Texture2D" uid="uid://btjnrke4c1pf3" path="res://scenes/FightScenes/TheMountain/Skybox/spacenopink.jpg" id="3_g3qk6"]
 [ext_resource type="ArrayMesh" uid="uid://bk3lbs6yirhyf" path="res://scenes/FightScenes/TheCountrySide/CountrySide6.obj" id="4_bhs08"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://sarwg0s46bs2" path="res://scenes/FightScenes/TheChurch/3DText/michaelttexttext.jpg" id="11_twke2"]
 [ext_resource type="ArrayMesh" uid="uid://4lger5fh6chq" path="res://scenes/FightScenes/TheChurch/3DText/preistroberttext1.obj" id="12_t5pfc"]
 [ext_resource type="ArrayMesh" uid="uid://dfstv50uufwrh" path="res://scenes/FightScenes/TheChurch/3DText/preistroberttext2.obj" id="13_16pfr"]
+[ext_resource type="Texture2D" uid="uid://d1qfbpx8ym8rd" path="res://scenes/FightScenes/TheMountain/Skybox/clouds.png" id="14_kro6o"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_ow5hs"]
 panorama = ExtResource("3_g3qk6")
@@ -39,6 +40,43 @@ albedo_texture = ExtResource("11_twke2")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_omdaq"]
 shading_mode = 0
 albedo_texture = ExtResource("11_twke2")
+
+[sub_resource type="Animation" id="Animation_k6lpu"]
+resource_name = "cloudmove"
+length = 250.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 249.433),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 84.471, -472.923), Vector3(0, 161.611, 181.862)]
+}
+
+[sub_resource type="Animation" id="Animation_sstbc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 84.471, -472.923)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bdj4s"]
+_data = {
+"RESET": SubResource("Animation_sstbc"),
+"cloudmove": SubResource("Animation_k6lpu")
+}
 
 [node name="TheRift" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.147749, 0.0364075, -0.0162697)
@@ -107,3 +145,14 @@ mesh = ExtResource("12_t5pfc")
 transform = Transform3D(1, 0, 0, 0, 0.73015, -0.683287, 0, 0.683287, 0.73015, 0.801404, 0.923181, -4.87205)
 material_override = SubResource("StandardMaterial3D_omdaq")
 mesh = ExtResource("13_16pfr")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(58.515, 0, 0, 0, 15.1014, -56.5328, 0, 56.5328, 15.1014, 0, 84.471, -472.923)
+modulate = Color(0.385448, 0.438511, 0.504069, 1)
+texture = ExtResource("14_kro6o")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite3D"]
+libraries = {
+"": SubResource("AnimationLibrary_bdj4s")
+}
+autoplay = "cloudmove"
