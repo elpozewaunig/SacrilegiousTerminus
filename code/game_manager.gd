@@ -29,6 +29,7 @@ func editTimer(timeLeft, delta):
 		
 	if timeLeft <= 0:
 		timeLeft = 0
+		SceneManager.change_scene(SceneManager.loseScene, false)
 	
 	return timeLeft
 

@@ -11,6 +11,8 @@ extends Node
 @export var churchCutSceneTillDeathHelpMePls: PackedScene
 @export var countrySideCutScene: PackedScene
 @export var mountainCutScene: PackedScene
+@export var riftCutScene: PackedScene
+@export var outroCutScene: PackedScene
 
 @export_group("Settings Scenes")
 @export var mainMenuSene : PackedScene
@@ -20,6 +22,9 @@ extends Node
 @export_group("Loading Screen")
 @export var loadingScene : PackedScene
 
+@export_group("endings")
+@export var loseScene : PackedScene
+@export var winScene : PackedScene
 
 func _ready() -> void:
 	pass
