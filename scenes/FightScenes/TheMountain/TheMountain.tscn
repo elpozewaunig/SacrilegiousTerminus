@@ -16,7 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://cuw82befexakv" path="res://assets/UI/goodwheel.png" id="14_l18yr"]
 [ext_resource type="Texture2D" uid="uid://deiwh6oq6lymh" path="res://scenes/SpellCastWheel/Material/SpellCastWheel_Texture.png" id="15_gg1jm"]
 [ext_resource type="PackedScene" uid="uid://dvygun7k256ji" path="res://scenes/HudOverlay.tscn" id="16_fjhqi"]
-[ext_resource type="PackedScene" path="res://assets/sprites/engel2/Angel2.tscn" id="16_m6crs"]
+[ext_resource type="PackedScene" uid="uid://ccwx42uifhfce" path="res://assets/sprites/engel2/Angel2.tscn" id="16_m6crs"]
 [ext_resource type="ArrayMesh" uid="uid://cfkachmxoytgr" path="res://scenes/SpellCastWheel/Model/SpellCastwheel_center.obj" id="16_u6xfl"]
 [ext_resource type="Texture2D" uid="uid://cevqxsd6mf03f" path="res://assets/UI/Choose.png" id="17_uip76"]
 [ext_resource type="Script" path="res://code/rotateToAngle.gd" id="18_gk7f6"]
@@ -295,6 +295,30 @@ tracks/11/keys = {
 "update": 0,
 "values": [129.8]
 }
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("roundManager/AutomaticWheel:visible")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("roundManager/ManualWheel:visible")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_lxrb8"]
 resource_name = "epicintro"
@@ -342,7 +366,7 @@ tracks/3/path = NodePath("Angle3:visible")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0.2, 7.86667, 8.1),
+"times": PackedFloat32Array(0, 7.86667, 8.1),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [false, false, true]
@@ -457,6 +481,30 @@ tracks/12/keys = {
 "method": &"gameStartsNow"
 }]
 }
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("roundManager/AutomaticWheel:visible")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(14.2, 14.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("roundManager/ManualWheel:visible")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(14.2, 14.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_2auk1"]
 _data = {
@@ -523,7 +571,7 @@ hasProgressBar = true
 timeForRoud = 12
 
 [node name="AutomaticWheel" type="Node3D" parent="roundManager" node_paths=PackedStringArray("innerRing", "middleRing", "elements", "sprites")]
-transform = Transform3D(1, 0, 0, 0, 0.683273, -0.730162, 0, 0.730162, 0.683273, 2, 0.5, -1.336)
+transform = Transform3D(0.406693, -0.54578, -0.370608, 0.0154749, 0.443143, -0.635618, 0.659535, 0.32615, 0.243444, 1.13, 0.345, -2.166)
 visible = false
 script = ExtResource("13_82uqp")
 innerRing = NodePath("Wheel/1")
@@ -554,10 +602,6 @@ texture = ExtResource("17_uip76")
 
 [node name="Chevron2" type="Sprite3D" parent="roundManager/AutomaticWheel/Wheel/Chevrons"]
 transform = Transform3D(0.015, 0, 0, 0, -6.55671e-10, 0.015, 0, -0.015, -6.55671e-10, 0.0102239, 0, 0.564491)
-texture = ExtResource("17_uip76")
-
-[node name="Chevron3" type="Sprite3D" parent="roundManager/AutomaticWheel/Wheel/Chevrons"]
-transform = Transform3D(0.016, 0, 0, 0, -6.99382e-10, 0.016, 0, -0.016, -6.99382e-10, 0, 0, 0.918)
 texture = ExtResource("17_uip76")
 
 [node name="1" type="Node3D" parent="roundManager/AutomaticWheel/Wheel" node_paths=PackedStringArray("particle")]
@@ -777,7 +821,7 @@ mass = 0.001
 gravity_scale = 0.0
 
 [node name="ManualWheel" type="Node3D" parent="roundManager" node_paths=PackedStringArray("innerRing", "middleRing")]
-transform = Transform3D(1, 0, 0, 0, 0.786935, -0.617036, 0, 0.617036, 0.786935, 0, 0.5, -1.574)
+transform = Transform3D(0.435123, 0.235404, 0.101381, 0, 0.19975, -0.463815, -0.256307, 0.399637, 0.172111, -0.25, 0.38, -1.574)
 visible = false
 script = ExtResource("43_13kqg")
 innerRing = NodePath("Wheel/1")
@@ -793,10 +837,6 @@ texture = ExtResource("17_uip76")
 
 [node name="Chevron2" type="Sprite3D" parent="roundManager/ManualWheel/Wheel/Chevrons"]
 transform = Transform3D(0.015, 0, 0, 0, -6.55671e-10, 0.015, 0, -0.015, -6.55671e-10, 0.0102239, 0, 0.564491)
-texture = ExtResource("17_uip76")
-
-[node name="Chevron3" type="Sprite3D" parent="roundManager/ManualWheel/Wheel/Chevrons"]
-transform = Transform3D(0.016, 0, 0, 0, -6.99382e-10, 0.016, 0, -0.016, -6.99382e-10, 0, 0, 0.918)
 texture = ExtResource("17_uip76")
 
 [node name="modelcenter" type="MeshInstance3D" parent="roundManager/ManualWheel/Wheel"]
