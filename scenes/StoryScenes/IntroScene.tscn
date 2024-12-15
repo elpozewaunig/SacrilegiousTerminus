@@ -22,7 +22,7 @@ func _ready() -> void:
 
 
 func _on_hud_overlay_dialog_completed() -> void:
-	SceneManager.change_scene(SceneManager.theChurch, true)
+	SceneManager.change_scene(SceneManager.churchCutSceneTillDeathHelpMePls, true)
 "
 
 [node name="IntroScene" type="Node3D"]

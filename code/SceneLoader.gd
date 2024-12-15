@@ -8,6 +8,9 @@ var progress = []
 func _ready() -> void:
 	ResourceLoader.load_threaded_request(scene_path)
 
+func _enter_tree() -> void:
+	ResourceLoader.load_threaded_request(scene_path)
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	var scene_load_status = ResourceLoader.load_threaded_get_status(scene_path, progress)

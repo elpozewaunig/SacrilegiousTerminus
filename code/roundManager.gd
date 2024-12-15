@@ -10,6 +10,8 @@ var opponentSpins: Array
 @export var hasProgressBar: bool
 @export var timeForRoud: int
 
+@onready var hudoverlay: Control = $HudOverlay
+
 var ringCount: int
 var wheelSizes: Array
 
@@ -33,6 +35,8 @@ func _ready() -> void:
 		
 	score = 50
 	timeTillNewSpin = 0
+	if hudoverlay != null:
+		hudoverlay.displayIngameHud()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

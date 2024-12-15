@@ -1,13 +1,14 @@
 extends Node
 
 @export_group("FightingScenes")
-@export var theChurch : PackedScene
+@export var theChurchFight : PackedScene
 @export var theCountrySide : PackedScene
 @export var theMountain : PackedScene
 @export var thRift : PackedScene
 
 @export_group("Cutscene Scenes")
 @export var introScene : PackedScene
+@export var churchCutSceneTillDeathHelpMePls: PackedScene
 
 @export_group("Settings Scenes")
 @export var mainMenuSene : PackedScene

@@ -58,11 +58,13 @@ func _process(_delta: float) -> void:
 		match shifts[0]:
 			0:
 				SceneManager.change_scene(SceneManager.introScene, true)
-				print(\"Resume\")
+				print(\"start\")
 			1: 
-				print(\"Main Menu\")
-				SceneManager.change_scene(SceneManager.mainMenuSene, true)
+				SceneManager.quit_game()	
 				
+			2: 
+				print(\"Settings\")
+				SceneManager.change_scene(SceneManager.mainMenuSene, true)
 			 
 	
 	if Input.is_action_just_pressed(\"input-before\"):
@@ -87,7 +89,7 @@ innerRing = NodePath("Wheel/3")
 
 [node name="3" type="Node3D" parent="Wheel" node_paths=PackedStringArray("particle")]
 script = ExtResource("4_rik2f")
-segmentCount = 2
+segmentCount = 3
 particle = NodePath("Particles")
 
 [node name="Sprite3D" type="Sprite3D" parent="Wheel/3"]
