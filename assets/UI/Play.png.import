@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://bl16jyy5oy70o"
 path.s3tc="res://.godot/imported/Play.png-6e2d25cc72d08e438c0986c0b0484133.s3tc.ctex"
+path.etc2="res://.godot/imported/Play.png-6e2d25cc72d08e438c0986c0b0484133.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/UI/Play.png"
-dest_files=["res://.godot/imported/Play.png-6e2d25cc72d08e438c0986c0b0484133.s3tc.ctex"]
+dest_files=["res://.godot/imported/Play.png-6e2d25cc72d08e438c0986c0b0484133.s3tc.ctex", "res://.godot/imported/Play.png-6e2d25cc72d08e438c0986c0b0484133.etc2.ctex"]
 
 [params]
 

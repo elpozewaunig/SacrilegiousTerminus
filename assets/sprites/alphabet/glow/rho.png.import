@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://dsie4rs1mwnri"
 path.s3tc="res://.godot/imported/rho.png-6a86410eb302c950abfcbe9ea34deb11.s3tc.ctex"
+path.etc2="res://.godot/imported/rho.png-6a86410eb302c950abfcbe9ea34deb11.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/sprites/alphabet/glow/rho.png"
-dest_files=["res://.godot/imported/rho.png-6a86410eb302c950abfcbe9ea34deb11.s3tc.ctex"]
+dest_files=["res://.godot/imported/rho.png-6a86410eb302c950abfcbe9ea34deb11.s3tc.ctex", "res://.godot/imported/rho.png-6a86410eb302c950abfcbe9ea34deb11.etc2.ctex"]
 
 [params]
 

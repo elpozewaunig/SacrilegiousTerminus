@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://cr76qycy7oknf"
 path.s3tc="res://.godot/imported/phi.png-8e8bba5342729c996d88f5ef1e0284f4.s3tc.ctex"
+path.etc2="res://.godot/imported/phi.png-8e8bba5342729c996d88f5ef1e0284f4.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/sprites/alphabet/glow/phi.png"
-dest_files=["res://.godot/imported/phi.png-8e8bba5342729c996d88f5ef1e0284f4.s3tc.ctex"]
+dest_files=["res://.godot/imported/phi.png-8e8bba5342729c996d88f5ef1e0284f4.s3tc.ctex", "res://.godot/imported/phi.png-8e8bba5342729c996d88f5ef1e0284f4.etc2.ctex"]
 
 [params]
 

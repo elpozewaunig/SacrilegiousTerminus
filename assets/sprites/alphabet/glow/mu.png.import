@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://bpsyio7b1q24d"
 path.s3tc="res://.godot/imported/mu.png-5cec3519d03d9714294a4a57a1277c5e.s3tc.ctex"
+path.etc2="res://.godot/imported/mu.png-5cec3519d03d9714294a4a57a1277c5e.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/sprites/alphabet/glow/mu.png"
-dest_files=["res://.godot/imported/mu.png-5cec3519d03d9714294a4a57a1277c5e.s3tc.ctex"]
+dest_files=["res://.godot/imported/mu.png-5cec3519d03d9714294a4a57a1277c5e.s3tc.ctex", "res://.godot/imported/mu.png-5cec3519d03d9714294a4a57a1277c5e.etc2.ctex"]
 
 [params]
 

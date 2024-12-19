@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://cjxouk3vxbfex"
 path.s3tc="res://.godot/imported/bake4.png-2a9c5ed4179bf8d65e1ca61ae28d5212.s3tc.ctex"
+path.etc2="res://.godot/imported/bake4.png-2a9c5ed4179bf8d65e1ca61ae28d5212.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://scenes/FightScenes/TheCountrySide/bake4.png"
-dest_files=["res://.godot/imported/bake4.png-2a9c5ed4179bf8d65e1ca61ae28d5212.s3tc.ctex"]
+dest_files=["res://.godot/imported/bake4.png-2a9c5ed4179bf8d65e1ca61ae28d5212.s3tc.ctex", "res://.godot/imported/bake4.png-2a9c5ed4179bf8d65e1ca61ae28d5212.etc2.ctex"]
 
 [params]
 

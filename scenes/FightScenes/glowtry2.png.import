@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://cjfxex8vd3byn"
 path.s3tc="res://.godot/imported/glowtry2.png-eb5e1a76a9b6e276408cd16d7407132d.s3tc.ctex"
+path.etc2="res://.godot/imported/glowtry2.png-eb5e1a76a9b6e276408cd16d7407132d.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://scenes/FightScenes/glowtry2.png"
-dest_files=["res://.godot/imported/glowtry2.png-eb5e1a76a9b6e276408cd16d7407132d.s3tc.ctex"]
+dest_files=["res://.godot/imported/glowtry2.png-eb5e1a76a9b6e276408cd16d7407132d.s3tc.ctex", "res://.godot/imported/glowtry2.png-eb5e1a76a9b6e276408cd16d7407132d.etc2.ctex"]
 
 [params]
 

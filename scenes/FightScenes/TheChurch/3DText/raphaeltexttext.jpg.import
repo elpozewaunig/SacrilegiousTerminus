@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://b7e850fwn6mnj"
 path.s3tc="res://.godot/imported/raphaeltexttext.jpg-b009cae732d91d6dcfbe6874cf7ad6b2.s3tc.ctex"
+path.etc2="res://.godot/imported/raphaeltexttext.jpg-b009cae732d91d6dcfbe6874cf7ad6b2.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://scenes/FightScenes/TheChurch/3DText/raphaeltexttext.jpg"
-dest_files=["res://.godot/imported/raphaeltexttext.jpg-b009cae732d91d6dcfbe6874cf7ad6b2.s3tc.ctex"]
+dest_files=["res://.godot/imported/raphaeltexttext.jpg-b009cae732d91d6dcfbe6874cf7ad6b2.s3tc.ctex", "res://.godot/imported/raphaeltexttext.jpg-b009cae732d91d6dcfbe6874cf7ad6b2.etc2.ctex"]
 
 [params]
 

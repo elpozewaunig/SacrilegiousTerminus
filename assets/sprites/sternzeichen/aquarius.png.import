@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://c5xxniywbchwe"
 path.s3tc="res://.godot/imported/aquarius.png-cff6f9884a8d81b3d38f1e17955a00cc.s3tc.ctex"
+path.etc2="res://.godot/imported/aquarius.png-cff6f9884a8d81b3d38f1e17955a00cc.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/sprites/sternzeichen/aquarius.png"
-dest_files=["res://.godot/imported/aquarius.png-cff6f9884a8d81b3d38f1e17955a00cc.s3tc.ctex"]
+dest_files=["res://.godot/imported/aquarius.png-cff6f9884a8d81b3d38f1e17955a00cc.s3tc.ctex", "res://.godot/imported/aquarius.png-cff6f9884a8d81b3d38f1e17955a00cc.etc2.ctex"]
 
 [params]
 

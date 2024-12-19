@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://drjj4u5wcu4iu"
 path.s3tc="res://.godot/imported/c.png-f236e0ff24c814b005253e010dbfaafa.s3tc.ctex"
+path.etc2="res://.godot/imported/c.png-f236e0ff24c814b005253e010dbfaafa.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://scenes/FightScenes/TheChurch/windowtry/c.png"
-dest_files=["res://.godot/imported/c.png-f236e0ff24c814b005253e010dbfaafa.s3tc.ctex"]
+dest_files=["res://.godot/imported/c.png-f236e0ff24c814b005253e010dbfaafa.s3tc.ctex", "res://.godot/imported/c.png-f236e0ff24c814b005253e010dbfaafa.etc2.ctex"]
 
 [params]
 

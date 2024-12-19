@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://deivwc3lo3tj7"
 path.s3tc="res://.godot/imported/fogglowtry.png-d3d4a14f97d97013192fb963c3085be8.s3tc.ctex"
+path.etc2="res://.godot/imported/fogglowtry.png-d3d4a14f97d97013192fb963c3085be8.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://scenes/FightScenes/fogglowtry.png"
-dest_files=["res://.godot/imported/fogglowtry.png-d3d4a14f97d97013192fb963c3085be8.s3tc.ctex"]
+dest_files=["res://.godot/imported/fogglowtry.png-d3d4a14f97d97013192fb963c3085be8.s3tc.ctex", "res://.godot/imported/fogglowtry.png-d3d4a14f97d97013192fb963c3085be8.etc2.ctex"]
 
 [params]
 

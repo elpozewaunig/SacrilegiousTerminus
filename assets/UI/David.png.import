@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://cwipda4lseqyo"
 path.s3tc="res://.godot/imported/David.png-60f957b16f06da2cdf833ee9e003454a.s3tc.ctex"
+path.etc2="res://.godot/imported/David.png-60f957b16f06da2cdf833ee9e003454a.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/UI/David.png"
-dest_files=["res://.godot/imported/David.png-60f957b16f06da2cdf833ee9e003454a.s3tc.ctex"]
+dest_files=["res://.godot/imported/David.png-60f957b16f06da2cdf833ee9e003454a.s3tc.ctex", "res://.godot/imported/David.png-60f957b16f06da2cdf833ee9e003454a.etc2.ctex"]
 
 [params]
 

@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://da5nl5phom540"
 path.s3tc="res://.godot/imported/sagittarius.png-563cafbb95bad3372f00025f75f76dc9.s3tc.ctex"
+path.etc2="res://.godot/imported/sagittarius.png-563cafbb95bad3372f00025f75f76dc9.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/sprites/sternzeichen/sagittarius.png"
-dest_files=["res://.godot/imported/sagittarius.png-563cafbb95bad3372f00025f75f76dc9.s3tc.ctex"]
+dest_files=["res://.godot/imported/sagittarius.png-563cafbb95bad3372f00025f75f76dc9.s3tc.ctex", "res://.godot/imported/sagittarius.png-563cafbb95bad3372f00025f75f76dc9.etc2.ctex"]
 
 [params]
 

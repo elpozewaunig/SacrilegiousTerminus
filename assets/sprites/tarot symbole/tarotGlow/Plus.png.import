@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://cch2xm4os4imv"
 path.s3tc="res://.godot/imported/Plus.png-68999024068cb3990398d127ad79efdb.s3tc.ctex"
+path.etc2="res://.godot/imported/Plus.png-68999024068cb3990398d127ad79efdb.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/sprites/tarot symbole/tarotGlow/Plus.png"
-dest_files=["res://.godot/imported/Plus.png-68999024068cb3990398d127ad79efdb.s3tc.ctex"]
+dest_files=["res://.godot/imported/Plus.png-68999024068cb3990398d127ad79efdb.s3tc.ctex", "res://.godot/imported/Plus.png-68999024068cb3990398d127ad79efdb.etc2.ctex"]
 
 [params]
 

@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://ddbiab4ysa40q"
 path.s3tc="res://.godot/imported/michi.png-125f904861333116c4d5f987313eb622.s3tc.ctex"
+path.etc2="res://.godot/imported/michi.png-125f904861333116c4d5f987313eb622.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/sprites/engel1/michi.png"
-dest_files=["res://.godot/imported/michi.png-125f904861333116c4d5f987313eb622.s3tc.ctex"]
+dest_files=["res://.godot/imported/michi.png-125f904861333116c4d5f987313eb622.s3tc.ctex", "res://.godot/imported/michi.png-125f904861333116c4d5f987313eb622.etc2.ctex"]
 
 [params]
 

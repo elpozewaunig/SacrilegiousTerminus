@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://bqdmlqulrjco2"
 path.s3tc="res://.godot/imported/a0001.png-a1f51c23f9ee0a7677b7feaff0556536.s3tc.ctex"
+path.etc2="res://.godot/imported/a0001.png-a1f51c23f9ee0a7677b7feaff0556536.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://scenes/FightScenes/a0001.png"
-dest_files=["res://.godot/imported/a0001.png-a1f51c23f9ee0a7677b7feaff0556536.s3tc.ctex"]
+dest_files=["res://.godot/imported/a0001.png-a1f51c23f9ee0a7677b7feaff0556536.s3tc.ctex", "res://.godot/imported/a0001.png-a1f51c23f9ee0a7677b7feaff0556536.etc2.ctex"]
 
 [params]
 

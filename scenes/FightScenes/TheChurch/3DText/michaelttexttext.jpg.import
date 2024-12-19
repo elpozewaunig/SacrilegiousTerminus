@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://sarwg0s46bs2"
 path.s3tc="res://.godot/imported/michaelttexttext.jpg-8e5a8b9c9577b16919a923326c026246.s3tc.ctex"
+path.etc2="res://.godot/imported/michaelttexttext.jpg-8e5a8b9c9577b16919a923326c026246.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://scenes/FightScenes/TheChurch/3DText/michaelttexttext.jpg"
-dest_files=["res://.godot/imported/michaelttexttext.jpg-8e5a8b9c9577b16919a923326c026246.s3tc.ctex"]
+dest_files=["res://.godot/imported/michaelttexttext.jpg-8e5a8b9c9577b16919a923326c026246.s3tc.ctex", "res://.godot/imported/michaelttexttext.jpg-8e5a8b9c9577b16919a923326c026246.etc2.ctex"]
 
 [params]
 

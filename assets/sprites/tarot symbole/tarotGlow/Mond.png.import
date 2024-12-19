@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://c5f8o1n2ykfhg"
 path.s3tc="res://.godot/imported/Mond.png-9c60d3344693f4bb66835e1e14a4f2de.s3tc.ctex"
+path.etc2="res://.godot/imported/Mond.png-9c60d3344693f4bb66835e1e14a4f2de.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/sprites/tarot symbole/tarotGlow/Mond.png"
-dest_files=["res://.godot/imported/Mond.png-9c60d3344693f4bb66835e1e14a4f2de.s3tc.ctex"]
+dest_files=["res://.godot/imported/Mond.png-9c60d3344693f4bb66835e1e14a4f2de.s3tc.ctex", "res://.godot/imported/Mond.png-9c60d3344693f4bb66835e1e14a4f2de.etc2.ctex"]
 
 [params]
 

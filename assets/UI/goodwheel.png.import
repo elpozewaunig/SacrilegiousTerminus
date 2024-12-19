@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://cuw82befexakv"
 path.s3tc="res://.godot/imported/goodwheel.png-8caaaace50fcb82a9939232eca2d2366.s3tc.ctex"
+path.etc2="res://.godot/imported/goodwheel.png-8caaaace50fcb82a9939232eca2d2366.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/UI/goodwheel.png"
-dest_files=["res://.godot/imported/goodwheel.png-8caaaace50fcb82a9939232eca2d2366.s3tc.ctex"]
+dest_files=["res://.godot/imported/goodwheel.png-8caaaace50fcb82a9939232eca2d2366.s3tc.ctex", "res://.godot/imported/goodwheel.png-8caaaace50fcb82a9939232eca2d2366.etc2.ctex"]
 
 [params]
 

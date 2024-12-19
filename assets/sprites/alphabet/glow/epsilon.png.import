@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://xd1qhdfpyh6x"
 path.s3tc="res://.godot/imported/epsilon.png-e28c4a8ada4ed896e9395a00ac88c81e.s3tc.ctex"
+path.etc2="res://.godot/imported/epsilon.png-e28c4a8ada4ed896e9395a00ac88c81e.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/sprites/alphabet/glow/epsilon.png"
-dest_files=["res://.godot/imported/epsilon.png-e28c4a8ada4ed896e9395a00ac88c81e.s3tc.ctex"]
+dest_files=["res://.godot/imported/epsilon.png-e28c4a8ada4ed896e9395a00ac88c81e.s3tc.ctex", "res://.godot/imported/epsilon.png-e28c4a8ada4ed896e9395a00ac88c81e.etc2.ctex"]
 
 [params]
 

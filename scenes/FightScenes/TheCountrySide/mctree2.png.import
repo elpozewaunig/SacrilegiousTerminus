@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://lihvw42vvtxp"
 path.s3tc="res://.godot/imported/mctree2.png-cf6218b13e50d5f3ee70c3186058ebd3.s3tc.ctex"
+path.etc2="res://.godot/imported/mctree2.png-cf6218b13e50d5f3ee70c3186058ebd3.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://scenes/FightScenes/TheCountrySide/mctree2.png"
-dest_files=["res://.godot/imported/mctree2.png-cf6218b13e50d5f3ee70c3186058ebd3.s3tc.ctex"]
+dest_files=["res://.godot/imported/mctree2.png-cf6218b13e50d5f3ee70c3186058ebd3.s3tc.ctex", "res://.godot/imported/mctree2.png-cf6218b13e50d5f3ee70c3186058ebd3.etc2.ctex"]
 
 [params]
 

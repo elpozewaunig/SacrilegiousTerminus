@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://cnvmr1oku46q1"
 path.s3tc="res://.godot/imported/HourGlass.png-214857cbd2e12f14d4ed89f10a0e6d80.s3tc.ctex"
+path.etc2="res://.godot/imported/HourGlass.png-214857cbd2e12f14d4ed89f10a0e6d80.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/sprites/tarot symbole/tarotGlow/HourGlass.png"
-dest_files=["res://.godot/imported/HourGlass.png-214857cbd2e12f14d4ed89f10a0e6d80.s3tc.ctex"]
+dest_files=["res://.godot/imported/HourGlass.png-214857cbd2e12f14d4ed89f10a0e6d80.s3tc.ctex", "res://.godot/imported/HourGlass.png-214857cbd2e12f14d4ed89f10a0e6d80.etc2.ctex"]
 
 [params]
 

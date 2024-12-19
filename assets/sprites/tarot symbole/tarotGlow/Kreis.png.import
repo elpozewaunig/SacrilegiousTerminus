@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://dojvrjpw6b24t"
 path.s3tc="res://.godot/imported/Kreis.png-5391d48bd02b65bd8b588d626647ae4e.s3tc.ctex"
+path.etc2="res://.godot/imported/Kreis.png-5391d48bd02b65bd8b588d626647ae4e.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/sprites/tarot symbole/tarotGlow/Kreis.png"
-dest_files=["res://.godot/imported/Kreis.png-5391d48bd02b65bd8b588d626647ae4e.s3tc.ctex"]
+dest_files=["res://.godot/imported/Kreis.png-5391d48bd02b65bd8b588d626647ae4e.s3tc.ctex", "res://.godot/imported/Kreis.png-5391d48bd02b65bd8b588d626647ae4e.etc2.ctex"]
 
 [params]
 

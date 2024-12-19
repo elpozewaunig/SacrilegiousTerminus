@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://b2l3kxhq07wuk"
 path.s3tc="res://.godot/imported/eyeinner.png-b613f50553bc055cda36a8dd474b7176.s3tc.ctex"
+path.etc2="res://.godot/imported/eyeinner.png-b613f50553bc055cda36a8dd474b7176.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/sprites/engel2/eyeinner.png"
-dest_files=["res://.godot/imported/eyeinner.png-b613f50553bc055cda36a8dd474b7176.s3tc.ctex"]
+dest_files=["res://.godot/imported/eyeinner.png-b613f50553bc055cda36a8dd474b7176.s3tc.ctex", "res://.godot/imported/eyeinner.png-b613f50553bc055cda36a8dd474b7176.etc2.ctex"]
 
 [params]
 

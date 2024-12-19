@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://dk2whx6y6dg37"
 path.s3tc="res://.godot/imported/scorpio.png-2fb07e75ce5dac1b579db5ee999cae72.s3tc.ctex"
+path.etc2="res://.godot/imported/scorpio.png-2fb07e75ce5dac1b579db5ee999cae72.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/sprites/sternzeichen/scorpio.png"
-dest_files=["res://.godot/imported/scorpio.png-2fb07e75ce5dac1b579db5ee999cae72.s3tc.ctex"]
+dest_files=["res://.godot/imported/scorpio.png-2fb07e75ce5dac1b579db5ee999cae72.s3tc.ctex", "res://.godot/imported/scorpio.png-2fb07e75ce5dac1b579db5ee999cae72.etc2.ctex"]
 
 [params]
 

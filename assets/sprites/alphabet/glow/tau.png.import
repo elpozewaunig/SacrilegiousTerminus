@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://dduqosyrxj3wr"
 path.s3tc="res://.godot/imported/tau.png-c8410fc5b1b286faaa0c18ea3f2bc4eb.s3tc.ctex"
+path.etc2="res://.godot/imported/tau.png-c8410fc5b1b286faaa0c18ea3f2bc4eb.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/sprites/alphabet/glow/tau.png"
-dest_files=["res://.godot/imported/tau.png-c8410fc5b1b286faaa0c18ea3f2bc4eb.s3tc.ctex"]
+dest_files=["res://.godot/imported/tau.png-c8410fc5b1b286faaa0c18ea3f2bc4eb.s3tc.ctex", "res://.godot/imported/tau.png-c8410fc5b1b286faaa0c18ea3f2bc4eb.etc2.ctex"]
 
 [params]
 

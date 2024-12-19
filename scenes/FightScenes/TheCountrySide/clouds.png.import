@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://d1qfbpx8ym8rd"
 path.s3tc="res://.godot/imported/clouds.png-975ae24e3de78fe40ca5a4eea8a398cf.s3tc.ctex"
+path.etc2="res://.godot/imported/clouds.png-975ae24e3de78fe40ca5a4eea8a398cf.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://scenes/FightScenes/TheCountrySide/clouds.png"
-dest_files=["res://.godot/imported/clouds.png-975ae24e3de78fe40ca5a4eea8a398cf.s3tc.ctex"]
+dest_files=["res://.godot/imported/clouds.png-975ae24e3de78fe40ca5a4eea8a398cf.s3tc.ctex", "res://.godot/imported/clouds.png-975ae24e3de78fe40ca5a4eea8a398cf.etc2.ctex"]
 
 [params]
 

@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://deiox7dda12bd"
 path.s3tc="res://.godot/imported/Pentagram.png-bdcd9393baa8ccd28b1fb091b06a7f2c.s3tc.ctex"
+path.etc2="res://.godot/imported/Pentagram.png-bdcd9393baa8ccd28b1fb091b06a7f2c.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/sprites/tarot symbole/Pentagram.png"
-dest_files=["res://.godot/imported/Pentagram.png-bdcd9393baa8ccd28b1fb091b06a7f2c.s3tc.ctex"]
+dest_files=["res://.godot/imported/Pentagram.png-bdcd9393baa8ccd28b1fb091b06a7f2c.s3tc.ctex", "res://.godot/imported/Pentagram.png-bdcd9393baa8ccd28b1fb091b06a7f2c.etc2.ctex"]
 
 [params]
 
