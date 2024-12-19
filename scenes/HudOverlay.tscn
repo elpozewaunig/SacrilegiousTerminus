@@ -31,7 +31,7 @@ script/source = "extends TextureProgressBar
 
 func update(score: float, maxScore: int) -> void:
 	var percentage: int = floori(score * 100 / maxScore);
-	print(\"Score: %s, MaxScore: %s, Percentage: %s\" % [score, maxScore, percentage])
+	#print(\"Score: %s, MaxScore: %s, Percentage: %s\" % [score, maxScore, percentage])
 	self.value = percentage
 "
 
@@ -70,7 +70,7 @@ shadow_color = Color(1, 0.311, 0.22, 0.309804)
 script/source = "extends Label
 
 func update(timeArray: Array) -> void:
-	print(timeArray);
+	#print(timeArray);
 	text = \"%02d:%02d:%02d\" % timeArray
 "
 
