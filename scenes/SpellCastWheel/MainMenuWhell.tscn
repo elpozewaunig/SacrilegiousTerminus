@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bl16jyy5oy70o" path="res://assets/UI/Play.png" id="6_vf6fn"]
 [ext_resource type="Texture2D" uid="uid://cwj0ditn811ca" path="res://assets/UI/QUIT.png" id="7_8pqsf"]
 [ext_resource type="Texture2D" uid="uid://dnsfbje70rhd8" path="res://assets/UI/Tutorial.png" id="8_5cio3"]
-[ext_resource type="AudioStream" uid="uid://xrk21k534jba" path="res://assets/sounds/wheel_turn.wav" id="8_qmpg1"]
+[ext_resource type="AudioStream" uid="uid://b8flt6yy81hcx" path="res://assets/sounds/wheel_turn/wheel_turn.ogg" id="8_qmpg1"]
 
 [sub_resource type="GDScript" id="GDScript_5rwoc"]
 script/source = "extends Node3D
@@ -131,6 +131,7 @@ stream = ExtResource("8_qmpg1")
 [node name="Play" type="Sprite3D" parent="Wheel/3/Play"]
 transform = Transform3D(0.025, 0, 0, 0, -1.09278e-09, 0.02, 0, -0.025, -8.74228e-10, 0, 0, 0.789066)
 modulate = Color(1, 0.314748, 0.224306, 1)
+pixel_size = 0.02
 texture = ExtResource("6_vf6fn")
 
 [node name="Credits" type="Node3D" parent="Wheel/3"]
@@ -139,6 +140,7 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 
 [node name="Play" type="Sprite3D" parent="Wheel/3/Credits"]
 transform = Transform3D(0.029, 0, 0, 0, -1.26763e-09, 0.024, 0, -0.029, -1.04907e-09, 0, 0, 0.789066)
 modulate = Color(1, 0.314748, 0.224306, 1)
+pixel_size = 0.02
 texture = ExtResource("3_quyjc")
 
 [node name="Tutorial" type="Node3D" parent="Wheel/3"]
@@ -147,6 +149,7 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 
 [node name="Play" type="Sprite3D" parent="Wheel/3/Tutorial"]
 transform = Transform3D(0.029, 0, 0, 0, -1.26763e-09, 0.023, 0, -0.029, -1.00536e-09, 0, 0, 0.789066)
 modulate = Color(1, 0.314748, 0.224306, 1)
+pixel_size = 0.02
 texture = ExtResource("8_5cio3")
 
 [node name="Quit" type="Node3D" parent="Wheel/3"]
@@ -155,6 +158,7 @@ transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 0, 0, 0)
 [node name="Play" type="Sprite3D" parent="Wheel/3/Quit"]
 transform = Transform3D(0.025, 0, 0, 0, -1.09278e-09, 0.02, 0, -0.025, -8.74228e-10, 0, 0, 0.789066)
 modulate = Color(1, 0.314748, 0.224306, 1)
+pixel_size = 0.02
 texture = ExtResource("7_8pqsf")
 
 [node name="Sprite3D" type="Sprite3D" parent="Wheel"]

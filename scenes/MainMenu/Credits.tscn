@@ -58,6 +58,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.31359, -1.60797, 5.11077)
 
 [node name="Sprite3D" type="Sprite3D" parent="Node3D7"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.28144, 1.61479, -27.8262)
+pixel_size = 0.02
 texture = ExtResource("1_op6y3")
 
 [node name="Node3D" type="Node3D" parent="Node3D7"]
@@ -69,6 +70,7 @@ color = Color(0.623849, 0, 0.067877, 1)
 
 [node name="Sprite3D" type="Sprite3D" parent="Node3D7/Node3D"]
 transform = Transform3D(0.1, 0.173205, 0, -0.173205, 0.1, 0, 0, 0, 0.2, 2.8, 0.0216375, 0.394646)
+pixel_size = 0.02
 texture = ExtResource("2_7etpv")
 
 [node name="Node3D2" type="Node3D" parent="Node3D7"]
@@ -80,6 +82,7 @@ color = Color(0.0699787, 0.428226, 0, 1)
 
 [node name="Sprite3D" type="Sprite3D" parent="Node3D7/Node3D2"]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 2.8, 0.00108188, 0.394646)
+pixel_size = 0.02
 texture = ExtResource("3_5jc48")
 
 [node name="Node3D3" type="Node3D" parent="Node3D7"]
@@ -91,6 +94,7 @@ color = Color(0.985349, 0.676673, 1.15514e-06, 1)
 
 [node name="Sprite3D" type="Sprite3D" parent="Node3D7/Node3D3"]
 transform = Transform3D(-0.2, 0, -1.74846e-08, 0, 0.2, 0, 1.74846e-08, 0, -0.2, 2.8, 0.020556, -0.394673)
+pixel_size = 0.02
 texture = ExtResource("4_r876j")
 
 [node name="Node3D4" type="Node3D" parent="Node3D7"]
@@ -102,6 +106,7 @@ color = Color(0.913725, 0.537255, 0.109804, 1)
 
 [node name="Sprite3D" type="Sprite3D" parent="Node3D7/Node3D4"]
 transform = Transform3D(-0.1, -0.173205, 0, 0.173205, -0.1, 0, 0, 0, 0.2, 2.8, -0.0216376, 0.394646)
+pixel_size = 0.02
 texture = ExtResource("5_xt0lb")
 
 [node name="Node3D5" type="Node3D" parent="Node3D7"]
@@ -113,6 +118,7 @@ color = Color(0.618809, 0.405192, 0.963639, 1)
 
 [node name="Sprite3D" type="Sprite3D" parent="Node3D7/Node3D5"]
 transform = Transform3D(0.1, -0.173205, 0, 0.173205, 0.1, 0, 0, 0, 0.2, 2.8, -0.00108153, 0.394646)
+pixel_size = 0.02
 texture = ExtResource("6_852ui")
 
 [node name="Node3D6" type="Node3D" parent="Node3D7"]
@@ -124,6 +130,7 @@ color = Color(0.341176, 0.788235, 0.482353, 1)
 
 [node name="Sprite3D" type="Sprite3D" parent="Node3D7/Node3D6"]
 transform = Transform3D(-0.1, 0.173205, 0, -0.173205, -0.1, 0, 0, 0, 0.2, 2.8, 0.020556, 0.394646)
+pixel_size = 0.02
 texture = ExtResource("7_4k6x1")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]

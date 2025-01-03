@@ -40,7 +40,7 @@
 [ext_resource type="Texture2D" uid="uid://dk2whx6y6dg37" path="res://assets/sprites/sternzeichen/scorpio.png" id="35_7h64v"]
 [ext_resource type="Texture2D" uid="uid://bg8uplj6jolm0" path="res://assets/sprites/sternzeichen/taurus.png" id="36_dmygu"]
 [ext_resource type="Texture2D" uid="uid://b8ojtanlxaubm" path="res://assets/sprites/sternzeichen/virgo.png" id="37_abj5y"]
-[ext_resource type="AudioStream" uid="uid://xrk21k534jba" path="res://assets/sounds/wheel_turn.wav" id="38_wd7ui"]
+[ext_resource type="AudioStream" uid="uid://b8flt6yy81hcx" path="res://assets/sounds/wheel_turn/wheel_turn.ogg" id="38_wd7ui"]
 [ext_resource type="Texture2D" uid="uid://cnvmr1oku46q1" path="res://assets/sprites/tarot symbole/tarotGlow/HourGlass.png" id="39_j7yb6"]
 [ext_resource type="Texture2D" uid="uid://cpmki30nkya7b" path="res://assets/sprites/tarot symbole/tarotGlow/Kelch.png" id="40_jbdwf"]
 [ext_resource type="Texture2D" uid="uid://dojvrjpw6b24t" path="res://assets/sprites/tarot symbole/tarotGlow/Kreis.png" id="41_xwlys"]
@@ -1018,6 +1018,7 @@ gravity_scale = 0.0
 [node name="Sprite3D" type="Sprite3D" parent="roundManager/AutomaticWheel/Wheel/1/Signs/sign1"]
 transform = Transform3D(0.02, 0, 0, 0, -8.74228e-10, -0.02, 0, 0.02, -8.74228e-10, 0.0123163, 0, 0.306733)
 modulate = Color(1, 0.313726, 0.223529, 1)
+pixel_size = 0.02
 texture = ExtResource("26_v35tc")
 
 [node name="sign2" type="Node3D" parent="roundManager/AutomaticWheel/Wheel/1/Signs"]
@@ -1026,6 +1027,7 @@ transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, 0, 0, 0)
 [node name="Sprite3D" type="Sprite3D" parent="roundManager/AutomaticWheel/Wheel/1/Signs/sign2"]
 transform = Transform3D(0.02, 0, 0, 0, -8.74228e-10, -0.02, 0, 0.02, -8.74228e-10, 0.0123163, 0, 0.306733)
 modulate = Color(1, 0.313726, 0.223529, 1)
+pixel_size = 0.02
 texture = ExtResource("27_f3x5y")
 
 [node name="sign3" type="Node3D" parent="roundManager/AutomaticWheel/Wheel/1/Signs"]
@@ -1034,6 +1036,7 @@ transform = Transform3D(0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, 0.5, 0, 0, 0)
 [node name="Sprite3D" type="Sprite3D" parent="roundManager/AutomaticWheel/Wheel/1/Signs/sign3"]
 transform = Transform3D(0.02, 0, 0, 0, -8.74228e-10, -0.02, 0, 0.02, -8.74228e-10, 0.0123163, 0, 0.306733)
 modulate = Color(1, 0.313726, 0.223529, 1)
+pixel_size = 0.02
 texture = ExtResource("28_potwu")
 
 [node name="sign4" type="Node3D" parent="roundManager/AutomaticWheel/Wheel/1/Signs"]
@@ -1042,6 +1045,7 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 
 [node name="Sprite3D" type="Sprite3D" parent="roundManager/AutomaticWheel/Wheel/1/Signs/sign4"]
 transform = Transform3D(0.02, 0, 0, 0, -8.74228e-10, -0.02, 0, 0.02, -8.74228e-10, 0.0123163, 0, 0.306733)
 modulate = Color(1, 0.313726, 0.223529, 1)
+pixel_size = 0.02
 texture = ExtResource("29_mn1bt")
 
 [node name="sign5" type="Node3D" parent="roundManager/AutomaticWheel/Wheel/1/Signs"]
@@ -1050,6 +1054,7 @@ transform = Transform3D(-0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, -0.5, 0, 0, 0)
 [node name="Sprite3D" type="Sprite3D" parent="roundManager/AutomaticWheel/Wheel/1/Signs/sign5"]
 transform = Transform3D(0.02, 0, 0, 0, -8.74228e-10, -0.02, 0, 0.02, -8.74228e-10, 0.0123163, 0, 0.306733)
 modulate = Color(1, 0.313726, 0.223529, 1)
+pixel_size = 0.02
 texture = ExtResource("30_ugivp")
 
 [node name="sign6" type="Node3D" parent="roundManager/AutomaticWheel/Wheel/1/Signs"]
@@ -1058,6 +1063,7 @@ transform = Transform3D(-0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, -0.866025, 0, 0, 0)
 [node name="Sprite3D" type="Sprite3D" parent="roundManager/AutomaticWheel/Wheel/1/Signs/sign6"]
 transform = Transform3D(0.02, 0, 0, 0, -8.74228e-10, -0.02, 0, 0.02, -8.74228e-10, 0.0123163, 0, 0.306733)
 modulate = Color(1, 0.313726, 0.223529, 1)
+pixel_size = 0.02
 texture = ExtResource("31_ot52e")
 
 [node name="sign7" type="Node3D" parent="roundManager/AutomaticWheel/Wheel/1/Signs"]
@@ -1066,6 +1072,7 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 
 [node name="Sprite3D" type="Sprite3D" parent="roundManager/AutomaticWheel/Wheel/1/Signs/sign7"]
 transform = Transform3D(0.02, 0, 0, 0, -8.74228e-10, -0.02, 0, 0.02, -8.74228e-10, 0.0123163, 0, 0.306733)
 modulate = Color(1, 0.313726, 0.223529, 1)
+pixel_size = 0.02
 texture = ExtResource("32_y3j8a")
 
 [node name="sign8" type="Node3D" parent="roundManager/AutomaticWheel/Wheel/1/Signs"]
@@ -1074,6 +1081,7 @@ transform = Transform3D(-0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, -0.866025, 0, 0, 0)
 [node name="Sprite3D" type="Sprite3D" parent="roundManager/AutomaticWheel/Wheel/1/Signs/sign8"]
 transform = Transform3D(0.02, 0, 0, 0, -8.74228e-10, -0.02, 0, 0.02, -8.74228e-10, 0.0123163, 0, 0.306733)
 modulate = Color(1, 0.313726, 0.223529, 1)
+pixel_size = 0.02
 texture = ExtResource("33_xkaa5")
 
 [node name="sign9" type="Node3D" parent="roundManager/AutomaticWheel/Wheel/1/Signs"]
@@ -1082,6 +1090,7 @@ transform = Transform3D(-0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, -0.5, 0, 0, 0)
 [node name="Sprite3D" type="Sprite3D" parent="roundManager/AutomaticWheel/Wheel/1/Signs/sign9"]
 transform = Transform3D(0.02, 0, 0, 0, -8.74228e-10, -0.02, 0, 0.02, -8.74228e-10, 0.0123163, 0, 0.306733)
 modulate = Color(1, 0.313726, 0.223529, 1)
+pixel_size = 0.02
 texture = ExtResource("34_4qfs4")
 
 [node name="sign10" type="Node3D" parent="roundManager/AutomaticWheel/Wheel/1/Signs"]
@@ -1090,6 +1099,7 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 
 [node name="Sprite3D" type="Sprite3D" parent="roundManager/AutomaticWheel/Wheel/1/Signs/sign10"]
 transform = Transform3D(0.02, 0, 0, 0, -8.74228e-10, -0.02, 0, 0.02, -8.74228e-10, 0.0123163, 0, 0.306733)
 modulate = Color(1, 0.313726, 0.223529, 1)
+pixel_size = 0.02
 texture = ExtResource("35_7h64v")
 
 [node name="sign11" type="Node3D" parent="roundManager/AutomaticWheel/Wheel/1/Signs"]
@@ -1098,6 +1108,7 @@ transform = Transform3D(0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, 0.5, 0, 0, 0)
 [node name="Sprite3D" type="Sprite3D" parent="roundManager/AutomaticWheel/Wheel/1/Signs/sign11"]
 transform = Transform3D(0.02, 0, 0, 0, -8.74228e-10, -0.02, 0, 0.02, -8.74228e-10, 0.0123163, 0, 0.306733)
 modulate = Color(1, 0.313726, 0.223529, 1)
+pixel_size = 0.02
 texture = ExtResource("36_dmygu")
 
 [node name="sign12" type="Node3D" parent="roundManager/AutomaticWheel/Wheel/1/Signs"]
@@ -1106,6 +1117,7 @@ transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, 0, 0, 0)
 [node name="Sprite3D" type="Sprite3D" parent="roundManager/AutomaticWheel/Wheel/1/Signs/sign12"]
 transform = Transform3D(0.02, 0, 0, 0, -8.74228e-10, -0.02, 0, 0.02, -8.74228e-10, 0.0123163, 0, 0.306733)
 modulate = Color(1, 0.313726, 0.223529, 1)
+pixel_size = 0.02
 texture = ExtResource("37_abj5y")
 
 [node name="WheelSpinAudioPlayer" type="AudioStreamPlayer" parent="roundManager/AutomaticWheel/Wheel/1"]
@@ -1137,6 +1149,7 @@ stream = ExtResource("38_wd7ui")
 [node name="Sprite3D8" type="Sprite3D" parent="roundManager/AutomaticWheel/Wheel/2/Signs/Sign1"]
 transform = Transform3D(0.017, 0, 0, 0, -7.43094e-10, -0.017, 0, 0.017, -7.43094e-10, 0.00916624, 0, 0.530655)
 modulate = Color(0.815686, 0.423529, 0.745098, 1)
+pixel_size = 0.02
 texture = ExtResource("39_j7yb6")
 
 [node name="Sign2" type="Node3D" parent="roundManager/AutomaticWheel/Wheel/2/Signs"]
@@ -1145,6 +1158,7 @@ transform = Transform3D(0.766044, 0, 0.642788, 0, 1, 0, -0.642788, 0, 0.766044, 
 [node name="Sprite3D8" type="Sprite3D" parent="roundManager/AutomaticWheel/Wheel/2/Signs/Sign2"]
 transform = Transform3D(0.017, 0, 0, 0, -7.43094e-10, -0.017, 0, 0.017, -7.43094e-10, 0.0430198, 5.25508e-17, 0.530655)
 modulate = Color(0.231373, 0.67451, 0.552941, 1)
+pixel_size = 0.02
 texture = ExtResource("40_jbdwf")
 
 [node name="Sign3" type="Node3D" parent="roundManager/AutomaticWheel/Wheel/2/Signs"]
@@ -1153,6 +1167,7 @@ transform = Transform3D(0.173648, 0, 0.984808, 0, 1, 0, -0.984808, 0, 0.173648, 
 [node name="Sprite3D8" type="Sprite3D" parent="roundManager/AutomaticWheel/Wheel/2/Signs/Sign3"]
 transform = Transform3D(0.017, 0, 0, 0, -7.43094e-10, -0.017, 0, 0.017, -7.43094e-10, 0.00916624, -1.62457e-09, 0.567821)
 modulate = Color(0.231373, 0.67451, 0.552941, 1)
+pixel_size = 0.02
 texture = ExtResource("41_xwlys")
 
 [node name="Sign4" type="Node3D" parent="roundManager/AutomaticWheel/Wheel/2/Signs"]
@@ -1161,6 +1176,7 @@ transform = Transform3D(-0.5, 0, 0.866026, 0, 1, 0, -0.866026, 0, -0.5, 0, 0, 0)
 [node name="Sprite3D8" type="Sprite3D" parent="roundManager/AutomaticWheel/Wheel/2/Signs/Sign4"]
 transform = Transform3D(0.017, 0, 0, 0, -7.43094e-10, -0.017, 0, 0.017, -7.43094e-10, 0.00916624, -7.45113e-10, 0.547701)
 modulate = Color(0.231373, 0.67451, 0.552941, 1)
+pixel_size = 0.02
 texture = ExtResource("42_mtmiy")
 
 [node name="Sign5" type="Node3D" parent="roundManager/AutomaticWheel/Wheel/2/Signs"]
@@ -1169,6 +1185,7 @@ transform = Transform3D(-0.939693, 0, 0.34202, 0, 1, 0, -0.34202, 0, -0.939693, 
 [node name="Sprite3D8" type="Sprite3D" parent="roundManager/AutomaticWheel/Wheel/2/Signs/Sign5"]
 transform = Transform3D(0.017, 0, 0, 0, -7.43094e-10, -0.017, 0, 0.017, -7.43094e-10, 0.00916624, -1.88261e-09, 0.573724)
 modulate = Color(0.811765, 0.501961, 0.262745, 1)
+pixel_size = 0.02
 texture = ExtResource("43_y0bl5")
 
 [node name="Sign6" type="Node3D" parent="roundManager/AutomaticWheel/Wheel/2/Signs"]
@@ -1177,6 +1194,7 @@ transform = Transform3D(-0.939693, 0, -0.34202, 0, 1, 0, 0.34202, 0, -0.939693, 
 [node name="Sprite3D8" type="Sprite3D" parent="roundManager/AutomaticWheel/Wheel/2/Signs/Sign6"]
 transform = Transform3D(0.017, 0, 0, 0, -7.43094e-10, -0.017, 0, 0.017, -7.43094e-10, 0.00916624, -2.19121e-09, 0.580784)
 modulate = Color(0.811765, 0.501961, 0.262745, 1)
+pixel_size = 0.02
 texture = ExtResource("44_a71nf")
 
 [node name="Sign7" type="Node3D" parent="roundManager/AutomaticWheel/Wheel/2/Signs"]
@@ -1185,6 +1203,7 @@ transform = Transform3D(-0.5, 0, -0.866026, 0, 1, 0, 0.866026, 0, -0.5, 0, 0, 0)
 [node name="Sprite3D8" type="Sprite3D" parent="roundManager/AutomaticWheel/Wheel/2/Signs/Sign7"]
 transform = Transform3D(0.017, 0, 0, 0, -7.43094e-10, -0.017, 0, 0.017, -7.43094e-10, 0.00916624, -1.65503e-09, 0.568518)
 modulate = Color(0.811765, 0.501961, 0.262745, 1)
+pixel_size = 0.02
 texture = ExtResource("45_towro")
 
 [node name="Sign8" type="Node3D" parent="roundManager/AutomaticWheel/Wheel/2/Signs"]
@@ -1193,6 +1212,7 @@ transform = Transform3D(0.173648, 0, -0.984808, 0, 1, 0, 0.984808, 0, 0.173648, 
 [node name="Sprite3D8" type="Sprite3D" parent="roundManager/AutomaticWheel/Wheel/2/Signs/Sign8"]
 transform = Transform3D(0.017, 0, 0, 0, -7.43094e-10, -0.017, 0, 0.017, -7.43094e-10, 0.00916624, -1.99445e-09, 0.576283)
 modulate = Color(0.815686, 0.423529, 0.745098, 1)
+pixel_size = 0.02
 texture = ExtResource("46_n1oip")
 
 [node name="Sign9" type="Node3D" parent="roundManager/AutomaticWheel/Wheel/2/Signs"]
@@ -1201,6 +1221,7 @@ transform = Transform3D(0.766044, 0, -0.642788, 0, 1, 0, 0.642788, 0, 0.766044, 
 [node name="Sprite3D8" type="Sprite3D" parent="roundManager/AutomaticWheel/Wheel/2/Signs/Sign9"]
 transform = Transform3D(0.017, 0, 0, 0, -7.43094e-10, -0.017, 0, 0.017, -7.43094e-10, 0.00916624, -2.00347e-09, 0.576489)
 modulate = Color(0.815686, 0.423529, 0.745098, 1)
+pixel_size = 0.02
 texture = ExtResource("47_q5p86")
 
 [node name="Particles" parent="roundManager/AutomaticWheel/Wheel/2/Signs" instance=ExtResource("25_4gwun")]
@@ -1259,6 +1280,7 @@ gravity_scale = 0.0
 [node name="Sprite3D" type="Sprite3D" parent="roundManager/ManualWheel/Wheel/1/Signs/sign1"]
 transform = Transform3D(0.02, 0, 0, 0, -8.74228e-10, -0.02, 0, 0.02, -8.74228e-10, 0.0123163, 0, 0.306733)
 modulate = Color(1, 0.313726, 0.223529, 1)
+pixel_size = 0.02
 texture = ExtResource("26_v35tc")
 
 [node name="sign2" type="Node3D" parent="roundManager/ManualWheel/Wheel/1/Signs"]
@@ -1267,6 +1289,7 @@ transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, 0, 0, 0)
 [node name="Sprite3D" type="Sprite3D" parent="roundManager/ManualWheel/Wheel/1/Signs/sign2"]
 transform = Transform3D(0.02, 0, 0, 0, -8.74228e-10, -0.02, 0, 0.02, -8.74228e-10, 0.0123163, 0, 0.306733)
 modulate = Color(1, 0.313726, 0.223529, 1)
+pixel_size = 0.02
 texture = ExtResource("27_f3x5y")
 
 [node name="sign3" type="Node3D" parent="roundManager/ManualWheel/Wheel/1/Signs"]
@@ -1275,6 +1298,7 @@ transform = Transform3D(0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, 0.5, 0, 0, 0)
 [node name="Sprite3D" type="Sprite3D" parent="roundManager/ManualWheel/Wheel/1/Signs/sign3"]
 transform = Transform3D(0.02, 0, 0, 0, -8.74228e-10, -0.02, 0, 0.02, -8.74228e-10, 0.0123163, 0, 0.306733)
 modulate = Color(1, 0.313726, 0.223529, 1)
+pixel_size = 0.02
 texture = ExtResource("28_potwu")
 
 [node name="sign4" type="Node3D" parent="roundManager/ManualWheel/Wheel/1/Signs"]
@@ -1283,6 +1307,7 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 
 [node name="Sprite3D" type="Sprite3D" parent="roundManager/ManualWheel/Wheel/1/Signs/sign4"]
 transform = Transform3D(0.02, 0, 0, 0, -8.74228e-10, -0.02, 0, 0.02, -8.74228e-10, 0.0123163, 0, 0.306733)
 modulate = Color(1, 0.313726, 0.223529, 1)
+pixel_size = 0.02
 texture = ExtResource("29_mn1bt")
 
 [node name="sign5" type="Node3D" parent="roundManager/ManualWheel/Wheel/1/Signs"]
@@ -1291,6 +1316,7 @@ transform = Transform3D(-0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, -0.5, 0, 0, 0)
 [node name="Sprite3D" type="Sprite3D" parent="roundManager/ManualWheel/Wheel/1/Signs/sign5"]
 transform = Transform3D(0.02, 0, 0, 0, -8.74228e-10, -0.02, 0, 0.02, -8.74228e-10, 0.0123163, 0, 0.306733)
 modulate = Color(1, 0.313726, 0.223529, 1)
+pixel_size = 0.02
 texture = ExtResource("30_ugivp")
 
 [node name="sign6" type="Node3D" parent="roundManager/ManualWheel/Wheel/1/Signs"]
@@ -1299,6 +1325,7 @@ transform = Transform3D(-0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, -0.866025, 0, 0, 0)
 [node name="Sprite3D" type="Sprite3D" parent="roundManager/ManualWheel/Wheel/1/Signs/sign6"]
 transform = Transform3D(0.02, 0, 0, 0, -8.74228e-10, -0.02, 0, 0.02, -8.74228e-10, 0.0123163, 0, 0.306733)
 modulate = Color(1, 0.313726, 0.223529, 1)
+pixel_size = 0.02
 texture = ExtResource("31_ot52e")
 
 [node name="sign7" type="Node3D" parent="roundManager/ManualWheel/Wheel/1/Signs"]
@@ -1307,6 +1334,7 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 
 [node name="Sprite3D" type="Sprite3D" parent="roundManager/ManualWheel/Wheel/1/Signs/sign7"]
 transform = Transform3D(0.02, 0, 0, 0, -8.74228e-10, -0.02, 0, 0.02, -8.74228e-10, 0.0123163, 0, 0.306733)
 modulate = Color(1, 0.313726, 0.223529, 1)
+pixel_size = 0.02
 texture = ExtResource("32_y3j8a")
 
 [node name="sign8" type="Node3D" parent="roundManager/ManualWheel/Wheel/1/Signs"]
@@ -1315,6 +1343,7 @@ transform = Transform3D(-0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, -0.866025, 0, 0, 0)
 [node name="Sprite3D" type="Sprite3D" parent="roundManager/ManualWheel/Wheel/1/Signs/sign8"]
 transform = Transform3D(0.02, 0, 0, 0, -8.74228e-10, -0.02, 0, 0.02, -8.74228e-10, 0.0123163, 0, 0.306733)
 modulate = Color(1, 0.313726, 0.223529, 1)
+pixel_size = 0.02
 texture = ExtResource("33_xkaa5")
 
 [node name="sign9" type="Node3D" parent="roundManager/ManualWheel/Wheel/1/Signs"]
@@ -1323,6 +1352,7 @@ transform = Transform3D(-0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, -0.5, 0, 0, 0)
 [node name="Sprite3D" type="Sprite3D" parent="roundManager/ManualWheel/Wheel/1/Signs/sign9"]
 transform = Transform3D(0.02, 0, 0, 0, -8.74228e-10, -0.02, 0, 0.02, -8.74228e-10, 0.0123163, 0, 0.306733)
 modulate = Color(1, 0.313726, 0.223529, 1)
+pixel_size = 0.02
 texture = ExtResource("34_4qfs4")
 
 [node name="sign10" type="Node3D" parent="roundManager/ManualWheel/Wheel/1/Signs"]
@@ -1331,6 +1361,7 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 
 [node name="Sprite3D" type="Sprite3D" parent="roundManager/ManualWheel/Wheel/1/Signs/sign10"]
 transform = Transform3D(0.02, 0, 0, 0, -8.74228e-10, -0.02, 0, 0.02, -8.74228e-10, 0.0123163, 0, 0.306733)
 modulate = Color(1, 0.313726, 0.223529, 1)
+pixel_size = 0.02
 texture = ExtResource("35_7h64v")
 
 [node name="sign11" type="Node3D" parent="roundManager/ManualWheel/Wheel/1/Signs"]
@@ -1339,6 +1370,7 @@ transform = Transform3D(0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, 0.5, 0, 0, 0)
 [node name="Sprite3D" type="Sprite3D" parent="roundManager/ManualWheel/Wheel/1/Signs/sign11"]
 transform = Transform3D(0.02, 0, 0, 0, -8.74228e-10, -0.02, 0, 0.02, -8.74228e-10, 0.0123163, 0, 0.306733)
 modulate = Color(1, 0.313726, 0.223529, 1)
+pixel_size = 0.02
 texture = ExtResource("36_dmygu")
 
 [node name="sign12" type="Node3D" parent="roundManager/ManualWheel/Wheel/1/Signs"]
@@ -1347,6 +1379,7 @@ transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, 0, 0, 0)
 [node name="Sprite3D" type="Sprite3D" parent="roundManager/ManualWheel/Wheel/1/Signs/sign12"]
 transform = Transform3D(0.02, 0, 0, 0, -8.74228e-10, -0.02, 0, 0.02, -8.74228e-10, 0.0123163, 0, 0.306733)
 modulate = Color(1, 0.313726, 0.223529, 1)
+pixel_size = 0.02
 texture = ExtResource("37_abj5y")
 
 [node name="WheelSpinAudioPlayer" type="AudioStreamPlayer" parent="roundManager/ManualWheel/Wheel/1"]
@@ -1382,6 +1415,7 @@ stream = ExtResource("38_wd7ui")
 [node name="Sprite3D8" type="Sprite3D" parent="roundManager/ManualWheel/Wheel/2/Signs/Sign1"]
 transform = Transform3D(0.017, 0, 0, 0, -7.43094e-10, -0.017, 0, 0.017, -7.43094e-10, 0.00916624, 0, 0.530655)
 modulate = Color(0.815686, 0.423529, 0.745098, 1)
+pixel_size = 0.02
 texture = ExtResource("39_j7yb6")
 
 [node name="Sign2" type="Node3D" parent="roundManager/ManualWheel/Wheel/2/Signs"]
@@ -1390,6 +1424,7 @@ transform = Transform3D(0.766044, 0, 0.642788, 0, 1, 0, -0.642788, 0, 0.766044, 
 [node name="Sprite3D8" type="Sprite3D" parent="roundManager/ManualWheel/Wheel/2/Signs/Sign2"]
 transform = Transform3D(0.017, 0, 0, 0, -7.43094e-10, -0.017, 0, 0.017, -7.43094e-10, 0.0430198, 5.25508e-17, 0.530655)
 modulate = Color(0.231373, 0.67451, 0.552941, 1)
+pixel_size = 0.02
 texture = ExtResource("40_jbdwf")
 
 [node name="Sign3" type="Node3D" parent="roundManager/ManualWheel/Wheel/2/Signs"]
@@ -1398,6 +1433,7 @@ transform = Transform3D(0.173648, 0, 0.984808, 0, 1, 0, -0.984808, 0, 0.173648, 
 [node name="Sprite3D8" type="Sprite3D" parent="roundManager/ManualWheel/Wheel/2/Signs/Sign3"]
 transform = Transform3D(0.017, 0, 0, 0, -7.43094e-10, -0.017, 0, 0.017, -7.43094e-10, 0.00916624, -1.62457e-09, 0.567821)
 modulate = Color(0.231373, 0.67451, 0.552941, 1)
+pixel_size = 0.02
 texture = ExtResource("41_xwlys")
 
 [node name="Sign4" type="Node3D" parent="roundManager/ManualWheel/Wheel/2/Signs"]
@@ -1406,6 +1442,7 @@ transform = Transform3D(-0.5, 0, 0.866026, 0, 1, 0, -0.866026, 0, -0.5, 0, 0, 0)
 [node name="Sprite3D8" type="Sprite3D" parent="roundManager/ManualWheel/Wheel/2/Signs/Sign4"]
 transform = Transform3D(0.017, 0, 0, 0, -7.43094e-10, -0.017, 0, 0.017, -7.43094e-10, 0.00916624, -7.45113e-10, 0.547701)
 modulate = Color(0.231373, 0.67451, 0.552941, 1)
+pixel_size = 0.02
 texture = ExtResource("42_mtmiy")
 
 [node name="Sign5" type="Node3D" parent="roundManager/ManualWheel/Wheel/2/Signs"]
@@ -1414,6 +1451,7 @@ transform = Transform3D(-0.939693, 0, 0.34202, 0, 1, 0, -0.34202, 0, -0.939693, 
 [node name="Sprite3D8" type="Sprite3D" parent="roundManager/ManualWheel/Wheel/2/Signs/Sign5"]
 transform = Transform3D(0.017, 0, 0, 0, -7.43094e-10, -0.017, 0, 0.017, -7.43094e-10, 0.00916624, -1.88261e-09, 0.573724)
 modulate = Color(0.811765, 0.501961, 0.262745, 1)
+pixel_size = 0.02
 texture = ExtResource("43_y0bl5")
 
 [node name="Sign6" type="Node3D" parent="roundManager/ManualWheel/Wheel/2/Signs"]
@@ -1422,6 +1460,7 @@ transform = Transform3D(-0.939693, 0, -0.34202, 0, 1, 0, 0.34202, 0, -0.939693, 
 [node name="Sprite3D8" type="Sprite3D" parent="roundManager/ManualWheel/Wheel/2/Signs/Sign6"]
 transform = Transform3D(0.017, 0, 0, 0, -7.43094e-10, -0.017, 0, 0.017, -7.43094e-10, 0.00916624, -2.19121e-09, 0.580784)
 modulate = Color(0.811765, 0.501961, 0.262745, 1)
+pixel_size = 0.02
 texture = ExtResource("44_a71nf")
 
 [node name="Sign7" type="Node3D" parent="roundManager/ManualWheel/Wheel/2/Signs"]
@@ -1430,6 +1469,7 @@ transform = Transform3D(-0.5, 0, -0.866026, 0, 1, 0, 0.866026, 0, -0.5, 0, 0, 0)
 [node name="Sprite3D8" type="Sprite3D" parent="roundManager/ManualWheel/Wheel/2/Signs/Sign7"]
 transform = Transform3D(0.017, 0, 0, 0, -7.43094e-10, -0.017, 0, 0.017, -7.43094e-10, 0.00916624, -1.65503e-09, 0.568518)
 modulate = Color(0.811765, 0.501961, 0.262745, 1)
+pixel_size = 0.02
 texture = ExtResource("45_towro")
 
 [node name="Sign8" type="Node3D" parent="roundManager/ManualWheel/Wheel/2/Signs"]
@@ -1438,6 +1478,7 @@ transform = Transform3D(0.173648, 0, -0.984808, 0, 1, 0, 0.984808, 0, 0.173648, 
 [node name="Sprite3D8" type="Sprite3D" parent="roundManager/ManualWheel/Wheel/2/Signs/Sign8"]
 transform = Transform3D(0.017, 0, 0, 0, -7.43094e-10, -0.017, 0, 0.017, -7.43094e-10, 0.00916624, -1.99445e-09, 0.576283)
 modulate = Color(0.815686, 0.423529, 0.745098, 1)
+pixel_size = 0.02
 texture = ExtResource("46_n1oip")
 
 [node name="Sign9" type="Node3D" parent="roundManager/ManualWheel/Wheel/2/Signs"]
@@ -1446,6 +1487,7 @@ transform = Transform3D(0.766044, 0, -0.642788, 0, 1, 0, 0.642788, 0, 0.766044, 
 [node name="Sprite3D8" type="Sprite3D" parent="roundManager/ManualWheel/Wheel/2/Signs/Sign9"]
 transform = Transform3D(0.017, 0, 0, 0, -7.43094e-10, -0.017, 0, 0.017, -7.43094e-10, 0.00916624, -2.00347e-09, 0.576489)
 modulate = Color(0.815686, 0.423529, 0.745098, 1)
+pixel_size = 0.02
 texture = ExtResource("47_q5p86")
 
 [node name="Particles" parent="roundManager/ManualWheel/Wheel/2/Signs" instance=ExtResource("25_4gwun")]
