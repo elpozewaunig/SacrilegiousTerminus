@@ -42,12 +42,12 @@ func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("input-next"):
 		#print(shifts[currentRingIndex])
 		#print("next")
-		currentRingIndex += 1
+		currentRingIndex -= 1
 		currentRingIndex %= rings.size() # standart mod is ok currentRingIndex >= 0
 		#print("currentRingIndex: ", currentRingIndex)
 	
 	if Input.is_action_just_pressed("input-before"):
-		currentRingIndex -= 1
+		currentRingIndex += 1
 		currentRingIndex = mod(currentRingIndex, rings.size())
 		
 	

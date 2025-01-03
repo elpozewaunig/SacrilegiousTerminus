@@ -1,4 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://dfj7crbv06vkm"]
+[gd_scene load_steps=4 format=3 uid="uid://dfj7crbv06vkm"]
+
+[ext_resource type="PackedScene" uid="uid://bnmu8y7sw3xs6" path="res://scenes/button_with_sfx.tscn" id="2_nepck"]
 
 [sub_resource type="GDScript" id="GDScript_p7hlj"]
 script/source = "extends Node3D
@@ -91,7 +93,7 @@ You can adjust the rings using two different input methods:
 
 "
 
-[node name="BackToMenuBtn" type="Button" parent="CanvasLayer/ScrollContainer/PanelContainer"]
+[node name="BackToMenuBtn" parent="CanvasLayer/ScrollContainer/PanelContainer" instance=ExtResource("2_nepck")]
 z_index = 11
 layout_mode = 2
 size_flags_vertical = 8
