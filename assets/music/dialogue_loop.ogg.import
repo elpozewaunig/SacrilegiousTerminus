@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/dialogue_loop.ogg-bad92c8b0660496312c84cdc2a8
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0
 bpm=0
 beat_count=0
