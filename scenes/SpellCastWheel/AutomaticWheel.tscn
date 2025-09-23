@@ -1,11 +1,11 @@
 [gd_scene load_steps=52 format=3 uid="uid://dqtcwmca5ongg"]
 
-[ext_resource type="Script" path="res://code/automaticWheelScript.gd" id="1_t76au"]
+[ext_resource type="Script" uid="uid://d15fqigsumxku" path="res://code/automaticWheelScript.gd" id="1_t76au"]
 [ext_resource type="Texture2D" uid="uid://cuw82befexakv" path="res://assets/UI/goodwheel.png" id="2_3woc4"]
 [ext_resource type="Texture2D" uid="uid://deiwh6oq6lymh" path="res://scenes/SpellCastWheel/Material/SpellCastWheel_Texture.png" id="2_4a4d3"]
 [ext_resource type="ArrayMesh" uid="uid://cfkachmxoytgr" path="res://scenes/SpellCastWheel/Model/SpellCastwheel_center.obj" id="3_c8nyk"]
 [ext_resource type="Texture2D" uid="uid://cevqxsd6mf03f" path="res://assets/UI/Choose.png" id="4_7wy6y"]
-[ext_resource type="Script" path="res://code/rotateToAngle.gd" id="4_nyiiv"]
+[ext_resource type="Script" uid="uid://cak8kbi4ib1as" path="res://code/rotateToAngle.gd" id="4_nyiiv"]
 [ext_resource type="Texture2D" uid="uid://cod5k6h5q11rd" path="res://assets/UI/circle.png" id="6_6rwwo"]
 [ext_resource type="Texture2D" uid="uid://c5xxniywbchwe" path="res://assets/sprites/sternzeichen/aquarius.png" id="7_5vy5j"]
 [ext_resource type="PackedScene" uid="uid://dee7mh3emdym1" path="res://scenes/SpellCastWheel/Particles.tscn" id="7_loy21"]

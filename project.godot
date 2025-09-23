@@ -12,11 +12,11 @@ config_version=5
 
 config/name="Sacrilegious Terminus"
 config/tags=PackedStringArray("game", "jam")
-run/main_scene="res://scenes/MainMenu/MainMenu.tscn"
-config/features=PackedStringArray("4.3", "GL Compatibility")
+run/main_scene="uid://cey20murtyiss"
+config/features=PackedStringArray("4.5", "GL Compatibility")
 boot_splash/bg_color=Color(0, 0, 0, 1)
-boot_splash/image="res://assets/gsesplash.png"
-config/icon="res://assets/icon.png"
+boot_splash/image="uid://t6geuomcnu2c"
+config/icon="uid://d1ny6x3uhuumm"
 
 [autoload]
 

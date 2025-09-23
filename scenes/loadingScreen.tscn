@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://dyvprgu04o2x5"]
 
-[ext_resource type="Script" path="res://code/SceneLoader.gd" id="1_ekybr"]
+[ext_resource type="Script" uid="uid://bnfx3onjpvlob" path="res://code/SceneLoader.gd" id="1_ekybr"]
 [ext_resource type="PackedScene" uid="uid://dqtcwmca5ongg" path="res://scenes/SpellCastWheel/AutomaticWheel.tscn" id="1_qjew8"]
 
 [sub_resource type="GDScript" id="GDScript_wyfoc"]

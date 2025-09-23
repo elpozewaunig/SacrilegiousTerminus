@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://ccl2sq1tsjiq8" path="res://assets/UI/Credits.png" id="3_quyjc"]
 [ext_resource type="Texture2D" uid="uid://cod5k6h5q11rd" path="res://assets/UI/circle.png" id="4_fd50j"]
-[ext_resource type="Script" path="res://code/rotateToAngle.gd" id="4_rik2f"]
+[ext_resource type="Script" uid="uid://cak8kbi4ib1as" path="res://code/rotateToAngle.gd" id="4_rik2f"]
 [ext_resource type="Texture2D" uid="uid://deiox7dda12bd" path="res://assets/sprites/tarot symbole/Pentagram.png" id="5_q07ao"]
 [ext_resource type="PackedScene" uid="uid://dee7mh3emdym1" path="res://scenes/SpellCastWheel/Particles.tscn" id="6_cgca7"]
 [ext_resource type="Texture2D" uid="uid://bl16jyy5oy70o" path="res://assets/UI/Play.png" id="6_vf6fn"]

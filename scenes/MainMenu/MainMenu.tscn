@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://ceft1i1qvo4fl" path="res://scenes/SpellCastWheel/MainMenuWhell.tscn" id="1_ewt1t"]
 [ext_resource type="AudioStream" uid="uid://2pf5cga2akch" path="res://assets/music/loading_loop.ogg" id="2_fi0y8"]
 [ext_resource type="ArrayMesh" uid="uid://dbeddpemneiye" path="res://assets/Chevron.obj" id="3_o50ab"]
-[ext_resource type="Shader" path="res://scenes/FightScenes/TheRift/TheRift.gdshader" id="4_el3ny"]
+[ext_resource type="Shader" uid="uid://boj2r6ija7w12" path="res://scenes/FightScenes/TheRift/TheRift.gdshader" id="4_el3ny"]
 [ext_resource type="Texture2D" uid="uid://bqdmlqulrjco2" path="res://scenes/FightScenes/a0001.png" id="5_bp0j2"]
 [ext_resource type="Material" uid="uid://cry5503xare3w" path="res://scenes/FightScenes/TheMountain/Skybox/mainmenuskybox.tres" id="6_esobt"]
 [ext_resource type="Texture2D" uid="uid://clo06kexhsdk5" path="res://scenes/FightScenes/TheMountain/ParallaxLayerTexts/layer1.png" id="7_lxc0g"]
@@ -88,8 +88,8 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_qs2vt"]
 _data = {
-"RESET": SubResource("Animation_m824m"),
-"spiiin": SubResource("Animation_gjay3")
+&"RESET": SubResource("Animation_m824m"),
+&"spiiin": SubResource("Animation_gjay3")
 }
 
 [node name="MainMenu" type="Node3D"]
@@ -122,7 +122,7 @@ camera_attributes = SubResource("CameraAttributesPractical_w2ypg")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="WorldEnvironment"]
 libraries = {
-"": SubResource("AnimationLibrary_qs2vt")
+&"": SubResource("AnimationLibrary_qs2vt")
 }
 autoplay = "spiiin"
 

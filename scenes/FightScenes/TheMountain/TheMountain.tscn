@@ -12,15 +12,15 @@
 [ext_resource type="ArrayMesh" uid="uid://4lger5fh6chq" path="res://scenes/FightScenes/TheChurch/3DText/preistroberttext1.obj" id="10_12yff"]
 [ext_resource type="ArrayMesh" uid="uid://dfstv50uufwrh" path="res://scenes/FightScenes/TheChurch/3DText/preistroberttext2.obj" id="11_0cgdh"]
 [ext_resource type="Texture2D" uid="uid://ci1ey5q7nrstp" path="res://scenes/FightScenes/TheMountain/clouds2.png" id="12_lnx8s"]
-[ext_resource type="Script" path="res://code/roundManager.gd" id="13_2kmek"]
-[ext_resource type="Script" path="res://code/automaticWheelScript.gd" id="13_82uqp"]
+[ext_resource type="Script" uid="uid://bu7my6lb2avif" path="res://code/roundManager.gd" id="13_2kmek"]
+[ext_resource type="Script" uid="uid://d15fqigsumxku" path="res://code/automaticWheelScript.gd" id="13_82uqp"]
 [ext_resource type="Texture2D" uid="uid://cuw82befexakv" path="res://assets/UI/goodwheel.png" id="14_l18yr"]
 [ext_resource type="Texture2D" uid="uid://deiwh6oq6lymh" path="res://scenes/SpellCastWheel/Material/SpellCastWheel_Texture.png" id="15_gg1jm"]
 [ext_resource type="PackedScene" uid="uid://dvygun7k256ji" path="res://scenes/HudOverlay.tscn" id="16_fjhqi"]
 [ext_resource type="PackedScene" uid="uid://ccwx42uifhfce" path="res://assets/sprites/engel2/Angel2.tscn" id="16_m6crs"]
 [ext_resource type="ArrayMesh" uid="uid://cfkachmxoytgr" path="res://scenes/SpellCastWheel/Model/SpellCastwheel_center.obj" id="16_u6xfl"]
 [ext_resource type="Texture2D" uid="uid://cevqxsd6mf03f" path="res://assets/UI/Choose.png" id="17_uip76"]
-[ext_resource type="Script" path="res://code/rotateToAngle.gd" id="18_gk7f6"]
+[ext_resource type="Script" uid="uid://cak8kbi4ib1as" path="res://code/rotateToAngle.gd" id="18_gk7f6"]
 [ext_resource type="Texture2D" uid="uid://cod5k6h5q11rd" path="res://assets/UI/circle.png" id="19_tdjs2"]
 [ext_resource type="PackedScene" uid="uid://dee7mh3emdym1" path="res://scenes/SpellCastWheel/Particles.tscn" id="20_iykaq"]
 [ext_resource type="Texture2D" uid="uid://c5xxniywbchwe" path="res://assets/sprites/sternzeichen/aquarius.png" id="21_ih8nl"]
@@ -45,7 +45,7 @@
 [ext_resource type="Texture2D" uid="uid://biq45i62niwdd" path="res://assets/sprites/tarot symbole/tarotGlow/SwordHeart.png" id="40_f0hvl"]
 [ext_resource type="Texture2D" uid="uid://deiox7dda12bd" path="res://assets/sprites/tarot symbole/Pentagram.png" id="41_a3qfw"]
 [ext_resource type="Texture2D" uid="uid://bhnu44u0bjfo0" path="res://assets/sprites/tarot symbole/tarotGlow/Swordwaage.png" id="42_840ck"]
-[ext_resource type="Script" path="res://code/spellCastWheelScript.gd" id="43_13kqg"]
+[ext_resource type="Script" uid="uid://f64l6edjfbpe" path="res://code/spellCastWheelScript.gd" id="43_13kqg"]
 [ext_resource type="AudioStream" uid="uid://p3j8kkj1er87" path="res://assets/sounds/long_whoosh/long_whoosh_4.ogg" id="46_8i7tv"]
 [ext_resource type="AudioStream" uid="uid://c50px6he1apgi" path="res://assets/music/battle1_loop.ogg" id="46_epgyi"]
 [ext_resource type="AudioStream" uid="uid://ba240676qg75s" path="res://assets/sounds/angel_incomprehensible/angel_sfx.ogg" id="47_kct0j"]
@@ -145,8 +145,8 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_lw031"]
 _data = {
-"RESET": SubResource("Animation_l0o3e"),
-"cloudmovemountain": SubResource("Animation_n60wm")
+&"RESET": SubResource("Animation_l0o3e"),
+&"cloudmovemountain": SubResource("Animation_n60wm")
 }
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dg72n"]
@@ -800,15 +800,15 @@ tracks/27/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_2auk1"]
 _data = {
-"RESET": SubResource("Animation_rsp4a"),
-"epicintro": SubResource("Animation_lxrb8")
+&"RESET": SubResource("Animation_rsp4a"),
+&"epicintro": SubResource("Animation_lxrb8")
 }
 
 [node name="TheRift3" type="Node3D"]
 script = SubResource("GDScript_yrvts")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(0.940288, -0.0414819, -0.337843, 0, 0.992546, -0.121869, 0.34038, 0.114592, 0.933279, 0.23, 0.415, -0.435)
+transform = Transform3D(0.94028795, -0.041481864, -0.3378428, 0, 0.99254596, -0.121869266, 0.34038, 0.11459221, 0.9332789, 0.23, 0.415, -0.435)
 fov = 50.0
 
 [node name="WhooshSFX" type="AudioStreamPlayer" parent="Camera3D"]
@@ -859,13 +859,13 @@ material_override = SubResource("StandardMaterial3D_ddo3o")
 mesh = ExtResource("11_0cgdh")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
-transform = Transform3D(439.585, 0, 0, 0, 226.405, -376.797, 0, 376.797, 226.405, 0, 918.971, -1348.19)
+transform = Transform3D(439.585, 0, 0, 0, 226.40477, -376.79715, 0, 376.79715, 226.40477, 0, 918.971, -1348.19)
 modulate = Color(1, 1, 1, 0.360784)
 texture = ExtResource("12_lnx8s")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite3D"]
 libraries = {
-"": SubResource("AnimationLibrary_lw031")
+&"": SubResource("AnimationLibrary_lw031")
 }
 autoplay = "cloudmovemountain"
 
@@ -878,7 +878,7 @@ timeForRoud = 12
 musicPlayer = NodePath("Music")
 
 [node name="AutomaticWheel" type="Node3D" parent="roundManager" node_paths=PackedStringArray("innerRing", "middleRing", "elements", "sprites")]
-transform = Transform3D(0.541633, -0.604853, -0.388312, 0, 0.486219, -0.757358, 0.718772, 0.455789, 0.292614, 1.055, 0.5, -2.161)
+transform = Transform3D(0.5416331, -0.60485315, -0.38831198, 0, 0.48621908, -0.7573579, 0.7187722, 0.45578906, 0.29261377, 1.055, 0.5, -2.161)
 visible = false
 script = ExtResource("13_82uqp")
 innerRing = NodePath("Wheel/1")
@@ -1149,7 +1149,7 @@ mass = 0.001
 gravity_scale = 0.0
 
 [node name="ManualWheel" type="Node3D" parent="roundManager" node_paths=PackedStringArray("innerRing", "middleRing")]
-transform = Transform3D(0.327532, 0.309042, 0.0938927, 0, 0.133721, -0.440135, -0.32299, 0.313387, 0.0952129, -0.255, 0.855, -1.574)
+transform = Transform3D(0.32753193, 0.30904207, 0.093892686, 0, 0.1337211, -0.44013482, -0.32299045, 0.31338742, 0.095212884, -0.255, 0.855, -1.574)
 visible = false
 script = ExtResource("43_13kqg")
 innerRing = NodePath("Wheel/1")
@@ -1422,11 +1422,11 @@ stream = ExtResource("46_epgyi")
 parameters/looping = true
 
 [node name="Angle3" parent="." instance=ExtResource("16_m6crs")]
-transform = Transform3D(2.27488, -0.4301, -2.59814, -1.01264, 3.02645, -1.38765, 2.43103, 1.66313, 1.85324, 10.441, 4.532, -23.225)
+transform = Transform3D(2.2748775, -0.43009996, -2.5981429, -1.0126367, 3.0264513, -1.3876456, 2.4310281, 1.6631317, 1.8532388, 10.441, 4.532, -23.225)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_2auk1")
+&"": SubResource("AnimationLibrary_2auk1")
 }
 autoplay = "epicintro"
 

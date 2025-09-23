@@ -1,9 +1,9 @@
 [gd_scene load_steps=51 format=3 uid="uid://ccelpifkgb5xq"]
 
-[ext_resource type="Script" path="res://code/spellCastWheelScript.gd" id="1_clo6s"]
+[ext_resource type="Script" uid="uid://f64l6edjfbpe" path="res://code/spellCastWheelScript.gd" id="1_clo6s"]
 [ext_resource type="Texture2D" uid="uid://deiwh6oq6lymh" path="res://scenes/SpellCastWheel/Material/SpellCastWheel_Texture.png" id="1_gku87"]
 [ext_resource type="ArrayMesh" uid="uid://cfkachmxoytgr" path="res://scenes/SpellCastWheel/Model/SpellCastwheel_center.obj" id="2_88er2"]
-[ext_resource type="Script" path="res://code/rotateToAngle.gd" id="4_3pldr"]
+[ext_resource type="Script" uid="uid://cak8kbi4ib1as" path="res://code/rotateToAngle.gd" id="4_3pldr"]
 [ext_resource type="Texture2D" uid="uid://cod5k6h5q11rd" path="res://assets/UI/circle.png" id="6_7utyr"]
 [ext_resource type="Texture2D" uid="uid://c5xxniywbchwe" path="res://assets/sprites/sternzeichen/aquarius.png" id="7_e0h32"]
 [ext_resource type="AudioStream" uid="uid://b8flt6yy81hcx" path="res://assets/sounds/wheel_turn/wheel_turn.ogg" id="7_xb16b"]

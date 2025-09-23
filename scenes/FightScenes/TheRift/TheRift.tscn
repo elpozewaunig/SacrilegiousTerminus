@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://r020t5g1merr" path="res://gpu_particles_3d.tscn" id="6_knecr"]
 [ext_resource type="ArrayMesh" uid="uid://4lger5fh6chq" path="res://scenes/FightScenes/TheChurch/3DText/preistroberttext1.obj" id="6_rjpab"]
 [ext_resource type="ArrayMesh" uid="uid://dfstv50uufwrh" path="res://scenes/FightScenes/TheChurch/3DText/preistroberttext2.obj" id="7_7ijst"]
-[ext_resource type="Script" path="res://code/roundManager.gd" id="8_i72os"]
+[ext_resource type="Script" uid="uid://bu7my6lb2avif" path="res://code/roundManager.gd" id="8_i72os"]
 [ext_resource type="PackedScene" uid="uid://dqtcwmca5ongg" path="res://scenes/SpellCastWheel/AutomaticWheel.tscn" id="9_hn1ih"]
 [ext_resource type="PackedScene" uid="uid://ccelpifkgb5xq" path="res://scenes/SpellCastWheel/SpellCastWheel.tscn" id="10_f0vt0"]
 [ext_resource type="PackedScene" uid="uid://dvygun7k256ji" path="res://scenes/HudOverlay.tscn" id="11_dkq56"]
@@ -443,8 +443,8 @@ tracks/16/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_uil50"]
 _data = {
-"RESET": SubResource("Animation_3557y"),
-"epicintro": SubResource("Animation_agft1")
+&"RESET": SubResource("Animation_3557y"),
+&"epicintro": SubResource("Animation_agft1")
 }
 
 [sub_resource type="Animation" id="Animation_dj5wu"]
@@ -480,15 +480,15 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_wogte"]
 _data = {
-"RESET": SubResource("Animation_dj5wu"),
-"space": SubResource("Animation_pfnqr")
+&"RESET": SubResource("Animation_dj5wu"),
+&"space": SubResource("Animation_pfnqr")
 }
 
 [node name="TheRift" type="Node3D"]
 script = SubResource("GDScript_0bvbl")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.522496, -0.852641, 0, 0.852641, 0.522496, 0, 1.95, 0)
+transform = Transform3D(1, 0, 0, 0, 0.5224961, -0.8526409, 0, 0.8526409, 0.5224961, 0, 1.95, 0)
 fov = 50.0
 
 [node name="WhooshSFX" type="AudioStreamPlayer" parent="Camera3D"]
@@ -534,11 +534,11 @@ timeForRoud = 21
 musicPlayer = NodePath("Music")
 
 [node name="AutomaticWheel" parent="roundManager" instance=ExtResource("9_hn1ih")]
-transform = Transform3D(3.565, 0, 0, 0, 2.92384, -2.0397, 0, 2.0397, 2.92384, 0.005, 2.95, -8.201)
+transform = Transform3D(3.565, 0, 0, 0, 2.9238403, -2.0396996, 0, 2.0396996, 2.9238403, 0.005, 2.95, -8.201)
 color = Color(0.818766, 0.587334, 0, 1)
 
 [node name="ManualWheel" parent="roundManager" instance=ExtResource("10_f0vt0")]
-transform = Transform3D(4.52, 0, 0, 0, 1.75882, -4.16377, 0, 4.16377, 1.75882, 0, -1.63, -18.407)
+transform = Transform3D(4.52, 0, 0, 0, 1.7588245, -4.1637683, 0, 4.1637683, 1.7588245, 0, -1.63, -18.407)
 
 [node name="HudOverlay" parent="roundManager" instance=ExtResource("11_dkq56")]
 
@@ -548,7 +548,7 @@ parameters/looping = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_uil50")
+&"": SubResource("AnimationLibrary_uil50")
 }
 autoplay = "epicintro"
 
@@ -558,7 +558,7 @@ texture = ExtResource("12_lewcg")
 
 [node name="AnimationPlayer2" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_wogte")
+&"": SubResource("AnimationLibrary_wogte")
 }
 autoplay = "space"
 

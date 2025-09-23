@@ -1,14 +1,14 @@
 [gd_scene load_steps=19 format=3 uid="uid://dvygun7k256ji"]
 
-[ext_resource type="Script" path="res://code/hudOverlay.gd" id="1_nlpga"]
-[ext_resource type="Script" path="res://code/dialogScript.gd" id="2_p562y"]
+[ext_resource type="Script" uid="uid://cejra01sesexs" path="res://code/hudOverlay.gd" id="1_nlpga"]
+[ext_resource type="Script" uid="uid://x3fy3h0u3pd" path="res://code/dialogScript.gd" id="2_p562y"]
 [ext_resource type="AudioStream" uid="uid://dlvfs6xlorf1j" path="res://assets/sounds/sfx_Typewriter.ogg" id="3_o5wnl"]
 [ext_resource type="AudioStream" uid="uid://m50mdiae1c0m" path="res://assets/sounds/sfx_PlayerVoice.ogg" id="4_nda3g"]
 [ext_resource type="AudioStream" uid="uid://ccdb1xll6wbh2" path="res://assets/sounds/sfx_EnemyVoice.ogg" id="5_oijn2"]
 [ext_resource type="Texture2D" uid="uid://b6fy8mvm3d5ht" path="res://assets/sprites/progressBar/ProgressBar.png" id="6_5qawj"]
-[ext_resource type="Script" path="res://code/tutorialScript.gd" id="8_rd4og"]
+[ext_resource type="Script" uid="uid://dxkw4w07yteqe" path="res://code/tutorialScript.gd" id="8_rd4og"]
 [ext_resource type="Texture2D" uid="uid://ur4cwlbgq8hv" path="res://assets/sprites/progressBar/HolyProgressBar.png" id="8_ynm7x"]
-[ext_resource type="Script" path="res://code/pauseMenuScript.gd" id="9_ompl7"]
+[ext_resource type="Script" uid="uid://bynw1j0xsgbmc" path="res://code/pauseMenuScript.gd" id="9_ompl7"]
 [ext_resource type="PackedScene" uid="uid://bnmu8y7sw3xs6" path="res://scenes/button_with_sfx.tscn" id="10_ly6oa"]
 
 [sub_resource type="SystemFont" id="SystemFont_baf6o"]

@@ -1,7 +1,7 @@
 [gd_scene load_steps=19 format=3 uid="uid://c5aam42caalrh"]
 
 [ext_resource type="PackedScene" uid="uid://coj8cff6bnd1d" path="res://scenes/FightScenes/TheChurch/TheChurch.tscn" id="1_m73o3"]
-[ext_resource type="Script" path="res://code/scene_manager.gd" id="2_t1nbp"]
+[ext_resource type="Script" uid="uid://ba68ojq8862tm" path="res://code/scene_manager.gd" id="2_t1nbp"]
 [ext_resource type="PackedScene" uid="uid://bihqmqmhy5qrk" path="res://scenes/FightScenes/TheCountrySide/TheCountrySide.tscn" id="3_ti5tm"]
 [ext_resource type="PackedScene" uid="uid://b0cfnqq0xj6ro" path="res://scenes/FightScenes/TheMountain/TheMountain.tscn" id="4_huykn"]
 [ext_resource type="PackedScene" uid="uid://icf506yysjwv" path="res://scenes/FightScenes/TheRift/TheRift.tscn" id="5_jehmd"]
