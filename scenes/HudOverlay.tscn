@@ -1,6 +1,7 @@
-[gd_scene load_steps=22 format=3 uid="uid://dvygun7k256ji"]
+[gd_scene load_steps=23 format=3 uid="uid://dvygun7k256ji"]
 
 [ext_resource type="Script" uid="uid://cejra01sesexs" path="res://code/hudOverlay.gd" id="1_nlpga"]
+[ext_resource type="PackedScene" uid="uid://cuw4yq5y387x7" path="res://scenes/mouse_hider.tscn" id="2_4haxn"]
 [ext_resource type="Script" uid="uid://x3fy3h0u3pd" path="res://code/dialogScript.gd" id="2_p562y"]
 [ext_resource type="AudioStream" uid="uid://dlvfs6xlorf1j" path="res://assets/sounds/sfx_Typewriter.ogg" id="3_o5wnl"]
 [ext_resource type="AudioStream" uid="uid://m50mdiae1c0m" path="res://assets/sounds/sfx_PlayerVoice.ogg" id="4_nda3g"]
@@ -75,6 +76,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_nlpga")
+
+[node name="MouseHider" parent="." instance=ExtResource("2_4haxn")]
 
 [node name="DialogLayer" type="CanvasLayer" parent="."]
 unique_name_in_owner = true
