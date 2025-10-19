@@ -19,6 +19,7 @@ script/source = "extends Node3D
 @export var outerRing: Node3D
 
 @export var touch: TouchInputHandler
+@export var webQuitInfo: Control
 
 var rings: Array
 var shifts: Array
@@ -74,6 +75,8 @@ func _process(_delta: float) -> void:
 				#SceneManager.change_scene(SceneManager.mainMenuSene, false)
 			3: 
 				print(\"quit\")
+				if OS.get_name() == \"Web\":
+					webQuitInfo.show()
 				SceneManager.quit_game()	
 			 
 	
