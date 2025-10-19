@@ -11,13 +11,19 @@ signal currentEntity(entity: DialogOption.DIALOG_ENTITY)
 @onready var textureProgressBar: TextureProgressBar = $"%FightProgressBar"
 @onready var timerLabel: Label = $"%TimerLabel"
 
+@onready var gotItBtn: Button = $"%GotItBtn"
+@onready var resumeBtn: Button = $"%ResumeBtn"
+
 func showDialog(dialog: Array[DialogOption], showFullscreen: bool = false) -> void:
 	dialogLayer.init(dialog, showFullscreen)
 	dialogLayer.visible = true
 
 func _input(event: InputEvent) -> void:
 	if Input.is_action_pressed("pause"):
-		displayPauseMenu()
+		if not pauseMenuLayer.visible:
+			displayPauseMenu()
+		else:
+			hidePauseMenu()
 	
 func _process(_delta: float) -> void:
 	timerLabel.update(GameManager.getTimerSignal())
@@ -52,6 +58,7 @@ func displayPauseMenu() -> void:
 		
 	GameManager.stopTimer()
 	pauseMenuLayer.visible = true;
+	resumeBtn.grab_focus()
 
 
 func hidePauseMenu() -> void:
@@ -78,3 +85,4 @@ func _on_pause_menu_layer_return_to_menu() -> void:
 func _on_pause_menu_layer_show_tutorial() -> void:
 	hidePauseMenu()
 	displayTutorial()
+	gotItBtn.grab_focus()

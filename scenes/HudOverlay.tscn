@@ -198,7 +198,8 @@ size_flags_vertical = 3
 unique_name_in_owner = true
 layout_mode = 2
 
-[node name="Button" parent="TutorialLayer/DialogContainer/DialogBox" instance=ExtResource("10_ly6oa")]
+[node name="GotItBtn" parent="TutorialLayer/DialogContainer/DialogBox" instance=ExtResource("10_ly6oa")]
+unique_name_in_owner = true
 layout_mode = 2
 text = "Alright, got it"
 
@@ -250,14 +251,19 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="ResumeBtn" parent="PauseMenuLayer/DialogContainer/DialogBox/VBoxContainer" instance=ExtResource("10_ly6oa")]
+unique_name_in_owner = true
 layout_mode = 2
+focus_neighbor_bottom = NodePath("../TutorialBtn")
 
 [node name="TutorialBtn" parent="PauseMenuLayer/DialogContainer/DialogBox/VBoxContainer" instance=ExtResource("10_ly6oa")]
 layout_mode = 2
+focus_neighbor_top = NodePath("../ResumeBtn")
+focus_neighbor_bottom = NodePath("../MainMenuBtn")
 text = "Show Tutorial"
 
 [node name="MainMenuBtn" parent="PauseMenuLayer/DialogContainer/DialogBox/VBoxContainer" instance=ExtResource("10_ly6oa")]
 layout_mode = 2
+focus_neighbor_top = NodePath("../TutorialBtn")
 text = "Back to Main Menu
 "
 
