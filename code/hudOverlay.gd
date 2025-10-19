@@ -42,28 +42,27 @@ func hideIngameHud() -> void:
 	
 	
 func displayTutorial() -> void:
-	GameManager.stopTimer()
 	tutorialLayer.visible = true;
+	get_tree().paused = true
 
 
 func hideTutorial() -> void:
-	GameManager.startTimer()
 	tutorialLayer.visible = false;
-	displayIngameHud();
+	get_tree().paused = false
 	
 
 func displayPauseMenu() -> void:
 	if tutorialLayer.visible or dialogLayer.visible:
 		return;
 		
-	GameManager.stopTimer()
 	pauseMenuLayer.visible = true;
 	resumeBtn.grab_focus()
+	get_tree().paused = true
 
 
 func hidePauseMenu() -> void:
-	GameManager.startTimer()
 	pauseMenuLayer.visible = false;
+	get_tree().paused = false
 
 func _on_round_manager_update_progress_bar_to(score: float, maxScore: int) -> void:
 	textureProgressBar.update(score, maxScore)
@@ -75,10 +74,10 @@ func _on_dialog_layer_current_entity(entity: DialogOption.DIALOG_ENTITY) -> void
 
 func _on_pause_menu_layer_resume_game() -> void:
 	hidePauseMenu();
-	displayIngameHud();
 	
 
 func _on_pause_menu_layer_return_to_menu() -> void:
+	get_tree().paused = false
 	SceneManager.change_scene(SceneManager.mainMenuSene)
 
 

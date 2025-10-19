@@ -1424,6 +1424,7 @@ metadata/_custom_type_script = "uid://dmuded80dy2d8"
 [node name="HudOverlay" parent="roundManager" instance=ExtResource("16_fjhqi")]
 
 [node name="Music" type="AudioStreamPlayer" parent="roundManager"]
+process_mode = 3
 stream = ExtResource("46_epgyi")
 parameters/looping = true
 

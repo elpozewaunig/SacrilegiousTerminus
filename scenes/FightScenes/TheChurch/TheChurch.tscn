@@ -742,6 +742,7 @@ timeForRoud = 10
 musicPlayer = NodePath("Music")
 
 [node name="Music" type="AudioStreamPlayer" parent="roundManager"]
+process_mode = 3
 stream = ExtResource("20_r22xg")
 parameters/looping = true
 

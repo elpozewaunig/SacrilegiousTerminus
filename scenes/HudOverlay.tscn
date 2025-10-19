@@ -67,6 +67,7 @@ expand_margin_left = 12.0
 expand_margin_right = 12.0
 
 [node name="HudOverlay" type="Control"]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

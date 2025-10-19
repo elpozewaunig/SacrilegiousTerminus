@@ -543,6 +543,7 @@ transform = Transform3D(4.52, 0, 0, 0, 1.7588245, -4.1637683, 0, 4.1637683, 1.75
 [node name="HudOverlay" parent="roundManager" instance=ExtResource("11_dkq56")]
 
 [node name="Music" type="AudioStreamPlayer" parent="roundManager"]
+process_mode = 3
 stream = ExtResource("12_d7crm")
 parameters/looping = true
 

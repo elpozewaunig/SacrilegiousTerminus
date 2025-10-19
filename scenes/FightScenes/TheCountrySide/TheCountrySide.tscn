@@ -1502,6 +1502,7 @@ gravity_scale = 0.0
 [node name="HudOverlay" parent="roundManager" instance=ExtResource("17_fyugo")]
 
 [node name="Music" type="AudioStreamPlayer" parent="roundManager"]
+process_mode = 3
 stream = ExtResource("50_k6svf")
 parameters/looping = true
 
