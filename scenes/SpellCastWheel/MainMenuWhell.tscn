@@ -64,6 +64,8 @@ func _process(_delta: float) -> void:
 		match shifts[0]:
 			2:
 				print(\"start\")
+				GameManager.stopTimer()
+				GameManager.resetTimer()
 				SceneManager.change_scene(SceneManager.introScene, false)
 				
 			1: 

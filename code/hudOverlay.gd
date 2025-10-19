@@ -78,6 +78,7 @@ func _on_pause_menu_layer_resume_game() -> void:
 
 func _on_pause_menu_layer_return_to_menu() -> void:
 	get_tree().paused = false
+	GameManager.stopTimer()
 	SceneManager.change_scene(SceneManager.mainMenuSene)
 
 
