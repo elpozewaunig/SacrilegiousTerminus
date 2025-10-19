@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=3 uid="uid://ccelpifkgb5xq"]
+[gd_scene load_steps=52 format=3 uid="uid://ccelpifkgb5xq"]
 
 [ext_resource type="Script" uid="uid://f64l6edjfbpe" path="res://code/spellCastWheelScript.gd" id="1_clo6s"]
 [ext_resource type="Texture2D" uid="uid://deiwh6oq6lymh" path="res://scenes/SpellCastWheel/Material/SpellCastWheel_Texture.png" id="1_gku87"]
@@ -49,16 +49,18 @@
 [ext_resource type="Texture2D" uid="uid://deiox7dda12bd" path="res://assets/sprites/tarot symbole/Pentagram.png" id="36_bt620"]
 [ext_resource type="Texture2D" uid="uid://bhnu44u0bjfo0" path="res://assets/sprites/tarot symbole/tarotGlow/Swordwaage.png" id="37_rg8pv"]
 [ext_resource type="Texture2D" uid="uid://cevqxsd6mf03f" path="res://assets/UI/Choose.png" id="49_kihk2"]
+[ext_resource type="PackedScene" uid="uid://c4lpbckpjebgf" path="res://scenes/touch_input_handler.tscn" id="50_40ffc"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dg72n"]
 albedo_texture = ExtResource("1_gku87")
 
-[node name="ManualWheel" type="Node3D" node_paths=PackedStringArray("innerRing", "middleRing", "outerRing")]
+[node name="ManualWheel" type="Node3D" node_paths=PackedStringArray("innerRing", "middleRing", "outerRing", "touchInput")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0096097, 0, 0.0048047)
 script = ExtResource("1_clo6s")
 innerRing = NodePath("Wheel/1")
 middleRing = NodePath("Wheel/2")
 outerRing = NodePath("Wheel/3")
+touchInput = NodePath("TouchInputHandler")
 
 [node name="Wheel" type="Node3D" parent="."]
 
@@ -527,3 +529,5 @@ gravity_scale = 0.0
 transform = Transform3D(-0.034907, 0.00254993, 6.93889e-18, 1.11461e-10, 1.52583e-09, -0.035, -0.00254993, -0.034907, -1.5299e-09, 0, 0, 0)
 modulate = Color(1, 0.313726, 0.223529, 1)
 texture = ExtResource("36_bt620")
+
+[node name="TouchInputHandler" parent="." instance=ExtResource("50_40ffc")]

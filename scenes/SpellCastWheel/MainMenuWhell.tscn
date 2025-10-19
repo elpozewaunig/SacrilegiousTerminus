@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://ceft1i1qvo4fl"]
+[gd_scene load_steps=13 format=3 uid="uid://ceft1i1qvo4fl"]
 
 [ext_resource type="Texture2D" uid="uid://ccl2sq1tsjiq8" path="res://assets/UI/Credits.png" id="3_quyjc"]
 [ext_resource type="Texture2D" uid="uid://cod5k6h5q11rd" path="res://assets/UI/circle.png" id="4_fd50j"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://cwj0ditn811ca" path="res://assets/UI/QUIT.png" id="7_8pqsf"]
 [ext_resource type="Texture2D" uid="uid://dnsfbje70rhd8" path="res://assets/UI/Tutorial.png" id="8_5cio3"]
 [ext_resource type="AudioStream" uid="uid://b8flt6yy81hcx" path="res://assets/sounds/wheel_turn/wheel_turn.ogg" id="8_qmpg1"]
+[ext_resource type="PackedScene" uid="uid://c4lpbckpjebgf" path="res://scenes/touch_input_handler.tscn" id="10_5vc8e"]
 
 [sub_resource type="GDScript" id="GDScript_5rwoc"]
 script/source = "extends Node3D
@@ -16,6 +17,8 @@ script/source = "extends Node3D
 @export var innerRing: Node3D 
 @export var middleRing: Node3D
 @export var outerRing: Node3D
+
+@export var touch: TouchInputHandler
 
 var rings: Array
 var shifts: Array
@@ -40,14 +43,14 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 
 	# key-right turn right
-	if Input.is_action_just_pressed(\"input-right\"):
+	if Input.is_action_just_pressed(\"input-right\") or touch.swiped_right:
 	
 		#print(\"right\")
 		rings[currentRingIndex].changeAngle(true)
 		shifts[currentRingIndex] += 1
 		shifts[currentRingIndex] = mod(shifts[currentRingIndex], rings[currentRingIndex].segmentCount)
 	# key-left turn left
-	if Input.is_action_just_pressed(\"input-left\"):
+	if Input.is_action_just_pressed(\"input-left\") or touch.swiped_left:
 		#print(\"left\")
 		
 		rings[currentRingIndex].changeAngle(false)
@@ -55,7 +58,7 @@ func _process(_delta: float) -> void:
 		# shifts[currentRingIndex] could be less than 0 und mod is falash implementiert :(
 		shifts[currentRingIndex] = mod(shifts[currentRingIndex], rings[currentRingIndex].segmentCount)
 	# enter, next ring mod ringCount
-	if Input.is_action_just_pressed(\"input-next\"):
+	if Input.is_action_just_pressed(\"input-next\") or touch.screen_just_pressed:
 		pass
 		match shifts[0]:
 			2:
@@ -74,7 +77,7 @@ func _process(_delta: float) -> void:
 				SceneManager.quit_game()	
 			 
 	
-	if Input.is_action_just_pressed(\"input-before\"):
+	if Input.is_action_just_pressed(\"input-before\") or touch.swiped_down:
 		currentRingIndex -= 1
 		currentRingIndex = mod(currentRingIndex, rings.size())
 		
@@ -90,10 +93,11 @@ func mod(a: int, b:int) -> int:
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wcs1u"]
 albedo_texture = ExtResource("3_quyjc")
 
-[node name="ManualWheel" type="Node3D" node_paths=PackedStringArray("innerRing")]
+[node name="ManualWheel" type="Node3D" node_paths=PackedStringArray("innerRing", "touch")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0096097, 0, 0.0048047)
 script = SubResource("GDScript_5rwoc")
 innerRing = NodePath("Wheel/3")
+touch = NodePath("TouchInputHandler")
 
 [node name="Wheel" type="Node3D" parent="."]
 
@@ -165,3 +169,5 @@ texture = ExtResource("7_8pqsf")
 transform = Transform3D(-0.119843, 0.00613809, -2.68305e-10, 0, -5.24537e-09, -0.12, -0.00613809, -0.119843, 5.2385e-09, 0, 0, 0)
 modulate = Color(1, 0.313726, 0.223529, 1)
 texture = ExtResource("5_q07ao")
+
+[node name="TouchInputHandler" parent="." instance=ExtResource("10_5vc8e")]

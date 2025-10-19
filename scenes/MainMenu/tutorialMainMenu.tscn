@@ -1,102 +1,51 @@
-[gd_scene load_steps=4 format=3 uid="uid://dfj7crbv06vkm"]
+[gd_scene load_steps=5 format=3 uid="uid://dfj7crbv06vkm"]
 
+[ext_resource type="Script" uid="uid://xbmyo7puhqh" path="res://code/tutorial_main_menu.gd" id="1_wfwg7"]
+[ext_resource type="Theme" uid="uid://8pxr3vfc2jme" path="res://scenes/MainMenu/MenuTheme.tres" id="2_8n6of"]
 [ext_resource type="PackedScene" uid="uid://bnmu8y7sw3xs6" path="res://scenes/button_with_sfx.tscn" id="2_nepck"]
+[ext_resource type="PackedScene" uid="uid://d0uw87hj0h1b8" path="res://scenes/MainMenu/tutorialText.tscn" id="3_s0w2m"]
 
-[sub_resource type="GDScript" id="GDScript_p7hlj"]
-script/source = "extends Node3D
+[node name="TutorialLayer" type="CanvasLayer"]
+script = ExtResource("1_wfwg7")
 
-func _process(_delta: float) -> void:
-	if Input.is_action_just_pressed(\"pause\") || Input.is_action_just_pressed(\"skip-dialog\"):
-		_on_back_to_menu_btn_pressed()
-
-func _on_back_to_menu_btn_pressed() -> void:
-	SceneManager.change_scene(SceneManager.mainMenuSene)
-"
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f8o4f"]
-content_margin_left = 8.0
-content_margin_top = 8.0
-content_margin_right = 8.0
-content_margin_bottom = 8.0
-bg_color = Color(0, 0, 0, 1)
-
-[node name="TutorialMainMenu" type="Node3D"]
-script = SubResource("GDScript_p7hlj")
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="ScrollContainer" type="ScrollContainer" parent="CanvasLayer"]
-custom_minimum_size = Vector2(1920, 1080)
-anchors_preset = -1
-anchor_left = -0.00208333
-anchor_right = 1.00208
+[node name="Background" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-horizontal_scroll_mode = 0
-metadata/_edit_use_anchors_ = true
+color = Color(0, 0, 0, 0.882353)
 
-[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer/ScrollContainer"]
+[node name="DialogContainer" type="CenterContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_8n6of")
+
+[node name="DialogBox" type="VBoxContainer" parent="DialogContainer"]
+z_index = 1
 custom_minimum_size = Vector2(1920, 1080)
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_f8o4f")
 
-[node name="TutorialLabel" type="RichTextLabel" parent="CanvasLayer/ScrollContainer/PanelContainer"]
-unique_name_in_owner = true
-z_index = 10
+[node name="ScrollContainer" type="ScrollContainer" parent="DialogContainer/DialogBox"]
+custom_minimum_size = Vector2(944, 400)
 layout_mode = 2
-bbcode_enabled = true
-text = "
-[center][font_size={24}][b]Game Objective and Rules[/b][/font_size][/center]
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
 
-To win the game, you must align your wheel to match your opponent's wheel. The opponent’s wheel can consist of up to three rings, and the matching rules vary depending on the number of rings:
-
-[center][font_size={18}][b]Single Ring[/b][/font_size][/center]
-If the opponent’s wheel has only one ring, select the icon directly opposite the one chosen by your opponent.
-
-[center][font_size={18}][b]Two Rings[/b][/font_size][/center]
-For a wheel with two rings:
-
-    [b]Inner Ring[/b]
-        The rule for selecting the inner ring depends on the icon shown in the middle (second) ring:
-[indent][ul] [color=TURQUOISE]Turquoise Icon:[/color] Match the inner ring icon exactly.
- [color=YELLOW]Yellow Icon:[/color] Select the icon that is one position away from matching the inner ring.
- [color=PURPLE]Purple Icon:[/color] Select the icon opposite to the inner ring. [/ul][/indent]
- 
-    [b]Middle Ring[/b]
-[indent][ul] Match the middle ring icon exactly, with no additional rules.[/ul][/indent]
-
-[center][font_size={18}][b]Three Rings (Final Level)[/b][/font_size][/center]
-In the final level, a third, outer ring is introduced. The outer ring is independent of the other two and does [color=RED]NOT[/color] influence their rules. Simply match the outer ring icon exactly.
-
-[center][font_size={18}][b]Controls[/b][/font_size][/center]
-You can adjust the rings using two different input methods:
-
-    
-    [b]Arrow Key Controls[/b]
-[indent][ul] → Right Arrow: Move the selection clockwise
- ← Left Arrow: Move the selection counterclockwise
- ↑ Up Arrow: Move to the next outer ring
- ↓ Down Arrow: Move to the next inner ring[/ul][/indent]
-
-    [b]Keypad Controls[/b]
-[indent][ul] Inner ring: Press 1 or 3
- Middle ring: Press 8 or 0
- Outer ring: Press 2 or 9[/ul][/indent]
-
-    [b]Keyboard Controls[/b]
-[indent][ul] Inner ring: Press W or S
- Middle ring: Press E or D
- Outer ring: Press R or F[/ul][/indent]
-
-
-
-"
-
-[node name="BackToMenuBtn" parent="CanvasLayer/ScrollContainer/PanelContainer" instance=ExtResource("2_nepck")]
-z_index = 11
+[node name="PanelContainer" type="PanelContainer" parent="DialogContainer/DialogBox/ScrollContainer"]
+custom_minimum_size = Vector2(944, 470)
 layout_mode = 2
-size_flags_vertical = 8
-text = "Back to menu"
+size_flags_horizontal = 3
+size_flags_vertical = 3
 
-[connection signal="pressed" from="CanvasLayer/ScrollContainer/PanelContainer/BackToMenuBtn" to="." method="_on_back_to_menu_btn_pressed"]
+[node name="TutorialLabel" parent="DialogContainer/DialogBox/ScrollContainer/PanelContainer" instance=ExtResource("3_s0w2m")]
+layout_mode = 2
+
+[node name="Button" parent="DialogContainer/DialogBox" instance=ExtResource("2_nepck")]
+layout_mode = 2
+text = "Alright, got it"
+
+[connection signal="pressed" from="DialogContainer/DialogBox/Button" to="." method="_on_back_to_menu_btn_pressed"]

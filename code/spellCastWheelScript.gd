@@ -4,6 +4,8 @@ extends Node3D
 @export var middleRing: Node3D
 @export var outerRing: Node3D
 
+@export var touchInput: TouchInputHandler
+
 var rings: Array
 var shifts: Array
 var currentRingIndex: int = 0
@@ -26,27 +28,27 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	#Segment: for simpleInputs
 	# key-right turn right
-	if Input.is_action_just_pressed("input-right"):
+	if Input.is_action_just_pressed("input-right") or touchInput.swiped_right:
 		#print("right")
 		rings[currentRingIndex].changeAngle(true)
 		shifts[currentRingIndex] += 1
 		shifts[currentRingIndex] = mod(shifts[currentRingIndex], rings[currentRingIndex].segmentCount)
 	# key-left turn left
-	if Input.is_action_just_pressed("input-left"):
+	if Input.is_action_just_pressed("input-left") or touchInput.swiped_left:
 		#print("left")
 		rings[currentRingIndex].changeAngle(false)
 		shifts[currentRingIndex] -= 1
 		# shifts[currentRingIndex] could be less than 0 und mod is falash implementiert :(
 		shifts[currentRingIndex] = mod(shifts[currentRingIndex], rings[currentRingIndex].segmentCount)
 	# enter, next ring mod ringCount
-	if Input.is_action_just_pressed("input-next"):
+	if Input.is_action_just_pressed("input-next") or touchInput.swiped_up:
 		#print(shifts[currentRingIndex])
 		#print("next")
 		currentRingIndex -= 1
 		currentRingIndex %= rings.size() # standart mod is ok currentRingIndex >= 0
 		#print("currentRingIndex: ", currentRingIndex)
 	
-	if Input.is_action_just_pressed("input-before"):
+	if Input.is_action_just_pressed("input-before") or touchInput.swiped_down:
 		currentRingIndex += 1
 		currentRingIndex = mod(currentRingIndex, rings.size())
 		

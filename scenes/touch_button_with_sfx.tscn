@@ -1,0 +1,26 @@
+[gd_scene load_steps=8 format=3 uid="uid://4ks3n2hoau7c"]
+
+[ext_resource type="Texture2D" uid="uid://c0gvp65fcfm64" path="res://assets/UI/pause.svg" id="1_jvaxs"]
+[ext_resource type="Script" uid="uid://bdkxnusdcxnff" path="res://code/touch_button_sound_player.gd" id="2_qchqp"]
+[ext_resource type="AudioStream" uid="uid://cf6nupy6ltvdj" path="res://assets/sounds/wheel_click/wheel_click_2.ogg" id="3_2magp"]
+[ext_resource type="AudioStream" uid="uid://bjrc4dyyho47j" path="res://assets/sounds/wheel_click/wheel_click_6.ogg" id="4_slmpu"]
+[ext_resource type="AudioStream" uid="uid://o2khwvs0pw75" path="res://assets/sounds/wheel_click/wheel_click_9.ogg" id="5_ccqgc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qerle"]
+size = Vector2(80, 80)
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_pcmcj"]
+streams_count = 3
+stream_0/stream = ExtResource("3_2magp")
+stream_1/stream = ExtResource("4_slmpu")
+stream_2/stream = ExtResource("5_ccqgc")
+
+[node name="PauseButton" type="TouchScreenButton"]
+texture_normal = ExtResource("1_jvaxs")
+shape = SubResource("RectangleShape2D_qerle")
+action = "pause"
+visibility_mode = 1
+script = ExtResource("2_qchqp")
+click_sound = SubResource("AudioStreamRandomizer_pcmcj")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

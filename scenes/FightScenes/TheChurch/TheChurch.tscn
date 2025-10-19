@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=3 uid="uid://coj8cff6bnd1d"]
+[gd_scene load_steps=54 format=3 uid="uid://coj8cff6bnd1d"]
 
 [ext_resource type="Script" uid="uid://c7fy8bv06usat" path="res://scenes/FightScenes/TheChurch/theChurchController.gd" id="1_dt4df"]
 [ext_resource type="AudioStream" uid="uid://p3j8kkj1er87" path="res://assets/sounds/long_whoosh/long_whoosh_4.ogg" id="2_chogk"]
@@ -42,6 +42,7 @@
 [ext_resource type="AudioStream" uid="uid://b8flt6yy81hcx" path="res://assets/sounds/wheel_turn/wheel_turn.ogg" id="35_5ays5"]
 [ext_resource type="Texture2D" uid="uid://cuw82befexakv" path="res://assets/UI/goodwheel.png" id="36_7p6h6"]
 [ext_resource type="Texture2D" uid="uid://deiox7dda12bd" path="res://assets/sprites/tarot symbole/Pentagram.png" id="38_nklhs"]
+[ext_resource type="PackedScene" uid="uid://c4lpbckpjebgf" path="res://scenes/touch_input_handler.tscn" id="41_kenac"]
 
 [sub_resource type="Animation" id="Animation_f7oct"]
 length = 0.001
@@ -692,7 +693,7 @@ material_override = SubResource("StandardMaterial3D_il6o1")
 mesh = ExtResource("2_kdy04")
 
 [node name="Preistroberttext1" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.1818789, -0.1592512, -0.08114221, 0, 0.115766734, -0.22720699, 0.17873207, 0.16205503, 0.08257082, 0.812365, 0.979, -5.63573)
+transform = Transform3D(0.1818789, -0.15925121, -0.08114221, 0, 0.11576674, -0.22720699, 0.17873207, 0.16205505, 0.08257082, 0.812365, 0.979, -5.63573)
 visible = false
 material_override = SubResource("StandardMaterial3D_a8l6r")
 mesh = ExtResource("5_yx4t5")
@@ -897,10 +898,11 @@ transform = Transform3D(0.035, 0, 0, 0, -1.5299e-09, -0.035, 0, 0.035, -1.5299e-
 modulate = Color(1, 0.313726, 0.223529, 1)
 texture = ExtResource("36_7p6h6")
 
-[node name="ManualWheel" type="Node3D" parent="roundManager" node_paths=PackedStringArray("innerRing")]
+[node name="ManualWheel" type="Node3D" parent="roundManager" node_paths=PackedStringArray("innerRing", "touchInput")]
 transform = Transform3D(1, 0, 0, 0, 0.937282, -0.3485719, 0, 0.3485719, 0.937282, 0.906, 1.83, -1.748)
 script = ExtResource("20_jntfy")
 innerRing = NodePath("Wheel/4")
+touchInput = NodePath("TouchInputHandler")
 
 [node name="Wheel" type="Node3D" parent="roundManager/ManualWheel"]
 
@@ -1046,6 +1048,8 @@ texture = ExtResource("34_2lixm")
 
 [node name="WheelSpinAudioPlayer" type="AudioStreamPlayer" parent="roundManager/ManualWheel/Wheel/4"]
 stream = ExtResource("35_5ays5")
+
+[node name="TouchInputHandler" parent="roundManager/ManualWheel" instance=ExtResource("41_kenac")]
 
 [node name="HudOverlay" parent="roundManager" instance=ExtResource("14_yx326")]
 

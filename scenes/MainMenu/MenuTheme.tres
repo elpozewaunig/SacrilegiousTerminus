@@ -1,0 +1,19 @@
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://8pxr3vfc2jme"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bxs3u"]
+content_margin_top = 15.0
+content_margin_bottom = 15.0
+bg_color = Color(0.13682574, 0.13682574, 0.13682568, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t36tk"]
+bg_color = Color(0.066755, 0.066755004, 0.06675495, 1)
+
+[resource]
+Button/font_sizes/font_size = 32
+Button/styles/normal = SubResource("StyleBoxFlat_bxs3u")
+Button/styles/pressed = SubResource("StyleBoxFlat_t36tk")
+RichTextLabel/font_sizes/bold_font_size = 32
+RichTextLabel/font_sizes/bold_italics_font_size = 32
+RichTextLabel/font_sizes/italics_font_size = 32
+RichTextLabel/font_sizes/mono_font_size = 32
+RichTextLabel/font_sizes/normal_font_size = 32

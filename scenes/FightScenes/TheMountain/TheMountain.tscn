@@ -1,4 +1,4 @@
-[gd_scene load_steps=67 format=3 uid="uid://b0cfnqq0xj6ro"]
+[gd_scene load_steps=68 format=3 uid="uid://b0cfnqq0xj6ro"]
 
 [ext_resource type="ArrayMesh" uid="uid://sdnkjicuuag3" path="res://scenes/FightScenes/TheMountain/3DFront/rock.obj" id="1_2bq0v"]
 [ext_resource type="Texture2D" uid="uid://b4gbrrmj35ey2" path="res://scenes/FightScenes/TheMountain/3DFront/rockbake.png" id="1_3jns5"]
@@ -46,6 +46,7 @@
 [ext_resource type="Texture2D" uid="uid://deiox7dda12bd" path="res://assets/sprites/tarot symbole/Pentagram.png" id="41_a3qfw"]
 [ext_resource type="Texture2D" uid="uid://bhnu44u0bjfo0" path="res://assets/sprites/tarot symbole/tarotGlow/Swordwaage.png" id="42_840ck"]
 [ext_resource type="Script" uid="uid://f64l6edjfbpe" path="res://code/spellCastWheelScript.gd" id="43_13kqg"]
+[ext_resource type="Script" uid="uid://dmuded80dy2d8" path="res://code/touch_input_handler.gd" id="44_jhd7a"]
 [ext_resource type="AudioStream" uid="uid://p3j8kkj1er87" path="res://assets/sounds/long_whoosh/long_whoosh_4.ogg" id="46_8i7tv"]
 [ext_resource type="AudioStream" uid="uid://c50px6he1apgi" path="res://assets/music/battle1_loop.ogg" id="46_epgyi"]
 [ext_resource type="AudioStream" uid="uid://ba240676qg75s" path="res://assets/sounds/angel_incomprehensible/angel_sfx.ogg" id="47_kct0j"]
@@ -808,7 +809,7 @@ _data = {
 script = SubResource("GDScript_yrvts")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(0.94028795, -0.041481864, -0.3378428, 0, 0.99254596, -0.121869266, 0.34038, 0.11459221, 0.9332789, 0.23, 0.415, -0.435)
+transform = Transform3D(0.94028795, -0.04148186, -0.3378428, 0, 0.9925459, -0.12186926, 0.34038, 0.1145922, 0.93327886, 0.23, 0.415, -0.435)
 fov = 50.0
 
 [node name="WhooshSFX" type="AudioStreamPlayer" parent="Camera3D"]
@@ -1148,12 +1149,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.41112, 0, 0.719418)
 mass = 0.001
 gravity_scale = 0.0
 
-[node name="ManualWheel" type="Node3D" parent="roundManager" node_paths=PackedStringArray("innerRing", "middleRing")]
+[node name="ManualWheel" type="Node3D" parent="roundManager" node_paths=PackedStringArray("innerRing", "middleRing", "touchInput")]
 transform = Transform3D(0.32753193, 0.30904207, 0.093892686, 0, 0.1337211, -0.44013482, -0.32299045, 0.31338742, 0.095212884, -0.255, 0.855, -1.574)
 visible = false
 script = ExtResource("43_13kqg")
 innerRing = NodePath("Wheel/1")
 middleRing = NodePath("Wheel/2")
+touchInput = NodePath("TouchInputHandler")
 
 [node name="Wheel" type="Node3D" parent="roundManager/ManualWheel"]
 
@@ -1414,6 +1416,10 @@ gravity_scale = 0.0
 transform = Transform3D(-0.034907, 0.00254993, 6.93889e-18, 1.11461e-10, 1.52583e-09, -0.035, -0.00254993, -0.034907, -1.5299e-09, 0, 0, 0)
 modulate = Color(1, 0.313726, 0.223529, 1)
 texture = ExtResource("41_a3qfw")
+
+[node name="TouchInputHandler" type="Node" parent="roundManager/ManualWheel"]
+script = ExtResource("44_jhd7a")
+metadata/_custom_type_script = "uid://dmuded80dy2d8"
 
 [node name="HudOverlay" parent="roundManager" instance=ExtResource("16_fjhqi")]
 
