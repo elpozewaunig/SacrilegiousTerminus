@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://dfj7crbv06vkm"]
+[gd_scene load_steps=6 format=3 uid="uid://dfj7crbv06vkm"]
 
 [ext_resource type="Script" uid="uid://xbmyo7puhqh" path="res://code/tutorial_main_menu.gd" id="1_wfwg7"]
 [ext_resource type="Theme" uid="uid://8pxr3vfc2jme" path="res://scenes/MainMenu/MenuTheme.tres" id="2_8n6of"]
 [ext_resource type="PackedScene" uid="uid://bnmu8y7sw3xs6" path="res://scenes/button_with_sfx.tscn" id="2_nepck"]
 [ext_resource type="PackedScene" uid="uid://d0uw87hj0h1b8" path="res://scenes/MainMenu/tutorialText.tscn" id="3_s0w2m"]
+[ext_resource type="PackedScene" uid="uid://cuw4yq5y387x7" path="res://scenes/mouse_hider.tscn" id="5_r65fp"]
 
 [node name="TutorialLayer" type="CanvasLayer"]
 script = ExtResource("1_wfwg7")
@@ -47,5 +48,7 @@ layout_mode = 2
 [node name="Button" parent="DialogContainer/DialogBox" instance=ExtResource("2_nepck")]
 layout_mode = 2
 text = "Alright, got it"
+
+[node name="MouseHider" parent="." instance=ExtResource("5_r65fp")]
 
 [connection signal="pressed" from="DialogContainer/DialogBox/Button" to="." method="_on_back_to_menu_btn_pressed"]

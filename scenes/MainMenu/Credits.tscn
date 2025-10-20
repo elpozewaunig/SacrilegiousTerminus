@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://o142xdjjr58r"]
+[gd_scene load_steps=20 format=3 uid="uid://o142xdjjr58r"]
 
 [ext_resource type="PackedScene" uid="uid://dqtcwmca5ongg" path="res://scenes/SpellCastWheel/AutomaticWheel.tscn" id="1_6ietl"]
 [ext_resource type="Script" uid="uid://c7p1qjb2mys2y" path="res://code/creditsController.gd" id="1_d66vi"]
@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://clo06kexhsdk5" path="res://scenes/FightScenes/TheMountain/ParallaxLayerTexts/layer1.png" id="11_n5ltc"]
 [ext_resource type="Texture2D" uid="uid://mnxcbjjfsn4n" path="res://scenes/FightScenes/TheCountrySide/materials/mctreemulti.png" id="12_vducm"]
 [ext_resource type="AudioStream" uid="uid://dd05jecp8xjjr" path="res://assets/music/dialogue_loop.ogg" id="15_ag0ue"]
+[ext_resource type="PackedScene" uid="uid://cuw4yq5y387x7" path="res://scenes/mouse_hider.tscn" id="16_a31w8"]
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_x7cx1"]
 emission_shape = 3
@@ -163,3 +164,5 @@ stream = ExtResource("15_ag0ue")
 volume_db = -12.0
 autoplay = true
 parameters/looping = true
+
+[node name="MouseHider" parent="." instance=ExtResource("16_a31w8")]
