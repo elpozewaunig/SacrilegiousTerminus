@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://dgurl1u1gb0ly" path="res://scenes/DialogScene.tscn" id="1_ayubt"]
 [ext_resource type="Texture2D" uid="uid://b3frq2g06mlbx" path="res://assets/sprites/protag/protagonist.png" id="2_k22er"]
 [ext_resource type="Texture2D" uid="uid://b87p17jmjgx3x" path="res://assets/sprites/engel2/raphael.png" id="3_hqlv2"]
-[ext_resource type="Texture2D" uid="uid://chqqwl1pfpokh" path="res://assets/cutscenebackgrounds/bg3.jpg" id="4_aqnbr"]
+[ext_resource type="Texture2D" uid="uid://chqqwl1pfpokh" path="res://assets/sprites/cutscenebackgrounds/bg3.jpg" id="4_aqnbr"]
 [ext_resource type="AudioStream" uid="uid://dd05jecp8xjjr" path="res://assets/music/dialogue_loop.ogg" id="5_l74ol"]
 
 [sub_resource type="GDScript" id="GDScript_uv2tw"]

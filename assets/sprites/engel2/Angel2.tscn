@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://ccwx42uifhfce"]
 
 [ext_resource type="ArrayMesh" uid="uid://c6m3qa1gm28w7" path="res://assets/sprites/engel2/obj/ring1.obj" id="1_c5en1"]
-[ext_resource type="Script" path="res://assets/sprites/engel2/engelringrotation.gd" id="2_3h44g"]
+[ext_resource type="Script" uid="uid://4pxcnw5mbgtd" path="res://code/engelringrotation.gd" id="2_3h44g"]
 [ext_resource type="Material" uid="uid://jy7c8h5k6yub" path="res://assets/sprites/engel2/engelring.tres" id="2_k6jbx"]
 [ext_resource type="ArrayMesh" uid="uid://iog2kat5uavw" path="res://assets/sprites/engel2/obj/ring2.obj" id="3_24ipw"]
 [ext_resource type="ArrayMesh" uid="uid://ddf87dt07dyki" path="res://assets/sprites/engel2/obj/ring3.obj" id="4_fqe71"]

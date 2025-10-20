@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://b3frq2g06mlbx" path="res://assets/sprites/protag/protagonist.png" id="2_ejgje"]
 [ext_resource type="Texture2D" uid="uid://bl6yt8a7nlq6h" path="res://assets/sprites/robert/priester robert.png" id="3_j18pa"]
-[ext_resource type="Texture2D" uid="uid://ghlcmjpp7b22" path="res://assets/cutscenebackgrounds/bg1.jpg" id="4_1sh1p"]
+[ext_resource type="Texture2D" uid="uid://ghlcmjpp7b22" path="res://assets/sprites/cutscenebackgrounds/bg1.jpg" id="4_1sh1p"]
 [ext_resource type="AudioStream" uid="uid://dd05jecp8xjjr" path="res://assets/music/dialogue_loop.ogg" id="5_jr8gw"]
 [ext_resource type="PackedScene" uid="uid://dgurl1u1gb0ly" path="res://scenes/DialogScene.tscn" id="6_ppr5c"]
 

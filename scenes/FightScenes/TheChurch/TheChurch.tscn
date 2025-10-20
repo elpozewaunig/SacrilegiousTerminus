@@ -1,6 +1,5 @@
 [gd_scene load_steps=54 format=3 uid="uid://coj8cff6bnd1d"]
 
-[ext_resource type="Script" uid="uid://c7fy8bv06usat" path="res://scenes/FightScenes/TheChurch/theChurchController.gd" id="1_dt4df"]
 [ext_resource type="AudioStream" uid="uid://p3j8kkj1er87" path="res://assets/sounds/long_whoosh/long_whoosh_4.ogg" id="2_chogk"]
 [ext_resource type="ArrayMesh" uid="uid://mjowk7pbf55q" path="res://scenes/FightScenes/TheChurch/3DFront/Church2.obj" id="2_kdy04"]
 [ext_resource type="AudioStream" uid="uid://u8glnl0syi8r" path="res://assets/sounds/long_whoosh/long_whoosh_1.ogg" id="3_3mow5"]
@@ -43,6 +42,14 @@
 [ext_resource type="Texture2D" uid="uid://cuw82befexakv" path="res://assets/UI/goodwheel.png" id="36_7p6h6"]
 [ext_resource type="Texture2D" uid="uid://deiox7dda12bd" path="res://assets/sprites/tarot symbole/Pentagram.png" id="38_nklhs"]
 [ext_resource type="PackedScene" uid="uid://c4lpbckpjebgf" path="res://scenes/touch_input_handler.tscn" id="41_kenac"]
+
+[sub_resource type="GDScript" id="GDScript_fw854"]
+script/source = "extends Node3D
+
+
+func _on_round_manager_player_won() -> void:
+	SceneManager.change_scene(SceneManager.countrySideCutScene, true)
+"
 
 [sub_resource type="Animation" id="Animation_f7oct"]
 length = 0.001
@@ -661,7 +668,7 @@ albedo_texture = ExtResource("17_ma4jh")
 albedo_texture = ExtResource("9_sovuh")
 
 [node name="TheRift3" type="Node3D"]
-script = ExtResource("1_dt4df")
+script = SubResource("GDScript_fw854")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

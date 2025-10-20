@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cenoxr45h5nfg"
-path="res://.godot/imported/PLAY.png-dbc6d8ec4fdbbf37288607ee09cc45b9.ctex"
+uid="uid://chqqwl1pfpokh"
+path="res://.godot/imported/bg3.jpg-59a792f9cda96f4fdca1b67e540bbeba.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/FightScenes/PLAY.png"
-dest_files=["res://.godot/imported/PLAY.png-dbc6d8ec4fdbbf37288607ee09cc45b9.ctex"]
+source_file="res://assets/sprites/cutscenebackgrounds/bg3.jpg"
+dest_files=["res://.godot/imported/bg3.jpg-59a792f9cda96f4fdca1b67e540bbeba.ctex"]
 
 [params]
 

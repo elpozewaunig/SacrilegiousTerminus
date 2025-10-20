@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://nukwwpr5axtc"]
 
 [ext_resource type="PackedScene" uid="uid://dgurl1u1gb0ly" path="res://scenes/DialogScene.tscn" id="1_mjeo2"]
-[ext_resource type="Texture2D" uid="uid://b2n213s6icibw" path="res://assets/cutscenebackgrounds/bg4.jpg" id="2_07t7d"]
+[ext_resource type="Texture2D" uid="uid://b2n213s6icibw" path="res://assets/sprites/cutscenebackgrounds/bg4.jpg" id="2_07t7d"]
 [ext_resource type="AudioStream" uid="uid://dd05jecp8xjjr" path="res://assets/music/dialogue_loop.ogg" id="3_32x8c"]
 
 [sub_resource type="GDScript" id="GDScript_fu138"]

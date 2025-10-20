@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://clo06kexhsdk5" path="res://scenes/FightScenes/TheMountain/ParallaxLayerTexts/layer1.png" id="6_k1qaw"]
 [ext_resource type="Texture2D" uid="uid://bqessv6mtjusq" path="res://scenes/FightScenes/TheMountain/ParallaxLayerTexts/layer2.png" id="7_3qoeg"]
 [ext_resource type="PackedScene" uid="uid://dtjng8jtop7ed" path="res://assets/sprites/protag/protag.tscn" id="8_48wte"]
-[ext_resource type="PackedScene" uid="uid://d3e5kcc82viwq" path="res://scenes/FightScenes/rifttear.tscn" id="8_1773n"]
+[ext_resource type="PackedScene" uid="uid://d3e5kcc82viwq" path="res://scenes/RiftTear/rifttear.tscn" id="8_1773n"]
 [ext_resource type="Texture2D" uid="uid://b7e850fwn6mnj" path="res://scenes/FightScenes/TheChurch/3DText/raphaeltexttext.jpg" id="9_u68kx"]
 [ext_resource type="ArrayMesh" uid="uid://4lger5fh6chq" path="res://scenes/FightScenes/TheChurch/3DText/preistroberttext1.obj" id="10_12yff"]
 [ext_resource type="ArrayMesh" uid="uid://dfstv50uufwrh" path="res://scenes/FightScenes/TheChurch/3DText/preistroberttext2.obj" id="11_0cgdh"]

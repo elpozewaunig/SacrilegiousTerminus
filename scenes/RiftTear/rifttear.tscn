@@ -1,9 +1,9 @@
 [gd_scene load_steps=10 format=4 uid="uid://d3e5kcc82viwq"]
 
 [ext_resource type="Shader" uid="uid://boj2r6ija7w12" path="res://scenes/FightScenes/TheRift/TheRift.gdshader" id="1_cxjw8"]
-[ext_resource type="Texture2D" uid="uid://bqdmlqulrjco2" path="res://scenes/FightScenes/a0001.png" id="2_fip4j"]
-[ext_resource type="Texture2D" uid="uid://deivwc3lo3tj7" path="res://scenes/FightScenes/fogglowtry.png" id="3_64hph"]
-[ext_resource type="Texture2D" uid="uid://cjfxex8vd3byn" path="res://scenes/FightScenes/glowtry2.png" id="4_ii77g"]
+[ext_resource type="Texture2D" uid="uid://bqdmlqulrjco2" path="res://scenes/RiftTear/a0001.png" id="2_fip4j"]
+[ext_resource type="Texture2D" uid="uid://deivwc3lo3tj7" path="res://scenes/RiftTear/fogglowtry.png" id="3_64hph"]
+[ext_resource type="Texture2D" uid="uid://cjfxex8vd3byn" path="res://scenes/RiftTear/glowtry2.png" id="4_ii77g"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_o67fh"]
 render_priority = 0

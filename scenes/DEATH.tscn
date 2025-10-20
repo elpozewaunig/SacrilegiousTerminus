@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://bbqw6wj7d55e"]
 
 [ext_resource type="PackedScene" uid="uid://dgurl1u1gb0ly" path="res://scenes/DialogScene.tscn" id="1_nn72u"]
-[ext_resource type="Texture2D" uid="uid://cbatqhg6u1i6m" path="res://assets/cutscenebackgrounds/youlose.jpg" id="2_db0x7"]
+[ext_resource type="Texture2D" uid="uid://cbatqhg6u1i6m" path="res://assets/sprites/cutscenebackgrounds/youlose.jpg" id="2_db0x7"]
 [ext_resource type="AudioStream" uid="uid://tsd3j1lcbp00" path="res://assets/music/defeat_peace_jingle.ogg" id="3_e3blm"]
 
 [sub_resource type="GDScript" id="GDScript_rsjad"]

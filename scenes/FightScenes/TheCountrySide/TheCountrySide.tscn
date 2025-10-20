@@ -17,7 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://d1qfbpx8ym8rd" path="res://scenes/FightScenes/TheCountrySide/clouds.png" id="14_kro6o"]
 [ext_resource type="Script" uid="uid://bu7my6lb2avif" path="res://code/roundManager.gd" id="14_wpcgj"]
 [ext_resource type="Texture2D" uid="uid://clo06kexhsdk5" path="res://scenes/FightScenes/TheMountain/ParallaxLayerTexts/layer1.png" id="15_hxuq5"]
-[ext_resource type="PackedScene" uid="uid://d3e5kcc82viwq" path="res://scenes/FightScenes/rifttear.tscn" id="16_offic"]
+[ext_resource type="PackedScene" uid="uid://d3e5kcc82viwq" path="res://scenes/RiftTear/rifttear.tscn" id="16_offic"]
 [ext_resource type="PackedScene" uid="uid://dvygun7k256ji" path="res://scenes/HudOverlay.tscn" id="17_fyugo"]
 [ext_resource type="Script" uid="uid://d15fqigsumxku" path="res://code/automaticWheelScript.gd" id="18_3i5yg"]
 [ext_resource type="Texture2D" uid="uid://cuw82befexakv" path="res://assets/UI/goodwheel.png" id="19_em0x5"]

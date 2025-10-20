@@ -2,12 +2,12 @@
 
 [ext_resource type="PackedScene" uid="uid://ceft1i1qvo4fl" path="res://scenes/SpellCastWheel/MainMenuWhell.tscn" id="1_ewt1t"]
 [ext_resource type="AudioStream" uid="uid://2pf5cga2akch" path="res://assets/music/loading_loop.ogg" id="2_fi0y8"]
-[ext_resource type="ArrayMesh" uid="uid://dbeddpemneiye" path="res://assets/Chevron.obj" id="3_o50ab"]
+[ext_resource type="ArrayMesh" uid="uid://dbeddpemneiye" path="res://scenes/MainMenu/Chevron.obj" id="3_o50ab"]
 [ext_resource type="Shader" uid="uid://boj2r6ija7w12" path="res://scenes/FightScenes/TheRift/TheRift.gdshader" id="4_el3ny"]
-[ext_resource type="Texture2D" uid="uid://bqdmlqulrjco2" path="res://scenes/FightScenes/a0001.png" id="5_bp0j2"]
+[ext_resource type="Texture2D" uid="uid://bqdmlqulrjco2" path="res://scenes/RiftTear/a0001.png" id="5_bp0j2"]
 [ext_resource type="Material" uid="uid://cry5503xare3w" path="res://scenes/FightScenes/TheMountain/Skybox/mainmenuskybox.tres" id="6_esobt"]
 [ext_resource type="Texture2D" uid="uid://clo06kexhsdk5" path="res://scenes/FightScenes/TheMountain/ParallaxLayerTexts/layer1.png" id="7_lxc0g"]
-[ext_resource type="Texture2D" uid="uid://cjfxex8vd3byn" path="res://scenes/FightScenes/glowtry2.png" id="8_vjx6n"]
+[ext_resource type="Texture2D" uid="uid://cjfxex8vd3byn" path="res://scenes/RiftTear/glowtry2.png" id="8_vjx6n"]
 [ext_resource type="Texture2D" uid="uid://mnxcbjjfsn4n" path="res://scenes/FightScenes/TheCountrySide/materials/mctreemulti.png" id="9_vunlc"]
 [ext_resource type="PackedScene" uid="uid://cuw4yq5y387x7" path="res://scenes/mouse_hider.tscn" id="10_mqas3"]
 

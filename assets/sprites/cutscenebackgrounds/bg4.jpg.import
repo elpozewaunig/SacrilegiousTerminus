@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://t6geuomcnu2c"
-path="res://.godot/imported/gsesplash.png-a9f8b7da0619368625600b7da493f94b.ctex"
+uid="uid://b2n213s6icibw"
+path="res://.godot/imported/bg4.jpg-2be19f2fba9d3b70bdd6f03e258b9d97.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/gsesplash.png"
-dest_files=["res://.godot/imported/gsesplash.png-a9f8b7da0619368625600b7da493f94b.ctex"]
+source_file="res://assets/sprites/cutscenebackgrounds/bg4.jpg"
+dest_files=["res://.godot/imported/bg4.jpg-2be19f2fba9d3b70bdd6f03e258b9d97.ctex"]
 
 [params]
 

@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dbeddpemneiye"
+path="res://.godot/imported/Chevron.obj-f81b5234f3fb45d0aebd50ff5dc87b1e.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Chevron.obj-f81b5234f3fb45d0aebd50ff5dc87b1e.mesh"]
+
+source_file="res://scenes/MainMenu/Chevron.obj"
+dest_files=["res://.godot/imported/Chevron.obj-f81b5234f3fb45d0aebd50ff5dc87b1e.mesh", "res://.godot/imported/Chevron.obj-f81b5234f3fb45d0aebd50ff5dc87b1e.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false
