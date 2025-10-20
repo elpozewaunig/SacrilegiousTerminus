@@ -46,6 +46,7 @@ size_flags_vertical = 3
 layout_mode = 2
 
 [node name="Button" parent="DialogContainer/DialogBox" instance=ExtResource("2_nepck")]
+unique_name_in_owner = true
 layout_mode = 2
 text = "Alright, got it"
 
