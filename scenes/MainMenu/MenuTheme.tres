@@ -1,4 +1,6 @@
-[gd_resource type="Theme" load_steps=4 format=3 uid="uid://8pxr3vfc2jme"]
+[gd_resource type="Theme" load_steps=7 format=3 uid="uid://8pxr3vfc2jme"]
+
+[ext_resource type="FontFile" uid="uid://nmqwlr0d5ra7" path="res://assets/fonts/NotoSansSymbols-SemiBold.ttf" id="1_t36tk"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6g3ks"]
 bg_color = Color(0.06666667, 0.06666667, 0.06666667, 1)
@@ -11,6 +13,14 @@ bg_color = Color(0.13682574, 0.13682574, 0.13682568, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t36tk"]
 bg_color = Color(0.066755, 0.066755004, 0.06675495, 1)
 
+[sub_resource type="FontVariation" id="FontVariation_t36tk"]
+base_font = ExtResource("1_t36tk")
+spacing_top = -13
+spacing_bottom = -13
+
+[sub_resource type="SystemFont" id="SystemFont_6g3ks"]
+fallbacks = Array[Font]([SubResource("FontVariation_t36tk")])
+
 [resource]
 Button/font_sizes/font_size = 32
 Button/styles/hover = SubResource("StyleBoxFlat_6g3ks")
@@ -21,3 +31,4 @@ RichTextLabel/font_sizes/bold_italics_font_size = 32
 RichTextLabel/font_sizes/italics_font_size = 32
 RichTextLabel/font_sizes/mono_font_size = 32
 RichTextLabel/font_sizes/normal_font_size = 32
+RichTextLabel/fonts/normal_font = SubResource("SystemFont_6g3ks")
